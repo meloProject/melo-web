@@ -1,0 +1,27 @@
+/* MIXINS */
+@mixin box-shadown($color, $rest...)
+    @if($rest)
+        -moz-box-shadow: 2px 4px 12px $color
+        -webkit-box-shadow: 2px 4px 12px $color
+        box-shadow: 2px 4px 12px $color
+    @else
+        -moz-box-shadow: $rest $color
+        -webkit-box-shadow: $rest $color
+        box-shadow: $rest $color 
+        
+@mixin opacityOut($sec)  
+    -webkit-transition: opacity $sec ease-in-out
+    -moz-transition: opacity $sec ease-in-out
+    -ms-transition: opacity $sec ease-in-out
+    -o-transition: opacity $sec ease-in-out
+    transition: opacity $sec ease-in-out 
+    
+@mixin transition($sec, $efect, $time, $rest...)
+    -webkit-transition: $rest $sec $efect $time;
+    -moz-transition: $rest $sec $efect $time;
+    -o-transition: $rest $sec $efect $time;
+    transition: $rest $sec $efect $time;      
+
+@mixin collapse()
+    padding: 0px !important
+    margin: 0px !important    
