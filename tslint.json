@@ -1,0 +1,14 @@
+{
+    "rulesDirectory": ["D:/APIS/melo/webserver/server/"],
+    "rules": {
+        "no-trailing-whitespace": false,
+        "variable-name": [true, "ban-keywords"],
+        "whitespace": [false,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-separator",
+            "check-type"
+        ]
+    }
+}

@@ -25172,7 +25172,15 @@ module.exports = function (_Component) {
           'body',
           null,
           this.props.children,
-          _react2.default.createElement('div', { id: 'main' }),
+          _react2.default.createElement(
+            'div',
+            { id: 'main' },
+            _react2.default.createElement(
+              'ul',
+              { className: 'panel' },
+              _react2.default.createElement('li', { id: 'panel' })
+            )
+          ),
           _react2.default.createElement(_deps2.default, null)
         )
       );

@@ -15,7 +15,11 @@ module.exports = class AppTres extends Component {
 
       <body>
          {this.props.children}
-      <div id="main"></div>  
+      <div id="main">
+            <ul className="panel">
+                <li id="panel"></li> 
+            </ul>
+      </div>  
       <Deps />
       </body>
       

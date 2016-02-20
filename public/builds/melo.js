@@ -1765,411 +1765,52 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"./support/isBuffer":"D:\\APIS\\melo\\webserver\\server\\node_modules\\util\\support\\isBufferBrowser.js","_process":"D:\\APIS\\melo\\webserver\\server\\node_modules\\process\\browser.js","inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\inherits\\inherits_browser.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\core\\melo\\dispositive\\despktopCn.ts":[function(require,module,exports){
+},{"./support/isBuffer":"D:\\APIS\\melo\\webserver\\server\\node_modules\\util\\support\\isBufferBrowser.js","_process":"D:\\APIS\\melo\\webserver\\server\\node_modules\\process\\browser.js","inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\inherits\\inherits_browser.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\dispositive\\desktopCn.ts":[function(require,module,exports){
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.DesktopCn = undefined;
-
-var _dispositive = require("./dispositive");
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /// <reference path="../../../../../typings/bragi-browser/bragi-browser" />
-
-var DesktopCn = exports.DesktopCn = function (_Dispositive) {
-    _inherits(DesktopCn, _Dispositive);
-
-    function DesktopCn() {
-        _classCallCheck(this, DesktopCn);
-
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(DesktopCn).call(this));
-    }
-
-    _createClass(DesktopCn, [{
-        key: "start",
-        value: function start(container, element, eve) {
-            var _this2 = this;
-
-            // start the controller graphics
-            this.setGraphics(element);
-            this.initGraphics();
-            this.element = element || this.error("error:DesktopCn", "the element is needed!");
-            // set events
-            this.element.onmouseup = function (eve) {
-                return _this2.onMouseup(eve);
-            };
-            document.onmousemove = function (eve) {
-                return _this2.onMousemove(eve);
-            };
-            // set impact sector.
-            this.y = eve.y;
-            this.x = eve.x;
-            this.borderBottomTolerance = 220;
-            this.borderRightTolerence = 220;
-            this.returns = 50;
-            this.container = container;
-        }
-        /* EVENTS */
-
-    }, {
-        key: "onMouseup",
-        value: function onMouseup(eve) {
-            document.onmousemove = null;
-        }
-    }, {
-        key: "onMousemove",
-        value: function onMousemove(eve) {
-            // when the mouse is in movement.
-            this.controls(this.element, eve);
-            this.movement(this.element, eve);
-            this.y = eve.y;
-            this.x = eve.x;
-        }
-        /* ACTIONS */
-
-    }, {
-        key: "movement",
-        value: function movement(element, eve) {
-            /*
-            set actions when the circle is in motion.
-            */
-            var actualY = eve.y - this.y + this.element.offsetTop;
-            var actualX = eve.x - this.x + this.element.offsetLeft;
-            element.style.top = actualY + "px";
-            element.style.left = actualX + "px";
-        }
-    }, {
-        key: "controls",
-        value: function controls(element, eve) {
-            var eY = element.offsetTop,
-                eX = element.offsetLeft;
-        }
-    }]);
-
-    return DesktopCn;
-}(_dispositive.Dispositive);
-
-},{"./dispositive":"D:\\APIS\\melo\\webserver\\server\\public\\core\\melo\\dispositive\\dispositive.ts"}],"D:\\APIS\\melo\\webserver\\server\\public\\core\\melo\\dispositive\\dispositive.ts":[function(require,module,exports){
-"use strict";
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.Dispositive = exports.Dispositives = undefined;
-
-var _bragiBrowser = require("bragi-browser");
-
-var Bragi = _interopRequireWildcard(_bragiBrowser);
-
-var _graphs = require("./graphs");
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Dispositives = exports.Dispositives = function Dispositives() {
-    _classCallCheck(this, Dispositives);
-};
-
-var Dispositive = exports.Dispositive = function (_Graphics) {
-    _inherits(Dispositive, _Graphics);
-
-    function Dispositive() {
-        _classCallCheck(this, Dispositive);
-
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(Dispositive).call(this));
-    }
-
-    _createClass(Dispositive, [{
-        key: "error",
-        value: function error(group, message) {
-            Bragi.log(group, message);
-            throw Error(message);
-        }
-    }]);
-
-    return Dispositive;
-}(_graphs.Graphics);
-
-},{"./graphs":"D:\\APIS\\melo\\webserver\\server\\public\\core\\melo\\dispositive\\graphs.ts","bragi-browser":"D:\\APIS\\melo\\webserver\\server\\node_modules\\bragi-browser\\lib\\bragi.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\core\\melo\\dispositive\\graphs.ts":[function(require,module,exports){
-"use strict";
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.Graphics = undefined;
-
-var _bragiBrowser = require("bragi-browser");
-
-var Bragi = _interopRequireWildcard(_bragiBrowser);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Graphics = exports.Graphics = function () {
-    function Graphics() {
-        _classCallCheck(this, Graphics);
-    }
-
-    _createClass(Graphics, [{
-        key: "setGraphics",
-        value: function setGraphics(element) {
-            var circleSet = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
-
-            /*
-            set initial props of the circles controller.
-            */
-            this.render = element.getContext("2d");
-            this.cw = element.width = 230;
-            this.ch = element.height = 230;
-            this.circle = {
-                x: circleSet.x || this.cw / 2,
-                y: circleSet.y || this.ch / 2,
-                radius: circleSet.radius || 90,
-                speed: circleSet.speed || 13,
-                rotation: circleSet.rotation || 0,
-                angleStart: circleSet.angleStart || 270,
-                angleEnd: circleSet.angleEnd || 90,
-                hue: circleSet.hue || 450,
-                thickness: circleSet.thickness || 35,
-                blur: circleSet.blur || 1,
-                particles: circleSet.particles || false,
-                border: circleSet.border || false,
-                flareTwo: circleSet.flareTwo || false
-            };
-            // aspect props.
-            this.render.shadowBlur = this.circle.blur;
-            this.render.shadowColor = "hsla(" + this.circle.hue + ", 80%, 60%, 1)";
-            this.render.lineCap = "round";
-            this.gradient1 = this.render.createLinearGradient(0, -this.circle.radius, 0, this.circle.radius);
-            this.gradient1.addColorStop(0, "hsla(" + this.circle.hue + ", 60%, 50%, .25)");
-            this.gradient1.addColorStop(1, "hsla(" + this.circle.hue + ", 60%, 50%, 0)");
-        }
-    }, {
-        key: "initGraphics",
-        value: function initGraphics() {
-            var _this = this;
-
-            /*
-            this function start the circular animation loop
-            */
-            if (requestAnimationFrame) {
-                this.circleInterval = requestAnimationFrame(function (eve) {
-                    return _this.initGraphics();
-                });
-                this.loop();
-            } else {
-                throw Error("Native function requestAnimationFrame is required");
-                Bragi.log("error:Graphics", "Native function requestAnimationFrame is required");
-            }
-            return this;
-        }
-    }, {
-        key: "stopGraphics",
-        value: function stopGraphics() {
-            cancelAnimationFrame(this.circleInterval);
-            this.render.clearRect(0, 0, this.cw, this.ch);
-        }
-    }, {
-        key: "loop",
-        value: function loop() {
-            this.clear();
-            this.updateCircle();
-            this.renderCircle();
-            if (this.circle.border) this.renderCircleBorder();
-            this.renderCircleFlare();
-            if (this.circle.flareTwo) this.renderCircleFlare2();
-            if (this.circle.particles) {
-                this.createParticles();
-                this.updateParticles();
-                this.renderParticles();
-            }
-        }
-    }, {
-        key: "rand",
-        value: function rand(a, b) {
-            return ~ ~(Math.random() * (b - a + 1) + a);
-        }
-    }, {
-        key: "dToR",
-        value: function dToR(degrees) {
-            return degrees * (Math.PI / 180);
-        }
-    }, {
-        key: "updateCircle",
-        value: function updateCircle() {
-            if (this.circle.rotation < 360) this.circle.rotation += this.circle.speed;else this.circle.rotation = 0;
-        }
-    }, {
-        key: "renderCircle",
-        value: function renderCircle() {
-            this.render.save();
-            this.render.translate(this.circle.x, this.circle.y);
-            this.render.rotate(this.dToR(this.circle.rotation));
-            this.render.beginPath();
-            this.render.arc(0, 0, this.circle.radius, this.dToR(this.circle.angleStart), this.dToR(this.circle.angleEnd), true);
-            this.render.lineWidth = this.circle.thickness;
-            this.render.strokeStyle = this.gradient1;
-            this.render.stroke();
-            this.render.restore();
-        }
-    }, {
-        key: "renderCircleBorder",
-        value: function renderCircleBorder() {
-            this.render.save();
-            this.render.translate(this.circle.x, this.circle.y);
-            this.render.rotate(this.dToR(this.circle.rotation));
-            this.render.beginPath();
-            this.render.arc(0, 0, this.circle.radius + this.circle.thickness / 2, this.dToR(this.circle.angleStart), this.dToR(this.circle.angleEnd), true);
-            this.render.lineWidth = 2;
-            this.render.stroke();
-            this.render.restore();
-        }
-    }, {
-        key: "renderCircleFlare",
-        value: function renderCircleFlare() {
-            var gradient3 = undefined;
-            this.render.save();
-            this.render.translate(this.circle.x, this.circle.y);
-            this.render.rotate(this.dToR(this.circle.rotation + 185));
-            this.render.scale(1, 1);
-            this.render.beginPath();
-            this.render.arc(0, this.circle.radius, 30, 0, Math.PI * 2, false);
-            this.render.closePath();
-            gradient3 = this.render.createRadialGradient(0, this.circle.radius, 0, 0, this.circle.radius, 30);
-            gradient3.addColorStop(0, "hsla(330, 50%, 50%, .35)");
-            gradient3.addColorStop(1, "hsla(330, 50%, 50%, 0)");
-            this.render.fillStyle = gradient3;
-            this.render.fill();
-            this.render.restore();
-        }
-    }, {
-        key: "renderParticles",
-        value: function renderParticles() {
-            var i = this.particles.length,
-                p = undefined;
-            while (i--) {
-                p = this.particles[i];
-                this.render.beginPath();
-                this.render.fillRect(p.x, p.y, p.radius, p.radius);
-                this.render.closePath();
-                this.render.fillStyle = "hsla(0, 0%, 100%, " + p.alpha + ")";
-            }
-        }
-    }, {
-        key: "clear",
-        value: function clear() {
-            this.render.globalCompositeOperation = "destination-out";
-            this.render.fillStyle = "rgba(0, 0, 0, .1)";
-            this.render.fillRect(0, 0, this.cw, this.ch);
-            this.render.globalCompositeOperation = "lighter";
-        }
-    }, {
-        key: "renderCircleFlare2",
-        value: function renderCircleFlare2() {
-            var gradient4 = undefined;
-            this.render.save();
-            this.render.translate(this.circle.x, this.circle.y);
-            this.render.rotate(this.dToR(this.circle.rotation + 165));
-            this.render.scale(1.5, 1);
-            this.render.beginPath();
-            this.render.arc(0, this.circle.radius, 25, 0, Math.PI * 2, false);
-            this.render.closePath();
-            gradient4 = this.render.createRadialGradient(0, this.circle.radius, 0, 0, this.circle.radius, 25);
-            gradient4.addColorStop(0, "hsla(30, 100%, 50%, .2)");
-            gradient4.addColorStop(1, "hsla(30, 100%, 50%, 0)");
-            this.render.fillStyle = gradient4;
-            this.render.fill();
-            this.render.restore();
-        }
-    }, {
-        key: "createParticles",
-        value: function createParticles() {
-            if (this.particles.length < this.particleMax) {
-                this.particles.push({
-                    x: this.circle.x + this.circle.radius * Math.cos(this.dToR(this.circle.rotation - 85)) + (this.rand(0, this.circle.thickness * 2) - this.circle.thickness),
-                    y: this.circle.y + this.circle.radius * Math.sin(this.dToR(this.circle.rotation - 85)) + (this.rand(0, this.circle.thickness * 2) - this.circle.thickness),
-                    vx: (this.rand(0, 100) - 50) / 1000,
-                    vy: (this.rand(0, 100) - 50) / 1000,
-                    radius: this.rand(1, 6) / 2,
-                    alpha: this.rand(10, 20) / 100
-                });
-            }
-        }
-    }, {
-        key: "updateParticles",
-        value: function updateParticles() {
-            var i = this.particles.length,
-                p = undefined;
-            while (i--) {
-                p = this.particles[i];
-                p.vx += (this.rand(0, 100) - 50) / 750;
-                p.vy += (this.rand(0, 100) - 50) / 750;
-                p.x += p.vx;
-                p.y += p.vy;
-                p.alpha -= .01;
-                if (p.alpha < .02) {
-                    this.particles.splice(i, 1);
-                }
-            }
-        }
-    }]);
-
-    return Graphics;
-}();
-
-},{"bragi-browser":"D:\\APIS\\melo\\webserver\\server\\node_modules\\bragi-browser\\lib\\bragi.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melo.ts":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\server\\public\\melo.ts":[function(require,module,exports){
 "use strict";
 
 var _bragiBrowser = require("bragi-browser");
 
 var Bragi = _interopRequireWildcard(_bragiBrowser);
 
-var _despktopCn = require("./core/melo/dispositive/despktopCn");
+var _desktopCn = require("./melcore/melcore/dispositive/desktopCn");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 // configure the logger
 Bragi.addGroup("Graphics");
 Bragi.options.groupsEnabled = ["Graphics"];
-console.log('controller start');
 var count = 0;
 var controller = undefined;
 var element = undefined;
+var panel = undefined;
+controller = new _desktopCn.DesktopCn();
 addEventListener("mousedown", function (eve) {
+    panel = document.getElementById("panel");
     element = document.createElement("canvas");
     // set props of canvas element controller
-    var ch = 230,
-        cx = 230;
+    var ch = 240,
+        cx = 240;
     element.id = "controller" + count;
+    element.className = "circles";
     element.style.top = eve.y - ch / 2 + "px";
     element.style.left = eve.x - cx / 2 + "px";
-    controller = new _despktopCn.DesktopCn();
-    controller.start(document.getElementById("main"), element, eve);
+    controller.init(document.getElementById("main"), element, eve);
+    controller.onLoop = function (strings) {
+        return panel.innerHTML = strings;
+    };
+    controller.start();
+    element.className = "circlesExpandedAnimation";
     document.getElementById("main").appendChild(element);
 });
 addEventListener("mouseup", function () {
-    controller.stopGraphics();
+    controller.stop();
     document.getElementById("main").removeChild(document.getElementById("controller" + count));
 });
 
-},{"./core/melo/dispositive/despktopCn":"D:\\APIS\\melo\\webserver\\server\\public\\core\\melo\\dispositive\\despktopCn.ts","bragi-browser":"D:\\APIS\\melo\\webserver\\server\\node_modules\\bragi-browser\\lib\\bragi.js"}]},{},["D:\\APIS\\melo\\webserver\\server\\public\\melo.ts"])
+},{"./melcore/melcore/dispositive/desktopCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\dispositive\\desktopCn.ts","bragi-browser":"D:\\APIS\\melo\\webserver\\server\\node_modules\\bragi-browser\\lib\\bragi.js"}]},{},["D:\\APIS\\melo\\webserver\\server\\public\\melo.ts"])
 
 
 //# sourceMappingURL=melo.js.map

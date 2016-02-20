@@ -2808,12 +2808,43 @@ ul {
 #main {
   width: 100%;
   height: 100%;
-  background: #131c35 linear-gradient(#192853, #131c35); }
+  background: #FFF;
+  display: flex;
+  flex-direction: center; }
 
-canvas {
+.circles {
   position: absolute;
   margin: 0px !important;
-  padding: 0px !important; }
+  padding: 0px !important;
+  cursor: none; }
+
+.circlesExpandedAnimation {
+  position: absolute;
+  margin: 0px !important;
+  padding: 0px !important;
+  cursor: none;
+  animation: spin1 0.8s infinite linear;
+  -webkit-animation: spin1 0.8s infinite linear; }
+
+@keyframes spin1 {
+  0% { }
+  50% { }
+  100% {
+    transform: rotate(360deg); } }
+
+.panel {
+  width: 100%;
+  height: 100px;
+  font-size: 45px;
+  color: #AA00FF;
+  display: flex;
+  justify-content: flex-end;
+  display: none; }
+  .panel li {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center; }
 
 .material-icons {
   font-family: 'Material Icons';
