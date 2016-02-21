@@ -1,9 +1,4 @@
-/// <reference path="./melcore/melcore/typings/bragi-browser/bragi-browser" />
-import * as Bragi from "bragi-browser";
-import {DesktopCn} from "./melcore/melcore/dispositive/desktopCn";
-// configure the logger
-Bragi.addGroup("Graphics");
-Bragi.options.groupsEnabled = ["Graphics"];
+import {DesktopCn} from "./melcore/melcore/controller/desktopCn";
 
 let count = 0;
 let controller;
@@ -34,4 +29,3 @@ addEventListener("mouseup", () => {
     controller.stop();
     document.getElementById("main").removeChild(document.getElementById("controller" + count));
 });
-    

@@ -1,10 +1,6 @@
-import {Dispositive, Dispositives} from "./dispositive";
+import {DispositiveCn} from "./dispositiveCn";
 
-interface Setup {
-    asyncMethod: () => Promise<number>;
-}
-
-export class DesktopCn extends Dispositive implements Dispositives {
+export class DesktopCn extends DispositiveCn {
 
     container: HTMLElement;
     element: HTMLElement;
@@ -13,33 +9,14 @@ export class DesktopCn extends Dispositive implements Dispositives {
         super();
     }
 
-    public init(container: HTMLElement, element: HTMLElement | any, event: MouseEvent) {
-        let test: number = 0;
-
-        async function delay(milliseconds: number) {
-            return new Promise<void>(resolve => {
-                setTimeout(resolve, milliseconds);
-            });
-        }
-
-        async function asyncMethodImplementation() {
-            await setTimeout(() => {
-                test = 1;
-            }, 4000)
-
-            return test;
-        }
-
-        asyncMethodImplementation()
-
+    public init(container: HTMLElement, element: HTMLCanvasElement, event: MouseEvent) {
+        this.container = container;
+        this.element = element;
         // start the controller element
         this.graphics.set(element);
         // set first impact sector.
         this.y = event.y;
         this.x = event.x;
-        
-        this.element = element || this.error("error:DesktopCn", "the element is needed!");
-        this.container = container;
 
         /* SET EVENTS */
         this.element.onmouseup = (eve: MouseEvent) => this.ONMOUSEUP(eve);

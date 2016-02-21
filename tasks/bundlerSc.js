@@ -24,7 +24,7 @@ class BundlerTs {
         this.browserSync = browserSync;
         this.gulp = gulp;
         this.browserOpenControl = 0;
-        this.initialFile = './public/meloCn.ts';
+        this.initialFile = './public/meloSc.ts';
         this.outputFolder= './public/builds';
         this.sourceMaps = './';
         this.bSync = Function;
@@ -55,7 +55,7 @@ class BundlerTs {
     build(bundle) {
         return bundle.bundle()
         .on('error', this.onError)
-        .pipe(source('melocn.js')) // Set source file name
+        .pipe(source('melosc.js')) // Set source file name
         .pipe(buffer()) // Convert to gulp pipeline
         .pipe(sourcemaps.init({loadMaps: true})) // Extract the inline sourcemaps
         //.pipe(uglify()) // enable for compression

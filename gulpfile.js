@@ -4,12 +4,16 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
 var bundlerRs = require('./tasks/bundler');
-var bundlerTs = require('./tasks/bundlerTs');
+
+var cnBundle = require('./tasks/bundlerTs');
+var scBundle = require('./tasks/bundlerSc');
+
 var notify = require('gulp-notify');
 
 gulp.task('default', ['start']);
 gulp.task('start', ()=> {
-    let tsBundle = new bundlerTs(browserSync, gulp);
+    let tsBundleTouch = new cnBundle(browserSync, gulp, './public/meloCn.ts', 'melocn.js');
+    let tsBundleScreen = new scBundle(browserSync, gulp, './public/meloSc.ts', 'melosc.js');
     let bundler = new bundlerRs(browserSync, gulp);
     bundler.bSync = r => gulp.start(['bsync']);
     return bundler;

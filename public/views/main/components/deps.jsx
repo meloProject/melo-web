@@ -9,9 +9,9 @@ export default class MainDepdencies extends Component {
         <script src='/src/systemjs-master/dist/system.src.js' type="text/javascript"></script>
         <script src='/systemConfig.js' type="text/javascript"></script>
         <script src='/builds/main.js' type="text/javascript"></script>
-        <script src='/builds/melo.js' type="text/javascript"></script>
         </scripts>
     )
   }
 };
 
+ 

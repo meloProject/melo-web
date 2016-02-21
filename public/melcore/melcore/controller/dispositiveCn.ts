@@ -1,14 +1,11 @@
 /// <reference path="../typings/bragi-browser/bragi-browser" />
 import * as Bragi from "bragi-browser";
+import {Melo, Dispositives} from "../melo";
 import {Graphics} from "./res/graphs";
 import Store from "./res/store";
+import Comunication from "../resources/comunication";
 
-export abstract class Dispositives {
-
-}
-
-
-export class Dispositive {
+export class DispositiveCn extends Melo implements Dispositives {
     graphics: Graphics;
     y: number;
     x: number;
@@ -17,15 +14,11 @@ export class Dispositive {
     returns: number;
 
     constructor() {
+        super();
         this.borderBottomTolerance = 220;
         this.borderRightTolerence = 220;
         this.returns = 50;
         this.graphics = new Graphics();
-    }
-
-    public error(group: string, message: string) {
-        Bragi.log(group, message);
-        throw Error(message);
     }
 
     public start() {
@@ -36,7 +29,7 @@ export class Dispositive {
         this.graphics.stop();
     }
 
-    protected movement(element: HTMLElement, eve: MouseEvent) {
+    public movement(element: HTMLElement, eve: MouseEvent) {
         /* 
         set actions when the circle is in motion.
         */
@@ -47,9 +40,12 @@ export class Dispositive {
         Store.MOVEMENT(actualY, actualX);
 
         // inform position.
-
+        Comunication.transport("position", {
+            x: Store.controllerPy,
+            y: Store.controllerPx
+        });
         
-        // set position in dom.
+        // set position in DOM.
         element.style.top = Store.controllerPy + "px";
         element.style.left = Store.controllerPx + "px";
     }
