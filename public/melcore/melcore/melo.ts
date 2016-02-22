@@ -1,7 +1,7 @@
 ﻿
 export abstract class Dispositives {
     //constructor(protected name: string) { }
-    abstract start(): void
+    abstract start(event: MouseEvent): void
     abstract stop(): void
     abstract movement(element: HTMLElement, eve: MouseEvent): void
 }

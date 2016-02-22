@@ -1,24 +1,14 @@
 /// <reference path="../typings/whatwg-fetch/whatwg-fetch" />
 class Comunication {
 
-    toUrl(url: string) {
-        switch (url) {
-            case "position":
-                return url = 'http://localhost:1337/melo/';
-        }
-    }
+    fetching(controller: string, action: string, method: string, values: {}) {
+        controller = "/" + controller,
+            action = "/" + action;
 
-    transport(APICONTROLLER: string, state: { x: number, y: number }) {
-        /*
-         method for transmit information to the API.
-        */
-        fetch(this.toUrl(APICONTROLLER) + APICONTROLLER, {
-            method: 'post',
+        fetch(controller + action, {
             mode: 'cors',
-            body: JSON.stringify({
-                x: state.x,
-                y: state.y,
-            })
+            method: method,
+            body: JSON.stringify(values)
         })
             .then((response: any) => {
                 return response;
@@ -26,6 +16,31 @@ class Comunication {
             .catch((response: any) => {
                 return response;
             });
+    }
+
+    createRequest(actionType: string, values: {}) {
+        let urlSet: string = 'http://localhost:1337';
+        switch (actionType) {
+            case "setposition":
+                this.fetching("melo", "position", "POST", values);
+            break;
+            case "updateposition":
+                this.fetching("melo", "position", "PUT", values);
+            break;
+            default:
+                try {
+                    throw Error("Communication error the action dont exist");    
+                } catch (err) {
+                    console.log(err);
+                }
+        }
+    }
+
+    transport(actionType: string, values: {}) {
+        /*
+         method for transmit information to the API.
+        */
+        this.createRequest(actionType, values);    
     }
 
 }

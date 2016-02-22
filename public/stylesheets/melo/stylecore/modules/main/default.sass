@@ -17,17 +17,19 @@ ul
     display: flex
     flex-direction: center
 
-.circles 
+.circlesOff 
     position: absolute
     margin: 0px !important
     padding: 0px !important
     cursor: none
+    display: none
     
-.circlesExpandedAnimation 
+.circlesOn
     position: absolute
     margin: 0px !important
     padding: 0px !important
     cursor: none
+    display: block
     +setSpin(1, 0.8s, 360deg, linear)
     
 .panel 

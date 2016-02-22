@@ -2812,17 +2812,19 @@ ul {
   display: flex;
   flex-direction: center; }
 
-.circles {
-  position: absolute;
-  margin: 0px !important;
-  padding: 0px !important;
-  cursor: none; }
-
-.circlesExpandedAnimation {
+.circlesOff {
   position: absolute;
   margin: 0px !important;
   padding: 0px !important;
   cursor: none;
+  display: none; }
+
+.circlesOn {
+  position: absolute;
+  margin: 0px !important;
+  padding: 0px !important;
+  cursor: none;
+  display: block;
   animation: spin1 0.8s infinite linear;
   -webkit-animation: spin1 0.8s infinite linear; }
 

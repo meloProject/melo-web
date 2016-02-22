@@ -9,12 +9,16 @@ export class DispositiveCn extends Melo implements Dispositives {
     graphics: Graphics;
     y: number;
     x: number;
+    cx: number;
+    ch: number;
     borderBottomTolerance: number;
     borderRightTolerence: number;
     returns: number;
 
     constructor() {
         super();
+        this.cx = 240;
+        this.ch = 240;
         this.borderBottomTolerance = 220;
         this.borderRightTolerence = 220;
         this.returns = 50;
@@ -29,29 +33,30 @@ export class DispositiveCn extends Melo implements Dispositives {
         this.graphics.stop();
     }
 
-    public movement(element: HTMLElement, eve: MouseEvent) {
+    public movement(element: HTMLElement, event: MouseEvent) {
         /* 
         set actions when the circle is in motion.
         */
-        let actualY: number = (eve.y - this.y) + element.offsetTop;
-        let actualX: number = (eve.x - this.x) + element.offsetLeft;
+        let actualY: number = (event.y - this.y) + element.offsetTop;
+        let actualX: number = (event.x - this.x) + element.offsetLeft;
         
         // store position.
         Store.MOVEMENT(actualY, actualX);
 
         // inform position.
-        Comunication.transport("position", {
-            x: Store.controllerPy,
-            y: Store.controllerPx
-        });
+        //Comunication.transport("updateposition", {
+        //    positionX: Store.controllerPy,
+        //    positionY: Store.controllerPx
+        //});
         
         // set position in DOM.
-        element.style.top = Store.controllerPy + "px";
-        element.style.left = Store.controllerPx + "px";
+        element.style.top = actualY + "px";
+        element.style.left = actualX + "px";
     }
 
     protected controls(element: HTMLElement, eve: Event) {
         let eY = element.offsetTop,
             eX = element.offsetLeft;
     }
+
 }

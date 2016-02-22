@@ -1,6 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\json\\stringify.js":[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/json/stringify"), __esModule: true };
-},{"core-js/library/fn/json/stringify":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\json\\stringify.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\create.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\create.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
 },{"core-js/library/fn/object/create":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\create.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\define-property.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/define-property"), __esModule: true };
@@ -118,12 +116,7 @@ function _typeof(obj) { return obj && typeof _Symbol !== "undefined" && obj.cons
 exports.default = function (obj) {
   return obj && typeof _symbol2.default !== "undefined" && obj.constructor === _symbol2.default ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
 };
-},{"../core-js/symbol":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\symbol.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\json\\stringify.js":[function(require,module,exports){
-var core = require('../../modules/$.core');
-module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-  return (core.JSON && core.JSON.stringify || JSON.stringify).apply(JSON, arguments);
-};
-},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\create.js":[function(require,module,exports){
+},{"../core-js/symbol":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\symbol.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\create.js":[function(require,module,exports){
 var $ = require('../../modules/$');
 module.exports = function create(P, D){
   return $.create(P, D);
@@ -2285,24 +2278,20 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
     }
 
     (0, _createClass3.default)(DesktopCn, [{
-        key: "init",
-        value: function init(container, element, event) {
+        key: "set",
+        value: function set(container, element) {
             var _this2 = this;
 
             this.container = container;
             this.element = element;
-            // start the controller element
-            this.graphics.set(element);
-            // set first impact sector.
-            this.y = event.y;
-            this.x = event.x;
+            this.element.className = "circlesOff";
+            if (element.tagName === "CANVAS") this.graphics.set(element);
             /* SET EVENTS */
-            this.element.onmouseup = function (eve) {
-                return _this2.ONMOUSEUP(eve);
+            window.onmouseup = function (event) {
+                return _this2.ONMOUSEUP(event);
             };
-            window.onmousemove = function (eve) {
-                _this2.ONMOUSEMOVE(eve);
-                eve.stopPropagation();
+            window.onmousedown = function (event) {
+                return _this2.ONMOUSEDOWN(event);
             };
         }
         /* EVENTS */
@@ -2310,7 +2299,28 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
     }, {
         key: "ONMOUSEUP",
         value: function ONMOUSEUP(eve) {
+            // desattach event for mouse move
             window.onmousemove = null;
+            this.element.className = "circlesOff";
+            this.stop();
+        }
+    }, {
+        key: "ONMOUSEDOWN",
+        value: function ONMOUSEDOWN(event) {
+            var _this3 = this;
+
+            // center element on center of mouse pointer
+            this.element.style.top = event.y - this.ch / 2 + "px";
+            this.element.style.left = event.x - this.cx / 2 + "px";
+            this.element.className = "circlesOn";
+            // set first impact sector.
+            this.y = event.y;
+            this.x = event.x;
+            // attach event for mouse move
+            window.onmousemove = function (event) {
+                return _this3.ONMOUSEMOVE(event);
+            };
+            this.start();
         }
     }, {
         key: "ONMOUSEMOVE",
@@ -2319,6 +2329,7 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
             this.controls(this.element, event);
             // circle mechanics
             this.movement(this.element, event);
+            // set position.
             this.y = event.y;
             this.x = event.x;
         }
@@ -2362,10 +2373,6 @@ var _store = require("./res/store");
 
 var _store2 = _interopRequireDefault(_store);
 
-var _comunication = require("../resources/comunication");
-
-var _comunication2 = _interopRequireDefault(_comunication);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DispositiveCn = exports.DispositiveCn = function (_Melo) {
@@ -2376,6 +2383,8 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
 
         var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(DispositiveCn).call(this));
 
+        _this.cx = 240;
+        _this.ch = 240;
         _this.borderBottomTolerance = 220;
         _this.borderRightTolerence = 220;
         _this.returns = 50;
@@ -2395,22 +2404,22 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
         }
     }, {
         key: "movement",
-        value: function movement(element, eve) {
+        value: function movement(element, event) {
             /*
             set actions when the circle is in motion.
             */
-            var actualY = eve.y - this.y + element.offsetTop;
-            var actualX = eve.x - this.x + element.offsetLeft;
+            var actualY = event.y - this.y + element.offsetTop;
+            var actualX = event.x - this.x + element.offsetLeft;
             // store position.
             _store2.default.MOVEMENT(actualY, actualX);
             // inform position.
-            _comunication2.default.transport("position", {
-                x: _store2.default.controllerPy,
-                y: _store2.default.controllerPx
-            });
+            //Comunication.transport("updateposition", {
+            //    positionX: Store.controllerPy,
+            //    positionY: Store.controllerPx
+            //});
             // set position in DOM.
-            element.style.top = _store2.default.controllerPy + "px";
-            element.style.left = _store2.default.controllerPx + "px";
+            element.style.top = actualY + "px";
+            element.style.left = actualX + "px";
         }
     }, {
         key: "controls",
@@ -2422,7 +2431,7 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
     return DispositiveCn;
 }(_melo.Melo);
 
-},{"../melo":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\melo.ts","../resources/comunication":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts","./res/graphs":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts","./res/store":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\store.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts":[function(require,module,exports){
+},{"../melo":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\melo.ts","./res/graphs":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts","./res/store":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\store.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2656,68 +2665,7 @@ var Melo = exports.Melo = function () {
     return Melo;
 }();
 
-},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts":[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/// <reference path="../typings/whatwg-fetch/whatwg-fetch" />
-
-var Comunication = function () {
-    function Comunication() {
-        (0, _classCallCheck3.default)(this, Comunication);
-    }
-
-    (0, _createClass3.default)(Comunication, [{
-        key: 'toUrl',
-        value: function toUrl(url) {
-            switch (url) {
-                case "position":
-                    return url = 'http://localhost:1337/melo/';
-            }
-        }
-    }, {
-        key: 'transport',
-        value: function transport(APICONTROLLER, state) {
-            /*
-             method for transmit information to the API.
-            */
-            fetch(this.toUrl(APICONTROLLER) + APICONTROLLER, {
-                method: 'post',
-                mode: 'cors',
-                body: (0, _stringify2.default)({
-                    x: state.x,
-                    y: state.y
-                })
-            }).then(function (response) {
-                return response;
-            }).catch(function (response) {
-                return response;
-            });
-        }
-    }]);
-    return Comunication;
-}();
-
-exports.default = new Comunication();
-
-},{"babel-runtime/core-js/json/stringify":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\json\\stringify.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\farm.ts":[function(require,module,exports){
+},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\farm.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2777,33 +2725,15 @@ var Farm = exports.Farm = function () {
 
 var _desktopCn = require("./melcore/melcore/controller/desktopCn");
 
-var count = 0;
 var controller = undefined;
 var element = undefined;
 var panel = undefined;
+var main = undefined;
+element = document.createElement("canvas");
+main = document.getElementById("main");
 controller = new _desktopCn.DesktopCn();
-addEventListener("mousedown", function (eve) {
-    panel = document.getElementById("panel");
-    element = document.createElement("canvas");
-    // set props of canvas element controller
-    var ch = 240,
-        cx = 240;
-    element.id = "controller" + count;
-    element.className = "circles";
-    element.style.top = eve.y - ch / 2 + "px";
-    element.style.left = eve.x - cx / 2 + "px";
-    controller.init(document.getElementById("main"), element, eve);
-    controller.onLoop = function (strings) {
-        return panel.innerHTML = strings;
-    };
-    controller.start();
-    element.className = "circlesExpandedAnimation";
-    document.getElementById("main").appendChild(element);
-});
-addEventListener("mouseup", function () {
-    controller.stop();
-    document.getElementById("main").removeChild(document.getElementById("controller" + count));
-});
+controller.set(main, element);
+main.appendChild(element);
 
 },{"./melcore/melcore/controller/desktopCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\desktopCn.ts"}]},{},["D:\\APIS\\melo\\webserver\\server\\public\\meloCn.ts"])
 

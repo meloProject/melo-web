@@ -2457,7 +2457,7 @@ var DispositiveSc = exports.DispositiveSc = function (_Melo) {
             element.style.top = actualY + "px";
             element.style.left = actualX + "px";
             // store position.
-            _store2.default.MOVEMENT("position", actualY, actualX);
+            _store2.default.MOVEMENT(actualY, actualX);
         }
     }, {
         key: "controls",
