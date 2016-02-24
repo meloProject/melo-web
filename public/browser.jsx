@@ -14,7 +14,6 @@ var options = {
   viewResolver: viewName => require('/views/' + viewName)
 };
 
-
 document.addEventListener('DOMContentLoaded', function onLoad() {
   console.log('Booting the client');
   // boot the app when the DOM is ready

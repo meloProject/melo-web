@@ -3,10 +3,12 @@ import { render } from 'react-dom'
 import { createHistory, useBasename } from 'history'
 import { Router, Route, Link } from 'react-router'
 import routes from '../public/browser.jsx'
-import socketIo from '../public/src/bower_components/socket.io-client/socket.io.js'
-import sailsIo from '../public/src/bower_components/sails.io.js/sails.io.js'
+import sockets from 'socket.io-client'
+import sails from 'sails.io.js'
+//import test from '../public/test'
 
-const io = sailsIo(socketIo)
-io.sails.autoConnect = false;
-io.sails.url = 'localhost:1337';
-io.sails.connect('localhost:1337')
+ var io = sails(sockets);
+     io.sails.autoConnect = true;
+        io.sails.transports = ['websocket'];
+        io.sails.url = 'http://localhost:1337';
+window.sails = io;

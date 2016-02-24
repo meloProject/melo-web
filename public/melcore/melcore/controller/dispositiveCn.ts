@@ -11,6 +11,7 @@ export class DispositiveCn extends Melo implements Dispositives {
     x: number;
     cx: number;
     ch: number;
+    channel: number;
     borderBottomTolerance: number;
     borderRightTolerence: number;
     returns: number;
@@ -23,6 +24,10 @@ export class DispositiveCn extends Melo implements Dispositives {
         this.borderRightTolerence = 220;
         this.returns = 50;
         this.graphics = new Graphics();
+
+        Comunication.socketOnMessages((message: any) => {
+            console.log(message);
+        });
     }
 
     public start() {
@@ -39,16 +44,18 @@ export class DispositiveCn extends Melo implements Dispositives {
         */
         let actualY: number = (event.y - this.y) + element.offsetTop;
         let actualX: number = (event.x - this.x) + element.offsetLeft;
-        
+
         // store position.
         Store.MOVEMENT(actualY, actualX);
 
         // inform position.
-        //Comunication.transport("updateposition", {
-        //    positionX: Store.controllerPy,
-        //    positionY: Store.controllerPx
-        //});
-        
+        Comunication.streamPosition("updateposition", {
+            channel: this.channel,
+            dispositive: 'controller',
+            positionX: Store.controllerPy,
+            positionY: Store.controllerPx
+        });
+
         // set position in DOM.
         element.style.top = actualY + "px";
         element.style.left = actualX + "px";

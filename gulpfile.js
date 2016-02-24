@@ -13,7 +13,7 @@ var notify = require('gulp-notify');
 gulp.task('default', ['start']);
 gulp.task('start', ()=> {
     let tsBundleTouch = new cnBundle(browserSync, gulp, './public/meloCn.ts', 'melocn.js');
-    let tsBundleScreen = new scBundle(browserSync, gulp, './public/meloSc.ts', 'melosc.js');
+    //let tsBundleScreen = new scBundle(browserSync, gulp, './public/meloSc.ts', 'melosc.js');
     let bundler = new bundlerRs(browserSync, gulp);
     bundler.bSync = r => gulp.start(['bsync']);
     return bundler;

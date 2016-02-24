@@ -2832,7 +2832,8 @@ ul {
   0% { }
   50% { }
   100% {
-    transform: rotate(360deg); } }
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg); } }
 
 .panel {
   width: 100%;

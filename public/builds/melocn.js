@@ -1,4 +1,6 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\create.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\json\\stringify.js":[function(require,module,exports){
+module.exports = { "default": require("core-js/library/fn/json/stringify"), __esModule: true };
+},{"core-js/library/fn/json/stringify":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\json\\stringify.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\create.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
 },{"core-js/library/fn/object/create":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\create.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\define-property.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/define-property"), __esModule: true };
@@ -8,7 +10,9 @@ module.exports = { "default": require("core-js/library/fn/object/get-prototype-o
 module.exports = { "default": require("core-js/library/fn/object/keys"), __esModule: true };
 },{"core-js/library/fn/object/keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\keys.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\set-prototype-of.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/set-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\set-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\symbol.js":[function(require,module,exports){
+},{"core-js/library/fn/object/set-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\set-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\promise.js":[function(require,module,exports){
+module.exports = { "default": require("core-js/library/fn/promise"), __esModule: true };
+},{"core-js/library/fn/promise":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\promise.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\symbol.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol"), __esModule: true };
 },{"core-js/library/fn/symbol":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\symbol\\index.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js":[function(require,module,exports){
 "use strict";
@@ -116,7 +120,12 @@ function _typeof(obj) { return obj && typeof _Symbol !== "undefined" && obj.cons
 exports.default = function (obj) {
   return obj && typeof _symbol2.default !== "undefined" && obj.constructor === _symbol2.default ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
 };
-},{"../core-js/symbol":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\symbol.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\create.js":[function(require,module,exports){
+},{"../core-js/symbol":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\symbol.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\json\\stringify.js":[function(require,module,exports){
+var core = require('../../modules/$.core');
+module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+  return (core.JSON && core.JSON.stringify || JSON.stringify).apply(JSON, arguments);
+};
+},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\create.js":[function(require,module,exports){
 var $ = require('../../modules/$');
 module.exports = function create(P, D){
   return $.create(P, D);
@@ -135,7 +144,13 @@ module.exports = require('../../modules/$.core').Object.keys;
 },{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.keys.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\set-prototype-of.js":[function(require,module,exports){
 require('../../modules/es6.object.set-prototype-of');
 module.exports = require('../../modules/$.core').Object.setPrototypeOf;
-},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.set-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.set-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\symbol\\index.js":[function(require,module,exports){
+},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.set-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.set-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\promise.js":[function(require,module,exports){
+require('../modules/es6.object.to-string');
+require('../modules/es6.string.iterator');
+require('../modules/web.dom.iterable');
+require('../modules/es6.promise');
+module.exports = require('../modules/$.core').Promise;
+},{"../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","../modules/es6.object.to-string":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.to-string.js","../modules/es6.promise":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.promise.js","../modules/es6.string.iterator":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.string.iterator.js","../modules/web.dom.iterable":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\web.dom.iterable.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\symbol\\index.js":[function(require,module,exports){
 require('../../modules/es6.symbol');
 require('../../modules/es6.object.to-string');
 module.exports = require('../../modules/$.core').Symbol;
@@ -144,13 +159,32 @@ module.exports = function(it){
   if(typeof it != 'function')throw TypeError(it + ' is not a function!');
   return it;
 };
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.add-to-unscopables.js":[function(require,module,exports){
+module.exports = function(){ /* empty */ };
 },{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js":[function(require,module,exports){
 var isObject = require('./$.is-object');
 module.exports = function(it){
   if(!isObject(it))throw TypeError(it + ' is not an object!');
   return it;
 };
-},{"./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js":[function(require,module,exports){
+},{"./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.classof.js":[function(require,module,exports){
+// getting tag from 19.1.3.6 Object.prototype.toString()
+var cof = require('./$.cof')
+  , TAG = require('./$.wks')('toStringTag')
+  // ES3 wrong here
+  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
+
+module.exports = function(it){
+  var O, T, B;
+  return it === undefined ? 'Undefined' : it === null ? 'Null'
+    // @@toStringTag case
+    : typeof (T = (O = Object(it))[TAG]) == 'string' ? T
+    // builtinTag case
+    : ARG ? cof(O)
+    // ES3 arguments fallback
+    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+};
+},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js":[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = function(it){
@@ -191,7 +225,15 @@ module.exports = function(it){
 module.exports = !require('./$.fails')(function(){
   return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
 });
-},{"./$.fails":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.fails.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.enum-keys.js":[function(require,module,exports){
+},{"./$.fails":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.fails.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.dom-create.js":[function(require,module,exports){
+var isObject = require('./$.is-object')
+  , document = require('./$.global').document
+  // in old IE typeof document.createElement is 'object'
+  , is = isObject(document) && isObject(document.createElement);
+module.exports = function(it){
+  return is ? document.createElement(it) : {};
+};
+},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.enum-keys.js":[function(require,module,exports){
 // all enumerable object keys, includes symbols
 var $ = require('./$');
 module.exports = function(it){
@@ -261,7 +303,27 @@ module.exports = function(exec){
     return true;
   }
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.get-names.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.for-of.js":[function(require,module,exports){
+var ctx         = require('./$.ctx')
+  , call        = require('./$.iter-call')
+  , isArrayIter = require('./$.is-array-iter')
+  , anObject    = require('./$.an-object')
+  , toLength    = require('./$.to-length')
+  , getIterFn   = require('./core.get-iterator-method');
+module.exports = function(iterable, entries, fn, that){
+  var iterFn = getIterFn(iterable)
+    , f      = ctx(fn, that, entries ? 2 : 1)
+    , index  = 0
+    , length, step, iterator;
+  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
+  // fast case for arrays with default iterator
+  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
+    entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
+  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
+    call(iterator, f, step.value, entries);
+  }
+};
+},{"./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.is-array-iter":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array-iter.js","./$.iter-call":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-call.js","./$.to-length":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-length.js","./core.get-iterator-method":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\core.get-iterator-method.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.get-names.js":[function(require,module,exports){
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 var toIObject = require('./$.to-iobject')
   , getNames  = require('./$').getNames
@@ -301,13 +363,41 @@ module.exports = require('./$.descriptors') ? function(object, key, value){
   object[key] = value;
   return object;
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.property-desc.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iobject.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.property-desc.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.html.js":[function(require,module,exports){
+module.exports = require('./$.global').document && document.documentElement;
+},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.invoke.js":[function(require,module,exports){
+// fast apply, http://jsperf.lnkit.com/fast-apply/5
+module.exports = function(fn, args, that){
+  var un = that === undefined;
+  switch(args.length){
+    case 0: return un ? fn()
+                      : fn.call(that);
+    case 1: return un ? fn(args[0])
+                      : fn.call(that, args[0]);
+    case 2: return un ? fn(args[0], args[1])
+                      : fn.call(that, args[0], args[1]);
+    case 3: return un ? fn(args[0], args[1], args[2])
+                      : fn.call(that, args[0], args[1], args[2]);
+    case 4: return un ? fn(args[0], args[1], args[2], args[3])
+                      : fn.call(that, args[0], args[1], args[2], args[3]);
+  } return              fn.apply(that, args);
+};
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iobject.js":[function(require,module,exports){
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = require('./$.cof');
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
-},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array.js":[function(require,module,exports){
+},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array-iter.js":[function(require,module,exports){
+// check on default Array iterator
+var Iterators  = require('./$.iterators')
+  , ITERATOR   = require('./$.wks')('iterator')
+  , ArrayProto = Array.prototype;
+
+module.exports = function(it){
+  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
+};
+},{"./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array.js":[function(require,module,exports){
 // 7.2.2 IsArray(argument)
 var cof = require('./$.cof');
 module.exports = Array.isArray || function(arg){
@@ -317,6 +407,128 @@ module.exports = Array.isArray || function(arg){
 module.exports = function(it){
   return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-call.js":[function(require,module,exports){
+// call something on iterator step with safe closing on error
+var anObject = require('./$.an-object');
+module.exports = function(iterator, fn, value, entries){
+  try {
+    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+  // 7.4.6 IteratorClose(iterator, completion)
+  } catch(e){
+    var ret = iterator['return'];
+    if(ret !== undefined)anObject(ret.call(iterator));
+    throw e;
+  }
+};
+},{"./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-create.js":[function(require,module,exports){
+'use strict';
+var $              = require('./$')
+  , descriptor     = require('./$.property-desc')
+  , setToStringTag = require('./$.set-to-string-tag')
+  , IteratorPrototype = {};
+
+// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+require('./$.hide')(IteratorPrototype, require('./$.wks')('iterator'), function(){ return this; });
+
+module.exports = function(Constructor, NAME, next){
+  Constructor.prototype = $.create(IteratorPrototype, {next: descriptor(1, next)});
+  setToStringTag(Constructor, NAME + ' Iterator');
+};
+},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.hide":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.hide.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.property-desc.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-define.js":[function(require,module,exports){
+'use strict';
+var LIBRARY        = require('./$.library')
+  , $export        = require('./$.export')
+  , redefine       = require('./$.redefine')
+  , hide           = require('./$.hide')
+  , has            = require('./$.has')
+  , Iterators      = require('./$.iterators')
+  , $iterCreate    = require('./$.iter-create')
+  , setToStringTag = require('./$.set-to-string-tag')
+  , getProto       = require('./$').getProto
+  , ITERATOR       = require('./$.wks')('iterator')
+  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
+  , FF_ITERATOR    = '@@iterator'
+  , KEYS           = 'keys'
+  , VALUES         = 'values';
+
+var returnThis = function(){ return this; };
+
+module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
+  $iterCreate(Constructor, NAME, next);
+  var getMethod = function(kind){
+    if(!BUGGY && kind in proto)return proto[kind];
+    switch(kind){
+      case KEYS: return function keys(){ return new Constructor(this, kind); };
+      case VALUES: return function values(){ return new Constructor(this, kind); };
+    } return function entries(){ return new Constructor(this, kind); };
+  };
+  var TAG        = NAME + ' Iterator'
+    , DEF_VALUES = DEFAULT == VALUES
+    , VALUES_BUG = false
+    , proto      = Base.prototype
+    , $native    = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT]
+    , $default   = $native || getMethod(DEFAULT)
+    , methods, key;
+  // Fix native
+  if($native){
+    var IteratorPrototype = getProto($default.call(new Base));
+    // Set @@toStringTag to native iterators
+    setToStringTag(IteratorPrototype, TAG, true);
+    // FF fix
+    if(!LIBRARY && has(proto, FF_ITERATOR))hide(IteratorPrototype, ITERATOR, returnThis);
+    // fix Array#{values, @@iterator}.name in V8 / FF
+    if(DEF_VALUES && $native.name !== VALUES){
+      VALUES_BUG = true;
+      $default = function values(){ return $native.call(this); };
+    }
+  }
+  // Define iterator
+  if((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])){
+    hide(proto, ITERATOR, $default);
+  }
+  // Plug for library
+  Iterators[NAME] = $default;
+  Iterators[TAG]  = returnThis;
+  if(DEFAULT){
+    methods = {
+      values:  DEF_VALUES  ? $default : getMethod(VALUES),
+      keys:    IS_SET      ? $default : getMethod(KEYS),
+      entries: !DEF_VALUES ? $default : getMethod('entries')
+    };
+    if(FORCED)for(key in methods){
+      if(!(key in proto))redefine(proto, key, methods[key]);
+    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
+  }
+  return methods;
+};
+},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.has":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.has.js","./$.hide":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.hide.js","./$.iter-create":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-create.js","./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.library":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.library.js","./$.redefine":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-detect.js":[function(require,module,exports){
+var ITERATOR     = require('./$.wks')('iterator')
+  , SAFE_CLOSING = false;
+
+try {
+  var riter = [7][ITERATOR]();
+  riter['return'] = function(){ SAFE_CLOSING = true; };
+  Array.from(riter, function(){ throw 2; });
+} catch(e){ /* empty */ }
+
+module.exports = function(exec, skipClosing){
+  if(!skipClosing && !SAFE_CLOSING)return false;
+  var safe = false;
+  try {
+    var arr  = [7]
+      , iter = arr[ITERATOR]();
+    iter.next = function(){ safe = true; };
+    arr[ITERATOR] = function(){ return iter; };
+    exec(arr);
+  } catch(e){ /* empty */ }
+  return safe;
+};
+},{"./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-step.js":[function(require,module,exports){
+module.exports = function(done, value){
+  return {value: value, done: !!done};
+};
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js":[function(require,module,exports){
+module.exports = {};
 },{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js":[function(require,module,exports){
 var $Object = Object;
 module.exports = {
@@ -344,7 +556,72 @@ module.exports = function(object, el){
 };
 },{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.library.js":[function(require,module,exports){
 module.exports = true;
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.object-sap.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.microtask.js":[function(require,module,exports){
+var global    = require('./$.global')
+  , macrotask = require('./$.task').set
+  , Observer  = global.MutationObserver || global.WebKitMutationObserver
+  , process   = global.process
+  , Promise   = global.Promise
+  , isNode    = require('./$.cof')(process) == 'process'
+  , head, last, notify;
+
+var flush = function(){
+  var parent, domain, fn;
+  if(isNode && (parent = process.domain)){
+    process.domain = null;
+    parent.exit();
+  }
+  while(head){
+    domain = head.domain;
+    fn     = head.fn;
+    if(domain)domain.enter();
+    fn(); // <- currently we use it only for Promise - try / catch not required
+    if(domain)domain.exit();
+    head = head.next;
+  } last = undefined;
+  if(parent)parent.enter();
+};
+
+// Node.js
+if(isNode){
+  notify = function(){
+    process.nextTick(flush);
+  };
+// browsers with MutationObserver
+} else if(Observer){
+  var toggle = 1
+    , node   = document.createTextNode('');
+  new Observer(flush).observe(node, {characterData: true}); // eslint-disable-line no-new
+  notify = function(){
+    node.data = toggle = -toggle;
+  };
+// environments with maybe non-completely correct, but existent Promise
+} else if(Promise && Promise.resolve){
+  notify = function(){
+    Promise.resolve().then(flush);
+  };
+// for other environments - macrotask based on:
+// - setImmediate
+// - MessageChannel
+// - window.postMessag
+// - onreadystatechange
+// - setTimeout
+} else {
+  notify = function(){
+    // strange IE + webpack dev server bug - use .call(global)
+    macrotask.call(global, flush);
+  };
+}
+
+module.exports = function asap(fn){
+  var task = {fn: fn, next: undefined, domain: isNode && process.domain};
+  if(last)last.next = task;
+  if(!head){
+    head = task;
+    notify();
+  } last = task;
+};
+},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.task":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.task.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.object-sap.js":[function(require,module,exports){
 // most Object methods by ES6 should accept primitives
 var $export = require('./$.export')
   , core    = require('./$.core')
@@ -364,9 +641,20 @@ module.exports = function(bitmap, value){
     value       : value
   };
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine-all.js":[function(require,module,exports){
+var redefine = require('./$.redefine');
+module.exports = function(target, src){
+  for(var key in src)redefine(target, key, src[key]);
+  return target;
+};
+},{"./$.redefine":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js":[function(require,module,exports){
 module.exports = require('./$.hide');
-},{"./$.hide":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.hide.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-proto.js":[function(require,module,exports){
+},{"./$.hide":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.hide.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.same-value.js":[function(require,module,exports){
+// 7.2.9 SameValue(x, y)
+module.exports = Object.is || function is(x, y){
+  return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
+};
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-proto.js":[function(require,module,exports){
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
 var getDesc  = require('./$').getDesc
@@ -393,7 +681,21 @@ module.exports = {
     }({}, false) : undefined),
   check: check
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-species.js":[function(require,module,exports){
+'use strict';
+var core        = require('./$.core')
+  , $           = require('./$')
+  , DESCRIPTORS = require('./$.descriptors')
+  , SPECIES     = require('./$.wks')('species');
+
+module.exports = function(KEY){
+  var C = core[KEY];
+  if(DESCRIPTORS && C && !C[SPECIES])$.setDesc(C, SPECIES, {
+    configurable: true,
+    get: function(){ return this; }
+  });
+};
+},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js":[function(require,module,exports){
 var def = require('./$').setDesc
   , has = require('./$.has')
   , TAG = require('./$.wks')('toStringTag');
@@ -408,14 +710,136 @@ var global = require('./$.global')
 module.exports = function(key){
   return store[key] || (store[key] = {});
 };
-},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js":[function(require,module,exports){
+},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.species-constructor.js":[function(require,module,exports){
+// 7.3.20 SpeciesConstructor(O, defaultConstructor)
+var anObject  = require('./$.an-object')
+  , aFunction = require('./$.a-function')
+  , SPECIES   = require('./$.wks')('species');
+module.exports = function(O, D){
+  var C = anObject(O).constructor, S;
+  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
+};
+},{"./$.a-function":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.a-function.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.strict-new.js":[function(require,module,exports){
+module.exports = function(it, Constructor, name){
+  if(!(it instanceof Constructor))throw TypeError(name + ": use the 'new' operator!");
+  return it;
+};
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.string-at.js":[function(require,module,exports){
+var toInteger = require('./$.to-integer')
+  , defined   = require('./$.defined');
+// true  -> String#at
+// false -> String#codePointAt
+module.exports = function(TO_STRING){
+  return function(that, pos){
+    var s = String(defined(that))
+      , i = toInteger(pos)
+      , l = s.length
+      , a, b;
+    if(i < 0 || i >= l)return TO_STRING ? '' : undefined;
+    a = s.charCodeAt(i);
+    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
+      ? TO_STRING ? s.charAt(i) : a
+      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
+  };
+};
+},{"./$.defined":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.defined.js","./$.to-integer":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-integer.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.task.js":[function(require,module,exports){
+var ctx                = require('./$.ctx')
+  , invoke             = require('./$.invoke')
+  , html               = require('./$.html')
+  , cel                = require('./$.dom-create')
+  , global             = require('./$.global')
+  , process            = global.process
+  , setTask            = global.setImmediate
+  , clearTask          = global.clearImmediate
+  , MessageChannel     = global.MessageChannel
+  , counter            = 0
+  , queue              = {}
+  , ONREADYSTATECHANGE = 'onreadystatechange'
+  , defer, channel, port;
+var run = function(){
+  var id = +this;
+  if(queue.hasOwnProperty(id)){
+    var fn = queue[id];
+    delete queue[id];
+    fn();
+  }
+};
+var listner = function(event){
+  run.call(event.data);
+};
+// Node.js 0.9+ & IE10+ has setImmediate, otherwise:
+if(!setTask || !clearTask){
+  setTask = function setImmediate(fn){
+    var args = [], i = 1;
+    while(arguments.length > i)args.push(arguments[i++]);
+    queue[++counter] = function(){
+      invoke(typeof fn == 'function' ? fn : Function(fn), args);
+    };
+    defer(counter);
+    return counter;
+  };
+  clearTask = function clearImmediate(id){
+    delete queue[id];
+  };
+  // Node.js 0.8-
+  if(require('./$.cof')(process) == 'process'){
+    defer = function(id){
+      process.nextTick(ctx(run, id, 1));
+    };
+  // Browsers with MessageChannel, includes WebWorkers
+  } else if(MessageChannel){
+    channel = new MessageChannel;
+    port    = channel.port2;
+    channel.port1.onmessage = listner;
+    defer = ctx(port.postMessage, port, 1);
+  // Browsers with postMessage, skip WebWorkers
+  // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
+  } else if(global.addEventListener && typeof postMessage == 'function' && !global.importScripts){
+    defer = function(id){
+      global.postMessage(id + '', '*');
+    };
+    global.addEventListener('message', listner, false);
+  // IE8-
+  } else if(ONREADYSTATECHANGE in cel('script')){
+    defer = function(id){
+      html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function(){
+        html.removeChild(this);
+        run.call(id);
+      };
+    };
+  // Rest old browsers
+  } else {
+    defer = function(id){
+      setTimeout(ctx(run, id, 1), 0);
+    };
+  }
+}
+module.exports = {
+  set:   setTask,
+  clear: clearTask
+};
+},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.dom-create":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.dom-create.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.html":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.html.js","./$.invoke":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.invoke.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-integer.js":[function(require,module,exports){
+// 7.1.4 ToInteger
+var ceil  = Math.ceil
+  , floor = Math.floor;
+module.exports = function(it){
+  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+};
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js":[function(require,module,exports){
 // to indexed object, toObject with fallback for non-array-like ES3 strings
 var IObject = require('./$.iobject')
   , defined = require('./$.defined');
 module.exports = function(it){
   return IObject(defined(it));
 };
-},{"./$.defined":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.defined.js","./$.iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iobject.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-object.js":[function(require,module,exports){
+},{"./$.defined":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.defined.js","./$.iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iobject.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-length.js":[function(require,module,exports){
+// 7.1.15 ToLength
+var toInteger = require('./$.to-integer')
+  , min       = Math.min;
+module.exports = function(it){
+  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+};
+},{"./$.to-integer":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-integer.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-object.js":[function(require,module,exports){
 // 7.1.13 ToObject(argument)
 var defined = require('./$.defined');
 module.exports = function(it){
@@ -435,7 +859,51 @@ module.exports = function(name){
   return store[name] || (store[name] =
     Symbol && Symbol[name] || (Symbol || uid)('Symbol.' + name));
 };
-},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.shared":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.shared.js","./$.uid":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.uid.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.get-prototype-of.js":[function(require,module,exports){
+},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.shared":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.shared.js","./$.uid":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.uid.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\core.get-iterator-method.js":[function(require,module,exports){
+var classof   = require('./$.classof')
+  , ITERATOR  = require('./$.wks')('iterator')
+  , Iterators = require('./$.iterators');
+module.exports = require('./$.core').getIteratorMethod = function(it){
+  if(it != undefined)return it[ITERATOR]
+    || it['@@iterator']
+    || Iterators[classof(it)];
+};
+},{"./$.classof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.classof.js","./$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.array.iterator.js":[function(require,module,exports){
+'use strict';
+var addToUnscopables = require('./$.add-to-unscopables')
+  , step             = require('./$.iter-step')
+  , Iterators        = require('./$.iterators')
+  , toIObject        = require('./$.to-iobject');
+
+// 22.1.3.4 Array.prototype.entries()
+// 22.1.3.13 Array.prototype.keys()
+// 22.1.3.29 Array.prototype.values()
+// 22.1.3.30 Array.prototype[@@iterator]()
+module.exports = require('./$.iter-define')(Array, 'Array', function(iterated, kind){
+  this._t = toIObject(iterated); // target
+  this._i = 0;                   // next index
+  this._k = kind;                // kind
+// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
+}, function(){
+  var O     = this._t
+    , kind  = this._k
+    , index = this._i++;
+  if(!O || index >= O.length){
+    this._t = undefined;
+    return step(1);
+  }
+  if(kind == 'keys'  )return step(0, index);
+  if(kind == 'values')return step(0, O[index]);
+  return step(0, [index, O[index]]);
+}, 'values');
+
+// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
+Iterators.Arguments = Iterators.Array;
+
+addToUnscopables('keys');
+addToUnscopables('values');
+addToUnscopables('entries');
+},{"./$.add-to-unscopables":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.add-to-unscopables.js","./$.iter-define":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-define.js","./$.iter-step":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-step.js","./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.get-prototype-of.js":[function(require,module,exports){
 // 19.1.2.9 Object.getPrototypeOf(O)
 var toObject = require('./$.to-object');
 
@@ -459,7 +927,315 @@ var $export = require('./$.export');
 $export($export.S, 'Object', {setPrototypeOf: require('./$.set-proto').set});
 },{"./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.set-proto":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-proto.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.to-string.js":[function(require,module,exports){
 
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.symbol.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.promise.js":[function(require,module,exports){
+'use strict';
+var $          = require('./$')
+  , LIBRARY    = require('./$.library')
+  , global     = require('./$.global')
+  , ctx        = require('./$.ctx')
+  , classof    = require('./$.classof')
+  , $export    = require('./$.export')
+  , isObject   = require('./$.is-object')
+  , anObject   = require('./$.an-object')
+  , aFunction  = require('./$.a-function')
+  , strictNew  = require('./$.strict-new')
+  , forOf      = require('./$.for-of')
+  , setProto   = require('./$.set-proto').set
+  , same       = require('./$.same-value')
+  , SPECIES    = require('./$.wks')('species')
+  , speciesConstructor = require('./$.species-constructor')
+  , asap       = require('./$.microtask')
+  , PROMISE    = 'Promise'
+  , process    = global.process
+  , isNode     = classof(process) == 'process'
+  , P          = global[PROMISE]
+  , Wrapper;
+
+var testResolve = function(sub){
+  var test = new P(function(){});
+  if(sub)test.constructor = Object;
+  return P.resolve(test) === test;
+};
+
+var USE_NATIVE = function(){
+  var works = false;
+  function P2(x){
+    var self = new P(x);
+    setProto(self, P2.prototype);
+    return self;
+  }
+  try {
+    works = P && P.resolve && testResolve();
+    setProto(P2, P);
+    P2.prototype = $.create(P.prototype, {constructor: {value: P2}});
+    // actual Firefox has broken subclass support, test that
+    if(!(P2.resolve(5).then(function(){}) instanceof P2)){
+      works = false;
+    }
+    // actual V8 bug, https://code.google.com/p/v8/issues/detail?id=4162
+    if(works && require('./$.descriptors')){
+      var thenableThenGotten = false;
+      P.resolve($.setDesc({}, 'then', {
+        get: function(){ thenableThenGotten = true; }
+      }));
+      works = thenableThenGotten;
+    }
+  } catch(e){ works = false; }
+  return works;
+}();
+
+// helpers
+var sameConstructor = function(a, b){
+  // library wrapper special case
+  if(LIBRARY && a === P && b === Wrapper)return true;
+  return same(a, b);
+};
+var getConstructor = function(C){
+  var S = anObject(C)[SPECIES];
+  return S != undefined ? S : C;
+};
+var isThenable = function(it){
+  var then;
+  return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
+};
+var PromiseCapability = function(C){
+  var resolve, reject;
+  this.promise = new C(function($$resolve, $$reject){
+    if(resolve !== undefined || reject !== undefined)throw TypeError('Bad Promise constructor');
+    resolve = $$resolve;
+    reject  = $$reject;
+  });
+  this.resolve = aFunction(resolve),
+  this.reject  = aFunction(reject)
+};
+var perform = function(exec){
+  try {
+    exec();
+  } catch(e){
+    return {error: e};
+  }
+};
+var notify = function(record, isReject){
+  if(record.n)return;
+  record.n = true;
+  var chain = record.c;
+  asap(function(){
+    var value = record.v
+      , ok    = record.s == 1
+      , i     = 0;
+    var run = function(reaction){
+      var handler = ok ? reaction.ok : reaction.fail
+        , resolve = reaction.resolve
+        , reject  = reaction.reject
+        , result, then;
+      try {
+        if(handler){
+          if(!ok)record.h = true;
+          result = handler === true ? value : handler(value);
+          if(result === reaction.promise){
+            reject(TypeError('Promise-chain cycle'));
+          } else if(then = isThenable(result)){
+            then.call(result, resolve, reject);
+          } else resolve(result);
+        } else reject(value);
+      } catch(e){
+        reject(e);
+      }
+    };
+    while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
+    chain.length = 0;
+    record.n = false;
+    if(isReject)setTimeout(function(){
+      var promise = record.p
+        , handler, console;
+      if(isUnhandled(promise)){
+        if(isNode){
+          process.emit('unhandledRejection', value, promise);
+        } else if(handler = global.onunhandledrejection){
+          handler({promise: promise, reason: value});
+        } else if((console = global.console) && console.error){
+          console.error('Unhandled promise rejection', value);
+        }
+      } record.a = undefined;
+    }, 1);
+  });
+};
+var isUnhandled = function(promise){
+  var record = promise._d
+    , chain  = record.a || record.c
+    , i      = 0
+    , reaction;
+  if(record.h)return false;
+  while(chain.length > i){
+    reaction = chain[i++];
+    if(reaction.fail || !isUnhandled(reaction.promise))return false;
+  } return true;
+};
+var $reject = function(value){
+  var record = this;
+  if(record.d)return;
+  record.d = true;
+  record = record.r || record; // unwrap
+  record.v = value;
+  record.s = 2;
+  record.a = record.c.slice();
+  notify(record, true);
+};
+var $resolve = function(value){
+  var record = this
+    , then;
+  if(record.d)return;
+  record.d = true;
+  record = record.r || record; // unwrap
+  try {
+    if(record.p === value)throw TypeError("Promise can't be resolved itself");
+    if(then = isThenable(value)){
+      asap(function(){
+        var wrapper = {r: record, d: false}; // wrap
+        try {
+          then.call(value, ctx($resolve, wrapper, 1), ctx($reject, wrapper, 1));
+        } catch(e){
+          $reject.call(wrapper, e);
+        }
+      });
+    } else {
+      record.v = value;
+      record.s = 1;
+      notify(record, false);
+    }
+  } catch(e){
+    $reject.call({r: record, d: false}, e); // wrap
+  }
+};
+
+// constructor polyfill
+if(!USE_NATIVE){
+  // 25.4.3.1 Promise(executor)
+  P = function Promise(executor){
+    aFunction(executor);
+    var record = this._d = {
+      p: strictNew(this, P, PROMISE),         // <- promise
+      c: [],                                  // <- awaiting reactions
+      a: undefined,                           // <- checked in isUnhandled reactions
+      s: 0,                                   // <- state
+      d: false,                               // <- done
+      v: undefined,                           // <- value
+      h: false,                               // <- handled rejection
+      n: false                                // <- notify
+    };
+    try {
+      executor(ctx($resolve, record, 1), ctx($reject, record, 1));
+    } catch(err){
+      $reject.call(record, err);
+    }
+  };
+  require('./$.redefine-all')(P.prototype, {
+    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
+    then: function then(onFulfilled, onRejected){
+      var reaction = new PromiseCapability(speciesConstructor(this, P))
+        , promise  = reaction.promise
+        , record   = this._d;
+      reaction.ok   = typeof onFulfilled == 'function' ? onFulfilled : true;
+      reaction.fail = typeof onRejected == 'function' && onRejected;
+      record.c.push(reaction);
+      if(record.a)record.a.push(reaction);
+      if(record.s)notify(record, false);
+      return promise;
+    },
+    // 25.4.5.1 Promise.prototype.catch(onRejected)
+    'catch': function(onRejected){
+      return this.then(undefined, onRejected);
+    }
+  });
+}
+
+$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: P});
+require('./$.set-to-string-tag')(P, PROMISE);
+require('./$.set-species')(PROMISE);
+Wrapper = require('./$.core')[PROMISE];
+
+// statics
+$export($export.S + $export.F * !USE_NATIVE, PROMISE, {
+  // 25.4.4.5 Promise.reject(r)
+  reject: function reject(r){
+    var capability = new PromiseCapability(this)
+      , $$reject   = capability.reject;
+    $$reject(r);
+    return capability.promise;
+  }
+});
+$export($export.S + $export.F * (!USE_NATIVE || testResolve(true)), PROMISE, {
+  // 25.4.4.6 Promise.resolve(x)
+  resolve: function resolve(x){
+    // instanceof instead of internal slot check because we should fix it without replacement native Promise core
+    if(x instanceof P && sameConstructor(x.constructor, this))return x;
+    var capability = new PromiseCapability(this)
+      , $$resolve  = capability.resolve;
+    $$resolve(x);
+    return capability.promise;
+  }
+});
+$export($export.S + $export.F * !(USE_NATIVE && require('./$.iter-detect')(function(iter){
+  P.all(iter)['catch'](function(){});
+})), PROMISE, {
+  // 25.4.4.1 Promise.all(iterable)
+  all: function all(iterable){
+    var C          = getConstructor(this)
+      , capability = new PromiseCapability(C)
+      , resolve    = capability.resolve
+      , reject     = capability.reject
+      , values     = [];
+    var abrupt = perform(function(){
+      forOf(iterable, false, values.push, values);
+      var remaining = values.length
+        , results   = Array(remaining);
+      if(remaining)$.each.call(values, function(promise, index){
+        var alreadyCalled = false;
+        C.resolve(promise).then(function(value){
+          if(alreadyCalled)return;
+          alreadyCalled = true;
+          results[index] = value;
+          --remaining || resolve(results);
+        }, reject);
+      });
+      else resolve(results);
+    });
+    if(abrupt)reject(abrupt.error);
+    return capability.promise;
+  },
+  // 25.4.4.4 Promise.race(iterable)
+  race: function race(iterable){
+    var C          = getConstructor(this)
+      , capability = new PromiseCapability(C)
+      , reject     = capability.reject;
+    var abrupt = perform(function(){
+      forOf(iterable, false, function(promise){
+        C.resolve(promise).then(capability.resolve, reject);
+      });
+    });
+    if(abrupt)reject(abrupt.error);
+    return capability.promise;
+  }
+});
+},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.a-function":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.a-function.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.classof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.classof.js","./$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.for-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.for-of.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js","./$.iter-detect":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-detect.js","./$.library":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.library.js","./$.microtask":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.microtask.js","./$.redefine-all":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine-all.js","./$.same-value":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.same-value.js","./$.set-proto":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-proto.js","./$.set-species":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-species.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.species-constructor":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.species-constructor.js","./$.strict-new":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.strict-new.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.string.iterator.js":[function(require,module,exports){
+'use strict';
+var $at  = require('./$.string-at')(true);
+
+// 21.1.3.27 String.prototype[@@iterator]()
+require('./$.iter-define')(String, 'String', function(iterated){
+  this._t = String(iterated); // target
+  this._i = 0;                // next index
+// 21.1.5.2.1 %StringIteratorPrototype%.next()
+}, function(){
+  var O     = this._t
+    , index = this._i
+    , point;
+  if(index >= O.length)return {value: undefined, done: true};
+  point = $at(O, index);
+  this._i += point.length;
+  return {value: point, done: false};
+});
+},{"./$.iter-define":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-define.js","./$.string-at":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.string-at.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.symbol.js":[function(require,module,exports){
 'use strict';
 // ECMAScript 6 symbols shim
 var $              = require('./$')
@@ -687,7 +1463,11 @@ setToStringTag($Symbol, 'Symbol');
 setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 setToStringTag(global.JSON, 'JSON', true);
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.enum-keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.enum-keys.js","./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.fails":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.fails.js","./$.get-names":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.get-names.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.has":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.has.js","./$.is-array":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array.js","./$.keyof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.keyof.js","./$.library":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.library.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.property-desc.js","./$.redefine":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.shared":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.shared.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js","./$.uid":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.uid.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\underscore\\underscore.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.enum-keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.enum-keys.js","./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.fails":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.fails.js","./$.get-names":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.get-names.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.has":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.has.js","./$.is-array":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array.js","./$.keyof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.keyof.js","./$.library":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.library.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.property-desc.js","./$.redefine":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.shared":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.shared.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js","./$.uid":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.uid.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\web.dom.iterable.js":[function(require,module,exports){
+require('./es6.array.iterator');
+var Iterators = require('./$.iterators');
+Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
+},{"./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./es6.array.iterator":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.array.iterator.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\underscore\\underscore.js":[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -2267,6 +3047,10 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _dispositiveCn = require("./dispositiveCn");
 
+var _comunication = require("../resources/comunication");
+
+var _comunication2 = _interopRequireDefault(_comunication);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
@@ -2293,6 +3077,10 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
             window.onmousedown = function (event) {
                 return _this2.ONMOUSEDOWN(event);
             };
+            // suscribge to channel for this controllers. deberia ser el id unicod del cannal
+            _comunication2.default.socketSuscribeToChannel("/channels/sus", "controller").then(function (message) {
+                console.log(message);
+            });
         }
         /* EVENTS */
 
@@ -2337,7 +3125,7 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
     return DesktopCn;
 }(_dispositiveCn.DispositiveCn);
 
-},{"./dispositiveCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts":[function(require,module,exports){
+},{"../resources/comunication":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts","./dispositiveCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2373,6 +3161,10 @@ var _store = require("./res/store");
 
 var _store2 = _interopRequireDefault(_store);
 
+var _comunication = require("../resources/comunication");
+
+var _comunication2 = _interopRequireDefault(_comunication);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DispositiveCn = exports.DispositiveCn = function (_Melo) {
@@ -2389,6 +3181,9 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
         _this.borderRightTolerence = 220;
         _this.returns = 50;
         _this.graphics = new _graphs.Graphics();
+        _comunication2.default.socketOnMessages(function (message) {
+            console.log(message);
+        });
         return _this;
     }
 
@@ -2413,10 +3208,12 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
             // store position.
             _store2.default.MOVEMENT(actualY, actualX);
             // inform position.
-            //Comunication.transport("updateposition", {
-            //    positionX: Store.controllerPy,
-            //    positionY: Store.controllerPx
-            //});
+            _comunication2.default.streamPosition("updateposition", {
+                channel: this.channel,
+                dispositive: 'controller',
+                positionX: _store2.default.controllerPy,
+                positionY: _store2.default.controllerPx
+            });
             // set position in DOM.
             element.style.top = actualY + "px";
             element.style.left = actualX + "px";
@@ -2431,7 +3228,7 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
     return DispositiveCn;
 }(_melo.Melo);
 
-},{"../melo":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\melo.ts","./res/graphs":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts","./res/store":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\store.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts":[function(require,module,exports){
+},{"../melo":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\melo.ts","../resources/comunication":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts","./res/graphs":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts","./res/store":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\store.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2475,7 +3272,7 @@ var Graphics = exports.Graphics = function () {
                 angleEnd: circleSet.angleEnd || 90,
                 hue: circleSet.hue || 450,
                 thickness: circleSet.thickness || 35,
-                bgColor: "#AA00FF",
+                bgColor: "#4c8efe",
                 rotation: 0
             };
             this.circleInverse = {
@@ -2486,7 +3283,7 @@ var Graphics = exports.Graphics = function () {
                 angleEnd: circleSet.angleEnd || 90,
                 hue: circleSet.hue || 450,
                 thickness: circleSet.thickness || 35,
-                bgColor: "#AA00FF",
+                bgColor: "#ffc31c",
                 rotation: 180
             };
             // aspect props.
@@ -2562,6 +3359,14 @@ var Graphics = exports.Graphics = function () {
             this.render.globalCompositeOperation = "destination-out";
             this.render.fillRect(0, 0, this.cw, this.ch);
             this.render.globalCompositeOperation = "lighter";
+        }
+    }, {
+        key: "elasticControl",
+        value: function elasticControl(event) {
+            var top = event.y,
+                left = event.x;
+            // if (top | left > this.actualPositon) console.log()
+            // elastic control movement.
         }
     }]);
     return Graphics;
@@ -2665,7 +3470,122 @@ var Melo = exports.Melo = function () {
     return Melo;
 }();
 
-},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\farm.ts":[function(require,module,exports){
+},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts":[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _stringify = require("babel-runtime/core-js/json/stringify");
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+var _typeof2 = require("babel-runtime/helpers/typeof");
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _promise = require("babel-runtime/core-js/promise");
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require("babel-runtime/helpers/createClass");
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/// <reference path="../typings/whatwg-fetch/whatwg-fetch" />
+
+var Comunication = function () {
+    function Comunication() {
+        (0, _classCallCheck3.default)(this, Comunication);
+
+        this.url = "http://localhost:1337";
+        this.socketurl = "http://localhost:1337";
+        this.dispositive = "controller";
+        this.socket = window.sails.socket;
+    }
+
+    (0, _createClass3.default)(Comunication, [{
+        key: "socketOnMessages",
+        value: function socketOnMessages(call) {
+            this.socket.on('message', function (message) {
+                call(message);
+            });
+        }
+    }, {
+        key: "socketSuscribeToChannel",
+        value: function socketSuscribeToChannel(url, room) {
+            var _this = this;
+
+            return new _promise2.default(function (resolve, reject) {
+                _this.socket.post(url, { room: room }, function (res) {
+                    if (!res.err) resolve(res);else reject(res.err);
+                });
+            });
+        }
+    }, {
+        key: "fetcher",
+        value: function fetcher(request) {
+            var reqConstructor = {};
+            // set defaut request props.
+            request.controller = request.controller !== undefined ? "/" + request.controller : "";
+            request.action = request.action !== undefined ? "/" + request.action : "";
+            // check props for send in request body
+            if (request.mode) reqConstructor.mode = request.mode; // default - cors 
+            if (request.method) reqConstructor.method = request.method; // VERBS POST GET DELETE PUT...
+            if (request.headers) reqConstructor.headers = request.headers;
+            if (request.cache) reqConstructor.cache = request.cache; // default disabled
+            if (request.values !== undefined && (0, _typeof3.default)(request.values) === "object") reqConstructor.values = (0, _stringify2.default)(request.values); // request body in JSON
+            return fetch(this.url + request.controller + request.action, reqConstructor);
+        }
+    }, {
+        key: "createRequest",
+        value: function createRequest(actionType, values) {
+            // prepare the request
+            var promise = undefined;
+            if (actionType == "updateposition") {
+                return this.fetcher({
+                    mode: "cors",
+                    method: "PUT",
+                    controller: "channels",
+                    action: values.channel,
+                    values: values
+                });
+            }
+            return promise = new _promise2.default(function (resolve, reject) {
+                reject("Fetch request error the action type dont exist");
+            });
+        }
+    }, {
+        key: "streamPosition",
+        value: function streamPosition(actionType, values) {
+            /*
+             method for transmit position.
+            */
+            // return promise.
+            return this.createRequest(actionType, values);
+        }
+    }, {
+        key: "request",
+        value: function request(actionType, values) {
+            /*
+             method for transmit default information.
+            */
+            //return this.createRequest(actionType, values);
+        }
+    }]);
+    return Comunication;
+}();
+
+exports.default = new Comunication();
+
+},{"babel-runtime/core-js/json/stringify":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\json\\stringify.js","babel-runtime/core-js/promise":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\promise.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/typeof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\typeof.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\farm.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2725,10 +3645,10 @@ var Farm = exports.Farm = function () {
 
 var _desktopCn = require("./melcore/melcore/controller/desktopCn");
 
-var controller = undefined;
-var element = undefined;
-var panel = undefined;
-var main = undefined;
+var controller = undefined,
+    element = undefined,
+    panel = undefined,
+    main = undefined;
 element = document.createElement("canvas");
 main = document.getElementById("main");
 controller = new _desktopCn.DesktopCn();

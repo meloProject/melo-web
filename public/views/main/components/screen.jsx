@@ -7,7 +7,6 @@ export default class Screen extends Component {
             <ul className="panel">
                 <li id="panel"></li> 
             </ul>
-            <script src='/builds/melosc.js' type="text/javascript"></script> 
         </div>
     )
   }

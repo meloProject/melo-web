@@ -1,4 +1,5 @@
 import {DispositiveCn} from "./dispositiveCn";
+import Comunication from "../resources/comunication";
 
 export class DesktopCn extends DispositiveCn {
 
@@ -18,6 +19,11 @@ export class DesktopCn extends DispositiveCn {
         /* SET EVENTS */
         window.onmouseup = (event: MouseEvent) => this.ONMOUSEUP(event);
         window.onmousedown = (event: MouseEvent) => this.ONMOUSEDOWN(event);
+
+        // suscribge to channel for this controllers. deberia ser el id unicod del cannal
+        Comunication.socketSuscribeToChannel("/channels/sus", "controller").then((message: any) => {
+            console.log(message);
+        });
     }
 
     /* EVENTS */

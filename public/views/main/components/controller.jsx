@@ -7,7 +7,6 @@ export default class Controller extends Component {
             <ul className="panel">
                 <li id="panel"></li> 
             </ul>
-            <script src='/builds/melocn.js' type="text/javascript"></script> 
         </div>
     )
   }

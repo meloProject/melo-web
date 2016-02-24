@@ -58,8 +58,8 @@ class BundlerTs {
         .pipe(source('melocn.js')) // Set source file name
         .pipe(buffer()) // Convert to gulp pipeline
         .pipe(sourcemaps.init({loadMaps: true})) // Extract the inline sourcemaps
-        //.pipe(uglify()) // enable for compression
-        .pipe(duration('Finish uglify'))
+        // .pipe(uglify()) // enable for compression
+        // .pipe(duration('Finish uglify'))
         .pipe(sourcemaps.write(this.sourceMaps)) // Set folder for sourcemaps to output to
         //.pipe(debug({title: 'unicorn:'})) 
         .pipe(this.gulp.dest(this.outputFolder)) // Set the output folder

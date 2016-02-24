@@ -72,7 +72,7 @@ export class Graphics {
             angleEnd: circleSet.angleEnd || 90,
             hue: circleSet.hue || 450,
             thickness: circleSet.thickness || 35,
-            bgColor: "#AA00FF",
+            bgColor: "#4c8efe",
             rotation: 0
         };
 
@@ -84,7 +84,7 @@ export class Graphics {
             angleEnd: circleSet.angleEnd || 90,
             hue: circleSet.hue || 450,
             thickness: circleSet.thickness || 35,
-            bgColor: "#AA00FF",
+            bgColor: "#ffc31c",
             rotation: 180
         };
 
@@ -153,6 +153,14 @@ export class Graphics {
         this.render.globalCompositeOperation = "destination-out";
         this.render.fillRect(0, 0, this.cw, this.ch);
         this.render.globalCompositeOperation = "lighter";
+    }
+
+    public elasticControl(event: MouseEvent) {
+        let top = event.y,
+            left = event.x;
+
+        // if (top | left > this.actualPositon) console.log()
+                // elastic control movement.
     }
 
 }
