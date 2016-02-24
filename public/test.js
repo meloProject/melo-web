@@ -12,7 +12,6 @@ System.import("sockets").then((sockets) => {
             //io.socket.get('/notifications/subscribe/statusUpdates');
         });
 
-
         io.socket.on('message', function (res) {
             console.log(res);
             //io.socket.get('/messages');

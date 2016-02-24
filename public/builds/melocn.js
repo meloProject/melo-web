@@ -3047,10 +3047,6 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _dispositiveCn = require("./dispositiveCn");
 
-var _comunication = require("../resources/comunication");
-
-var _comunication2 = _interopRequireDefault(_comunication);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
@@ -3077,10 +3073,6 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
             window.onmousedown = function (event) {
                 return _this2.ONMOUSEDOWN(event);
             };
-            // suscribge to channel for this controllers. deberia ser el id unicod del cannal
-            _comunication2.default.socketSuscribeToChannel("/channels/sus", "controller").then(function (message) {
-                console.log(message);
-            });
         }
         /* EVENTS */
 
@@ -3125,7 +3117,7 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
     return DesktopCn;
 }(_dispositiveCn.DispositiveCn);
 
-},{"../resources/comunication":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts","./dispositiveCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts":[function(require,module,exports){
+},{"./dispositiveCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3161,9 +3153,9 @@ var _store = require("./res/store");
 
 var _store2 = _interopRequireDefault(_store);
 
-var _comunication = require("../resources/comunication");
+var _Sockets = require("../resources/Sockets");
 
-var _comunication2 = _interopRequireDefault(_comunication);
+var _Sockets2 = _interopRequireDefault(_Sockets);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -3180,9 +3172,16 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
         _this.borderBottomTolerance = 220;
         _this.borderRightTolerence = 220;
         _this.returns = 50;
+        // Caution: these methods are called whenever the class is instanced.
         _this.graphics = new _graphs.Graphics();
-        _comunication2.default.socketOnMessages(function (message) {
+        _Sockets2.default.socketOnMessages(function (message) {
             console.log(message);
+        });
+        // suscribge to channel for this controllers. deberia ir con el id del controller harcodeado con controller
+        _Sockets2.default.socketSuscribeToChannel("controller").then(function (message) {
+            console.log(message);
+        }).catch(function (message) {
+            console.error(message);
         });
         return _this;
     }
@@ -3208,11 +3207,14 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
             // store position.
             _store2.default.MOVEMENT(actualY, actualX);
             // inform position.
-            _comunication2.default.streamPosition("updateposition", {
-                channel: this.channel,
-                dispositive: 'controller',
+            _Sockets2.default.comuPosition({
+                brodcastChannel: "screen",
                 positionX: _store2.default.controllerPy,
                 positionY: _store2.default.controllerPx
+            }).then(function (message) {
+                console.log(message);
+            }).catch(function (message) {
+                console.error(message);
             });
             // set position in DOM.
             element.style.top = actualY + "px";
@@ -3228,7 +3230,7 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
     return DispositiveCn;
 }(_melo.Melo);
 
-},{"../melo":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\melo.ts","../resources/comunication":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts","./res/graphs":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts","./res/store":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\store.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts":[function(require,module,exports){
+},{"../melo":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\melo.ts","../resources/Sockets":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\Sockets.ts","./res/graphs":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts","./res/store":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\store.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3470,12 +3472,118 @@ var Melo = exports.Melo = function () {
     return Melo;
 }();
 
-},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts":[function(require,module,exports){
+},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\Sockets.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _promise = require("babel-runtime/core-js/promise");
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _getPrototypeOf = require("babel-runtime/core-js/object/get-prototype-of");
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require("babel-runtime/helpers/createClass");
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = require("babel-runtime/helpers/possibleConstructorReturn");
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require("babel-runtime/helpers/inherits");
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _comunication = require("./comunication");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Sockets = function (_Comunication) {
+    (0, _inherits3.default)(Sockets, _Comunication);
+
+    function Sockets() {
+        (0, _classCallCheck3.default)(this, Sockets);
+
+        var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Sockets).call(this));
+
+        _this.socket = window.sails.socket;
+        _this.socketurl = "http://localhost:1337";
+        _this.urls = {
+            updateposition: "/controllers/position",
+            suscribe: "/channels/sus"
+        };
+        return _this;
+    }
+
+    (0, _createClass3.default)(Sockets, [{
+        key: "comuPosition",
+        value: function comuPosition(params, url) {
+            var _this2 = this;
+
+            /*
+            * METODO PARA COMUNICAR AL SCREEN, LA POSICION DEL ELEMENTO.
+            nota: en el request deberia ir el id del screen - hacodeado con por ahora con "screen"
+            */
+            url = url || this.urls.updateposition;
+            return new _promise2.default(function (resolve, reject) {
+                _this2.socket.post(url, params, function (res, JWR) {
+                    // deberia controlar el error en esta parte.
+                    if (!JWR.error) resolve(res);else reject(JWR);
+                });
+            });
+        }
+    }, {
+        key: "socketOnMessages",
+        value: function socketOnMessages(call) {
+            /*
+            * METODO SETEAR LAS ACCIONES QUE SE EMITIRAN CUANDO SE RECIBA UN MENSAJE.
+            */
+            this.socket.on('message', function (message) {
+                call(message);
+            });
+        }
+    }, {
+        key: "socketSuscribeToChannel",
+        value: function socketSuscribeToChannel(room, url) {
+            var _this3 = this;
+
+            /*
+            * METODO PARA SUSCRIBIR EL CLIENTE AL CHANNEL DE WEBSCOKETS.
+            */
+            url = url || this.urls.suscribe;
+            return new _promise2.default(function (resolve, reject) {
+                _this3.socket.post(url, { room: room }, function (res, JWR) {
+                    // deberia controlar el error en esta parte.
+                    if (!JWR.error) resolve(res);else reject(JWR.error);
+                });
+            });
+        }
+    }]);
+    return Sockets;
+}(_comunication.Comunication);
+
+exports.default = new Sockets();
+
+},{"./comunication":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/core-js/promise":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\promise.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts":[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Comunication = undefined;
+
+var _promise = require("babel-runtime/core-js/promise");
+
+var _promise2 = _interopRequireDefault(_promise);
 
 var _stringify = require("babel-runtime/core-js/json/stringify");
 
@@ -3484,10 +3592,6 @@ var _stringify2 = _interopRequireDefault(_stringify);
 var _typeof2 = require("babel-runtime/helpers/typeof");
 
 var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _promise = require("babel-runtime/core-js/promise");
-
-var _promise2 = _interopRequireDefault(_promise);
 
 var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
 
@@ -3501,35 +3605,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /// <reference path="../typings/whatwg-fetch/whatwg-fetch" />
 
-var Comunication = function () {
+var Comunication = exports.Comunication = function () {
     function Comunication() {
         (0, _classCallCheck3.default)(this, Comunication);
 
         this.url = "http://localhost:1337";
-        this.socketurl = "http://localhost:1337";
         this.dispositive = "controller";
-        this.socket = window.sails.socket;
     }
 
     (0, _createClass3.default)(Comunication, [{
-        key: "socketOnMessages",
-        value: function socketOnMessages(call) {
-            this.socket.on('message', function (message) {
-                call(message);
-            });
-        }
-    }, {
-        key: "socketSuscribeToChannel",
-        value: function socketSuscribeToChannel(url, room) {
-            var _this = this;
-
-            return new _promise2.default(function (resolve, reject) {
-                _this.socket.post(url, { room: room }, function (res) {
-                    if (!res.err) resolve(res);else reject(res.err);
-                });
-            });
-        }
-    }, {
         key: "fetcher",
         value: function fetcher(request) {
             var reqConstructor = {};
@@ -3563,21 +3647,9 @@ var Comunication = function () {
             });
         }
     }, {
-        key: "streamPosition",
-        value: function streamPosition(actionType, values) {
-            /*
-             method for transmit position.
-            */
-            // return promise.
-            return this.createRequest(actionType, values);
-        }
-    }, {
         key: "request",
         value: function request(actionType, values) {
-            /*
-             method for transmit default information.
-            */
-            //return this.createRequest(actionType, values);
+            return this.createRequest(actionType, values);
         }
     }]);
     return Comunication;

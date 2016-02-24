@@ -22,15 +22,9 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="screen\desktopSc.js" />
-    <Content Include="screen\dispositiveSc.js" />
-    <Content Include="screen\touchSc.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="screen\desktopSc.js.map" />
-    <Content Include="screen\dispositiveSc.js.map" />
-    <Content Include="screen\touchSc.js.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -39,24 +33,30 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="dispositive\desktopCn.ts" />
-    <TypeScriptCompile Include="dispositive\dispositive.ts" />
-    <TypeScriptCompile Include="dispositive\res\graphs.ts" />
-    <Content Include="dispositive\res\worker.js" />
-    <TypeScriptCompile Include="dispositive\touchCn.ts" />
+    <TypeScriptCompile Include="controller\desktopCn.ts" />
+    <TypeScriptCompile Include="controller\dispositiveCn.ts" />
+    <TypeScriptCompile Include="controller\res\graphs.ts" />
+    <TypeScriptCompile Include="melo.ts" />
     <TypeScriptCompile Include="resources\comunication.ts" />
-    <TypeScriptCompile Include="dispositive\res\store.ts" />
+    <TypeScriptCompile Include="controller\res\store.ts" />
     <TypeScriptCompile Include="resources\farm.ts" />
+    <TypeScriptCompile Include="resources\sockets.ts" />
     <TypeScriptCompile Include="screen\desktopSc.ts" />
     <TypeScriptCompile Include="screen\dispositiveSc.ts" />
-    <TypeScriptCompile Include="screen\touchSc.ts" />
+    <TypeScriptCompile Include="screen\res\graphs.ts" />
+    <TypeScriptCompile Include="screen\res\store.ts" />
     <TypeScriptCompile Include="typings\alt\alt.d.ts" />
     <TypeScriptCompile Include="typings\bragi-browser\bragi-browser.d.ts" />
     <TypeScriptCompile Include="typings\debug\debug.d.ts" />
     <TypeScriptCompile Include="typings\es6\es6.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\react\react.d.ts" />
+    <TypeScriptCompile Include="typings\sails\sails.io.d.ts" />
+    <TypeScriptCompile Include="typings\socket.io-client\socket.io-client.d.ts" />
+    <TypeScriptCompile Include="typings\underscore\underscore.d.ts" />
     <TypeScriptCompile Include="typings\whatwg-fetch\whatwg-fetch.d.ts" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>

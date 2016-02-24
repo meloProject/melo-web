@@ -17,34 +17,14 @@ interface RequestConstructor {
     action?: string | {};
 }
 
-class Comunication {
+export class Comunication {
     url: string;
-    socketurl: string;
     channel: string | number;
     dispositive: string;
-    socket: any;
 
     constructor() {
         this.url = "http://localhost:1337";
-        this.socketurl = "http://localhost:1337";
         this.dispositive = "controller";
-        this.socket = (<any>window).sails.socket;
-    }
-
-    socketOnMessages(call: (message: any) => void): void {
-        this.socket.on('message', (message: any) => {
-            call(message);
-        });
-    }
-
-    socketSuscribeToChannel(url: string, room: string): Promise<Response> {
-        return new Promise((resolve: any, reject: any) => {
-            this.socket.post(url, { room: room },
-                (res: any) => {
-                    if (!res.err) resolve(res);
-                    else reject(res.err);
-                });
-        });
     }
 
     fetcher(request: RequestConstructor): Promise<Response> {
@@ -88,22 +68,9 @@ class Comunication {
         });
     }
 
-    streamPosition(actionType: string, values: StramPosition) {
-        /*
-         method for transmit position.
-        */
-
-        // return promise.
-        return this.createRequest(actionType, values);
+    request(actionType: string, values?: any) {
+       return this.createRequest(actionType, values);
     }
-
-    request(actionType: string, values?: {}) {
-        /*
-         method for transmit default information.
-        */
-        //return this.createRequest(actionType, values);
-    }
-
 }
 
 export default new Comunication();

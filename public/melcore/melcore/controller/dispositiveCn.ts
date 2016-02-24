@@ -1,9 +1,9 @@
 /// <reference path="../typings/bragi-browser/bragi-browser" />
 import * as Bragi from "bragi-browser";
-import {Melo, Dispositives} from "../melo";
-import {Graphics} from "./res/graphs";
+import { Melo, Dispositives } from "../melo";
+import { Graphics } from "./res/graphs";
 import Store from "./res/store";
-import Comunication from "../resources/comunication";
+import Sockets from "../resources/Sockets";
 
 export class DispositiveCn extends Melo implements Dispositives {
     graphics: Graphics;
@@ -23,11 +23,21 @@ export class DispositiveCn extends Melo implements Dispositives {
         this.borderBottomTolerance = 220;
         this.borderRightTolerence = 220;
         this.returns = 50;
+
+        // Caution: these methods are called whenever the class is instanced.
         this.graphics = new Graphics();
 
-        Comunication.socketOnMessages((message: any) => {
+        Sockets.socketOnMessages((message: any) => {
             console.log(message);
         });
+
+        // suscribge to channel for this controllers. deberia ir con el id del controller harcodeado con controller
+        Sockets.socketSuscribeToChannel("controller")
+            .then((message: any) => {
+                console.log(message);
+            }).catch((message) => {
+                console.error(message);
+            });
     }
 
     public start() {
@@ -49,11 +59,14 @@ export class DispositiveCn extends Melo implements Dispositives {
         Store.MOVEMENT(actualY, actualX);
 
         // inform position.
-        Comunication.streamPosition("updateposition", {
-            channel: this.channel,
-            dispositive: 'controller',
+        Sockets.comuPosition({
+            brodcastChannel: "screen",
             positionX: Store.controllerPy,
             positionY: Store.controllerPx
+        }).then((message: any) => {
+            console.log(message);
+        }).catch((message) => {
+            console.error(message);
         });
 
         // set position in DOM.
