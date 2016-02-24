@@ -14,8 +14,8 @@ var options = {
   viewResolver: viewName => require('/views/' + viewName)
 };
 
-document.addEventListener('DOMContentLoaded', function onLoad() {
-  console.log('Booting the client');
+document.addEventListener('DOMContentLoaded', function onLoad(eve) {
+  console.log('React engine working');
   // boot the app when the DOM is ready
   ReactEngineClient.boot(options);
 });

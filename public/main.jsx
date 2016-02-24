@@ -8,7 +8,7 @@ import sails from 'sails.io.js'
 //import test from '../public/test'
 
  var io = sails(sockets);
-     io.sails.autoConnect = true;
-        io.sails.transports = ['websocket'];
-        io.sails.url = 'http://localhost:1337';
+io.sails.autoConnect = true;
+io.sails.transports = ['websocket'];
+io.sails.url = 'http://localhost:1337';
 window.sails = io;

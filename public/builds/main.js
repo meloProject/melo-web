@@ -59412,8 +59412,8 @@ var options = {
   }
 };
 
-document.addEventListener('DOMContentLoaded', function onLoad() {
-  console.log('Booting the client');
+document.addEventListener('DOMContentLoaded', function onLoad(eve) {
+  console.log('React engine working');
   // boot the app when the DOM is ready
   _client2.default.boot(options);
 });
@@ -59466,9 +59466,9 @@ var _index = require('../public/views/main/components/index.jsx');
 
 var _index2 = _interopRequireDefault(_index);
 
-var _startpage = require('../public/views/main/components/startpage.jsx');
+var _main = require('../public/views/main/components/main.jsx');
 
-var _startpage2 = _interopRequireDefault(_startpage);
+var _main2 = _interopRequireDefault(_main);
 
 var _controller = require('../public/views/main/components/controller.jsx');
 
@@ -59486,14 +59486,19 @@ module.exports = _react2.default.createElement(
     _react2.default.createElement(
         _reactRouter.Route,
         { path: '/', component: _index2.default },
-        _react2.default.createElement(_reactRouter.Route, { path: 'startpage', component: _startpage2.default }),
-        _react2.default.createElement(_reactRouter.Route, { path: 'controller', component: _controller2.default }),
-        _react2.default.createElement(_reactRouter.Route, { path: 'screen', component: _screen2.default })
+        _react2.default.createElement(
+            _reactRouter.Route,
+            { path: 'melo', component: _main2.default },
+            _react2.default.createElement(_reactRouter.Route, { path: 'controller', component: _controller2.default,
+                onEnter: function onEnter(location, replaceWith) {}
+            }),
+            _react2.default.createElement(_reactRouter.Route, { path: 'screen', component: _screen2.default })
+        )
     )
 );
 
-},{"../public/views/main/components/controller.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\controller.jsx","../public/views/main/components/index.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\index.jsx","../public/views/main/components/screen.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\screen.jsx","../public/views/main/components/startpage.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\startpage.jsx","react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js","react-router":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react-router\\lib\\index.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\controller.jsx":[function(require,module,exports){
-"use strict";
+},{"../public/views/main/components/controller.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\controller.jsx","../public/views/main/components/index.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\index.jsx","../public/views/main/components/main.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\main.jsx","../public/views/main/components/screen.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\screen.jsx","react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js","react-router":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react-router\\lib\\index.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\controller.jsx":[function(require,module,exports){
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -59501,7 +59506,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -59523,16 +59528,20 @@ var Controller = function (_Component) {
     }
 
     _createClass(Controller, [{
-        key: "render",
+        key: 'render',
         value: function render() {
+            function deps() {
+                return _react2.default.createElement('script', { async: true, src: '/builds/melocn.js', type: 'text/javascript' });
+            }
             return _react2.default.createElement(
-                "div",
-                { id: "main" },
+                'div',
+                { id: 'main' },
                 _react2.default.createElement(
-                    "ul",
-                    { className: "panel" },
-                    _react2.default.createElement("li", { id: "panel" })
-                )
+                    'ul',
+                    { className: 'panel' },
+                    _react2.default.createElement('li', { id: 'panel' })
+                ),
+                deps()
             );
         }
     }]);
@@ -59579,12 +59588,8 @@ var MainDepdencies = function (_Component) {
       return _react2.default.createElement(
         'scripts',
         null,
-        _react2.default.createElement('script', { src: '/src/babel-core.js', type: 'text/javascript' }),
-        _react2.default.createElement('script', { src: '/src/systemjs-master/dist/system-polyfills.js', type: 'text/javascript' }),
         _react2.default.createElement('script', { src: '/src/systemjs-master/dist/system.src.js', type: 'text/javascript' }),
-        _react2.default.createElement('script', { src: '/systemConfig.js', type: 'text/javascript' }),
-        _react2.default.createElement('script', { src: '/builds/main.js', type: 'text/javascript' }),
-        _react2.default.createElement('script', { src: '/builds/melocn.js', type: 'text/javascript' })
+        _react2.default.createElement('script', { src: '/systemConfig.js', type: 'text/javascript' })
       );
     }
   }]);
@@ -59639,6 +59644,7 @@ module.exports = function (_Component) {
           _react2.default.createElement('meta', { charSet: 'utf-8' }),
           _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
           _react2.default.createElement('link', { rel: 'stylesheet', href: '/stylesheets/melo/stylecore/css/main.css' }),
+          _react2.default.createElement('script', { src: '/builds/main.js', type: 'text/javascript' }),
           _react2.default.createElement(
             'title',
             null,
@@ -59658,16 +59664,63 @@ module.exports = function (_Component) {
   return AppTres;
 }(_react.Component);
 
-},{"./deps.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\deps.jsx","react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js","react-router":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react-router\\lib\\index.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
+},{"./deps.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\deps.jsx","react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js","react-router":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react-router\\lib\\index.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\main.jsx":[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Main = function (_Component) {
+  _inherits(Main, _Component);
+
+  function Main() {
+    _classCallCheck(this, Main);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
+  }
+
+  _createClass(Main, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "main" },
+        this.props.children
+      );
+    }
+  }]);
+
+  return Main;
+}(_react.Component);
+
+exports.default = Main;
+;
+
+},{"react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+Object.defineProperty(exports, "__esModule", {
+      value: true
+});
+
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -59680,98 +59733,33 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Screen = function (_Component) {
-    _inherits(Screen, _Component);
+      _inherits(Screen, _Component);
 
-    function Screen() {
-        _classCallCheck(this, Screen);
+      function Screen() {
+            _classCallCheck(this, Screen);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(Screen).apply(this, arguments));
-    }
+            return _possibleConstructorReturn(this, Object.getPrototypeOf(Screen).apply(this, arguments));
+      }
 
-    _createClass(Screen, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { id: "main" },
-                _react2.default.createElement(
-                    "ul",
-                    { className: "panel" },
-                    _react2.default.createElement("li", { id: "panel" })
-                )
-            );
-        }
-    }]);
+      _createClass(Screen, [{
+            key: 'render',
+            value: function render() {
+                  function deps() {
+                        return _react2.default.createElement('script', { async: true, src: '/builds/melosc.js', type: 'text/javascript' });
+                  }
+                  return _react2.default.createElement(
+                        'div',
+                        { className: 'main' },
+                        this.props.children,
+                        deps()
+                  );
+            }
+      }]);
 
-    return Screen;
+      return Screen;
 }(_react.Component);
 
 exports.default = Screen;
-;
-
-},{"react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\startpage.jsx":[function(require,module,exports){
-"use strict";
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var StartPage = function (_Component) {
-    _inherits(StartPage, _Component);
-
-    function StartPage() {
-        _classCallCheck(this, StartPage);
-
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(StartPage).apply(this, arguments));
-    }
-
-    _createClass(StartPage, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { className: "startpage" },
-                _react2.default.createElement("div", { className: "st_top" }),
-                _react2.default.createElement(
-                    "div",
-                    { className: "st_mid" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "arcs_ct_float" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "arc_one" },
-                            _react2.default.createElement(
-                                "div",
-                                { className: "arc_two" },
-                                _react2.default.createElement("div", { className: "arc_three" })
-                            )
-                        )
-                    )
-                ),
-                _react2.default.createElement("div", { className: "st_bot" })
-            );
-        }
-    }]);
-
-    return StartPage;
-}(_react.Component);
-
-exports.default = StartPage;
 ;
 
 },{"react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js"}]},{},["D:\\APIS\\melo\\webserver\\server\\public\\main.jsx"])
