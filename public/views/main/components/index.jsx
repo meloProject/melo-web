@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link, Router } from 'react-router'
 import Deps from './deps.jsx'
 
-module.exports = class AppTres extends Component {
+module.exports = class Melo extends Component {
   render() {
     return (
       <html>

@@ -5,6 +5,7 @@ export class DesktopCn extends DispositiveCn {
 
     container: HTMLElement;
     element: HTMLElement;
+    captureEvents: boolean;
 
     constructor() {
         super();
@@ -13,23 +14,31 @@ export class DesktopCn extends DispositiveCn {
     public set(container: HTMLElement, element: HTMLCanvasElement | HTMLElement) {
         this.container = container;
         this.element = element;
-        this.element.className = "circlesOff";
-        if (element.tagName === "CANVAS") this.graphics.set(<HTMLCanvasElement>element);
+        this.element.className = "circlesOn";
 
-        /* SET EVENTS */
-        window.onmouseup = (event: MouseEvent) => this.ONMOUSEUP(event);
-        window.onmousedown = (event: MouseEvent) => this.ONMOUSEDOWN(event);
+        if (element.tagName === "CANVAS") this.graphics.set(<HTMLCanvasElement>element);     
+    }
+
+    public create(container: HTMLElement, element: HTMLCanvasElement | HTMLElement) {
+        /*
+        METHOD FOR TEST
+        */
+        this.container = container;
+        this.element = element;
+        if (element.tagName === "CANVAS") this.graphics.set(<HTMLCanvasElement>element);
     }
 
     /* EVENTS */
     public ONMOUSEUP(eve: MouseEvent) {
         // desattach event for mouse move
-        window.onmousemove = null;
-        this.element.className = "circlesOff";
+        this.captureEvents = false;
         this.stop();
     }
 
     public ONMOUSEDOWN(event: MouseEvent) {
+        var self: DesktopCn = this;
+        this.captureEvents = true;
+
         // center element on center of mouse pointer
         this.element.style.top = (event.y - this.ch / 2) + "px";
         this.element.style.left = (event.x - this.cx / 2) + "px";
@@ -39,8 +48,15 @@ export class DesktopCn extends DispositiveCn {
         this.y = event.y;
         this.x = event.x;
 
+        function handleEvent(event: MouseEvent) {
+            if (self.captureEvents)
+                self.ONMOUSEMOVE.call(self, event);
+            else 
+                removeEventListener("mousemove", handleEvent);
+        }
+
         // attach event for mouse move
-        window.onmousemove = (event: MouseEvent) => this.ONMOUSEMOVE(event);
+        addEventListener("mousemove", handleEvent);
         this.start();
     }
 

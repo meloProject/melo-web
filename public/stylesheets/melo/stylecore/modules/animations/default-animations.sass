@@ -1,76 +1,83 @@
 =cubesPresed()
     position: relative
-    -webkit-animation: movement 0.1s ease 
+    -webkit-animation: movement 0.1s ease
     animation: movement 0.1s ease
     animation-fill-mode: forwards
     @keyframes movement
         0%
             top: 0px
             left: 0px
-        100% 
+        100%
             top: 6px
             left: 6px
-        
-    
+
 =leftIn($distance)
-    -webkit-animation: leftIn 0.5s 
+    -webkit-animation: leftIn 0.5s
     -webkit-animation-timing-function: ease
     animation: leftIn 0.5s ease
     animation-fill-mode: forwards
     @keyframes leftIn
         0%
-            padding-left: 0px 
-        100% 
-            padding-left: $distance    
+            padding-left: 0px
+        100%
+            padding-left: $distance
 
 =leftOut($distance)
-    -webkit-animation: leftOut 0.5s 
+    -webkit-animation: leftOut 0.5s
     -webkit-animation-timing-function: ease
     animation: leftOut 0.5s ease
     @keyframes leftOut
         0%
-            padding-left: $distance  
-        100% 
+            padding-left: $distance
+        100%
             padding-left: 0px
 
 =opacityCircle()
     animation: opacityCircle 3s infinite
     -webkit-animation: opacityCircle 3s infinite
     @keyframes opacityCircle
-        0% 
+        0%
             opacity: 0
-        50% 
+        50%
             opacity: 5
-        100% 
+        100%
             opacity: 10
-            
+
 =leaves()
     animation: leaves 3s ease
     -webkit-animation: leaves 3s ease
     @keyframes leaves
-        0% 
+        0%
             opacity: 0
             transform: scale(0)
             -webkit-transform: scale(0)
-        50% 
+        50%
             opacity: 5
             transform: scale(1.3)
             -webkit-transform: scale(1.3)
-        100% 
+        100%
             opacity: 10
             transform: scale(1)
             -webkit-transform: scale(1)
-                   
+
 =animateSpin($id, $rotation)
     @keyframes spin#{$id}
-        0% 
-        50% 
-        100% 
-            transform: rotate($rotation)
+        0%
+        50%
+        100%
+            // transform: rotate($rotation)
             -webkit-transform: rotate($rotation)
-            
+
 =setSpin($id, $speed, $rotation, $timing)
-    animation: spin#{$id} $speed infinite $timing 
+    // animation: spin#{$id} $speed infinite $timing
     -webkit-animation: spin#{$id} $speed infinite $timing
     +animateSpin($id, $rotation)
-   
+
+=userAnimate()
+    animation: userAnimate 2s ease infinite
+    @-webkit-keyframes userAnimate
+        0%
+        50%
+            -webkit-transform: translate3d(0, 12px, 10px)
+        100%
+            -webkit-transform: translate3d(50px, 15px, 10px)

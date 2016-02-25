@@ -3060,19 +3060,20 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
     (0, _createClass3.default)(DesktopCn, [{
         key: "set",
         value: function set(container, element) {
-            var _this2 = this;
-
             this.container = container;
             this.element = element;
-            this.element.className = "circlesOff";
+            this.element.className = "circlesOn";
             if (element.tagName === "CANVAS") this.graphics.set(element);
-            /* SET EVENTS */
-            window.onmouseup = function (event) {
-                return _this2.ONMOUSEUP(event);
-            };
-            window.onmousedown = function (event) {
-                return _this2.ONMOUSEDOWN(event);
-            };
+        }
+    }, {
+        key: "create",
+        value: function create(container, element) {
+            /*
+            METHOD FOR TEST
+            */
+            this.container = container;
+            this.element = element;
+            if (element.tagName === "CANVAS") this.graphics.set(element);
         }
         /* EVENTS */
 
@@ -3080,15 +3081,14 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
         key: "ONMOUSEUP",
         value: function ONMOUSEUP(eve) {
             // desattach event for mouse move
-            window.onmousemove = null;
-            this.element.className = "circlesOff";
+            this.captureEvents = false;
             this.stop();
         }
     }, {
         key: "ONMOUSEDOWN",
         value: function ONMOUSEDOWN(event) {
-            var _this3 = this;
-
+            var self = this;
+            this.captureEvents = true;
             // center element on center of mouse pointer
             this.element.style.top = event.y - this.ch / 2 + "px";
             this.element.style.left = event.x - this.cx / 2 + "px";
@@ -3096,10 +3096,11 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
             // set first impact sector.
             this.y = event.y;
             this.x = event.x;
+            function handleEvent(event) {
+                if (self.captureEvents) self.ONMOUSEMOVE.call(self, event);else removeEventListener("mousemove", handleEvent);
+            }
             // attach event for mouse move
-            window.onmousemove = function (event) {
-                return _this3.ONMOUSEMOVE(event);
-            };
+            addEventListener("mousemove", handleEvent);
             this.start();
         }
     }, {
@@ -3525,6 +3526,9 @@ var Sockets = function (_Comunication) {
     }
 
     (0, _createClass3.default)(Sockets, [{
+        key: "findChannel",
+        value: function findChannel() {}
+    }, {
         key: "comuPosition",
         value: function comuPosition(params, url) {
             var _this2 = this;
@@ -3715,19 +3719,109 @@ var Farm = exports.Farm = function () {
 },{"babel-runtime/core-js/object/keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","underscore":"D:\\APIS\\melo\\webserver\\server\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\meloCn.ts":[function(require,module,exports){
 "use strict";
 
+var _keys = require("babel-runtime/core-js/object/keys");
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _desktopCn = require("./melcore/melcore/controller/desktopCn");
 
-var controller = undefined,
-    element = undefined,
-    panel = undefined,
-    main = undefined;
-element = document.createElement("canvas");
-main = document.getElementById("main");
-controller = new _desktopCn.DesktopCn();
-controller.set(main, element);
-main.appendChild(element);
+var _tests = require("./tests/tests");
 
-},{"./melcore/melcore/controller/desktopCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\desktopCn.ts"}]},{},["D:\\APIS\\melo\\webserver\\server\\public\\meloCn.ts"])
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* SET TESTS*/
+_tests.Tests.setGlobals();
+!function () {
+    var controllers = controllers || {},
+        controllersID = 0;
+    addEventListener('load', function () {
+        var element = document.createElement("canvas"),
+            main = document.getElementById("controllerContainer");
+        /* SET EVENTS */
+        addEventListener("mouseup", function (event) {
+            controllers[controllersID].ONMOUSEUP(event);
+            main.removeChild(element);
+            delete controllers[controllersID];
+            console.log("controllers: " + (0, _keys2.default)(controllers).length);
+        });
+        addEventListener("mousedown", function (event) {
+            controllersID++;
+            controllers[controllersID] = new _desktopCn.DesktopCn();
+            controllers[controllersID].set(main, element);
+            main.appendChild(element);
+            controllers[controllersID].ONMOUSEDOWN(event);
+            console.log("controllers: " + (0, _keys2.default)(controllers).length);
+        });
+    });
+}();
+
+},{"./melcore/melcore/controller/desktopCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\desktopCn.ts","./tests/tests":"D:\\APIS\\melo\\webserver\\server\\public\\tests\\tests.ts","babel-runtime/core-js/object/keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\keys.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\tests\\tests.ts":[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Tests = undefined;
+
+var _typeof2 = require("babel-runtime/helpers/typeof");
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = require("babel-runtime/helpers/createClass");
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _desktopCn = require("../melcore/melcore/controller/desktopCn");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Tests = exports.Tests = function () {
+    function Tests() {
+        (0, _classCallCheck3.default)(this, Tests);
+    }
+
+    (0, _createClass3.default)(Tests, null, [{
+        key: "setGlobals",
+        value: function setGlobals() {
+            window.createController = function (classElement, container) {
+                var element = document.createElement("canvas"),
+                    main = document.getElementById("controllerContainer"),
+                    controller = undefined;
+                classElement = classElement || "circlesOn";
+                var elementContainer = document.createElement("div");
+                element.className = classElement;
+                element.id = "canvasTest";
+                elementContainer.className = "circleContainer";
+                controller = new _desktopCn.DesktopCn();
+                controller.create(main, element);
+                controller.start();
+                elementContainer.appendChild(element);
+                main.appendChild(elementContainer);
+                console.log("created new controller");
+                return element;
+            };
+            window.removeController = function (container) {
+                var elements = document.querySelectorAll(".circleContainer"),
+                    main = document.getElementById("controllerContainer");
+                try {
+                    for (var h in elements) {
+                        if ((0, _typeof3.default)(elements[h]) === "object") main.removeChild(elements[h]);
+                    }
+                } catch (err) {
+                    return "something's wrong " + err;
+                }
+                return "All controllers removed";
+            };
+        }
+    }]);
+    return Tests;
+}();
+
+},{"../melcore/melcore/controller/desktopCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\desktopCn.ts","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/typeof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\typeof.js"}]},{},["D:\\APIS\\melo\\webserver\\server\\public\\meloCn.ts"])
 
 
 //# sourceMappingURL=melocn.js.map

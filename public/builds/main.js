@@ -59481,21 +59481,20 @@ var _screen2 = _interopRequireDefault(_screen);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = _react2.default.createElement(
-    _reactRouter.Router,
-    { history: _reactRouter.browserHistory },
-    _react2.default.createElement(
-        _reactRouter.Route,
-        { path: '/', component: _index2.default },
-        _react2.default.createElement(
-            _reactRouter.Route,
-            { path: 'melo', component: _main2.default },
-            _react2.default.createElement(_reactRouter.Route, { path: 'controller', component: _controller2.default,
-                onEnter: function onEnter(location, replaceWith) {}
-            }),
-            _react2.default.createElement(_reactRouter.Route, { path: 'screen', component: _screen2.default })
-        )
-    )
+  _reactRouter.Router,
+  { history: _reactRouter.browserHistory },
+  _react2.default.createElement(
+    _reactRouter.Route,
+    { path: '/', component: _index2.default },
+    _react2.default.createElement(_reactRouter.Route, { path: 'melo', component: _main2.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: 'controller', component: _controller2.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: 'screen', component: _screen2.default })
+  )
 );
+
+// onEnter={(location, replaceWith) => {
+//                        
+// }}
 
 },{"../public/views/main/components/controller.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\controller.jsx","../public/views/main/components/index.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\index.jsx","../public/views/main/components/main.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\main.jsx","../public/views/main/components/screen.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\screen.jsx","react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js","react-router":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react-router\\lib\\index.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\controller.jsx":[function(require,module,exports){
 'use strict';
@@ -59503,7 +59502,7 @@ module.exports = _react2.default.createElement(
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = require('react');
@@ -59519,34 +59518,32 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Controller = function (_Component) {
-    _inherits(Controller, _Component);
+  _inherits(Controller, _Component);
 
-    function Controller() {
-        _classCallCheck(this, Controller);
+  function Controller() {
+    _classCallCheck(this, Controller);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(Controller).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Controller).apply(this, arguments));
+  }
+
+  _createClass(Controller, [{
+    key: 'render',
+    value: function render() {
+      function deps() {
+        return _react2.default.createElement('script', { async: true, src: '/builds/melocn.js', type: 'text/javascript' });
+      }
+      return _react2.default.createElement(
+        'div',
+        { id: 'controllerContainer', className: 'main-controller' },
+        _react2.default.createElement('div', { className: 'con__st_top' }),
+        _react2.default.createElement('div', { className: 'con__st_mid' }),
+        _react2.default.createElement('div', { className: 'con__st_bot' }),
+        deps()
+      );
     }
+  }]);
 
-    _createClass(Controller, [{
-        key: 'render',
-        value: function render() {
-            function deps() {
-                return _react2.default.createElement('script', { async: true, src: '/builds/melocn.js', type: 'text/javascript' });
-            }
-            return _react2.default.createElement(
-                'div',
-                { id: 'main' },
-                _react2.default.createElement(
-                    'ul',
-                    { className: 'panel' },
-                    _react2.default.createElement('li', { id: 'panel' })
-                ),
-                deps()
-            );
-        }
-    }]);
-
-    return Controller;
+  return Controller;
 }(_react.Component);
 
 exports.default = Controller;
@@ -59573,16 +59570,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var MainDepdencies = function (_Component) {
-  _inherits(MainDepdencies, _Component);
+var indexDepdencies = function (_Component) {
+  _inherits(indexDepdencies, _Component);
 
-  function MainDepdencies() {
-    _classCallCheck(this, MainDepdencies);
+  function indexDepdencies() {
+    _classCallCheck(this, indexDepdencies);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(MainDepdencies).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(indexDepdencies).apply(this, arguments));
   }
 
-  _createClass(MainDepdencies, [{
+  _createClass(indexDepdencies, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -59594,10 +59591,10 @@ var MainDepdencies = function (_Component) {
     }
   }]);
 
-  return MainDepdencies;
+  return indexDepdencies;
 }(_react.Component);
 
-exports.default = MainDepdencies;
+exports.default = indexDepdencies;
 ;
 
 },{"react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\index.jsx":[function(require,module,exports){
@@ -59624,15 +59621,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 module.exports = function (_Component) {
-  _inherits(AppTres, _Component);
+  _inherits(Melo, _Component);
 
-  function AppTres() {
-    _classCallCheck(this, AppTres);
+  function Melo() {
+    _classCallCheck(this, Melo);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(AppTres).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Melo).apply(this, arguments));
   }
 
-  _createClass(AppTres, [{
+  _createClass(Melo, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -59661,7 +59658,7 @@ module.exports = function (_Component) {
     }
   }]);
 
-  return AppTres;
+  return Melo;
 }(_react.Component);
 
 },{"./deps.jsx":"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\deps.jsx","react":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react\\react.js","react-router":"D:\\APIS\\melo\\webserver\\server\\node_modules\\react-router\\lib\\index.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\views\\main\\components\\main.jsx":[function(require,module,exports){
@@ -59670,7 +59667,7 @@ module.exports = function (_Component) {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _react = require("react");
@@ -59686,26 +59683,61 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Main = function (_Component) {
-  _inherits(Main, _Component);
+    _inherits(Main, _Component);
 
-  function Main() {
-    _classCallCheck(this, Main);
+    function Main() {
+        _classCallCheck(this, Main);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
-  }
-
-  _createClass(Main, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "main" },
-        this.props.children
-      );
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(Main).apply(this, arguments));
     }
-  }]);
 
-  return Main;
+    _createClass(Main, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "main-main" },
+                _react2.default.createElement("div", { className: "main__st_top" }),
+                _react2.default.createElement(
+                    "div",
+                    { className: "main__st_mid" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "conta_input_mutator" },
+                        _react2.default.createElement(
+                            "ul",
+                            { className: "quest_circles" },
+                            _react2.default.createElement("li", { className: "classAut0" }),
+                            _react2.default.createElement("li", { className: "other" }),
+                            _react2.default.createElement("li", { className: "start" })
+                        ),
+                        _react2.default.createElement(
+                            "ul",
+                            { className: "ul_mutator" },
+                            _react2.default.createElement(
+                                "li",
+                                { className: "icon_type" },
+                                _react2.default.createElement("i", { className: "child icon" })
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                { className: "input_mut" },
+                                _react2.default.createElement("input", { placeholder: "usuario", type: "text", className: "input_mutator" })
+                            ),
+                            _react2.default.createElement(
+                                "li",
+                                { className: "icon_arrow" },
+                                _react2.default.createElement("i", { className: "chevron down icon" })
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement("div", { className: "main__st_bot" })
+            );
+        }
+    }]);
+
+    return Main;
 }(_react.Component);
 
 exports.default = Main;
@@ -59717,7 +59749,7 @@ exports.default = Main;
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
-      value: true
+  value: true
 });
 
 var _react = require('react');
@@ -59733,30 +59765,32 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Screen = function (_Component) {
-      _inherits(Screen, _Component);
+  _inherits(Screen, _Component);
 
-      function Screen() {
-            _classCallCheck(this, Screen);
+  function Screen() {
+    _classCallCheck(this, Screen);
 
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(Screen).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Screen).apply(this, arguments));
+  }
+
+  _createClass(Screen, [{
+    key: 'render',
+    value: function render() {
+      function deps() {
+        return _react2.default.createElement('script', { async: true, src: '/builds/melosc.js', type: 'text/javascript' });
       }
+      return _react2.default.createElement(
+        'div',
+        { id: 'screenContainer', className: 'main-screen' },
+        _react2.default.createElement('div', { className: 'sc__st_top' }),
+        _react2.default.createElement('div', { className: 'sc__st_mid' }),
+        _react2.default.createElement('div', { className: 'sc__st_bot' }),
+        deps()
+      );
+    }
+  }]);
 
-      _createClass(Screen, [{
-            key: 'render',
-            value: function render() {
-                  function deps() {
-                        return _react2.default.createElement('script', { async: true, src: '/builds/melosc.js', type: 'text/javascript' });
-                  }
-                  return _react2.default.createElement(
-                        'div',
-                        { className: 'main' },
-                        this.props.children,
-                        deps()
-                  );
-            }
-      }]);
-
-      return Screen;
+  return Screen;
 }(_react.Component);
 
 exports.default = Screen;

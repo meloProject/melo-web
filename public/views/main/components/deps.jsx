@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class MainDepdencies extends Component {
+export default class indexDepdencies extends Component {
   render() {
     return (
     	<scripts>

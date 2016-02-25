@@ -9,19 +9,15 @@ import Screen from '../public/views/main/components/screen.jsx'
 module.exports = (
    <Router history={browserHistory}>
         <Route path='/' component={App} >
-            <Route path="melo" component={Main}>
-                <Route path="controller" component={Controller} 
-                    onEnter={(location, replaceWith) => {
-                        
-                    }}
-                />
-                <Route path="screen" component={Screen} />
-            </ Route>
+            <Route path="melo" component={Main} />
+             <Route path="controller" component={Controller}/>
+             <Route path="screen" component={Screen} />
         </Route>
   </Router >
 );
 
-
-
+// onEnter={(location, replaceWith) => {
+//                         
+// }}
 
 

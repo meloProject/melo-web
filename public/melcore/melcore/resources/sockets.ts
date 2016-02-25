@@ -27,6 +27,10 @@ class Sockets extends Comunication {
         };
     }
 
+    findChannel() {
+
+    }
+
     comuPosition(params: { positionX: number, positionY: number, brodcastChannel: string }, url?: string): Promise<Response> {
         /*
         * METODO PARA COMUNICAR AL SCREEN, LA POSICION DEL ELEMENTO.

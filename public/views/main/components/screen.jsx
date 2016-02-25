@@ -8,9 +8,11 @@ export default class Screen extends Component {
         ) 
     } 
     return (
-          <div className="main"> 
-                {this.props.children} 
-                {deps()}
+          <div id="screenContainer" className="main-screen"> 
+            <div className="sc__st_top"></div>
+            <div className="sc__st_mid"></div>
+            <div className="sc__st_bot"></div>
+          {deps()}
           </div>
     )
   }
