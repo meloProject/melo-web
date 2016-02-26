@@ -59662,7 +59662,7 @@ module.exports = function (_Component) {
 }(_react.Component);
 
 },{"./deps.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\deps.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","react-router":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react-router\\lib\\index.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\main.jsx":[function(require,module,exports){
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -59670,9 +59670,13 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59692,70 +59696,59 @@ var Main = function (_Component) {
     }
 
     _createClass(Main, [{
-        key: "render",
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var mutator = document.querySelector(".ul_mutator");
+            mutator.addEventListener("animationend", function (event) {
+                console.log("ready");
+            });
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "div",
-                { className: "main-main" },
-                _react2.default.createElement("div", { className: "main__st_top" }),
+                'div',
+                { className: 'main-main' },
+                _react2.default.createElement('div', { className: 'main__st_top' }),
                 _react2.default.createElement(
-                    "div",
-                    { className: "main__st_mid" },
+                    'div',
+                    { className: 'main__st_mid' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "conta_input_mutator" },
+                        'div',
+                        { className: 'conta_input_mutator' },
                         _react2.default.createElement(
-                            "ul",
-                            { className: "quest_circles" },
-                            _react2.default.createElement("li", { className: "classAut0" }),
-                            _react2.default.createElement("li", { className: "other" }),
-                            _react2.default.createElement("li", { className: "start" })
+                            'ul',
+                            { className: 'quest_circles' },
+                            _react2.default.createElement('li', { className: 'classAut0' }),
+                            _react2.default.createElement('li', { className: 'other' }),
+                            _react2.default.createElement('li', { className: 'start' })
                         ),
                         _react2.default.createElement(
-                            "div",
-                            { className: "con_inputs_mutator" },
+                            'div',
+                            { className: 'con_inputs_mutator' },
                             _react2.default.createElement(
-                                "ul",
-                                { className: "ul_mutator" },
+                                'ul',
+                                { className: 'ul_mutator' },
                                 _react2.default.createElement(
-                                    "li",
-                                    { className: "icon_type" },
-                                    _react2.default.createElement("i", { className: "child icon" })
+                                    'li',
+                                    { className: 'icon_type' },
+                                    _react2.default.createElement('i', { className: 'child icon' })
                                 ),
                                 _react2.default.createElement(
-                                    "li",
-                                    { className: "input_mut" },
-                                    _react2.default.createElement("input", { placeholder: "usuario", type: "text", className: "input_mutator" })
+                                    'li',
+                                    { className: 'input_mut' },
+                                    _react2.default.createElement('input', { placeholder: 'usuario', type: 'text', className: 'input_mutator' })
                                 ),
                                 _react2.default.createElement(
-                                    "li",
-                                    { className: "icon_arrow" },
-                                    _react2.default.createElement("i", { className: "chevron down icon" })
-                                )
-                            ),
-                            _react2.default.createElement(
-                                "ul",
-                                { className: "ul_mutator_face" },
-                                _react2.default.createElement(
-                                    "li",
-                                    { className: "icon_type" },
-                                    _react2.default.createElement("i", { className: "child icon" })
-                                ),
-                                _react2.default.createElement(
-                                    "li",
-                                    { className: "input_mut" },
-                                    _react2.default.createElement("input", { placeholder: "usuario", type: "text", className: "input_mutator" })
-                                ),
-                                _react2.default.createElement(
-                                    "li",
-                                    { className: "icon_arrow" },
-                                    _react2.default.createElement("i", { className: "chevron down icon" })
+                                    'li',
+                                    { className: 'icon_arrow' },
+                                    _react2.default.createElement('i', { className: 'chevron down icon' })
                                 )
                             )
                         )
                     )
                 ),
-                _react2.default.createElement("div", { className: "main__st_bot" })
+                _react2.default.createElement('div', { className: 'main__st_bot' })
             );
         }
     }]);
@@ -59766,7 +59759,7 @@ var Main = function (_Component) {
 exports.default = Main;
 ;
 
-},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
+},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","react-dom":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react-dom\\index.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

@@ -1,57 +1,51 @@
-﻿@mixin user() {
-    -webkit-animation-name: user;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 0.7s;
+﻿@mixin inputChange() {
+    -webkit-animation-name: inputChange;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    opacity: 0;
 
-    @keyframes user {
+    @keyframes inputChange {
         0% {
-            -webkit-transform: translate(0, 0px);
+            -webkit-transform: scale(0.2);
         }
 
-        50% {
-            -webkit-transform: translate(0, 6px);
+        60% {
+            -webkit-transform: scale(1.1);
         }
 
         100% {
-            -webkit-transform: translate(0, 0px);
+            -webkit-transform: scale(1);
+            opacity: 10;
         }
     }
 }
 
-@mixin changeInputMutator() {
-    -webkit-animation-name: spincube;
+
+@mixin arrowChange() {
+    -webkit-animation-name: arrowChange;
     -webkit-animation-timing-function: ease;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 3s;
-    -webkit-transform-style: preserve-3d;
-
-    @-webkit-keyframes spincube {
-        0% {
-            -webkit-transform: rotateX(90deg) translateY(-65px);
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: forwards;
+    @keyframes arrowChange {
+        to {
+            -webkit-transform: translate(0px, 5px);
         }
-
-        50% {
-            -webkit-transform:  rotateX(0deg) translateY(-65px);
-        }
+       
     }
 }
 
-@mixin changeInputMutator2() {
-    -webkit-animation-name: spincube2;
+@mixin arrowChangeUp() {
+    -webkit-animation-name: arrowChangeUp;
     -webkit-animation-timing-function: ease;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 3s;
-    -webkit-transform-style: preserve-3d;
-
-    @-webkit-keyframes spincube2 {
-        0% {
-            -webkit-transform: rotateX(90deg) translateY(-65px);
+    -webkit-animation-duration: 0.5s;
+    @keyframes arrowChangeUp {
+        from {
+            -webkit-transform: translate(0px, 5px);
         }
-
-        50% {
-            -webkit-transform:  rotateX(0deg) translateY(0px);
+        to {
+            -webkit-transform: translate(0px, 0px);
         }
+       
     }
 }
-
