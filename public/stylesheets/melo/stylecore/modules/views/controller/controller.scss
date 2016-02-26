@@ -1,0 +1,49 @@
+// PRINCIPAL ESTRUCTURE
+.main-controller {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.sc_st_top {
+	width: 100%;
+    height: 10%;
+    display: flex;
+    @include collapse();
+}
+    
+.sc__st_mid {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    @include collapse();
+}
+    
+.sc__st_bot {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    @include collapse();
+}
+ 
+// ELEMETS 
+.circleContainer {
+    position: relative;
+    width: 230px;
+    height: 230px;
+    display: flex;
+    align-self: center;
+    @include collapse();
+ }      
+.circlesOn {
+	position: absolute;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: none;
+    z-index: 9999;
+    @include setSpin(1, 0.7s, 360deg, linear);
+}
+    
+    

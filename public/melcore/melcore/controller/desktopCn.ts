@@ -25,7 +25,8 @@ export class DesktopCn extends DispositiveCn {
         */
         this.container = container;
         this.element = element;
-        if (element.tagName === "CANVAS") this.graphics.set(<HTMLCanvasElement>element);
+        if (element.tagName === "CANVAS")
+            this.graphics.set(<HTMLCanvasElement>element);
     }
 
     /* EVENTS */
@@ -51,12 +52,12 @@ export class DesktopCn extends DispositiveCn {
         function handleEvent(event: MouseEvent) {
             if (self.captureEvents)
                 self.ONMOUSEMOVE.call(self, event);
-            else 
-                removeEventListener("mousemove", handleEvent);
+            else
+                self.container.removeEventListener("mousemove", handleEvent);
         }
 
         // attach event for mouse move
-        addEventListener("mousemove", handleEvent);
+        this.container.addEventListener("mousemove", handleEvent);
         this.start();
     }
 

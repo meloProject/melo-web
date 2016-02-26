@@ -1,20 +1,20 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\json\\stringify.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\json\\stringify.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/json/stringify"), __esModule: true };
-},{"core-js/library/fn/json/stringify":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\json\\stringify.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\create.js":[function(require,module,exports){
+},{"core-js/library/fn/json/stringify":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\json\\stringify.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\create.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
-},{"core-js/library/fn/object/create":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\create.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\define-property.js":[function(require,module,exports){
+},{"core-js/library/fn/object/create":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\create.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\define-property.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/define-property"), __esModule: true };
-},{"core-js/library/fn/object/define-property":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\define-property.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js":[function(require,module,exports){
+},{"core-js/library/fn/object/define-property":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\define-property.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/get-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\get-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\keys.js":[function(require,module,exports){
+},{"core-js/library/fn/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\get-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\keys.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/keys"), __esModule: true };
-},{"core-js/library/fn/object/keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\keys.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\set-prototype-of.js":[function(require,module,exports){
+},{"core-js/library/fn/object/keys":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\keys.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\set-prototype-of.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/set-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\set-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\promise.js":[function(require,module,exports){
+},{"core-js/library/fn/object/set-prototype-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\set-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\promise.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/promise"), __esModule: true };
-},{"core-js/library/fn/promise":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\promise.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\symbol.js":[function(require,module,exports){
+},{"core-js/library/fn/promise":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\promise.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\symbol.js":[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol"), __esModule: true };
-},{"core-js/library/fn/symbol":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\symbol\\index.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js":[function(require,module,exports){
+},{"core-js/library/fn/symbol":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\symbol\\index.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -24,7 +24,7 @@ exports.default = function (instance, Constructor) {
     throw new TypeError("Cannot call a class as a function");
   }
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -52,7 +52,7 @@ exports.default = (function () {
     return Constructor;
   };
 })();
-},{"../core-js/object/define-property":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\define-property.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js":[function(require,module,exports){
+},{"../core-js/object/define-property":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\define-property.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\inherits.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -86,7 +86,7 @@ exports.default = function (subClass, superClass) {
   });
   if (superClass) _setPrototypeOf2.default ? (0, _setPrototypeOf2.default)(subClass, superClass) : subClass.__proto__ = superClass;
 };
-},{"../core-js/object/create":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\create.js","../core-js/object/set-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\set-prototype-of.js","../helpers/typeof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\typeof.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js":[function(require,module,exports){
+},{"../core-js/object/create":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\create.js","../core-js/object/set-prototype-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\set-prototype-of.js","../helpers/typeof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\typeof.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -104,7 +104,7 @@ exports.default = function (self, call) {
 
   return call && ((typeof call === "undefined" ? "undefined" : (0, _typeof3.default)(call)) === "object" || typeof call === "function") ? call : self;
 };
-},{"../helpers/typeof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\typeof.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\typeof.js":[function(require,module,exports){
+},{"../helpers/typeof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\typeof.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\typeof.js":[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -120,54 +120,54 @@ function _typeof(obj) { return obj && typeof _Symbol !== "undefined" && obj.cons
 exports.default = function (obj) {
   return obj && typeof _symbol2.default !== "undefined" && obj.constructor === _symbol2.default ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
 };
-},{"../core-js/symbol":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\symbol.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\json\\stringify.js":[function(require,module,exports){
+},{"../core-js/symbol":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\symbol.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\json\\stringify.js":[function(require,module,exports){
 var core = require('../../modules/$.core');
 module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
   return (core.JSON && core.JSON.stringify || JSON.stringify).apply(JSON, arguments);
 };
-},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\create.js":[function(require,module,exports){
+},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\create.js":[function(require,module,exports){
 var $ = require('../../modules/$');
 module.exports = function create(P, D){
   return $.create(P, D);
 };
-},{"../../modules/$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\define-property.js":[function(require,module,exports){
+},{"../../modules/$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\define-property.js":[function(require,module,exports){
 var $ = require('../../modules/$');
 module.exports = function defineProperty(it, key, desc){
   return $.setDesc(it, key, desc);
 };
-},{"../../modules/$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\get-prototype-of.js":[function(require,module,exports){
+},{"../../modules/$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\get-prototype-of.js":[function(require,module,exports){
 require('../../modules/es6.object.get-prototype-of');
 module.exports = require('../../modules/$.core').Object.getPrototypeOf;
-},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.get-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\keys.js":[function(require,module,exports){
+},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.get-prototype-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.object.get-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\keys.js":[function(require,module,exports){
 require('../../modules/es6.object.keys');
 module.exports = require('../../modules/$.core').Object.keys;
-},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.keys.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\object\\set-prototype-of.js":[function(require,module,exports){
+},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.keys":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.object.keys.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\object\\set-prototype-of.js":[function(require,module,exports){
 require('../../modules/es6.object.set-prototype-of');
 module.exports = require('../../modules/$.core').Object.setPrototypeOf;
-},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.set-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.set-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\promise.js":[function(require,module,exports){
+},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.set-prototype-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.object.set-prototype-of.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\promise.js":[function(require,module,exports){
 require('../modules/es6.object.to-string');
 require('../modules/es6.string.iterator');
 require('../modules/web.dom.iterable');
 require('../modules/es6.promise');
 module.exports = require('../modules/$.core').Promise;
-},{"../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","../modules/es6.object.to-string":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.to-string.js","../modules/es6.promise":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.promise.js","../modules/es6.string.iterator":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.string.iterator.js","../modules/web.dom.iterable":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\web.dom.iterable.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\fn\\symbol\\index.js":[function(require,module,exports){
+},{"../modules/$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","../modules/es6.object.to-string":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.object.to-string.js","../modules/es6.promise":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.promise.js","../modules/es6.string.iterator":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.string.iterator.js","../modules/web.dom.iterable":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\web.dom.iterable.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\fn\\symbol\\index.js":[function(require,module,exports){
 require('../../modules/es6.symbol');
 require('../../modules/es6.object.to-string');
 module.exports = require('../../modules/$.core').Symbol;
-},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.to-string":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.to-string.js","../../modules/es6.symbol":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.symbol.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.a-function.js":[function(require,module,exports){
+},{"../../modules/$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","../../modules/es6.object.to-string":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.object.to-string.js","../../modules/es6.symbol":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.symbol.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.a-function.js":[function(require,module,exports){
 module.exports = function(it){
   if(typeof it != 'function')throw TypeError(it + ' is not a function!');
   return it;
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.add-to-unscopables.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.add-to-unscopables.js":[function(require,module,exports){
 module.exports = function(){ /* empty */ };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.an-object.js":[function(require,module,exports){
 var isObject = require('./$.is-object');
 module.exports = function(it){
   if(!isObject(it))throw TypeError(it + ' is not an object!');
   return it;
 };
-},{"./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.classof.js":[function(require,module,exports){
+},{"./$.is-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.classof.js":[function(require,module,exports){
 // getting tag from 19.1.3.6 Object.prototype.toString()
 var cof = require('./$.cof')
   , TAG = require('./$.wks')('toStringTag')
@@ -184,16 +184,16 @@ module.exports = function(it){
     // ES3 arguments fallback
     : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
 };
-},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js":[function(require,module,exports){
+},{"./$.cof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.cof.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.cof.js":[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = function(it){
   return toString.call(it).slice(8, -1);
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js":[function(require,module,exports){
 var core = module.exports = {version: '1.2.6'};
 if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.ctx.js":[function(require,module,exports){
 // optional / simple context binding
 var aFunction = require('./$.a-function');
 module.exports = function(fn, that, length){
@@ -214,18 +214,18 @@ module.exports = function(fn, that, length){
     return fn.apply(that, arguments);
   };
 };
-},{"./$.a-function":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.a-function.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.defined.js":[function(require,module,exports){
+},{"./$.a-function":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.a-function.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.defined.js":[function(require,module,exports){
 // 7.2.1 RequireObjectCoercible(argument)
 module.exports = function(it){
   if(it == undefined)throw TypeError("Can't call method on  " + it);
   return it;
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.descriptors.js":[function(require,module,exports){
 // Thank's IE8 for his funny defineProperty
 module.exports = !require('./$.fails')(function(){
   return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
 });
-},{"./$.fails":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.fails.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.dom-create.js":[function(require,module,exports){
+},{"./$.fails":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.fails.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.dom-create.js":[function(require,module,exports){
 var isObject = require('./$.is-object')
   , document = require('./$.global').document
   // in old IE typeof document.createElement is 'object'
@@ -233,7 +233,7 @@ var isObject = require('./$.is-object')
 module.exports = function(it){
   return is ? document.createElement(it) : {};
 };
-},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.enum-keys.js":[function(require,module,exports){
+},{"./$.global":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js","./$.is-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.enum-keys.js":[function(require,module,exports){
 // all enumerable object keys, includes symbols
 var $ = require('./$');
 module.exports = function(it){
@@ -248,7 +248,7 @@ module.exports = function(it){
   }
   return keys;
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.export.js":[function(require,module,exports){
 var global    = require('./$.global')
   , core      = require('./$.core')
   , ctx       = require('./$.ctx')
@@ -295,7 +295,7 @@ $export.P = 8;  // proto
 $export.B = 16; // bind
 $export.W = 32; // wrap
 module.exports = $export;
-},{"./$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.fails.js":[function(require,module,exports){
+},{"./$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","./$.ctx":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.global":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.fails.js":[function(require,module,exports){
 module.exports = function(exec){
   try {
     return !!exec();
@@ -303,7 +303,7 @@ module.exports = function(exec){
     return true;
   }
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.for-of.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.for-of.js":[function(require,module,exports){
 var ctx         = require('./$.ctx')
   , call        = require('./$.iter-call')
   , isArrayIter = require('./$.is-array-iter')
@@ -323,7 +323,7 @@ module.exports = function(iterable, entries, fn, that){
     call(iterator, f, step.value, entries);
   }
 };
-},{"./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.is-array-iter":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array-iter.js","./$.iter-call":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-call.js","./$.to-length":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-length.js","./core.get-iterator-method":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\core.get-iterator-method.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.get-names.js":[function(require,module,exports){
+},{"./$.an-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.ctx":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.is-array-iter":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.is-array-iter.js","./$.iter-call":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-call.js","./$.to-length":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-length.js","./core.get-iterator-method":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\core.get-iterator-method.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.get-names.js":[function(require,module,exports){
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 var toIObject = require('./$.to-iobject')
   , getNames  = require('./$').getNames
@@ -344,17 +344,17 @@ module.exports.get = function getOwnPropertyNames(it){
   if(windowNames && toString.call(it) == '[object Window]')return getWindowNames(it);
   return getNames(toIObject(it));
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-iobject.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js":[function(require,module,exports){
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 var global = module.exports = typeof window != 'undefined' && window.Math == Math
   ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
 if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.has.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.has.js":[function(require,module,exports){
 var hasOwnProperty = {}.hasOwnProperty;
 module.exports = function(it, key){
   return hasOwnProperty.call(it, key);
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.hide.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.hide.js":[function(require,module,exports){
 var $          = require('./$')
   , createDesc = require('./$.property-desc');
 module.exports = require('./$.descriptors') ? function(object, key, value){
@@ -363,9 +363,9 @@ module.exports = require('./$.descriptors') ? function(object, key, value){
   object[key] = value;
   return object;
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.property-desc.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.html.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.property-desc.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.html.js":[function(require,module,exports){
 module.exports = require('./$.global').document && document.documentElement;
-},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.invoke.js":[function(require,module,exports){
+},{"./$.global":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.invoke.js":[function(require,module,exports){
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
 module.exports = function(fn, args, that){
   var un = that === undefined;
@@ -382,13 +382,13 @@ module.exports = function(fn, args, that){
                       : fn.call(that, args[0], args[1], args[2], args[3]);
   } return              fn.apply(that, args);
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iobject.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iobject.js":[function(require,module,exports){
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = require('./$.cof');
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
-},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array-iter.js":[function(require,module,exports){
+},{"./$.cof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.cof.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.is-array-iter.js":[function(require,module,exports){
 // check on default Array iterator
 var Iterators  = require('./$.iterators')
   , ITERATOR   = require('./$.wks')('iterator')
@@ -397,17 +397,17 @@ var Iterators  = require('./$.iterators')
 module.exports = function(it){
   return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
 };
-},{"./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array.js":[function(require,module,exports){
+},{"./$.iterators":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.is-array.js":[function(require,module,exports){
 // 7.2.2 IsArray(argument)
 var cof = require('./$.cof');
 module.exports = Array.isArray || function(arg){
   return cof(arg) == 'Array';
 };
-},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js":[function(require,module,exports){
+},{"./$.cof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.cof.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.is-object.js":[function(require,module,exports){
 module.exports = function(it){
   return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-call.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-call.js":[function(require,module,exports){
 // call something on iterator step with safe closing on error
 var anObject = require('./$.an-object');
 module.exports = function(iterator, fn, value, entries){
@@ -420,7 +420,7 @@ module.exports = function(iterator, fn, value, entries){
     throw e;
   }
 };
-},{"./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-create.js":[function(require,module,exports){
+},{"./$.an-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.an-object.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-create.js":[function(require,module,exports){
 'use strict';
 var $              = require('./$')
   , descriptor     = require('./$.property-desc')
@@ -434,7 +434,7 @@ module.exports = function(Constructor, NAME, next){
   Constructor.prototype = $.create(IteratorPrototype, {next: descriptor(1, next)});
   setToStringTag(Constructor, NAME + ' Iterator');
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.hide":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.hide.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.property-desc.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-define.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.hide":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.hide.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.property-desc.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-define.js":[function(require,module,exports){
 'use strict';
 var LIBRARY        = require('./$.library')
   , $export        = require('./$.export')
@@ -501,7 +501,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
   }
   return methods;
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.has":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.has.js","./$.hide":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.hide.js","./$.iter-create":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-create.js","./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.library":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.library.js","./$.redefine":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-detect.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.export":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.export.js","./$.has":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.has.js","./$.hide":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.hide.js","./$.iter-create":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-create.js","./$.iterators":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.library":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.library.js","./$.redefine":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.redefine.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-detect.js":[function(require,module,exports){
 var ITERATOR     = require('./$.wks')('iterator')
   , SAFE_CLOSING = false;
 
@@ -523,13 +523,13 @@ module.exports = function(exec, skipClosing){
   } catch(e){ /* empty */ }
   return safe;
 };
-},{"./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-step.js":[function(require,module,exports){
+},{"./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-step.js":[function(require,module,exports){
 module.exports = function(done, value){
   return {value: value, done: !!done};
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iterators.js":[function(require,module,exports){
 module.exports = {};
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js":[function(require,module,exports){
 var $Object = Object;
 module.exports = {
   create:     $Object.create,
@@ -543,7 +543,7 @@ module.exports = {
   getSymbols: $Object.getOwnPropertySymbols,
   each:       [].forEach
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.keyof.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.keyof.js":[function(require,module,exports){
 var $         = require('./$')
   , toIObject = require('./$.to-iobject');
 module.exports = function(object, el){
@@ -554,9 +554,9 @@ module.exports = function(object, el){
     , key;
   while(length > index)if(O[key = keys[index++]] === el)return key;
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.library.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-iobject.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.library.js":[function(require,module,exports){
 module.exports = true;
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.microtask.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.microtask.js":[function(require,module,exports){
 var global    = require('./$.global')
   , macrotask = require('./$.task').set
   , Observer  = global.MutationObserver || global.WebKitMutationObserver
@@ -621,7 +621,7 @@ module.exports = function asap(fn){
     notify();
   } last = task;
 };
-},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.task":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.task.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.object-sap.js":[function(require,module,exports){
+},{"./$.cof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.cof.js","./$.global":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js","./$.task":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.task.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.object-sap.js":[function(require,module,exports){
 // most Object methods by ES6 should accept primitives
 var $export = require('./$.export')
   , core    = require('./$.core')
@@ -632,7 +632,7 @@ module.exports = function(KEY, exec){
   exp[KEY] = exec(fn);
   $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
 };
-},{"./$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.fails":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.fails.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.property-desc.js":[function(require,module,exports){
+},{"./$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","./$.export":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.export.js","./$.fails":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.fails.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.property-desc.js":[function(require,module,exports){
 module.exports = function(bitmap, value){
   return {
     enumerable  : !(bitmap & 1),
@@ -641,20 +641,20 @@ module.exports = function(bitmap, value){
     value       : value
   };
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine-all.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.redefine-all.js":[function(require,module,exports){
 var redefine = require('./$.redefine');
 module.exports = function(target, src){
   for(var key in src)redefine(target, key, src[key]);
   return target;
 };
-},{"./$.redefine":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js":[function(require,module,exports){
+},{"./$.redefine":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.redefine.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.redefine.js":[function(require,module,exports){
 module.exports = require('./$.hide');
-},{"./$.hide":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.hide.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.same-value.js":[function(require,module,exports){
+},{"./$.hide":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.hide.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.same-value.js":[function(require,module,exports){
 // 7.2.9 SameValue(x, y)
 module.exports = Object.is || function is(x, y){
   return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-proto.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-proto.js":[function(require,module,exports){
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
 var getDesc  = require('./$').getDesc
@@ -681,7 +681,7 @@ module.exports = {
     }({}, false) : undefined),
   check: check
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-species.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.an-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.ctx":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.is-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.is-object.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-species.js":[function(require,module,exports){
 'use strict';
 var core        = require('./$.core')
   , $           = require('./$')
@@ -695,7 +695,7 @@ module.exports = function(KEY){
     get: function(){ return this; }
   });
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js":[function(require,module,exports){
 var def = require('./$').setDesc
   , has = require('./$.has')
   , TAG = require('./$.wks')('toStringTag');
@@ -703,14 +703,14 @@ var def = require('./$').setDesc
 module.exports = function(it, tag, stat){
   if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 };
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.has":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.has.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.shared.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.has":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.has.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.shared.js":[function(require,module,exports){
 var global = require('./$.global')
   , SHARED = '__core-js_shared__'
   , store  = global[SHARED] || (global[SHARED] = {});
 module.exports = function(key){
   return store[key] || (store[key] = {});
 };
-},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.species-constructor.js":[function(require,module,exports){
+},{"./$.global":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.species-constructor.js":[function(require,module,exports){
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
 var anObject  = require('./$.an-object')
   , aFunction = require('./$.a-function')
@@ -719,12 +719,12 @@ module.exports = function(O, D){
   var C = anObject(O).constructor, S;
   return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
 };
-},{"./$.a-function":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.a-function.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.strict-new.js":[function(require,module,exports){
+},{"./$.a-function":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.a-function.js","./$.an-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.strict-new.js":[function(require,module,exports){
 module.exports = function(it, Constructor, name){
   if(!(it instanceof Constructor))throw TypeError(name + ": use the 'new' operator!");
   return it;
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.string-at.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.string-at.js":[function(require,module,exports){
 var toInteger = require('./$.to-integer')
   , defined   = require('./$.defined');
 // true  -> String#at
@@ -742,7 +742,7 @@ module.exports = function(TO_STRING){
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
-},{"./$.defined":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.defined.js","./$.to-integer":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-integer.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.task.js":[function(require,module,exports){
+},{"./$.defined":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.defined.js","./$.to-integer":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-integer.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.task.js":[function(require,module,exports){
 var ctx                = require('./$.ctx')
   , invoke             = require('./$.invoke')
   , html               = require('./$.html')
@@ -818,40 +818,40 @@ module.exports = {
   set:   setTask,
   clear: clearTask
 };
-},{"./$.cof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.cof.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.dom-create":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.dom-create.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.html":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.html.js","./$.invoke":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.invoke.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-integer.js":[function(require,module,exports){
+},{"./$.cof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.cof.js","./$.ctx":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.dom-create":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.dom-create.js","./$.global":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js","./$.html":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.html.js","./$.invoke":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.invoke.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-integer.js":[function(require,module,exports){
 // 7.1.4 ToInteger
 var ceil  = Math.ceil
   , floor = Math.floor;
 module.exports = function(it){
   return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-iobject.js":[function(require,module,exports){
 // to indexed object, toObject with fallback for non-array-like ES3 strings
 var IObject = require('./$.iobject')
   , defined = require('./$.defined');
 module.exports = function(it){
   return IObject(defined(it));
 };
-},{"./$.defined":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.defined.js","./$.iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iobject.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-length.js":[function(require,module,exports){
+},{"./$.defined":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.defined.js","./$.iobject":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iobject.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-length.js":[function(require,module,exports){
 // 7.1.15 ToLength
 var toInteger = require('./$.to-integer')
   , min       = Math.min;
 module.exports = function(it){
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 };
-},{"./$.to-integer":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-integer.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-object.js":[function(require,module,exports){
+},{"./$.to-integer":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-integer.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-object.js":[function(require,module,exports){
 // 7.1.13 ToObject(argument)
 var defined = require('./$.defined');
 module.exports = function(it){
   return Object(defined(it));
 };
-},{"./$.defined":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.defined.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.uid.js":[function(require,module,exports){
+},{"./$.defined":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.defined.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.uid.js":[function(require,module,exports){
 var id = 0
   , px = Math.random();
 module.exports = function(key){
   return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
 };
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js":[function(require,module,exports){
 var store  = require('./$.shared')('wks')
   , uid    = require('./$.uid')
   , Symbol = require('./$.global').Symbol;
@@ -859,7 +859,7 @@ module.exports = function(name){
   return store[name] || (store[name] =
     Symbol && Symbol[name] || (Symbol || uid)('Symbol.' + name));
 };
-},{"./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.shared":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.shared.js","./$.uid":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.uid.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\core.get-iterator-method.js":[function(require,module,exports){
+},{"./$.global":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js","./$.shared":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.shared.js","./$.uid":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.uid.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\core.get-iterator-method.js":[function(require,module,exports){
 var classof   = require('./$.classof')
   , ITERATOR  = require('./$.wks')('iterator')
   , Iterators = require('./$.iterators');
@@ -868,7 +868,7 @@ module.exports = require('./$.core').getIteratorMethod = function(it){
     || it['@@iterator']
     || Iterators[classof(it)];
 };
-},{"./$.classof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.classof.js","./$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.array.iterator.js":[function(require,module,exports){
+},{"./$.classof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.classof.js","./$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","./$.iterators":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.array.iterator.js":[function(require,module,exports){
 'use strict';
 var addToUnscopables = require('./$.add-to-unscopables')
   , step             = require('./$.iter-step')
@@ -903,7 +903,7 @@ Iterators.Arguments = Iterators.Array;
 addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
-},{"./$.add-to-unscopables":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.add-to-unscopables.js","./$.iter-define":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-define.js","./$.iter-step":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-step.js","./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.get-prototype-of.js":[function(require,module,exports){
+},{"./$.add-to-unscopables":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.add-to-unscopables.js","./$.iter-define":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-define.js","./$.iter-step":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-step.js","./$.iterators":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iterators.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-iobject.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.object.get-prototype-of.js":[function(require,module,exports){
 // 19.1.2.9 Object.getPrototypeOf(O)
 var toObject = require('./$.to-object');
 
@@ -912,7 +912,7 @@ require('./$.object-sap')('getPrototypeOf', function($getPrototypeOf){
     return $getPrototypeOf(toObject(it));
   };
 });
-},{"./$.object-sap":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.object-sap.js","./$.to-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.keys.js":[function(require,module,exports){
+},{"./$.object-sap":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.object-sap.js","./$.to-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-object.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.object.keys.js":[function(require,module,exports){
 // 19.1.2.14 Object.keys(O)
 var toObject = require('./$.to-object');
 
@@ -921,13 +921,13 @@ require('./$.object-sap')('keys', function($keys){
     return $keys(toObject(it));
   };
 });
-},{"./$.object-sap":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.object-sap.js","./$.to-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-object.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.set-prototype-of.js":[function(require,module,exports){
+},{"./$.object-sap":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.object-sap.js","./$.to-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-object.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.object.set-prototype-of.js":[function(require,module,exports){
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = require('./$.export');
 $export($export.S, 'Object', {setPrototypeOf: require('./$.set-proto').set});
-},{"./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.set-proto":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-proto.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.object.to-string.js":[function(require,module,exports){
+},{"./$.export":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.export.js","./$.set-proto":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-proto.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.object.to-string.js":[function(require,module,exports){
 
-},{}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.promise.js":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.promise.js":[function(require,module,exports){
 'use strict';
 var $          = require('./$')
   , LIBRARY    = require('./$.library')
@@ -1217,7 +1217,7 @@ $export($export.S + $export.F * !(USE_NATIVE && require('./$.iter-detect')(funct
     return capability.promise;
   }
 });
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.a-function":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.a-function.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.classof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.classof.js","./$.core":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.core.js","./$.ctx":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.for-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.for-of.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.is-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-object.js","./$.iter-detect":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-detect.js","./$.library":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.library.js","./$.microtask":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.microtask.js","./$.redefine-all":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine-all.js","./$.same-value":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.same-value.js","./$.set-proto":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-proto.js","./$.set-species":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-species.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.species-constructor":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.species-constructor.js","./$.strict-new":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.strict-new.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.string.iterator.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.a-function":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.a-function.js","./$.an-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.classof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.classof.js","./$.core":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.core.js","./$.ctx":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.ctx.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.export":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.export.js","./$.for-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.for-of.js","./$.global":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js","./$.is-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.is-object.js","./$.iter-detect":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-detect.js","./$.library":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.library.js","./$.microtask":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.microtask.js","./$.redefine-all":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.redefine-all.js","./$.same-value":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.same-value.js","./$.set-proto":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-proto.js","./$.set-species":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-species.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.species-constructor":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.species-constructor.js","./$.strict-new":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.strict-new.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.string.iterator.js":[function(require,module,exports){
 'use strict';
 var $at  = require('./$.string-at')(true);
 
@@ -1235,7 +1235,7 @@ require('./$.iter-define')(String, 'String', function(iterated){
   this._i += point.length;
   return {value: point, done: false};
 });
-},{"./$.iter-define":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iter-define.js","./$.string-at":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.string-at.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.symbol.js":[function(require,module,exports){
+},{"./$.iter-define":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iter-define.js","./$.string-at":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.string-at.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.symbol.js":[function(require,module,exports){
 'use strict';
 // ECMAScript 6 symbols shim
 var $              = require('./$')
@@ -1463,11 +1463,11 @@ setToStringTag($Symbol, 'Symbol');
 setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 setToStringTag(global.JSON, 'JSON', true);
-},{"./$":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.js","./$.an-object":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.enum-keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.enum-keys.js","./$.export":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.export.js","./$.fails":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.fails.js","./$.get-names":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.get-names.js","./$.global":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.global.js","./$.has":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.has.js","./$.is-array":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.is-array.js","./$.keyof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.keyof.js","./$.library":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.library.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.property-desc.js","./$.redefine":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.redefine.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.shared":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.shared.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.to-iobject.js","./$.uid":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.uid.js","./$.wks":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\web.dom.iterable.js":[function(require,module,exports){
+},{"./$":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.js","./$.an-object":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.an-object.js","./$.descriptors":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.descriptors.js","./$.enum-keys":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.enum-keys.js","./$.export":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.export.js","./$.fails":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.fails.js","./$.get-names":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.get-names.js","./$.global":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.global.js","./$.has":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.has.js","./$.is-array":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.is-array.js","./$.keyof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.keyof.js","./$.library":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.library.js","./$.property-desc":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.property-desc.js","./$.redefine":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.redefine.js","./$.set-to-string-tag":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.set-to-string-tag.js","./$.shared":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.shared.js","./$.to-iobject":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.to-iobject.js","./$.uid":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.uid.js","./$.wks":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.wks.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\web.dom.iterable.js":[function(require,module,exports){
 require('./es6.array.iterator');
 var Iterators = require('./$.iterators');
 Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
-},{"./$.iterators":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\$.iterators.js","./es6.array.iterator":"D:\\APIS\\melo\\webserver\\server\\node_modules\\core-js\\library\\modules\\es6.array.iterator.js"}],"D:\\APIS\\melo\\webserver\\server\\node_modules\\underscore\\underscore.js":[function(require,module,exports){
+},{"./$.iterators":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\$.iterators.js","./es6.array.iterator":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\core-js\\library\\modules\\es6.array.iterator.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js":[function(require,module,exports){
 //     Underscore.js 1.8.3
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -3017,7 +3017,7 @@ Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
   }
 }.call(this));
 
-},{}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\desktopCn.ts":[function(require,module,exports){
+},{}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\controller\\desktopCn.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3097,10 +3097,10 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
             this.y = event.y;
             this.x = event.x;
             function handleEvent(event) {
-                if (self.captureEvents) self.ONMOUSEMOVE.call(self, event);else removeEventListener("mousemove", handleEvent);
+                if (self.captureEvents) self.ONMOUSEMOVE.call(self, event);else self.container.removeEventListener("mousemove", handleEvent);
             }
             // attach event for mouse move
-            addEventListener("mousemove", handleEvent);
+            this.container.addEventListener("mousemove", handleEvent);
             this.start();
         }
     }, {
@@ -3118,7 +3118,7 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
     return DesktopCn;
 }(_dispositiveCn.DispositiveCn);
 
-},{"./dispositiveCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\dispositiveCn.ts":[function(require,module,exports){
+},{"./dispositiveCn":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\controller\\dispositiveCn.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\controller\\dispositiveCn.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3231,7 +3231,7 @@ var DispositiveCn = exports.DispositiveCn = function (_Melo) {
     return DispositiveCn;
 }(_melo.Melo);
 
-},{"../melo":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\melo.ts","../resources/Sockets":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\Sockets.ts","./res/graphs":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts","./res/store":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\store.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\graphs.ts":[function(require,module,exports){
+},{"../melo":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\melo.ts","../resources/Sockets":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\resources\\Sockets.ts","./res/graphs":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\controller\\res\\graphs.ts","./res/store":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\controller\\res\\store.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\controller\\res\\graphs.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3375,7 +3375,7 @@ var Graphics = exports.Graphics = function () {
     return Graphics;
 }();
 
-},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\res\\store.ts":[function(require,module,exports){
+},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\controller\\res\\store.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3436,7 +3436,7 @@ var Store = function (_Farm) {
 
 exports.default = new Store();
 
-},{"../../resources/farm":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\farm.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\melo.ts":[function(require,module,exports){
+},{"../../resources/farm":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\resources\\farm.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\melo.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3473,7 +3473,7 @@ var Melo = exports.Melo = function () {
     return Melo;
 }();
 
-},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\Sockets.ts":[function(require,module,exports){
+},{"babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\resources\\Sockets.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3577,7 +3577,7 @@ var Sockets = function (_Comunication) {
 
 exports.default = new Sockets();
 
-},{"./comunication":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/core-js/promise":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\promise.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\comunication.ts":[function(require,module,exports){
+},{"./comunication":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\resources\\comunication.ts","babel-runtime/core-js/object/get-prototype-of":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\get-prototype-of.js","babel-runtime/core-js/promise":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\promise.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/inherits":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\inherits.js","babel-runtime/helpers/possibleConstructorReturn":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\possibleConstructorReturn.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\resources\\comunication.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3661,7 +3661,7 @@ var Comunication = exports.Comunication = function () {
 
 exports.default = new Comunication();
 
-},{"babel-runtime/core-js/json/stringify":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\json\\stringify.js","babel-runtime/core-js/promise":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\promise.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/typeof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\typeof.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\resources\\farm.ts":[function(require,module,exports){
+},{"babel-runtime/core-js/json/stringify":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\json\\stringify.js","babel-runtime/core-js/promise":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\promise.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/typeof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\typeof.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\resources\\farm.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3716,7 +3716,7 @@ var Farm = exports.Farm = function () {
     return Farm;
 }();
 
-},{"babel-runtime/core-js/object/keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","underscore":"D:\\APIS\\melo\\webserver\\server\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\meloCn.ts":[function(require,module,exports){
+},{"babel-runtime/core-js/object/keys":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\keys.js","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\meloCn.ts":[function(require,module,exports){
 "use strict";
 
 var _keys = require("babel-runtime/core-js/object/keys");
@@ -3731,31 +3731,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* SET TESTS*/
 _tests.Tests.setGlobals();
-!function () {
-    var controllers = controllers || {},
-        controllersID = 0;
-    addEventListener('load', function () {
-        var element = document.createElement("canvas"),
-            main = document.getElementById("controllerContainer");
-        /* SET EVENTS */
-        addEventListener("mouseup", function (event) {
-            controllers[controllersID].ONMOUSEUP(event);
-            main.removeChild(element);
-            delete controllers[controllersID];
-            console.log("controllers: " + (0, _keys2.default)(controllers).length);
-        });
-        addEventListener("mousedown", function (event) {
-            controllersID++;
-            controllers[controllersID] = new _desktopCn.DesktopCn();
-            controllers[controllersID].set(main, element);
-            main.appendChild(element);
-            controllers[controllersID].ONMOUSEDOWN(event);
-            console.log("controllers: " + (0, _keys2.default)(controllers).length);
-        });
+var controllers = controllers || {},
+    controllersID = 0;
+addEventListener('load', function () {
+    var element = document.createElement("canvas"),
+        main = document.getElementById("controllerContainer");
+    /* SET EVENTS */
+    main.addEventListener("mouseup", function (event) {
+        controllers[controllersID].ONMOUSEUP(event);
+        main.removeChild(element);
+        delete controllers[controllersID];
+        console.log("controllers: " + (0, _keys2.default)(controllers).length);
     });
-}();
+    main.addEventListener("mousedown", function (event) {
+        controllersID++;
+        controllers[controllersID] = new _desktopCn.DesktopCn();
+        controllers[controllersID]["set"](main, element);
+        main.appendChild(element);
+        controllers[controllersID].ONMOUSEDOWN(event);
+        console.log("controllers: " + (0, _keys2.default)(controllers).length);
+    });
+});
 
-},{"./melcore/melcore/controller/desktopCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\desktopCn.ts","./tests/tests":"D:\\APIS\\melo\\webserver\\server\\public\\tests\\tests.ts","babel-runtime/core-js/object/keys":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\core-js\\object\\keys.js"}],"D:\\APIS\\melo\\webserver\\server\\public\\tests\\tests.ts":[function(require,module,exports){
+},{"./melcore/melcore/controller/desktopCn":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\controller\\desktopCn.ts","./tests/tests":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\tests\\tests.ts","babel-runtime/core-js/object/keys":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\core-js\\object\\keys.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\tests\\tests.ts":[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3789,7 +3787,7 @@ var Tests = exports.Tests = function () {
         value: function setGlobals() {
             window.createController = function (classElement, container) {
                 var element = document.createElement("canvas"),
-                    main = document.getElementById("controllerContainer"),
+                    main = document.querySelector(".con__st_mid"),
                     controller = undefined;
                 classElement = classElement || "circlesOn";
                 var elementContainer = document.createElement("div");
@@ -3806,7 +3804,7 @@ var Tests = exports.Tests = function () {
             };
             window.removeController = function (container) {
                 var elements = document.querySelectorAll(".circleContainer"),
-                    main = document.getElementById("controllerContainer");
+                    main = document.querySelector(".con__st_mid");
                 try {
                     for (var h in elements) {
                         if ((0, _typeof3.default)(elements[h]) === "object") main.removeChild(elements[h]);
@@ -3821,7 +3819,7 @@ var Tests = exports.Tests = function () {
     return Tests;
 }();
 
-},{"../melcore/melcore/controller/desktopCn":"D:\\APIS\\melo\\webserver\\server\\public\\melcore\\melcore\\controller\\desktopCn.ts","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/typeof":"D:\\APIS\\melo\\webserver\\server\\node_modules\\babel-runtime\\helpers\\typeof.js"}]},{},["D:\\APIS\\melo\\webserver\\server\\public\\meloCn.ts"])
+},{"../melcore/melcore/controller/desktopCn":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\melcore\\melcore\\controller\\desktopCn.ts","babel-runtime/helpers/classCallCheck":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\classCallCheck.js","babel-runtime/helpers/createClass":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\createClass.js","babel-runtime/helpers/typeof":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\babel-runtime\\helpers\\typeof.js"}]},{},["D:\\APIS\\melo\\webserver\\melo\\melo\\public\\meloCn.ts"])
 
 
 //# sourceMappingURL=melocn.js.map

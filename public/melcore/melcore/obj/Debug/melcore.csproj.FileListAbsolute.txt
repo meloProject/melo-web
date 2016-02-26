@@ -1,1 +1,0 @@
-D:\APIS\melo\webserver\server\public\melcore\melcore\obj\Debug\melcore.csprojResolveAssemblyReference.cache

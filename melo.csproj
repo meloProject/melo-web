@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{60FB73B5-4658-4FB3-B8F2-932530696281}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="gulpfile.js" />
+    <Content Include="public\browser.jsx" />
+    <Content Include="public\main.jsx" />
+    <Content Include="public\routes.jsx" />
+    <Content Include="public\systemConfig.js" />
+    <Content Include="public\tests\testsNots.js" />
+    <Content Include="public\views\main\components\controller.jsx" />
+    <Content Include="public\views\main\components\deps.jsx" />
+    <Content Include="public\views\main\components\index.jsx" />
+    <Content Include="public\views\main\components\main.jsx" />
+    <Content Include="public\views\main\components\screen.jsx" />
+    <Content Include="public\views\main\components\start.jsx" />
+    <Content Include="server.js" />
+    <Content Include="server\controllers\routes.js" />
+    <Content Include="tasks\bundler.js" />
+    <Content Include="tasks\bundlerSc.js" />
+    <Content Include="tasks\bundlerTs.js" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="package.json" />
+    <Content Include="tsconfig.json" />
+    <Content Include="packages.config" />
+    <None Include=".bin\node.cmd" />
+    <None Include="public\stylesheets\melo\stylecore\modules\animations\default-animations.scss" />
+    <Content Include="public\stylesheets\melo\stylecore\modules\defaults\default.sass" />
+    <Content Include="public\stylesheets\melo\stylecore\modules\mixins\default-mixins.sass" />
+    <None Include="public\stylesheets\melo\stylecore\modules\views\controller\controller.scss" />
+    <None Include="public\stylesheets\melo\stylecore\modules\views\mainpage\mainpage.scss" />
+    <Content Include="public\stylesheets\melo\stylecore\modules\views\screen\screen.sass" />
+    <Content Include="public\stylesheets\melo\main.sass" />
+    <Content Include="public\stylesheets\melo\stylecore\modules\views\mainpage\animationsMp.scss" />
+    <Content Include="public\stylesheets\melo\stylecore\modules\views\controller\animationsCn.scss" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="public\melcore\melcore\controller\desktopCn.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\controller\dispositiveCn.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\controller\res\graphs.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\controller\res\store.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\melo.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\resources\comunication.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\resources\farm.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\resources\sockets.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\screen\desktopSc.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\screen\dispositiveSc.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\screen\res\graphs.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\screen\res\store.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\typings\alt\alt.d.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\typings\bragi-browser\bragi-browser.d.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\typings\debug\debug.d.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\typings\node\node.d.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\typings\react\react.d.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\typings\sails\sails.io.d.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\typings\socket.io-client\socket.io-client.d.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\typings\underscore\underscore.d.ts" />
+    <TypeScriptCompile Include="public\melcore\melcore\typings\whatwg-fetch\whatwg-fetch.d.ts" />
+    <TypeScriptCompile Include="public\meloCn.ts" />
+    <TypeScriptCompile Include="public\meloSc.ts" />
+    <TypeScriptCompile Include="public\tests\tests.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\images\" />
+    <Folder Include="public\melcore\melcore\typings\es6\" />
+    <Folder Include="public\views\main\components\controller\" />
+    <Folder Include="public\views\main\components\screen\" />
+    <Folder Include="server\models\" />
+    <Folder Include="server\services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Bridge, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bridge.1.11.0\lib\net40\Bridge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bridge.Html5, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bridge.1.11.0\lib\net40\Bridge.Html5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=1.2.4.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.1.2.4\lib\net40\JavaScriptEngineSwitcher.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JSPool, Version=0.3.0.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSPool.0.3.0\lib\net40-Client\JSPool.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.1.0.0\lib\net40\Nancy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.React, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.ViewEngines.React.0.2.0.0\lib\net452\Nancy.ViewEngines.React.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>melo</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65001</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65001/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="..\packages\Bridge.1.11.0\build\Bridge.targets" Condition="Exists('..\packages\Bridge.1.11.0\build\Bridge.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Bridge.1.11.0\build\Bridge.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bridge.1.11.0\build\Bridge.targets'))" />
+    <Error Condition="!Exists('..\packages\Nancy.ViewEngines.React.0.2.0.0\build\Nancy.ViewEngines.React.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nancy.ViewEngines.React.0.2.0.0\build\Nancy.ViewEngines.React.targets'))" />
+  </Target>
+  <Import Project="..\packages\Nancy.ViewEngines.React.0.2.0.0\build\Nancy.ViewEngines.React.targets" Condition="Exists('..\packages\Nancy.ViewEngines.React.0.2.0.0\build\Nancy.ViewEngines.React.targets')" />
+</Project>

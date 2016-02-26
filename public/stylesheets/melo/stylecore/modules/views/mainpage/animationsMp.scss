@@ -1,0 +1,57 @@
+﻿@mixin user() {
+    -webkit-animation-name: user;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 0.7s;
+
+    @keyframes user {
+        0% {
+            -webkit-transform: translate(0, 0px);
+        }
+
+        50% {
+            -webkit-transform: translate(0, 6px);
+        }
+
+        100% {
+            -webkit-transform: translate(0, 0px);
+        }
+    }
+}
+
+@mixin changeInputMutator() {
+    -webkit-animation-name: spincube;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 3s;
+    -webkit-transform-style: preserve-3d;
+
+    @-webkit-keyframes spincube {
+        0% {
+            -webkit-transform: rotateX(90deg) translateY(-65px);
+        }
+
+        50% {
+            -webkit-transform:  rotateX(0deg) translateY(-65px);
+        }
+    }
+}
+
+@mixin changeInputMutator2() {
+    -webkit-animation-name: spincube2;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 3s;
+    -webkit-transform-style: preserve-3d;
+
+    @-webkit-keyframes spincube2 {
+        0% {
+            -webkit-transform: rotateX(90deg) translateY(-65px);
+        }
+
+        50% {
+            -webkit-transform:  rotateX(0deg) translateY(0px);
+        }
+    }
+}
+

@@ -21,7 +21,8 @@ gulp.task('start', ()=> {
 
 // Static Server + watching scss/html files
 gulp.task('bsync', ['sass'], function() {
-    gulp.watch('./public/stylesheets/melo/stylecore/modules/**/*.sass', ['sass']);
+    gulp.watch('./public/stylesheets/melo/stylecore/modules/**/*.{sass, scss}', ['sass']);
+    gulp.watch('./public/stylesheets/melo/stylecore/modules/views/**/*.scss', ['sass']);
     //gulp.watch('./client/views/*.jsx').on('change', browserSync.reload);
 });
 

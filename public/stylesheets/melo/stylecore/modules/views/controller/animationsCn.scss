@@ -1,0 +1,17 @@
+﻿/*ROTATE SPIN*/
+@mixin animateSpin($id, $rotation) {
+    @-webkit-keyframes spin#{$id} {
+        to {
+            -webkit-transform: rotate($rotation);
+        }
+    }
+}
+
+@mixin setSpin($id, $speed, $rotation, $timing) {
+    -webkit-animation-name: spin#{$id};
+    -webkit-animation-timing-function: $timing;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: $speed;
+    @include animateSpin($id, $rotation);
+}
+

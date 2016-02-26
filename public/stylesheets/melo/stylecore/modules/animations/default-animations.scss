@@ -1,0 +1,18 @@
+
+// LEFT IN
+@mixin leftIn($distance, $speed) {
+    -webkit-animation-name: leftAnimate;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-duration: $speed;
+
+    @-webkit-keyframes leftAnimate {
+        0% {
+            padding-left: 0px;
+        }
+
+        100% {
+            padding-left: $distance;
+        }
+    }
+}

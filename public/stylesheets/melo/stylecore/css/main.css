@@ -1,4 +1,6 @@
+/* EXTERNALS DEPS */
 @import url(./resources/bower_components/semantic-ui-icon/icon.min.css);
+/* EXTERNAL DEPS */
 html, body {
   margin: 0;
   height: 100vh;
@@ -46,6 +48,7 @@ ul {
   font-size: 48px !important; }
 
 /* MIXINS */
+/* MAIN PAGE */
 .main-main {
   width: 100%;
   height: 100%;
@@ -83,6 +86,64 @@ ul {
   align-self: center;
   justify-content: center; }
 
+.con_inputs_mutator {
+  width: 100%;
+  height: 100%;
+  flex-direction: column; }
+
+.ul_mutator_face {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 6px 8px rgba(28, 28, 28, 0.13);
+  -webkit-animation-name: spincube;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: rotateX(90deg) translateY(-65px); }
+
+@-webkit-keyframes spincube {
+  0% {
+    -webkit-transform: rotateX(90deg) translateY(-65px); }
+  50% {
+    -webkit-transform: rotateX(0deg) translateY(-65px); } }
+  .ul_mutator_face li {
+    height: 100%;
+    display: flex;
+    justify-content: center; }
+  .ul_mutator_face .icon_type {
+    width: 20%;
+    font-size: 26px; }
+    .ul_mutator_face .icon_type i {
+      align-self: center;
+      -webkit-animation-name: user;
+      -webkit-animation-timing-function: ease;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-duration: 0.7s;
+      margin-bottom: 5px; }
+
+@keyframes user {
+  0% {
+    -webkit-transform: translate(0, 0px); }
+  50% {
+    -webkit-transform: translate(0, 6px); }
+  100% {
+    -webkit-transform: translate(0, 0px); } }
+  .ul_mutator_face .input_mut {
+    width: 60%; }
+  .ul_mutator_face .icon_arrow {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    font-size: 20px;
+    cursor: pointer; }
+    .ul_mutator_face .icon_arrow i {
+      align-self: center; }
+
 .ul_mutator {
   width: 100%;
   height: 100%;
@@ -90,7 +151,18 @@ ul {
   flex-direction: row;
   border-radius: 10px;
   background: white;
-  box-shadow: 0px 6px 8px rgba(28, 28, 28, 0.13); }
+  box-shadow: 0 6px 8px rgba(28, 28, 28, 0.13);
+  -webkit-animation-name: spincube2;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 3s;
+  -webkit-transform-style: preserve-3d; }
+
+@-webkit-keyframes spincube2 {
+  0% {
+    -webkit-transform: rotateX(90deg) translateY(-65px); }
+  50% {
+    -webkit-transform: rotateX(0deg) translateY(0px); } }
   .ul_mutator li {
     height: 100%;
     display: flex;
@@ -100,14 +172,19 @@ ul {
     font-size: 26px; }
     .ul_mutator .icon_type i {
       align-self: center;
-      animation: userAnimate 2s ease infinite; }
+      -webkit-animation-name: user;
+      -webkit-animation-timing-function: ease;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-duration: 0.7s;
+      margin-bottom: 5px; }
 
-@-webkit-keyframes userAnimate {
-  0% { }
+@keyframes user {
+  0% {
+    -webkit-transform: translate(0, 0px); }
   50% {
-    -webkit-transform: translate3d(0, 12px, 10px); }
+    -webkit-transform: translate(0, 6px); }
   100% {
-    -webkit-transform: translate3d(50px, 15px, 10px); } }
+    -webkit-transform: translate(0, 0px); } }
   .ul_mutator .input_mut {
     width: 60%; }
   .ul_mutator .icon_arrow {
@@ -126,7 +203,7 @@ ul {
   flex-direction: column;
   justify-content: center; }
   .quest_circles li:nth-child(1) {
-    margin-top: 0px;
+    margin-top: 0;
     opacity: 10; }
   .quest_circles li {
     width: 10px;
@@ -144,11 +221,13 @@ ul {
   padding: 0px !important;
   margin: 0px !important; }
 
+/* CONTROLLER PAGE */
+/*ROTATE SPIN*/
 .main-controller {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row; }
+  flex-direction: column; }
 
 .sc_st_top {
   width: 100%;
@@ -177,21 +256,26 @@ ul {
   width: 230px;
   height: 230px;
   display: flex;
-  align-self: center; }
+  align-self: center;
+  padding: 0px !important;
+  margin: 0px !important; }
 
 .circlesOn {
   position: absolute;
-  margin: 0px !important;
-  padding: 0px !important;
+  margin: 0 !important;
+  padding: 0 !important;
   cursor: none;
-  -webkit-animation: spin1 0.7s infinite linear; }
+  z-index: 9999;
+  -webkit-animation-name: spin1;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 0.7s; }
 
-@keyframes spin1 {
-  0% { }
-  50% { }
-  100% {
+@-webkit-keyframes spin1 {
+  to {
     -webkit-transform: rotate(360deg); } }
 
+/* SCREEN PAGE */
 .main-screen {
   width: 100%;
   height: 100%;

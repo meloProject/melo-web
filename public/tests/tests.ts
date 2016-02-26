@@ -4,7 +4,7 @@ export class Tests {
     static setGlobals() {
         (<any>window).createController = (classElement?: string, container?: string) => {
             let element: any = document.createElement("canvas"),
-                main: HTMLElement = document.getElementById("controllerContainer"),
+                main: any = document.querySelector(".con__st_mid"),
                 controller: any;
             classElement = classElement || "circlesOn";
             let elementContainer = document.createElement("div");
@@ -24,7 +24,7 @@ export class Tests {
         }
         (<any>window).removeController = (container?: string) => {
             let elements: any = document.querySelectorAll(".circleContainer"),
-                main: HTMLElement = document.getElementById("controllerContainer");
+                main: any = document.querySelector(".con__st_mid");
             try {
 
                 for (let h in elements) {
