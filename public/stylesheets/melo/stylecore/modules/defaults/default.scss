@@ -14,11 +14,15 @@ ul {
 *:focus {
     outline: none;
 }
- /* PLACE HOLDERS */
+/* PLACE HOLDERS */
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #B0BEC5;
+    color: #B0BEC5;
+}
+
+::-ms-clear {
+    display: none;
 }
 
 /* VARIABLES GLOBALES */
@@ -26,6 +30,7 @@ $main_bg: #40de40;
 $globalItemColor: #263238;
 $globalFontColor: #263238;
 $presseds: #FFD600;
+$error_bg: #F44336;
 
 /* Material icon font configurations */
 .material-icons {

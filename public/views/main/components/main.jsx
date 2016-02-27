@@ -11,7 +11,7 @@ export default class Main extends Component {
             circles = document.querySelectorAll(".quest_circles > li");
 
         // ANIMATIONS EXTRAS 
-        inter = 200;
+        inter = 50; // animation call velocity
         executedAni = 0;
 
         // anima el icon user.
@@ -36,7 +36,7 @@ export default class Main extends Component {
 
     render() {
         return (
-            <div className="main-main">
+            <div className="main-main" id="main-main">
             <div className="main__st_top"></div>
             <div className="main__st_mid">
                 <div className="conta_input_mutator">

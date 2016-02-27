@@ -20,6 +20,9 @@ input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #B0BEC5; }
 
+::-ms-clear {
+  display: none; }
+
 /* VARIABLES GLOBALES */
 /* Material icon font configurations */
 .material-icons {
@@ -48,12 +51,15 @@ textarea::-webkit-input-placeholder {
 
 /* MIXINS */
 /* MAIN PAGE */
-.main-main {
+.main-main, .main-main_error {
   width: 100%;
   height: 100%;
   background: #40de40;
   display: flex;
   flex-direction: column; }
+
+.main-main_error {
+  background: #F44336; }
 
 .main__st_top {
   width: 100%;
@@ -132,7 +138,43 @@ textarea::-webkit-input-placeholder {
     -webkit-transform: scale(1);
     opacity: 10; } }
 
-.ul_mutator, .ul_mutator_out, .ul_mutator_enter {
+.ul_mutator_error {
+  -webkit-animation-name: inputErrornormal;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards; }
+
+@keyframes inputErrornormal {
+  0% {
+    -webkit-transform: rotateZ(0deg); }
+  25% {
+    -webkit-transform: rotateZ(7deg); }
+  50% {
+    -webkit-transform: rotateZ(0deg); }
+  75% {
+    -webkit-transform: rotateZ(-7deg); }
+  100% {
+    -webkit-transform: rotateZ(0deg); } }
+
+.ul_mutator_error_iterator {
+  -webkit-animation-name: inputErroriterator;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards; }
+
+@keyframes inputErroriterator {
+  0% {
+    -webkit-transform: rotateZ(0deg); }
+  25% {
+    -webkit-transform: rotateZ(7deg); }
+  50% {
+    -webkit-transform: rotateZ(0deg); }
+  75% {
+    -webkit-transform: rotateZ(-7deg); }
+  100% {
+    -webkit-transform: rotateZ(0deg); } }
+
+.ul_mutator, .ul_mutator_out, .ul_mutator_enter, .ul_mutator_error, .ul_mutator_error_iterator {
   width: 100%;
   height: 100%;
   display: flex;
@@ -140,18 +182,18 @@ textarea::-webkit-input-placeholder {
   border-radius: 100px;
   background: white;
   box-shadow: 0 6px 8px rgba(28, 28, 28, 0.13); }
-  .ul_mutator li, .ul_mutator_out li, .ul_mutator_enter li {
+  .ul_mutator li, .ul_mutator_out li, .ul_mutator_enter li, .ul_mutator_error li, .ul_mutator_error_iterator li {
     height: 100%;
     display: flex;
     justify-content: center; }
-  .ul_mutator .icon_type, .ul_mutator_out .icon_type, .ul_mutator_enter .icon_type, .ul_mutator .icon_type_animate, .ul_mutator_out .icon_type_animate, .ul_mutator_enter .icon_type_animate {
+  .ul_mutator .icon_type, .ul_mutator_out .icon_type, .ul_mutator_enter .icon_type, .ul_mutator_error .icon_type, .ul_mutator_error_iterator .icon_type, .ul_mutator .icon_type_animate, .ul_mutator_out .icon_type_animate, .ul_mutator_enter .icon_type_animate, .ul_mutator_error .icon_type_animate, .ul_mutator_error_iterator .icon_type_animate {
     width: 20%;
     font-size: 26px;
     color: #263238; }
-    .ul_mutator .icon_type i, .ul_mutator_out .icon_type i, .ul_mutator_enter .icon_type i, .ul_mutator .icon_type_animate i, .ul_mutator_out .icon_type_animate i, .ul_mutator_enter .icon_type_animate i {
+    .ul_mutator .icon_type i, .ul_mutator_out .icon_type i, .ul_mutator_enter .icon_type i, .ul_mutator_error .icon_type i, .ul_mutator_error_iterator .icon_type i, .ul_mutator .icon_type_animate i, .ul_mutator_out .icon_type_animate i, .ul_mutator_enter .icon_type_animate i, .ul_mutator_error .icon_type_animate i, .ul_mutator_error_iterator .icon_type_animate i {
       align-self: center;
       margin-bottom: 5px; }
-  .ul_mutator .icon_type_animate i, .ul_mutator_out .icon_type_animate i, .ul_mutator_enter .icon_type_animate i {
+  .ul_mutator .icon_type_animate i, .ul_mutator_out .icon_type_animate i, .ul_mutator_enter .icon_type_animate i, .ul_mutator_error .icon_type_animate i, .ul_mutator_error_iterator .icon_type_animate i {
     -webkit-animation-name: iconAnimate;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-duration: 0.7s;
@@ -165,9 +207,9 @@ textarea::-webkit-input-placeholder {
     -webkit-transform: translate(0, 5px); }
   100% {
     -webkit-transform: translate(0, 0); } }
-  .ul_mutator .input_mut, .ul_mutator_out .input_mut, .ul_mutator_enter .input_mut {
+  .ul_mutator .input_mut, .ul_mutator_out .input_mut, .ul_mutator_enter .input_mut, .ul_mutator_error .input_mut, .ul_mutator_error_iterator .input_mut {
     width: 60%; }
-  .ul_mutator .icon_arrow, .ul_mutator_out .icon_arrow, .ul_mutator_enter .icon_arrow {
+  .ul_mutator .icon_arrow, .ul_mutator_out .icon_arrow, .ul_mutator_enter .icon_arrow, .ul_mutator_error .icon_arrow, .ul_mutator_error_iterator .icon_arrow {
     width: 20%;
     height: 100%;
     display: flex;
@@ -186,7 +228,7 @@ textarea::-webkit-input-placeholder {
   to {
     color: #263238;
     -webkit-transform: translateX(0px); } }
-    .ul_mutator .icon_arrow:hover, .ul_mutator_out .icon_arrow:hover, .ul_mutator_enter .icon_arrow:hover {
+    .ul_mutator .icon_arrow:hover, .ul_mutator_out .icon_arrow:hover, .ul_mutator_enter .icon_arrow:hover, .ul_mutator_error .icon_arrow:hover, .ul_mutator_error_iterator .icon_arrow:hover {
       -webkit-animation-name: arrowpressed;
       -webkit-animation-timing-function: ease;
       -webkit-animation-duration: 0.4s;
@@ -196,7 +238,7 @@ textarea::-webkit-input-placeholder {
   to {
     color: #FFD600;
     -webkit-transform: translateX(5px); } }
-    .ul_mutator .icon_arrow i, .ul_mutator_out .icon_arrow i, .ul_mutator_enter .icon_arrow i {
+    .ul_mutator .icon_arrow i, .ul_mutator_out .icon_arrow i, .ul_mutator_enter .icon_arrow i, .ul_mutator_error .icon_arrow i, .ul_mutator_error_iterator .icon_arrow i {
       align-self: center;
       -webkit-transform: rotateZ(-90deg); }
 

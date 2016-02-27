@@ -1,4 +1,17 @@
 // PRINCIPAL ESTRUCTURE
+.colorChild {
+    //color: #F44336;
+}
+
+.colorLock {
+    //color: #3D5AFE;
+}
+
+.colorRocket {
+    //color: #3D5AFE;
+}
+
+
 $margins: 60px;
 
 .main-main {
@@ -7,6 +20,11 @@ $margins: 60px;
     background: $main_bg;
     display: flex;
     flex-direction: column;
+}
+
+.main-main_error {
+    @extend .main-main;
+    background: $error_bg;
 }
 
 .main__st_top {
@@ -23,7 +41,6 @@ $margins: 60px;
     justify-content: center;
     @include collapse();
 }
-
 
 .main__st_bot {
     width: 100%;
@@ -65,6 +82,16 @@ $margins: 60px;
 .ul_mutator_enter {
     @extend .ul_mutator;
     @include inputChangeEnter();
+}
+
+.ul_mutator_error {
+    @extend .ul_mutator;
+    @include inputError(normal);
+}
+
+.ul_mutator_error_iterator {
+    @extend .ul_mutator;
+    @include inputError(iterator);
 }
 
 .ul_mutator {
@@ -138,7 +165,6 @@ $margins: 60px;
     @include show();
     @include circleAnimationOnly();
 }
-
 
 .quest_circles {
     width: $margins;

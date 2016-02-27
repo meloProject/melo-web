@@ -78,6 +78,35 @@ $circlesOpacity: 0.6;
     }
 }
 
+@mixin inputError($id) {
+    -webkit-animation-name: inputError#{$id};
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: forwards;
+
+    @keyframes inputError#{$id} {
+        0% {
+            -webkit-transform: rotateZ(0deg);
+        }
+
+        25% {
+           -webkit-transform: rotateZ(7deg);
+        }
+
+        50% {
+            -webkit-transform: rotateZ(0deg);
+        }
+
+        75% {
+             -webkit-transform: rotateZ(-7deg);
+        }
+
+        100% {
+            -webkit-transform: rotateZ(0deg);
+        }
+    }
+}
+
 
 @mixin inputChangeOut() {
     -webkit-animation-name: inputChangeOut;

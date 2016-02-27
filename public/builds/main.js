@@ -61264,7 +61264,7 @@ var Main = function (_Component) {
                 circles = document.querySelectorAll(".quest_circles > li");
 
             // ANIMATIONS EXTRAS
-            inter = 200;
+            inter = 50; // animation call velocity
             executedAni = 0;
 
             // anima el icon user.
@@ -61291,7 +61291,7 @@ var Main = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'main-main' },
+                { className: 'main-main', id: 'main-main' },
                 _react2.default.createElement('div', { className: 'main__st_top' }),
                 _react2.default.createElement(
                     'div',
@@ -61321,7 +61321,7 @@ exports.default = Main;
 ;
 
 },{"./main/inputMutator.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\main\\inputMutator.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\main\\inputMutator.jsx":[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -61329,11 +61329,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _underscore = require('underscore');
+var _underscore = require("underscore");
 
 var _underscore2 = _interopRequireDefault(_underscore);
 
@@ -61351,63 +61351,116 @@ var InputMutator = function (_Component) {
     function InputMutator() {
         _classCallCheck(this, InputMutator);
 
+        // mutator preferences
+
         var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(InputMutator).call(this));
 
+        _this.state = {
+            icon: "child colorChild",
+            placeholder: "Apodo"
+        };
+
+        _this.mutatorList = [{
+            icon: "child colorChild",
+            placeholder: "Apodo"
+        }, {
+            icon: "lock colorLock",
+            placeholder: "Tu contraseña"
+        }, {
+            icon: "rocket colorRocket",
+            placeholder: "Estamos listos!"
+        }];
+
+        _this.main;
+        _this.mutator;
+        _this.circles;
+        _this.inptMut;
         _this.circlesSection = 0;
+
+        _this.iteratorError = 0;
         return _this;
     }
 
     _createClass(InputMutator, [{
-        key: 'changeInput',
+        key: "changeInput",
         value: function changeInput(event) {
             var _this2 = this;
 
-            var mutator = document.querySelector(".ul_mutator_enter"),
-                circles = document.querySelectorAll(".quest_circles > li");
-
-            if (!document.querySelector(".input_mutator").value) {
-                //document.querySelector(".ul_mutator").className = "";
+            if (!this.mutator) {
+                this.mutator = document.getElementById("mutator");
+                this.circles = document.querySelectorAll(".quest_circles > li");
+                this.inptMut = document.querySelector(".input_mutator");
             }
-            mutator.className = "ul_mutator_out";
-            mutator.addEventListener("animationend", function (event) {
 
+            // check empty input
+            if (!this.inptMut.value) {
+                // intercambia las clases para volver a animar, cada vez que el usuario no resuelve el conflicto.
+                if (this.iteratorError) {
+                    this.mutator.className = "ul_mutator_error_iterator";
+                    this.iteratorError = 0;
+                    this.setState({
+                        placeholder: this.mutatorList[this.circlesSection].placeholder + " hey!"
+                    });
+                } else {
+                    this.mutator.className = "ul_mutator_error";
+                    this.iteratorError = 1;
+                }
+
+                this.main = document.getElementById("main-main");
+                this.main.className = "main-main_error";
+
+                return;
+            }
+            // va a ser true si se se presento un error.
+            if (this.main) this.main.className = "main-main";
+
+            // se activa la animacion de incio.
+            this.mutator.className = "ul_mutator_out";
+            this.inptMut.value = "";
+            this.mutator.addEventListener("animationend", function (event) {
                 if (event.animationName != "inputChangeOut") return;
                 if (_this2.circlesSection == 2) return;
-
                 _this2.circlesSection++;
+
+                _this2.setState({
+                    icon: _this2.mutatorList[_this2.circlesSection].icon,
+                    placeholder: _this2.mutatorList[_this2.circlesSection].placeholder
+                });
+
                 // efecto de ingreso del input mutator
-                mutator.className = "ul_mutator_enter";
-                circles[_this2.circlesSection].className = "circlesSelected";
+                _this2.mutator.className = "ul_mutator_enter";
+                _this2.circles[_this2.circlesSection].className = "circlesSelected";
+
                 event.preventDefault();
             });
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
             var _this3 = this;
 
             return _react2.default.createElement(
-                'div',
-                { className: 'con_inputs_mutator' },
+                "div",
+                { className: "con_inputs_mutator" },
                 _react2.default.createElement(
-                    'ul',
-                    { className: 'ul_mutator_enter' },
+                    "ul",
+                    { className: "ul_mutator_enter", id: "mutator" },
                     _react2.default.createElement(
-                        'li',
-                        { className: 'icon_type', id: 'icon_type' },
-                        _react2.default.createElement('i', { className: 'child icon' })
+                        "li",
+                        { className: "icon_type", id: "icon_type" },
+                        _react2.default.createElement("i", { className: this.state.icon + " icon" })
                     ),
                     _react2.default.createElement(
-                        'li',
-                        { className: 'input_mut' },
-                        _react2.default.createElement('input', { placeholder: 'tu usuario!', type: 'text', className: 'input_mutator' })
+                        "li",
+                        { className: "input_mut" },
+                        _react2.default.createElement("input", { placeholder: this.state.placeholder, type: "text", className: "input_mutator" })
                     ),
                     _react2.default.createElement(
-                        'li',
-                        { className: 'icon_arrow', onClick: function onClick() {
+                        "li",
+                        { className: "icon_arrow", onClick: function onClick() {
                                 _this3.changeInput.call(_this3);
                             } },
-                        _react2.default.createElement('i', { className: 'chevron down icon' })
+                        _react2.default.createElement("i", { className: "chevron down icon" })
                     )
                 )
             );
