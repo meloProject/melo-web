@@ -1,0 +1,11 @@
+{
+    "public/views/main/components/start.jsx": 0,
+    "public/views/main/components/screen.jsx": 1,
+    "public/views/main/components/main.jsx": 2,
+    "public/views/main/components/index.jsx": 3,
+    "public/views/main/components/deps.jsx": 4,
+    "public/views/main/components/controller.jsx": 5,
+    "public/routes.jsx": 6,
+    "public/main.jsx": 7,
+    "public/browser.jsx": 8
+}

@@ -16,7 +16,8 @@ ul {
   outline: none; }
 
 /* PLACE HOLDERS */
-::-webkit-input-placeholder {
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: #B0BEC5; }
 
 /* VARIABLES GLOBALES */
@@ -89,21 +90,40 @@ ul {
   height: 100%;
   flex-direction: column; }
 
-.ul_mutator {
+.input_mutator {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: row;
-  border-radius: 100px;
-  background: white;
-  box-shadow: 0 6px 8px rgba(28, 28, 28, 0.13);
-  -webkit-animation-name: inputChange;
+  border: 0;
+  font-size: 20px;
+  color: #263238;
+  padding: 0px !important;
+  margin: 0px !important; }
+
+.ul_mutator_out {
+  -webkit-animation-name: inputChangeOut;
   -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards; }
+
+@keyframes inputChangeOut {
+  0% {
+    -webkit-transform: scale(1); }
+  25% {
+    -webkit-transform: scale(1.1); }
+  50% {
+    -webkit-transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1) translateY(50px);
+    opacity: 0; } }
+
+.ul_mutator_enter {
+  -webkit-animation-name: inputChangeEnter;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
   opacity: 0; }
 
-@keyframes inputChange {
+@keyframes inputChangeEnter {
   0% {
     -webkit-transform: scale(0.2); }
   60% {
@@ -111,18 +131,27 @@ ul {
   100% {
     -webkit-transform: scale(1);
     opacity: 10; } }
-  .ul_mutator li {
+
+.ul_mutator, .ul_mutator_out, .ul_mutator_enter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 100px;
+  background: white;
+  box-shadow: 0 6px 8px rgba(28, 28, 28, 0.13); }
+  .ul_mutator li, .ul_mutator_out li, .ul_mutator_enter li {
     height: 100%;
     display: flex;
     justify-content: center; }
-  .ul_mutator .icon_type, .ul_mutator .icon_type_animate {
+  .ul_mutator .icon_type, .ul_mutator_out .icon_type, .ul_mutator_enter .icon_type, .ul_mutator .icon_type_animate, .ul_mutator_out .icon_type_animate, .ul_mutator_enter .icon_type_animate {
     width: 20%;
     font-size: 26px;
     color: #263238; }
-    .ul_mutator .icon_type i, .ul_mutator .icon_type_animate i {
+    .ul_mutator .icon_type i, .ul_mutator_out .icon_type i, .ul_mutator_enter .icon_type i, .ul_mutator .icon_type_animate i, .ul_mutator_out .icon_type_animate i, .ul_mutator_enter .icon_type_animate i {
       align-self: center;
       margin-bottom: 5px; }
-  .ul_mutator .icon_type_animate i {
+  .ul_mutator .icon_type_animate i, .ul_mutator_out .icon_type_animate i, .ul_mutator_enter .icon_type_animate i {
     -webkit-animation-name: iconAnimate;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-duration: 0.7s;
@@ -136,9 +165,9 @@ ul {
     -webkit-transform: translate(0, 5px); }
   100% {
     -webkit-transform: translate(0, 0); } }
-  .ul_mutator .input_mut {
+  .ul_mutator .input_mut, .ul_mutator_out .input_mut, .ul_mutator_enter .input_mut {
     width: 60%; }
-  .ul_mutator .icon_arrow {
+  .ul_mutator .icon_arrow, .ul_mutator_out .icon_arrow, .ul_mutator_enter .icon_arrow {
     width: 20%;
     height: 100%;
     display: flex;
@@ -152,12 +181,12 @@ ul {
 
 @keyframes arrownopressed {
   from {
-    color: #03A9F4;
+    color: #FFD600;
     -webkit-transform: translateX(5px); }
   to {
     color: #263238;
     -webkit-transform: translateX(0px); } }
-    .ul_mutator .icon_arrow:hover {
+    .ul_mutator .icon_arrow:hover, .ul_mutator_out .icon_arrow:hover, .ul_mutator_enter .icon_arrow:hover {
       -webkit-animation-name: arrowpressed;
       -webkit-animation-timing-function: ease;
       -webkit-animation-duration: 0.4s;
@@ -165,40 +194,75 @@ ul {
 
 @keyframes arrowpressed {
   to {
-    color: #03A9F4;
+    color: #FFD600;
     -webkit-transform: translateX(5px); } }
-    .ul_mutator .icon_arrow i {
+    .ul_mutator .icon_arrow i, .ul_mutator_out .icon_arrow i, .ul_mutator_enter .icon_arrow i {
       align-self: center;
       -webkit-transform: rotateZ(-90deg); }
 
-.circleAni {
-  width: 10px;
-  height: 10px;
-  border-radius: 100px;
-  background: white;
-  margin-top: 9px;
-  -webkit-animation-name: circlesMutStartAnimation;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-duration: 0.8s;
+.circlesInit {
+  -webkit-animation-name: circleAnimation;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-fill-mode: forwards; }
 
-@keyframes circlesMutStartAnimation {
+@keyframes circleAnimation {
   0% {
-    -webkit-transform: scale(0); }
-  60% {
+    -webkit-transform: scale(1); }
+  50% {
     -webkit-transform: scale(1.5); }
   100% {
     -webkit-transform: scale(1);
     opacity: 0.6; } }
 
-.circleSelected {
+.circleFocus {
   -webkit-animation-name: show;
   -webkit-animation-timing-function: ease;
   -webkit-animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: circleAnimationOnly;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-fill-mode: forwards; }
 
 @keyframes show {
+  from {
+    opacity: 0; }
   to {
+    opacity: 10; } }
+
+@keyframes circleAnimationOnly {
+  0% {
+    -webkit-transform: scale(0); }
+  60% {
+    -webkit-transform: scale(2); }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 10; } }
+
+.circlesSelected {
+  -webkit-animation-name: show;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-name: circleAnimationOnly;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards; }
+
+@keyframes show {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 10; } }
+
+@keyframes circleAnimationOnly {
+  0% {
+    -webkit-transform: scale(0); }
+  60% {
+    -webkit-transform: scale(2); }
+  100% {
+    -webkit-transform: scale(1);
     opacity: 10; } }
 
 .quest_circles {
@@ -216,15 +280,6 @@ ul {
     background: white;
     margin-top: 9px;
     opacity: 0; }
-
-.input_mutator {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  font-size: 20px;
-  color: #263238;
-  padding: 0px !important;
-  margin: 0px !important; }
 
 /* CONTROLLER PAGE */
 /*ROTATE SPIN*/

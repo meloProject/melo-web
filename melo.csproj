@@ -51,7 +51,7 @@
     <Content Include="packages.config" />
     <None Include=".bin\node.cmd" />
     <None Include="public\stylesheets\melo\stylecore\modules\animations\default-animations.scss" />
-    <Content Include="public\stylesheets\melo\stylecore\modules\defaults\default.sass" />
+    <None Include="public\stylesheets\melo\stylecore\modules\defaults\default.scss" />
     <Content Include="public\stylesheets\melo\stylecore\modules\mixins\default-mixins.sass" />
     <None Include="public\stylesheets\melo\stylecore\modules\views\controller\controller.scss" />
     <None Include="public\stylesheets\melo\stylecore\modules\views\mainpage\mainpage.scss" />
@@ -91,6 +91,7 @@
     <TypeScriptCompile Include="public\meloCn.ts" />
     <TypeScriptCompile Include="public\meloSc.ts" />
     <TypeScriptCompile Include="public\tests\tests.ts" />
+    <TypeScriptCompile Include="public\views\main\components\main\inputMutator.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="public\images\" />

@@ -1,0 +1,12 @@
+require("babel/polyfill")
+module.exports = require("D:\\APIS\\melo\\webserver\\melo\\packages\\Nancy.ViewEngines.React.0.2.0.0\\tools\\client\\render.js")({
+  0: require("D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\start.jsx") /* public/views/main/components/start.jsx */,
+  1: require("D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx") /* public/views/main/components/screen.jsx */,
+  2: require("D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\main.jsx") /* public/views/main/components/main.jsx */,
+  3: require("D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\index.jsx") /* public/views/main/components/index.jsx */,
+  4: require("D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\deps.jsx") /* public/views/main/components/deps.jsx */,
+  5: require("D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\controller.jsx") /* public/views/main/components/controller.jsx */,
+  6: require("D:\\APIS\\melo\\webserver\\melo\\melo\\public\\routes.jsx") /* public/routes.jsx */,
+  7: require("D:\\APIS\\melo\\webserver\\melo\\melo\\public\\main.jsx") /* public/main.jsx */,
+  8: require("D:\\APIS\\melo\\webserver\\melo\\melo\\public\\browser.jsx") /* public/browser.jsx */
+}, require("D:\\APIS\\melo\\webserver\\melo\\packages\\Nancy.ViewEngines.React.0.2.0.0\\tools\\client\\layout.jsx"));

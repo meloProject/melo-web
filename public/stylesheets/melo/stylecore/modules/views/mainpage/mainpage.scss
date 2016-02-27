@@ -48,6 +48,25 @@ $margins: 60px;
     flex-direction: column;
 }
 
+.input_mutator {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    font-size: 20px;
+    color: $globalFontColor;
+    @include collapse();
+}
+
+.ul_mutator_out {
+    @extend .ul_mutator;
+    @include inputChangeOut();
+}
+
+.ul_mutator_enter {
+    @extend .ul_mutator;
+    @include inputChangeEnter();
+}
+
 .ul_mutator {
     width: 100%;
     height: 100%;
@@ -56,7 +75,6 @@ $margins: 60px;
     border-radius: 100px;
     background: white;
     box-shadow: 0 6px 8px rgba(#1c1c1c, 0.13);
-    @include inputChangeEnter();
 
     li {
         height: 100%;
@@ -68,6 +86,7 @@ $margins: 60px;
         width: 20%;
         font-size: 26px;
         color: $globalItemColor;
+
         i {
             align-self: center;
             margin-bottom: 5px;
@@ -106,18 +125,20 @@ $margins: 60px;
     }
 }
 
-.circleAni {
-    width: 10px;
-    height: 10px;
-    border-radius: 100px;
-    background: white;
-    margin-top: 9px;
-    @include circlesMutStartAnimation();
+.circlesInit {
+    @include circleAnimation();
 }
 
-.circleSelected {
+.circleFocus {
     @include show();
+    @include circleAnimationOnly();
 }
+
+.circlesSelected {
+    @include show();
+    @include circleAnimationOnly();
+}
+
 
 .quest_circles {
     width: $margins;
@@ -125,6 +146,7 @@ $margins: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     li:nth-child(1) {
         margin-top: 8px;
     }
@@ -137,13 +159,4 @@ $margins: 60px;
         margin-top: 9px;
         opacity: 0;
     }
-}
-
-.input_mutator {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    font-size: 20px;
-    color: $globalFontColor;
-    @include collapse();
 }

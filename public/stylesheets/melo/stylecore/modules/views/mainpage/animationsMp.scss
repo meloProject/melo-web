@@ -1,15 +1,35 @@
-﻿@mixin show() {
+﻿
+$circlesOpacity: 0.6;
+
+@mixin show() {
     -webkit-animation-name: show;
     -webkit-animation-timing-function: ease;
     -webkit-animation-duration: 0.8s;
     -webkit-animation-fill-mode: forwards;
+
     @keyframes show {
+        from {
+            opacity: 0;
+        }
+
         to {
             opacity: 10;
         }
     }
 }
 
+@mixin hide() {
+    -webkit-animation-name: hide;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-fill-mode: forwards;
+
+    @keyframes hide {
+        to {
+            opacity: 0;
+        }
+    }
+}
 
 
 @mixin iconAnimate() {
@@ -18,27 +38,31 @@
     -webkit-animation-duration: 0.7s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation-iteration-count: infinite;
+
     @keyframes iconAnimate {
         0% {
             -webkit-transform: translate(0, 0);
         }
+
         50% {
             -webkit-transform: translate(0, 5px);
         }
+
         100% {
             -webkit-transform: translate(0, 0);
         }
     }
 }
 
+
 @mixin inputChangeEnter() {
-    -webkit-animation-name: inputChange;
+    -webkit-animation-name: inputChangeEnter;
     -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 0.5s;
     -webkit-animation-fill-mode: forwards;
     opacity: 0;
 
-    @keyframes inputChange {
+    @keyframes inputChangeEnter {
         0% {
             -webkit-transform: scale(0.2);
         }
@@ -56,12 +80,12 @@
 
 
 @mixin inputChangeOut() {
-    -webkit-animation-name: inputChange;
+    -webkit-animation-name: inputChangeOut;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-fill-mode: forwards;
 
-    @keyframes inputChange {
+    @keyframes inputChangeOut {
         0% {
             -webkit-transform: scale(1);
         }
@@ -81,7 +105,6 @@
     }
 }
 
-
 @mixin arrowChange($name, $status) {
     -webkit-animation-name: arrow#{$name};
     -webkit-animation-timing-function: ease;
@@ -91,7 +114,7 @@
     @if($status == hover) {
         @keyframes arrow#{$name} {
             to {
-                color: #03A9F4;
+                color: $presseds;
                 -webkit-transform: translateX(5px);
             }
         }
@@ -99,7 +122,7 @@
     @else {
         @keyframes arrow#{$name} {
             from {
-                color: #03A9F4;
+                color: $presseds;
                 -webkit-transform: translateX(5px);
             }
 
@@ -111,24 +134,46 @@
     }
 }
 
-@mixin circlesMutStartAnimation() {
-    -webkit-animation-name: circlesMutStartAnimation;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-duration: 0.8s;
+@mixin circleAnimation() {
+    -webkit-animation-name: circleAnimation;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.3s;
     -webkit-animation-fill-mode: forwards;
-    @keyframes circlesMutStartAnimation {
+
+    @keyframes circleAnimation {
         0% {
-            -webkit-transform: scale(0);
+            -webkit-transform: scale(1);
         }
 
-        60% {
+        50% {
             -webkit-transform: scale(1.5);
         }
 
         100% {
             -webkit-transform: scale(1);
-            opacity: 0.6;
+            opacity: $circlesOpacity;
         }
     }
 }
 
+@mixin circleAnimationOnly() {
+    -webkit-animation-name: circleAnimationOnly;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-fill-mode: forwards;
+
+    @keyframes circleAnimationOnly {
+        0% {
+            -webkit-transform: scale(0);
+        }
+
+        60% {
+            -webkit-transform: scale(2);
+        }
+
+        100% {
+            -webkit-transform: scale(1);
+            opacity: 10;
+        }
+    }
+}

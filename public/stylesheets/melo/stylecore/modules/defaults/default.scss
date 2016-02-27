@@ -15,7 +15,9 @@ ul {
     outline: none;
 }
  /* PLACE HOLDERS */
-::-webkit-input-placeholder {
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: #B0BEC5;
 }
 
@@ -23,6 +25,7 @@ ul {
 $main_bg: #40de40;
 $globalItemColor: #263238;
 $globalFontColor: #263238;
+$presseds: #FFD600;
 
 /* Material icon font configurations */
 .material-icons {

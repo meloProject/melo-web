@@ -60971,6 +60971,10 @@ document.addEventListener('DOMContentLoaded', function onLoad(eve) {
 },{"../public/routes.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\routes.jsx","react-engine/lib/client":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react-engine\\lib\\client.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\main.jsx":[function(require,module,exports){
 'use strict';
 
+var _underscore = require('underscore');
+
+var _underscore2 = _interopRequireDefault(_underscore);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -60997,13 +61001,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //import test from '../public/test'
 
+window._ = _underscore2.default;
 var io = (0, _sailsIo2.default)(_socket2.default);
 io.sails.autoConnect = true;
 io.sails.transports = ['websocket'];
 io.sails.url = 'http://localhost:1337';
 window.sails = io;
 
-},{"../public/browser.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\browser.jsx","history":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\history\\lib\\index.js","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","react-dom":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react-dom\\index.js","react-router":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react-router\\lib\\index.js","sails.io.js":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\sails.io.js\\sails.io.js","socket.io-client":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\socket.io-client\\lib\\index.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\routes.jsx":[function(require,module,exports){
+},{"../public/browser.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\browser.jsx","history":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\history\\lib\\index.js","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","react-dom":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react-dom\\index.js","react-router":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react-router\\lib\\index.js","sails.io.js":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\sails.io.js\\sails.io.js","socket.io-client":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\socket.io-client\\lib\\index.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\routes.jsx":[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -61224,9 +61229,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
+var _inputMutator = require('./main/inputMutator.jsx');
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
+var _inputMutator2 = _interopRequireDefault(_inputMutator);
 
 var _underscore = require('underscore');
 
@@ -61252,27 +61257,33 @@ var Main = function (_Component) {
     _createClass(Main, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var mutator = document.querySelector(".ul_mutator");
-            mutator.addEventListener("animationend", function (event) {
+            var mutator,
+                iconType,
+                inter,
+                executedAni,
+                circles = document.querySelectorAll(".quest_circles > li");
 
-                if (event.animationName != "inputChange") return;
-                var iconType = document.getElementById("icon_type");
-                iconType.className = "icon_type_animate";
+            // ANIMATIONS EXTRAS
+            inter = 200;
+            executedAni = 0;
 
-                // start animation circles quest.
-                var iter = 200;
-                var executedAni = 0;
-                var circles = document.querySelectorAll(".quest_circles > li");
-                _underscore2.default.each(circles, function (value, key) {
-                    setTimeout(function () {
-                        value.className = "circleAni";
-                        executedAni++;
-                        if (circles.length == executedAni) {
-                            circles[0].className = circles[0].className + " circleSelected";
-                        }
-                    }, iter);
-                    if (key) iter += iter;
-                });
+            // anima el icon user.
+            iconType = document.getElementById("icon_type");
+            iconType.className = "icon_type_animate";
+
+            // start animation start circles quest.
+            _underscore2.default.each(circles, function (element, key) {
+                setTimeout(function () {
+                    executedAni++;
+                    element.className = "circlesInit";
+                    // agrege una clase especial para poner el primero ciculo en focus.
+                    if (circles.length == executedAni) {
+                        circles[2].addEventListener("animationend", function () {
+                            circles[0].className = 'circleFocus';
+                        });
+                    }
+                }, inter);
+                inter += inter;
             });
         }
     }, {
@@ -61295,29 +61306,7 @@ var Main = function (_Component) {
                             _react2.default.createElement('li', { className: 'other' }),
                             _react2.default.createElement('li', { className: 'start' })
                         ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'con_inputs_mutator' },
-                            _react2.default.createElement(
-                                'ul',
-                                { className: 'ul_mutator' },
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'icon_type', id: 'icon_type' },
-                                    _react2.default.createElement('i', { className: 'child icon' })
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'input_mut' },
-                                    _react2.default.createElement('input', { placeholder: 'tu usuario!', type: 'text', className: 'input_mutator' })
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    { className: 'icon_arrow' },
-                                    _react2.default.createElement('i', { className: 'chevron down icon' })
-                                )
-                            )
-                        )
+                        _react2.default.createElement(_inputMutator2.default, null)
                     )
                 ),
                 _react2.default.createElement('div', { className: 'main__st_bot' })
@@ -61331,7 +61320,107 @@ var Main = function (_Component) {
 exports.default = Main;
 ;
 
-},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","react-dom":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react-dom\\index.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
+},{"./main/inputMutator.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\main\\inputMutator.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\main\\inputMutator.jsx":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _underscore = require('underscore');
+
+var _underscore2 = _interopRequireDefault(_underscore);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var InputMutator = function (_Component) {
+    _inherits(InputMutator, _Component);
+
+    function InputMutator() {
+        _classCallCheck(this, InputMutator);
+
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(InputMutator).call(this));
+
+        _this.circlesSection = 0;
+        return _this;
+    }
+
+    _createClass(InputMutator, [{
+        key: 'changeInput',
+        value: function changeInput(event) {
+            var _this2 = this;
+
+            var mutator = document.querySelector(".ul_mutator_enter"),
+                circles = document.querySelectorAll(".quest_circles > li");
+
+            if (!document.querySelector(".input_mutator").value) {
+                //document.querySelector(".ul_mutator").className = "";
+            }
+            mutator.className = "ul_mutator_out";
+            mutator.addEventListener("animationend", function (event) {
+
+                if (event.animationName != "inputChangeOut") return;
+                if (_this2.circlesSection == 2) return;
+
+                _this2.circlesSection++;
+                // efecto de ingreso del input mutator
+                mutator.className = "ul_mutator_enter";
+                circles[_this2.circlesSection].className = "circlesSelected";
+                event.preventDefault();
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'con_inputs_mutator' },
+                _react2.default.createElement(
+                    'ul',
+                    { className: 'ul_mutator_enter' },
+                    _react2.default.createElement(
+                        'li',
+                        { className: 'icon_type', id: 'icon_type' },
+                        _react2.default.createElement('i', { className: 'child icon' })
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        { className: 'input_mut' },
+                        _react2.default.createElement('input', { placeholder: 'tu usuario!', type: 'text', className: 'input_mutator' })
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        { className: 'icon_arrow', onClick: function onClick() {
+                                _this3.changeInput.call(_this3);
+                            } },
+                        _react2.default.createElement('i', { className: 'chevron down icon' })
+                    )
+                )
+            );
+        }
+    }]);
+
+    return InputMutator;
+}(_react.Component);
+
+exports.default = InputMutator;
+;
+
+},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
