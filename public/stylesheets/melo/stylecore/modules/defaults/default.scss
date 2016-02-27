@@ -1,0 +1,55 @@
+html, body {
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+*:focus {
+    outline: none;
+}
+ /* PLACE HOLDERS */
+::-webkit-input-placeholder {
+  color: #B0BEC5;
+}
+
+/* VARIABLES GLOBALES */
+$main_bg: #40de40;
+$globalItemColor: #263238;
+$globalFontColor: #263238;
+
+/* Material icon font configurations */
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.md-18 {
+    font-size: 18px !important;
+}
+
+.md-24 {
+    font-size: 24px !important;
+}
+
+.md-36 {
+    font-size: 36px !important;
+}
+
+.md-48 {
+    font-size: 48px !important;
+}

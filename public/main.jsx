@@ -12,3 +12,4 @@ io.sails.autoConnect = true;
 io.sails.transports = ['websocket'];
 io.sails.url = 'http://localhost:1337';
 window.sails = io;
+

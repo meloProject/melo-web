@@ -1,4 +1,37 @@
-﻿@mixin inputChange() {
+﻿@mixin show() {
+    -webkit-animation-name: show;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-fill-mode: forwards;
+    @keyframes show {
+        to {
+            opacity: 10;
+        }
+    }
+}
+
+
+
+@mixin iconAnimate() {
+    -webkit-animation-name: iconAnimate;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.7s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    @keyframes iconAnimate {
+        0% {
+            -webkit-transform: translate(0, 0);
+        }
+        50% {
+            -webkit-transform: translate(0, 5px);
+        }
+        100% {
+            -webkit-transform: translate(0, 0);
+        }
+    }
+}
+
+@mixin inputChangeEnter() {
     -webkit-animation-name: inputChange;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-duration: 1s;
@@ -22,30 +55,80 @@
 }
 
 
-@mixin arrowChange() {
-    -webkit-animation-name: arrowChange;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-duration: 0.4s;
+@mixin inputChangeOut() {
+    -webkit-animation-name: inputChange;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.5s;
     -webkit-animation-fill-mode: forwards;
-    @keyframes arrowChange {
-        to {
-            -webkit-transform: translate(0px, 5px);
+
+    @keyframes inputChange {
+        0% {
+            -webkit-transform: scale(1);
         }
-       
+
+        25% {
+            -webkit-transform: scale(1.1);
+        }
+
+        50% {
+            -webkit-transform: scale(1);
+        }
+
+        100% {
+            -webkit-transform: scale(1) translateY(50px);
+            opacity: 0;
+        }
     }
 }
 
-@mixin arrowChangeUp() {
-    -webkit-animation-name: arrowChangeUp;
+
+@mixin arrowChange($name, $status) {
+    -webkit-animation-name: arrow#{$name};
     -webkit-animation-timing-function: ease;
-    -webkit-animation-duration: 0.5s;
-    @keyframes arrowChangeUp {
-        from {
-            -webkit-transform: translate(0px, 5px);
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-fill-mode: forwards;
+
+    @if($status == hover) {
+        @keyframes arrow#{$name} {
+            to {
+                color: #03A9F4;
+                -webkit-transform: translateX(5px);
+            }
         }
-        to {
-            -webkit-transform: translate(0px, 0px);
+    }
+    @else {
+        @keyframes arrow#{$name} {
+            from {
+                color: #03A9F4;
+                -webkit-transform: translateX(5px);
+            }
+
+            to {
+                color: $globalItemColor;
+                -webkit-transform: translateX(0px);
+            }
         }
-       
     }
 }
+
+@mixin circlesMutStartAnimation() {
+    -webkit-animation-name: circlesMutStartAnimation;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-fill-mode: forwards;
+    @keyframes circlesMutStartAnimation {
+        0% {
+            -webkit-transform: scale(0);
+        }
+
+        60% {
+            -webkit-transform: scale(1.5);
+        }
+
+        100% {
+            -webkit-transform: scale(1);
+            opacity: 0.6;
+        }
+    }
+}
+
