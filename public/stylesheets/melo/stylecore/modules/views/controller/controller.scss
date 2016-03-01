@@ -43,7 +43,7 @@
     padding: 0 !important;
     cursor: none;
     z-index: 9999;
-    @include setSpin(1, 0.7s, 360deg, linear);
+   @include setSpin(1, 0.8s, 360deg, linear);
 }
     
     

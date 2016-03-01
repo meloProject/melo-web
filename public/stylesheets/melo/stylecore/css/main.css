@@ -1,6 +1,7 @@
 /* EXTERNALS DEPS */
 @import url(./resources/bower_components/semantic-ui-icon/icon.min.css);
 /* EXTERNAL DEPS */
+/* VARIABLES GLOBALES */
 html, body {
   margin: 0;
   height: 100vh;
@@ -9,11 +10,23 @@ html, body {
 
 ul {
   list-style: none;
-  padding: 0px;
-  margin: 0px; }
+  padding: 0;
+  margin: 0; }
 
 *:focus {
   outline: none; }
+
+a {
+  color: inherit !important;
+  height: 100% !important;
+  width: auto !important; }
+
+a:active {
+  color: inherit !important; }
+
+p {
+  font-family: "Roboto";
+  color: #263238; }
 
 /* PLACE HOLDERS */
 input::-webkit-input-placeholder,
@@ -23,7 +36,6 @@ textarea::-webkit-input-placeholder {
 ::-ms-clear {
   display: none; }
 
-/* VARIABLES GLOBALES */
 /* Material icon font configurations */
 .material-icons {
   font-family: 'Material Icons';
@@ -49,17 +61,32 @@ textarea::-webkit-input-placeholder {
 .md-48 {
   font-size: 48px !important; }
 
+@font-face {
+  font-family: "roboto";
+  src: url("./resources/fonts/Roboto/Roboto-Regular.ttf"); }
+
+.text-center {
+  text-align: center; }
+
 /* MIXINS */
 /* MAIN PAGE */
+@media screen and (min-width: 1024px) {
+  .con_inputs_mutator {
+    margin-right: 0 !important; } }
+
 .main-main, .main-main_error {
   width: 100%;
   height: 100%;
-  background: #40de40;
+  background: #b757fd;
+  background: -moz-linear-gradient(top, #b757fd 0%, #a635fc 100%);
+  background: -webkit-linear-gradient(top, #b757fd 0%, #a635fc 100%);
+  background: linear-gradient(to bottom, #b757fd 0%, #a635fc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b757fd', endColorstr='#a635fc',GradientType=0 );
   display: flex;
   flex-direction: column; }
 
 .main-main_error {
-  background: #F44336; }
+  background: #FF1744; }
 
 .main__st_top {
   width: 100%;
@@ -73,6 +100,7 @@ textarea::-webkit-input-placeholder {
   height: 80%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   padding: 0px !important;
   margin: 0px !important; }
 
@@ -84,8 +112,8 @@ textarea::-webkit-input-placeholder {
   margin: 0px !important; }
 
 .conta_input_mutator {
-  width: 350px;
-  margin-right: 60px;
+  width: 100%;
+  max-width: 350px;
   height: 65px;
   display: flex;
   align-self: center;
@@ -94,7 +122,8 @@ textarea::-webkit-input-placeholder {
 .con_inputs_mutator {
   width: 100%;
   height: 100%;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-right: 10%; }
 
 .input_mutator {
   width: 100%;
@@ -179,9 +208,10 @@ textarea::-webkit-input-placeholder {
   height: 100%;
   display: flex;
   flex-direction: row;
-  border-radius: 100px;
+  border-radius: 0px;
   background: white;
-  box-shadow: 0 6px 8px rgba(28, 28, 28, 0.13); }
+  box-shadow: 0 6px 8px rgba(28, 28, 28, 0.13);
+  opacity: 1; }
   .ul_mutator li, .ul_mutator_out li, .ul_mutator_enter li, .ul_mutator_error li, .ul_mutator_error_iterator li {
     height: 100%;
     display: flex;
@@ -208,9 +238,10 @@ textarea::-webkit-input-placeholder {
   100% {
     -webkit-transform: translate(0, 0); } }
   .ul_mutator .input_mut, .ul_mutator_out .input_mut, .ul_mutator_enter .input_mut, .ul_mutator_error .input_mut, .ul_mutator_error_iterator .input_mut {
-    width: 60%; }
+    width: 60%;
+    height: 99%; }
   .ul_mutator .icon_arrow, .ul_mutator_out .icon_arrow, .ul_mutator_enter .icon_arrow, .ul_mutator_error .icon_arrow, .ul_mutator_error_iterator .icon_arrow {
-    width: 20%;
+    width: 100%;
     height: 100%;
     display: flex;
     font-size: 20px;
@@ -241,6 +272,9 @@ textarea::-webkit-input-placeholder {
     .ul_mutator .icon_arrow i, .ul_mutator_out .icon_arrow i, .ul_mutator_enter .icon_arrow i, .ul_mutator_error .icon_arrow i, .ul_mutator_error_iterator .icon_arrow i {
       align-self: center;
       -webkit-transform: rotateZ(-90deg); }
+
+.mut_links {
+  width: 20% !important; }
 
 .circlesInit {
   -webkit-animation-name: circleAnimation;
@@ -308,7 +342,9 @@ textarea::-webkit-input-placeholder {
     opacity: 10; } }
 
 .quest_circles {
-  width: 60px;
+  width: 10%;
+  margin-left: 3%;
+  margin-right: 2%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -318,10 +354,108 @@ textarea::-webkit-input-placeholder {
   .quest_circles li {
     width: 10px;
     height: 10px;
-    border-radius: 100px;
+    border-radius: 0;
     background: white;
     margin-top: 9px;
     opacity: 0; }
+
+.mutator_messages {
+  width: 200px;
+  height: 0;
+  align-self: center;
+  margin-top: 50px;
+  font-size: 18px;
+  color: white;
+  font-family: "roboto"; }
+
+/* SCREEN PAGE */
+.main-nexus {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.con_selection {
+  align-self: center; }
+
+.stage {
+  width: 170px;
+  height: 170px;
+  -webkit-perspective: 1600px;
+  -webkit-perspective-origin: 50% -240px;
+  cursor: pointer;
+  -webkit-animation-name: boxAnimate;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite; }
+
+@keyframes boxAnimate {
+  0% {
+    -webkit-transform: translate(0, 0); }
+  50% {
+    -webkit-transform: translate(0, 5px); }
+  100% {
+    -webkit-transform: translate(0, 0); } }
+
+figure {
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #a641f2;
+  -webkit-transform-origin: 50% 50% 0; }
+
+.cube {
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation-name: rotateOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.6s;
+  -webkit-animation-fill-mode: forwards; }
+
+@keyframes rotateOut {
+  from {
+    -webkit-transform: rotateY(712deg) translateY(-20px); }
+  to {
+    -webkit-transform: rotateY(0deg) translateY(0px); } }
+  .cube:hover {
+    -webkit-animation-name: rotateSelection;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.6s; }
+
+@keyframes rotateSelection {
+  to {
+    -webkit-transform: rotateY(712deg) translateY(-20px); } }
+
+.front {
+  -webkit-transform: translateZ(50px);
+  display: flex;
+  justify-content: center; }
+  .front i {
+    font-size: 50px;
+    color: #ffea00;
+    align-self: center; }
+
+.back {
+  -webkit-transform: rotateY(180deg) translateZ(50px); }
+
+.top {
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+  background: -webkit-linear-gradient(top, #7a2ab7 0%, #651c9c 100%); }
+
+.bottom {
+  -webkit-transform: rotateX(-90deg) translateZ(50px);
+  -webkit-box-shadow: 0 2px 50px rgba(0, 0, 0, 0.4); }
+
+.left {
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+  background: -webkit-linear-gradient(top, #7a2ab7 0%, #651c9c 100%); }
+
+.right {
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+  background: -webkit-linear-gradient(top, #7a2ab7 0%, #651c9c 100%); }
 
 /* CONTROLLER PAGE */
 /*ROTATE SPIN*/
@@ -371,7 +505,7 @@ textarea::-webkit-input-placeholder {
   -webkit-animation-name: spin1;
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-duration: 0.7s; }
+  -webkit-animation-duration: 0.8s; }
 
 @-webkit-keyframes spin1 {
   to {

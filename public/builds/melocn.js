@@ -3087,7 +3087,8 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
     }, {
         key: "ONMOUSEDOWN",
         value: function ONMOUSEDOWN(event) {
-            var self = this;
+            var _this2 = this;
+
             this.captureEvents = true;
             // center element on center of mouse pointer
             this.element.style.top = event.y - this.ch / 2 + "px";
@@ -3096,9 +3097,9 @@ var DesktopCn = exports.DesktopCn = function (_DispositiveCn) {
             // set first impact sector.
             this.y = event.y;
             this.x = event.x;
-            function handleEvent(event) {
-                if (self.captureEvents) self.ONMOUSEMOVE.call(self, event);else self.container.removeEventListener("mousemove", handleEvent);
-            }
+            var handleEvent = function handleEvent(event) {
+                if (_this2.captureEvents) _this2.ONMOUSEMOVE(event);else _this2.container.removeEventListener("mousemove", handleEvent);
+            };
             // attach event for mouse move
             this.container.addEventListener("mousemove", handleEvent);
             this.start();
@@ -3275,7 +3276,7 @@ var Graphics = exports.Graphics = function () {
                 angleEnd: circleSet.angleEnd || 90,
                 hue: circleSet.hue || 450,
                 thickness: circleSet.thickness || 35,
-                bgColor: "#4c8efe",
+                bgColor: "#40de40",
                 rotation: 0
             };
             this.circleInverse = {
@@ -3286,7 +3287,7 @@ var Graphics = exports.Graphics = function () {
                 angleEnd: circleSet.angleEnd || 90,
                 hue: circleSet.hue || 450,
                 thickness: circleSet.thickness || 35,
-                bgColor: "#ffc31c",
+                bgColor: "#40de40",
                 rotation: 180
             };
             // aspect props.

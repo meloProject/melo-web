@@ -1,26 +1,25 @@
 ﻿import React, { Component } from "react";
+import { Link } from "react-router";
 import _ from "underscore";
 
 export default class InputMutator extends Component {
-
     constructor() {
         super();
+
 
         // mutator preferences
         this.state = {
             icon: "child colorChild",
-            placeholder: "Apodo"
+            placeholder: "usuario",
+            changePage: false
         };
 
         this.mutatorList = [{
             icon: "child colorChild",
-            placeholder: "Apodo"
+            placeholder: "usuario"
         }, {
             icon: "lock colorLock",
-            placeholder: "Tu contraseña"
-        }, {
-            icon: "rocket colorRocket",
-            placeholder: "Estamos listos!"
+            placeholder: "contraseña"
         }];
 
         this.main;
@@ -28,11 +27,26 @@ export default class InputMutator extends Component {
         this.circles;
         this.inptMut;
         this.circlesSection = 0;
-
         this.iteratorError = 0;
+
+        this.changeInput = this.changeInput.bind(this);
+        this.changePage = this.changePage.bind(this);
+    }
+
+    componentDidMount() {
+        // anima el icon user.
+        var iconType = document.getElementById("icon_type");
+        iconType.className = "icon_type_animate";
+    }
+
+    changePage(event) {
+        document.querySelector(".mut_links").click();
     }
 
     changeInput(event) {
+        /* hay que controlar la animacion del main ya que se hacen repetciones de error muy rapido y luego
+        se resuelve y se pasa a la proxima pantalla la animacion se sigue ejecutando. */
+
         if (!this.mutator) {
             this.mutator = document.getElementById("mutator");
             this.circles = document.querySelectorAll(".quest_circles > li");
@@ -40,35 +54,52 @@ export default class InputMutator extends Component {
         }
 
         // check empty input
-        if (!this.inptMut.value) {
+        if (!this.inptMut.validity.valid) {
+
             // intercambia las clases para volver a animar, cada vez que el usuario no resuelve el conflicto.
             if (this.iteratorError) {
                 this.mutator.className = "ul_mutator_error_iterator";
                 this.iteratorError = 0;
-                this.setState({
-                    placeholder: this.mutatorList[this.circlesSection].placeholder + " hey!"
-                });
             } else {
                 this.mutator.className = "ul_mutator_error";
                 this.iteratorError = 1;
             }
 
-            this.main = document.getElementById("main-main");
+            // en caso de ser invalido el contenedor:
+            this.main = document.getElementById("mainContainer");
             this.main.className = "main-main_error";
 
+            if (this.circlesSection > 0) {
+                this.setState({
+                    changePage: false
+                });
+            }
+
             return;
+
         }
-        // va a ser true si se se presento un error.
+
+        // en caso de ser valido el input mutator:
         if (this.main) this.main.className = "main-main";
 
-        // se activa la animacion de incio. 
+        // se activa la animacion de retiro del mutator. 
         this.mutator.className = "ul_mutator_out";
         this.inptMut.value = "";
-        this.mutator.addEventListener("animationend", (event) => {
-            if (event.animationName != "inputChangeOut") return;
-            if (this.circlesSection == 2) return;
-            this.circlesSection++;
 
+        this.mutator.addEventListener("animationend", (event) => {
+
+            if (event.animationName != "inputChangeOut") return;
+            if (this.circlesSection == 1) {
+                // aacciones para ir al proxima pagina.
+                this.setState({
+                    changePage: true
+                });
+
+                this.changePage();
+                return;
+            }
+
+            this.circlesSection++;
             this.setState({
                 icon: this.mutatorList[this.circlesSection].icon,
                 placeholder: this.mutatorList[this.circlesSection].placeholder
@@ -77,28 +108,45 @@ export default class InputMutator extends Component {
             // efecto de ingreso del input mutator
             this.mutator.className = "ul_mutator_enter";
             this.circles[this.circlesSection].className = "circlesSelected";
-
             event.preventDefault();
         });
     }
 
     render() {
+        function changePage() {
+            if (!this.state.changePage) {
+                return (
+                    <a className="mut_links" onClick={ this.changeInput }>
+                        <li className="icon_arrow">
+                            <i className="chevron down icon"></i>
+                        </li>
+                    </a>
+                )
+            } else {
+                return (
+                    <Link to="/nexus" className="mut_links" onClick={ this.changePage }>
+                        <li className="icon_arrow">
+                            <i className="chevron down icon"></i>
+                        </li>
+                    </Link>
+                )
+            }
+        }
+
         return (
             <div className="con_inputs_mutator">
-                <ul className="ul_mutator_enter" id="mutator">
-                    <li className="icon_type" id="icon_type">
-                        <i className={this.state.icon + " icon"}></i>
-                    </li>
-                    <li className="input_mut">
-                        <input placeholder={this.state.placeholder} type="text" className="input_mutator"/>
-                    </li>
-                    <li className="icon_arrow" onClick={()=> {
-                        this.changeInput.call(this);
-                    }}>
-                        <i className="chevron down icon"></i>
-                    </li>
-                </ul>
-            </div>
+            <ul className="ul_mutator_enter" id="mutator">
+                <li className="icon_type" id="icon_type">
+                    <i className={this.state.icon + " icon"}></i>
+                </li>
+                <li className="input_mut">
+                    <input required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{5,20}$" placeholder={this.state.placeholder} type="text" className="input_mutator"/>
+                </li>
+                 {
+                    changePage.call(this)
+                 }
+            </ul>
+        </div>
         )
     }
 };

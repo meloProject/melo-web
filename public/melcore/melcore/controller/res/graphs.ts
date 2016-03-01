@@ -72,7 +72,7 @@ export class Graphics {
             angleEnd: circleSet.angleEnd || 90,
             hue: circleSet.hue || 450,
             thickness: circleSet.thickness || 35,
-            bgColor: "#4c8efe",
+            bgColor: "#40de40",
             rotation: 0
         };
 
@@ -84,7 +84,7 @@ export class Graphics {
             angleEnd: circleSet.angleEnd || 90,
             hue: circleSet.hue || 450,
             thickness: circleSet.thickness || 35,
-            bgColor: "#ffc31c",
+            bgColor: "#40de40",
             rotation: 180
         };
 

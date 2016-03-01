@@ -1,0 +1,16 @@
+﻿@mixin cubeAnimation() {
+    -webkit-animation-name: show;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-fill-mode: forwards;
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 10;
+        }
+    }
+}

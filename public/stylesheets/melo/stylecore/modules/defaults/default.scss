@@ -1,3 +1,12 @@
+
+/* VARIABLES GLOBALES */
+$main_bg: #a641f2;
+$nexus_bg: #ffffff;
+$globalItemColor: #263238;
+$globalFontColor: #263238;
+$presseds: #FFD600;
+$error_bg: #FF1744;
+
 html, body {
     margin: 0;
     height: 100vh;
@@ -7,15 +16,31 @@ html, body {
 
 ul {
     list-style: none;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
 }
 
 *:focus {
     outline: none;
 }
-/* PLACE HOLDERS */
 
+a {
+    color: inherit !important;
+    height: 100% !important;
+    width: auto !important;
+}
+
+a:active {
+    color: inherit !important;
+}
+
+
+p {
+    font-family: "Roboto";
+    color: $globalFontColor;
+}
+
+/* PLACE HOLDERS */
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
     color: #B0BEC5;
@@ -24,13 +49,6 @@ textarea::-webkit-input-placeholder {
 ::-ms-clear {
     display: none;
 }
-
-/* VARIABLES GLOBALES */
-$main_bg: #40de40;
-$globalItemColor: #263238;
-$globalFontColor: #263238;
-$presseds: #FFD600;
-$error_bg: #F44336;
 
 /* Material icon font configurations */
 .material-icons {
@@ -60,4 +78,19 @@ $error_bg: #F44336;
 
 .md-48 {
     font-size: 48px !important;
+}
+
+// FONTS
+@mixin getFont($name, $url) {
+    @font-face {
+        font-family: $name;
+        src: url($url);
+    }
+}
+
+@include getFont('roboto', './resources/fonts/Roboto/Roboto-Regular.ttf');
+
+
+.text-center {
+    text-align: center;
 }

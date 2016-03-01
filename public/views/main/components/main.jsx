@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InputMutator from "./main/inputMutator.jsx";
+import MutatorMessages from "./main/mutatorMessages.jsx";
 import _ from 'underscore';
 
 export default class Main extends Component {
@@ -14,10 +15,6 @@ export default class Main extends Component {
         inter = 50; // animation call velocity
         executedAni = 0;
 
-        // anima el icon user.
-        iconType = document.getElementById("icon_type");
-        iconType.className = "icon_type_animate";
-
         // start animation start circles quest.
         _.each(circles, (element, key) => {
             setTimeout(() => {
@@ -25,7 +22,7 @@ export default class Main extends Component {
                 element.className = "circlesInit";
                 // agrege una clase especial para poner el primero ciculo en focus.
                 if (circles.length == executedAni) {
-                    circles[2].addEventListener("animationend", () => {
+                    circles[1].addEventListener("animationend", () => {
                         circles[0].className = 'circleFocus';
                     });
                 }
@@ -36,17 +33,17 @@ export default class Main extends Component {
 
     render() {
         return (
-            <div className="main-main" id="main-main">
+            <div  id="mainContainer" className="main-main">
             <div className="main__st_top"></div>
             <div className="main__st_mid">
                 <div className="conta_input_mutator">
                     <ul className="quest_circles">
-                        <li className="classAut0"></li>
-                        <li className="other"></li>
-                        <li className="start"></li>
+                        <li className="username"></li>
+                        <li className="password"></li>
                     </ul>
                     <InputMutator/>
                 </div>
+                <MutatorMessages/>
             </div>
             <div className="main__st_bot"></div>
         </div>

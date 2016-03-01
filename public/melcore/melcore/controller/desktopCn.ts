@@ -15,8 +15,8 @@ export class DesktopCn extends DispositiveCn {
         this.container = container;
         this.element = element;
         this.element.className = "circlesOn";
-
-        if (element.tagName === "CANVAS") this.graphics.set(<HTMLCanvasElement>element);     
+        if (element.tagName === "CANVAS")
+            this.graphics.set(<HTMLCanvasElement>element);     
     }
 
     public create(container: HTMLElement, element: HTMLCanvasElement | HTMLElement) {
@@ -37,7 +37,6 @@ export class DesktopCn extends DispositiveCn {
     }
 
     public ONMOUSEDOWN(event: MouseEvent) {
-        var self: DesktopCn = this;
         this.captureEvents = true;
 
         // center element on center of mouse pointer
@@ -49,11 +48,11 @@ export class DesktopCn extends DispositiveCn {
         this.y = event.y;
         this.x = event.x;
 
-        function handleEvent(event: MouseEvent) {
-            if (self.captureEvents)
-                self.ONMOUSEMOVE.call(self, event);
+        let handleEvent = (event: MouseEvent) => {
+            if (this.captureEvents)
+                this.ONMOUSEMOVE(event);
             else
-                self.container.removeEventListener("mousemove", handleEvent);
+                this.container.removeEventListener("mousemove", handleEvent);
         }
 
         // attach event for mouse move
