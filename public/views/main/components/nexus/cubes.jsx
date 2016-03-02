@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
-import NexusStore from './actions/nexusActions.jsx';
+import NexusActions from './actions/nexusActions.jsx';
 import _ from 'underscore';
 
 export default class Cubes extends Component {
-    constructor() {
-        super(); 
-    }
-
-    onSelectItem(itemName) {
-        let text = document.getElementById("nex_text_item");
-        text.className = "text_item_description_in";
-        NexusStore.setTextForChacarterDes(itemName);
-    }
-
-    onMouseOutItem() {
-        let text = document.getElementById("nex_text_item");
-        text.className = "text_item_description_out";
+    animateTextBoxOut() {
+        document.getElementById("nex_text_container")
+            .className = "nex_text_container_out";
     }
 
     render() {
@@ -80,8 +70,12 @@ export default class Cubes extends Component {
         }
 
         return (
-            <div className="stage" onMouseOver={this.onSelectItem()} onMouseOut={this.onMouseOutItem()}>
-	            <div className="cube">
+            <div className="stage">
+	            <div className="cube" onMouseOver={()=> {
+	            	NexusActions.settext(this.props.figure)
+	            }} onMouseOut={()=> {
+	            	this.animateTextBoxOut()
+	            }}>
 				    <figure className={"back" + " figure" + this.props.indent}></figure>
 				    <figure className={"top" + " figure" + this.props.indent}></figure>
 				    <figure className={"bottom" + " figure" + this.props.indent}></figure>
@@ -92,8 +86,7 @@ export default class Cubes extends Component {
 							svgFigure(this.props.figure)
 						}
 				    </figure>
-				</div> 
-		    </div>
+				</div> < /div>
         )
     }
 };

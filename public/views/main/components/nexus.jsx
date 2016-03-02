@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import LateralPanel from '././standars/panelLateral.jsx';
 import Cubes from './nexus/cubes.jsx';
 import NexusStore from './stores/nexusStore.jsx';
 
@@ -6,21 +7,32 @@ export default class Nexus extends Component {
 
     constructor() {
         super();
-
-        this.state = {
-        	textItem: NexusStore.itemTextDescrition 
-        };
-
         this.cubes = [{
-            figure: "female",
-            description: "chica"
+            figure: "female"
         }, {
-            figure: "alien",
-            description: "marciano"
+            figure: "alien"
         }, {
-            figure: "male",
-            description: "chico"
+            figure: "male"
         }];
+
+        this.state = this.getState();
+        this.onChange = this.onChange.bind(this);
+    }
+
+    getState() {
+        return NexusStore.getState();
+    }
+    
+    componentDidMount() {
+        NexusStore.listen(this.onChange);
+    }
+
+    componentWillUnmount() {
+        NexusStore.unlisten(this.onChange);
+    }
+
+    onChange(state) {
+        this.setState(state);
     }
 
     render() {
@@ -36,10 +48,11 @@ export default class Nexus extends Component {
 								    })
 								}
 					    </div>
+                        <LateralPanel/>
 				</div>
 				<div className="main_nex__st_bot">
-					<div className="nex_text_container">
-						
+					<div className="nex_text_container" id="nex_text_container">
+						<span>{this.state.text}</span>
 					</div>
 				</div>
 			</div>

@@ -1,20 +1,32 @@
 import Alt from '../alt.jsx';
-import nexusActions from '../nexus/actions/nexusActions.jsx';
+import NexusActions from '../nexus/actions/nexusActions.jsx';
 
 class NexusStore {
-  constructor() {
-    this.itemTextDescrition;
+    constructor() {
 
-     this.bindListeners({
-      handleItemTextDescrition: nexusActions.SETTEXTFORCHACARTERDES,
-    });
+        this.text = "";
+        this.cubes = {
+            "female": {
+                "description": "Chica"
+            },
+            "alien": {
+                "description": "Extraterrestre"
+            },
+            "male": {
+                "description": "Chico"
+            }
+        };
 
-  }
 
-  handleItemTextDescrition(text) {
-    this.text = text;
-  }  
+        this.bindListeners({
+            handleItemTextDescrition: NexusActions.SETTEXT
+        });
 
+    }
+
+    handleItemTextDescrition(type) {
+        this.text = this.cubes[type].description;
+    }
 }
 
 module.exports = Alt.createStore(NexusStore, 'NexusStore');

@@ -33,7 +33,7 @@ export default class Main extends Component {
 
     render() {
         return (
-            <div  id="mainContainer" className="main-main">
+            <div id="mainContainer" className="main-main">
             <div className="main__st_top"></div>
             <div className="main__st_mid">
                 <div className="conta_input_mutator">

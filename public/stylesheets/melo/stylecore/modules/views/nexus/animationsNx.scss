@@ -88,7 +88,7 @@ $rotationSpeed: 1s;
     @keyframes rotateSelection {
         to {
             -webkit-transform: rotateY(-360deg) translateY(-20px);
-        }
+            }
     }
 }
 
@@ -117,7 +117,6 @@ $rotationSpeed: 1s;
     -webkit-animation-duration: 0.7s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation-iteration-count: infinite;
-
     @keyframes boxAnimate {
         0% {
             -webkit-transform: translate(0, 0);
@@ -132,3 +131,51 @@ $rotationSpeed: 1s;
         }
     }
 }
+
+
+@mixin nexTextContainer() {
+    -webkit-animation-name: nexTextContainer;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    opacity: 0;
+    @keyframes nexTextContainer {
+        0% {
+            -webkit-transform: scale(0.2);
+        }
+
+        60% {
+            -webkit-transform: scale(1.1);
+        }
+
+        100% {
+            opacity: 8;
+        }
+     }
+}
+
+@mixin nexTextContainerOut() {
+    -webkit-animation-name: nexTextContainerOut;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    @keyframes nexTextContainerOut {
+        0% {
+            -webkit-transform: scale(1);
+        }
+
+        25% {
+            -webkit-transform: scale(1.1);
+        }
+
+        50% {
+            -webkit-transform: scale(1);
+        }
+
+        100% {
+            -webkit-transform: translateY(50px);
+            opacity: 0;
+        }
+     }
+}
+

@@ -74,6 +74,31 @@ textarea::-webkit-input-placeholder {
   .con_inputs_mutator {
     margin-right: 0 !important; } }
 
+.panel_l_container {
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 50%; }
+
+.ul_panel_lateral {
+  width: 100%;
+  height: 100%;
+  flex-direction: row; }
+  .ul_panel_lateral li {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center; }
+    .ul_panel_lateral li i {
+      align-self: center;
+      padding: 10px;
+      font-size: 30px;
+      color: #333;
+      cursor: pointer; }
+      .ul_panel_lateral li i:hover {
+        color: #1997f6; }
+
 .main-main, .main-main_error {
   width: 100%;
   height: 100%;
@@ -364,16 +389,57 @@ textarea::-webkit-input-placeholder {
   color: white;
   font-family: "roboto"; }
 
-/* SCREEN PAGE */
+/* MELO PAGE */
+.main-melo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+/* LINKER PAGE */
+.main-linker {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column; }
+
+.main_linker__st_top {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  padding: 0px !important;
+  margin: 0px !important; }
+
+.main_linker__st_mid {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px !important;
+  margin: 0px !important; }
+
+.main_linker__st_bot {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  padding: 0px !important;
+  margin: 0px !important; }
+
+/* NEXUS PAGE */
 @media screen and (max-width: 1023px) {
   .con_selection {
-    flex-direction: column !important; }
-  .main_nex__st_mid {
-    justify-content: center !important; } }
+    flex-direction: column !important; } }
 
 @media screen and (min-width: 1023px) {
+  .main_nex__st_top {
+    height: 50% !important; }
   .main_nex__st_mid {
-    justify-content: center !important; } }
+    justify-content: center !important;
+    height: 40% !important; }
+  .main_nex__st_bot {
+    height: 100% !important; } }
 
 .icons8-User-Female {
   /* Customizes User Female icon */
@@ -480,8 +546,49 @@ textarea::-webkit-input-placeholder {
   width: 100%;
   height: 25%;
   display: flex;
+  justify-content: center;
   padding: 0px !important;
   margin: 0px !important; }
+
+.nex_text_container {
+  align-self: center;
+  font-size: 45px;
+  font-family: "Roboto";
+  color: #333;
+  -webkit-animation-name: nexTextContainer;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  opacity: 0; }
+
+@keyframes nexTextContainer {
+  0% {
+    -webkit-transform: scale(0.2); }
+  60% {
+    -webkit-transform: scale(1.1); }
+  100% {
+    opacity: 8; } }
+
+.nex_text_container_out {
+  align-self: center;
+  font-size: 45px;
+  font-family: "Roboto";
+  color: #333;
+  -webkit-animation-name: nexTextContainerOut;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards; }
+
+@keyframes nexTextContainerOut {
+  0% {
+    -webkit-transform: scale(1); }
+  25% {
+    -webkit-transform: scale(1.1); }
+  50% {
+    -webkit-transform: scale(1); }
+  100% {
+    -webkit-transform: translateY(50px);
+    opacity: 0; } }
 
 .con_selection {
   width: 70%;

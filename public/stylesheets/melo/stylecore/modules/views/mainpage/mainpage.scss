@@ -6,6 +6,39 @@ $margins: 10%;
     }
 }
 
+// LATERAL PANEL
+
+.panel_l_container {
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.ul_panel_lateral {
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    li {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        i {
+            align-self: center;
+            padding: 10px;
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+            &:hover {
+                color: $globalHover;
+            }
+        }
+    }
+}
+
+
 // PRINCIPAL ESTRUCTURE
 .colorChild {
     //color: #F44336;
