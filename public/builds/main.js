@@ -61436,6 +61436,31 @@ var InputMutator = function (_Component) {
                     });
                 }
 
+                this.mutator.addEventListener("animationend", function (event) {
+
+                    if (event.animationName != "inputChangeOut") return;
+                    if (_this2.circlesSection == 1) {
+                        // aacciones para ir al proxima pagina.
+                        _this2.setState({
+                            changePage: true
+                        });
+
+                        _this2.changePage();
+                        return;
+                    }
+
+                    _this2.circlesSection++;
+                    _this2.setState({
+                        icon: _this2.mutatorList[_this2.circlesSection].icon,
+                        placeholder: _this2.mutatorList[_this2.circlesSection].placeholder
+                    });
+
+                    // efecto de ingreso del input mutator
+                    _this2.mutator.className = "ul_mutator_enter";
+                    _this2.circles[_this2.circlesSection].className = "circlesSelected";
+                    event.preventDefault();
+                });
+
                 return;
             }
 
@@ -61445,31 +61470,6 @@ var InputMutator = function (_Component) {
             // se activa la animacion de retiro del mutator.
             this.mutator.className = "ul_mutator_out";
             this.inptMut.value = "";
-
-            this.mutator.addEventListener("animationend", function (event) {
-
-                if (event.animationName != "inputChangeOut") return;
-                if (_this2.circlesSection == 1) {
-                    // aacciones para ir al proxima pagina.
-                    _this2.setState({
-                        changePage: true
-                    });
-
-                    _this2.changePage();
-                    return;
-                }
-
-                _this2.circlesSection++;
-                _this2.setState({
-                    icon: _this2.mutatorList[_this2.circlesSection].icon,
-                    placeholder: _this2.mutatorList[_this2.circlesSection].placeholder
-                });
-
-                // efecto de ingreso del input mutator
-                _this2.mutator.className = "ul_mutator_enter";
-                _this2.circles[_this2.circlesSection].className = "circlesSelected";
-                event.preventDefault();
-            });
         }
     }, {
         key: "render",
@@ -61570,17 +61570,21 @@ exports.default = mutatorMessages;
 ;
 
 },{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus.jsx":[function(require,module,exports){
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
-				value: true
+    value: true
 });
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _cubes = require('./nexus/cubes.jsx');
+
+var _cubes2 = _interopRequireDefault(_cubes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -61591,80 +61595,160 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Nexus = function (_Component) {
-				_inherits(Nexus, _Component);
+    _inherits(Nexus, _Component);
 
-				function Nexus() {
-								_classCallCheck(this, Nexus);
+    function Nexus() {
+        _classCallCheck(this, Nexus);
 
-								return _possibleConstructorReturn(this, Object.getPrototypeOf(Nexus).call(this));
-				}
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Nexus).call(this));
 
-				_createClass(Nexus, [{
-								key: "render",
-								value: function render() {
-												function blocks() {
-																return _react2.default.createElement(
-																				"li",
-																				null,
-																				_react2.default.createElement("div", { className: "selec_li_top" }),
-																				_react2.default.createElement("div", { className: "selec_li_mid" }),
-																				_react2.default.createElement("div", { className: "selec_li_bot" })
-																);
-												}
-												return _react2.default.createElement(
-																"div",
-																{ className: "main-nexus" },
-																_react2.default.createElement(
-																				"div",
-																				{ className: "con_selection" },
-																				_react2.default.createElement(
-																								"div",
-																								{ className: "stage" },
-																								_react2.default.createElement(
-																												"div",
-																												{ className: "cube" },
-																												_react2.default.createElement("figure", { className: "back" }),
-																												_react2.default.createElement("figure", { className: "top" }),
-																												_react2.default.createElement("figure", { className: "bottom" }),
-																												_react2.default.createElement("figure", { className: "left" }),
-																												_react2.default.createElement("figure", { className: "right" }),
-																												_react2.default.createElement(
-																																"figure",
-																																{ className: "front" },
-																																_react2.default.createElement("i", { className: "tablet icon" })
-																												)
-																								)
-																				),
-																				_react2.default.createElement(
-																								"div",
-																								{ className: "stage" },
-																								_react2.default.createElement(
-																												"div",
-																												{ className: "cube" },
-																												_react2.default.createElement("figure", { className: "back" }),
-																												_react2.default.createElement("figure", { className: "top" }),
-																												_react2.default.createElement("figure", { className: "bottom" }),
-																												_react2.default.createElement("figure", { className: "left" }),
-																												_react2.default.createElement("figure", { className: "right" }),
-																												_react2.default.createElement(
-																																"figure",
-																																{ className: "front" },
-																																_react2.default.createElement("i", { className: "desktop icon" })
-																												)
-																								)
-																				)
-																)
-												);
-								}
-				}]);
+        _this.cubes = [{
+            figure: "female"
+        }, {
+            figure: "alien"
+        }, {
+            figure: "male"
+        }];
+        return _this;
+    }
 
-				return Nexus;
+    _createClass(Nexus, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'main-nexus' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'con_selection' },
+                    this.cubes.map(function (object, key) {
+                        return _react2.default.createElement(_cubes2.default, { key: key, figure: object.figure, indent: key });
+                    })
+                )
+            );
+        }
+    }]);
+
+    return Nexus;
 }(_react.Component);
 
 exports.default = Nexus;
 ;
 
-},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
+},{"./nexus/cubes.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _underscore = require('underscore');
+
+var _underscore2 = _interopRequireDefault(_underscore);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Cubes = function (_Component) {
+	_inherits(Cubes, _Component);
+
+	function Cubes() {
+		_classCallCheck(this, Cubes);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Cubes).call(this));
+	}
+
+	_createClass(Cubes, [{
+		key: 'render',
+		value: function render() {
+
+			function svgFigure(figure) {
+				switch (figure) {
+					case "male":
+						return _react2.default.createElement(
+							'svg',
+							{ version: '1.0', x: '0px', y: '0px', width: '48px', height: '48px', viewBox: '0 0 48 48', className: 'icons8 icons8-User-Male' },
+							_react2.default.createElement(
+								'g',
+								null,
+								_react2.default.createElement('path', { fill: '#FFA726', d: 'M14,27c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S14,24.791,14,27' }),
+								_react2.default.createElement('path', { fill: '#FFA726', d: 'M42,27c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S42,24.791,42,27' })
+							),
+							_react2.default.createElement('path', { fill: '#FFB74D', d: 'M9,20c0-12.725,30-8.284,30,0v10c0,8.284-6.716,15-15,15S9,38.284,9,30V20z' }),
+							_react2.default.createElement('path', { fill: '#424242', d: 'M40.891,19.338C40.417,13.365,38.33,7.482,31,6l-2-3h-5C14.772,3,7,10.48,7,21v3.4l3,3.6v-6l21-7l7,6v7\tl3-3.6V21C41,20.436,40.957,19.883,40.891,19.338' }),
+							_react2.default.createElement(
+								'g',
+								null,
+								_react2.default.createElement('path', { fill: '#784719', d: 'M33,28c0,1.105-0.895,2-2,2s-2-0.895-2-2s0.895-2,2-2S33,26.895,33,28' }),
+								_react2.default.createElement('path', { fill: '#784719', d: 'M19,28c0,1.105-0.895,2-2,2s-2-0.895-2-2s0.895-2,2-2S19,26.895,19,28' })
+							),
+							_react2.default.createElement('path', { fill: '#FB8C00', d: 'M19,37h10c0,0-2,3-5,3S19,37,19,37z' })
+						);
+					case "female":
+						return _react2.default.createElement(
+							'svg',
+							{ version: '1.0', x: '0px', y: '0px', width: '48px', height: '48px', viewBox: '0 0 48 48', className: 'icons8 icons8-User-Female' },
+							_react2.default.createElement('path', { fill: '#BF360C', d: 'M35,44c0,0-6-2-11-2s-11,2-11,2V32h22V44z' }),
+							_react2.default.createElement(
+								'g',
+								null,
+								_react2.default.createElement('path', { fill: '#FFA726', d: 'M14,28c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S14,25.791,14,28' }),
+								_react2.default.createElement('path', { fill: '#FFA726', d: 'M42,28c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S42,25.791,42,28' })
+							),
+							_react2.default.createElement('path', { fill: '#FFB74D', d: 'M38,18c0-12.725-28-8.284-28,0v9c0,8.284,6.269,15,14,15s14-6.716,14-15V18z' }),
+							_react2.default.createElement(
+								'g',
+								null,
+								_react2.default.createElement('path', { fill: '#784719', d: 'M32,26c0,1.105-0.895,2-2,2s-2-0.895-2-2s0.895-2,2-2S32,24.895,32,26' }),
+								_react2.default.createElement('path', { fill: '#784719', d: 'M20,26c0,1.105-0.895,2-2,2s-2-0.895-2-2s0.895-2,2-2S20,24.895,20,26' })
+							),
+							_react2.default.createElement('path', { fill: '#FF5722', d: 'M24,4C15.495,4,3,9,2.875,36L13,44V24l16.75-9l5.125,7L35,44l10-8c0-12-0.543-29-15-29l-2-3H24z' }),
+							_react2.default.createElement('path', { fill: '#FB8C00', d: 'M19,35h10c0,0-2,3-5,3S19,35,19,35z' })
+						);
+					case "alien":
+						return _react2.default.createElement('img', { className: 'icons8 icons8-Alien', src: '/images/alien_96px.png' });
+				}
+			}
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'stage' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'cube' },
+					_react2.default.createElement('figure', { className: "back" + " figure" + this.props.indent }),
+					_react2.default.createElement('figure', { className: "top" + " figure" + this.props.indent }),
+					_react2.default.createElement('figure', { className: "bottom" + " figure" + this.props.indent }),
+					_react2.default.createElement('figure', { className: "left" + " figure" + this.props.indent }),
+					_react2.default.createElement('figure', { className: "right" + " figure" + this.props.indent }),
+					_react2.default.createElement(
+						'figure',
+						{ className: "front" + " figure" + this.props.indent },
+						svgFigure(this.props.figure)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Cubes;
+}(_react.Component);
+
+exports.default = Cubes;
+;
+
+},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

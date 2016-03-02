@@ -1,44 +1,30 @@
 import React, { Component } from 'react';
+import Cubes from './nexus/cubes.jsx';
 
 export default class Nexus extends Component {
 
-	constructor() {
-		super();
-	}
+    constructor() {
+        super();
+        this.cubes = [{
+            figure: "female"
+        }, {
+            figure: "alien"
+        }, {
+            figure: "male"
+        }];
+    }
 
     render() {
-        function blocks() {
-            return (
-                <li>
-					<div className="selec_li_top"></div>
-					<div className="selec_li_mid"></div>
-					<div className="selec_li_bot"></div>
-				</li>
-            )
-        }
         return (
-			<div className="main-nexus">
+            <div className="main-nexus">
 			    <div className="con_selection">
-			        <div className="stage">
-			            <div className="cube">
-			                <figure className="back"></figure>
-			                <figure className="top"></figure>
-			                <figure className="bottom"></figure>
-			                <figure className="left"></figure>
-			                <figure className="right"></figure>
-			                <figure className="front"><i className="tablet icon"></i></figure>
-			            </div>
-			        </div>
-			        <div className="stage">
-			            <div className="cube">
-			                <figure className="back"></figure>
-			                <figure className="top"></figure>
-			                <figure className="bottom"></figure>
-			                <figure className="left"></figure>
-			                <figure className="right"></figure>
-			                <figure className="front"><i className="desktop icon"></i></figure>
-			            </div>
-			        </div>
+				     
+						{
+							this.cubes.map((object, key)=> {
+						       	return <Cubes key={key} figure={object.figure} indent={key}/>
+						    })
+						}
+
 			    </div>
 			</div>
         )

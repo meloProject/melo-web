@@ -1,16 +1,55 @@
-﻿@mixin cubeAnimation() {
-    -webkit-animation-name: show;
-    -webkit-animation-timing-function: ease;
-    -webkit-animation-duration: 0.8s;
-    -webkit-animation-fill-mode: forwards;
+﻿
+$rotationSpeed: 1s;
 
-    @keyframes show {
+@mixin rotateSelection() {
+    -webkit-animation-name: rotateSelection;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: $rotationSpeed;
+    
+    @keyframes rotateSelection {
+        to {
+            -webkit-transform: rotateY(-360deg) translateY(-20px);
+        }
+    }
+}
+
+@mixin rotateOut() {
+    -webkit-animation-name: rotateOut;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: $rotationSpeed;
+    -webkit-animation-fill-mode: forwards;
+    opacity: 10;
+    @keyframes rotateOut {
         from {
-            opacity: 0;
+            -webkit-transform: rotateY(-720deg) translateY(-20px);
         }
 
         to {
-            opacity: 10;
+            -webkit-transform: rotateY(0deg) translateY(0px);
+            opacity: 5;
+        }
+    }
+}
+
+
+@mixin boxAnimate() {
+    -webkit-animation-name: boxAnimate;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.7s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+
+    @keyframes boxAnimate {
+        0% {
+            -webkit-transform: translate(0, 0);
+        }
+
+        50% {
+            -webkit-transform: translate(0, 5px);
+        }
+
+        100% {
+            -webkit-transform: translate(0, 0);
         }
     }
 }
