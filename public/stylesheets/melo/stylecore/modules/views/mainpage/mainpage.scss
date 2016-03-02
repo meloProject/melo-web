@@ -22,11 +22,7 @@ $margins: 10%;
 .main-main {
     width: 100%;
     height: 100%;
-    background: #b757fd;
-    background: -moz-linear-gradient(top, #b757fd 0%, #a635fc 100%);
-    background: -webkit-linear-gradient(top, #b757fd 0%,#a635fc 100%);
-    background: linear-gradient(to bottom, #b757fd 0%,#a635fc 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b757fd', endColorstr='#a635fc',GradientType=0 );
+    background: -webkit-linear-gradient(top, $main_bg 0%, $main_bgTw 100%);
     display: flex;
     flex-direction: column;
 }

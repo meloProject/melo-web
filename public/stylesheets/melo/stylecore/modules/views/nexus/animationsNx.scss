@@ -1,11 +1,90 @@
 ﻿
 $rotationSpeed: 1s;
 
+// ALIEN ANIMATE
+@mixin alienEye() {
+    -webkit-animation-name: alienEye;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-direction: alternate-reverse;
+
+    @keyframes alienEye {
+        0% {
+            -webkit-transform: translateY(0);
+        }
+
+        20% {
+            -webkit-transform: translateX(2px) translateY(0px);
+        }
+
+        40% {
+            -webkit-transform: translateX(-2px) translateY(0px);
+        }
+
+        90% {
+            -webkit-transform: translateX(-1px) translateY(3px);
+        }
+
+        100% {
+            -webkit-transform: translateY(0px);
+        }
+    }
+}
+
+
+@mixin animateAntR() {
+    -webkit-animation-name: animateAntR;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate-reverse;
+
+    @keyframes animateAntR {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        50% {
+            -webkit-transform: rotate(-1deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(0deg);
+        }
+    }
+}
+
+
+@mixin animateAntL() {
+    -webkit-animation-name: animateAntL;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate-reverse;
+
+    @keyframes animateAntL {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        50% {
+            -webkit-transform: rotate(5deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(0deg);
+        }
+    }
+}
+
+
 @mixin rotateSelection() {
     -webkit-animation-name: rotateSelection;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-duration: $rotationSpeed;
-    
+
     @keyframes rotateSelection {
         to {
             -webkit-transform: rotateY(-360deg) translateY(-20px);
@@ -18,7 +97,7 @@ $rotationSpeed: 1s;
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-duration: $rotationSpeed;
     -webkit-animation-fill-mode: forwards;
-    opacity: 10;
+
     @keyframes rotateOut {
         from {
             -webkit-transform: rotateY(-720deg) translateY(-20px);

@@ -3,8 +3,8 @@ $bg_cube0: #FFEE58;
 $bg_cube0RL: #f3e45b;
 $fontColor0: #FF1744;
 
-$bg_cube1: #6de655;
-$bg_cube1RL: #5fd847;
+$bg_cube1: #74ef5c;
+$bg_cube1RL: #6feb57;
 $fontColor1: #333;
 
 $bg_cube2: #1997f6;
@@ -12,32 +12,65 @@ $bg_cube2RL: #048bf1;
 $fontColor2: #0092ff;
 
 $boxSize: 60px;
-$iconsSize:  65px;
+$iconsSize: 65px;
+
+@media screen and (max-width: 1023px) {
+    .con_selection {
+        flex-direction: column !important;
+    }
+
+    .main_nex__st_mid {
+        justify-content: center !important;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .main_nex__st_mid {
+        justify-content: center !important;
+    }
+}
+
 
 
 .icons8-User-Female { /* Customizes User Female icon */
-  fill: #false;
-  width: 96px;
-  height: 96px;
+    fill: #false;
+    width: 96px;
+    height: 96px;
 }
+
 .icon { /* Customizes all icons at once */
-  display: inline-block;
-  align-self: center;
+    display: inline-block;
+    align-self: center;
 }
 
 .icons8-User-Male { /* Customizes User Male icon */
-  fill: #false;
-  width: 96px;
-  height: 96px;
-}
-.icons8 { /* Customizes all icons at once */
-  display: inline-block;
-  align-self: center;
+    fill: #false;
+    width: 96px;
+    height: 96px;
 }
 
+.icons8 { /* Customizes all icons at once */
+    display: inline-block;
+    align-self: center;
+}
+
+
+/* ALIEN FIGURE */
 .icons8-Alien {
     width: 96px;
     height: 96px;
+}
+
+.ant-right {
+    @include animateAntR();
+}
+
+.ant-letf {
+    @include animateAntL();
+}
+
+.alien-eye {
+    @include alienEye();
 }
 
 .main-nexus {
@@ -49,13 +82,36 @@ $iconsSize:  65px;
     justify-content: center;
 }
 
+
+.main_nex__st_top {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    @include collapse();
+}
+
+.main_nex__st_mid {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    @include collapse();
+}
+
+.main_nex__st_bot {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    @include collapse();
+}
+
 .con_selection {
     width: 70%;
     display: flex;
     align-self: center;
     flex-direction: row;
     justify-content: center;
-
 }
 
 .stage {
@@ -63,6 +119,7 @@ $iconsSize:  65px;
     height: $boxSize * 3;
     margin-right: 2%;
     margin-left: 2%;
+    align-self: center;
     -webkit-perspective: 1600px;
     -webkit-perspective-origin: 50% -240px;
     cursor: pointer;
@@ -74,8 +131,9 @@ $iconsSize:  65px;
     height: 170px;
     -webkit-transform-style: preserve-3d;
     @include rotateOut();
+
     &:hover {
-         @include rotateSelection(); 
+        @include rotateSelection();
     }
 }
 
@@ -83,7 +141,7 @@ $iconsSize:  65px;
     -webkit-transform: translateZ($boxSize);
     display: flex;
     justify-content: center;
-    
+
     i {
         font-size: $iconsSize;
         align-self: center;
@@ -116,7 +174,7 @@ figure {
     display: block;
     position: absolute;
     width: $boxSize * 2;
-    height: $boxSize * 2 ;
+    height: $boxSize * 2;
     -webkit-transform-origin: 50% 50% 0;
 }
 

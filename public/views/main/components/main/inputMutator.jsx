@@ -74,35 +74,35 @@ export default class InputMutator extends Component {
                     changePage: false
                 });
             }
+            
+            return;
+        }
 
-            this.mutator.addEventListener("animationend", (event) => {
+        this.mutator.addEventListener("animationend", (event) => {
 
-                if (event.animationName != "inputChangeOut") return;
-                if (this.circlesSection == 1) {
-                    // aacciones para ir al proxima pagina.
-                    this.setState({
-                        changePage: true
-                    });
-
-                    this.changePage();
-                    return;
-                }
-
-                this.circlesSection++;
+            if (event.animationName != "inputChangeOut") return;
+            if (this.circlesSection == 1) {
+                // aacciones para ir al proxima pagina.
                 this.setState({
-                    icon: this.mutatorList[this.circlesSection].icon,
-                    placeholder: this.mutatorList[this.circlesSection].placeholder
+                    changePage: true
                 });
 
-                // efecto de ingreso del input mutator
-                this.mutator.className = "ul_mutator_enter";
-                this.circles[this.circlesSection].className = "circlesSelected";
-                event.preventDefault();
+                this.changePage();
+                return;
+            }
+
+            this.circlesSection++;
+            this.setState({
+                icon: this.mutatorList[this.circlesSection].icon,
+                placeholder: this.mutatorList[this.circlesSection].placeholder
             });
 
-            return;
+            // efecto de ingreso del input mutator
+            this.mutator.className = "ul_mutator_enter";
+            this.circles[this.circlesSection].className = "circlesSelected";
+            event.preventDefault();
+        });
 
-        }
 
         // en caso de ser valido el input mutator:
         if (this.main) this.main.className = "main-main";
