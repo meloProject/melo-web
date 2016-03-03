@@ -3,16 +3,6 @@ import NexusActions from './actions/nexusActions.jsx';
 import _ from 'underscore';
 
 export default class Cubes extends Component {
-   
-    clickCubes(cubeType) {
-
-    	NexusActions.cubeGoTo(cubeType);
-    	
-    	document.querySelector("#swittcher > section").classList.add("switchSection");
-    	document.getElementById("nex_text_container")
-            .className = "nex_text_container_out";
-    }
-
     animateTextBoxOut() {
         document.getElementById("nex_text_container")
             .className = "nex_text_container_out";
@@ -84,8 +74,7 @@ export default class Cubes extends Component {
 		            <div className="cube"
 		            	
 		            	onClick={()=> {
-
-		            		this.clickCubes.call(this.props.figure) }} 
+		            		NexusActions.cubeGoTo(this.props.figure) }} 
 
 		            	onMouseOver={()=> {
 

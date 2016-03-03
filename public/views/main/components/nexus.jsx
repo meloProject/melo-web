@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
-import Cubes from './nexus/cubes.jsx';
-import Swittcher from '././standars/swittcher.js';
+import Sections from './nexus/sections.jsx';
 import NexusStore from './stores/nexusStore.jsx';
-import _ from 'underscore';
+import LateralPanel from './standars/panelLateral.jsx';
 
 export default class Nexus extends Component {
-
     constructor() {
         super();
-        this.cubes = [{
-            figure: "female"
-        }, {
-            figure: "alien"
-        }, {
-            figure: "male"
-        }];
-
         this.state = this.getState();
         this.onChange = this.onChange.bind(this);
     }
@@ -25,7 +15,6 @@ export default class Nexus extends Component {
     }
 
     componentDidMount() {
-        Swittcher.init();
         NexusStore.listen(this.onChange);
     }
 
@@ -39,27 +28,14 @@ export default class Nexus extends Component {
 
     render() {
         return (
-            <div className="main-nexus" id="swittcher">
-                 <section>
-                     <div className="main_nex__st_top"></div>
-                     <div className="main_nex__st_mid">
-                        <div className="con_selection">
-                            {
-                                this.cubes.map((object, key)=> {
-                                    return (<Cubes key={key} figure={object.figure} indent={key} />)
-                                })
-                            }
-                        </div>
-                    </div>
-                    <div className="main_nex__st_bot">
-                        <div className="nex_text_container" id="nex_text_container">
-                            <span>{this.state.text}</span>
-                        </div>
-                    </div>
-                </section>
+            <div id="meloContainer" className="main-melo">
+                <Sections 
+                    background={ this.state.background } 
+                    text={ this.state.text }>
+                </Sections>
 
-                <section style={{ background: this.state.background }}>
-                </section>
+                <LateralPanel fontColor={ this.state.fontColor }>
+                </LateralPanel>
             </div>
         )
     }
