@@ -16,3 +16,38 @@
         }
     }
 }
+
+
+@mixin switchSection() {
+    -webkit-animation-name: switchSection;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-fill-mode: forwards;
+
+    @keyframes switchSection {
+        to {
+            height: 0;
+        }
+    }
+}
+
+
+@mixin animateSectionsIn() {
+    -webkit-animation-name: animateSectionsIn;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.9s;
+    -webkit-animation-fill-mode: forwards;
+
+    @keyframes animateSectionsIn {
+        0% {
+        }
+
+        50% {
+            -webkit-transform: translateY(30px);
+        }
+
+        100% {
+            -webkit-transform: translateY(0px);
+        }
+    }
+}

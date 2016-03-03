@@ -5,15 +5,24 @@ class NexusStore {
     constructor() {
 
         this.text = "";
+        this.background = "";
+        this.fontColor = "";
+
         this.cubes = {
-            "female": {
-                "description": "Chica"
+            female: {
+                description: "Chica",
+                background: "#FFEE58",
+                fontColor: "#333" 
             },
-            "alien": {
-                "description": "Extraterrestre"
+            alien: {
+                description: "Extraterrestre",
+                background: "#74ef5c",
+                fontColor: "white"
             },
-            "male": {
-                "description": "Chico"
+            male: {
+                description: "Chico",
+                background: "#1997f6",
+                fontColor: "white"
             }
         };
 
@@ -26,6 +35,8 @@ class NexusStore {
 
     handleItemTextDescrition(type) {
         this.text = this.cubes[type].description;
+        this.background = this.cubes[type].background;
+        this.fontColor = this.cubes[type].fontColor;
     }
 }
 

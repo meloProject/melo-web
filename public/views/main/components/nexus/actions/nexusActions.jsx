@@ -7,6 +7,10 @@ class NexusActions {
         .className = "nex_text_container";
         return text;
     }
+
+    cubeGoTo(location) {
+    	
+    }
     
 }
 

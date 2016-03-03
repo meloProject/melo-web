@@ -126,7 +126,7 @@ export default class InputMutator extends Component {
                 )
             } else {
                 return (
-                    <Link to="/nexus" className="mut_links" onClick={ this.changePage }>
+                    <Link to="/melo/nexus" className="mut_links" onClick={ this.changePage }>
                         <li className="icon_arrow">
                             <i className="chevron down icon"></i>
                         </li>

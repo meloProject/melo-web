@@ -3,6 +3,16 @@ import NexusActions from './actions/nexusActions.jsx';
 import _ from 'underscore';
 
 export default class Cubes extends Component {
+   
+    clickCubes(cubeType) {
+
+    	NexusActions.cubeGoTo(cubeType);
+    	
+    	document.querySelector("#swittcher > section").classList.add("switchSection");
+    	document.getElementById("nex_text_container")
+            .className = "nex_text_container_out";
+    }
+
     animateTextBoxOut() {
         document.getElementById("nex_text_container")
             .className = "nex_text_container_out";
@@ -71,22 +81,32 @@ export default class Cubes extends Component {
 
         return (
             <div className="stage">
-	            <div className="cube" onMouseOver={()=> {
-	            	NexusActions.settext(this.props.figure)
-	            }} onMouseOut={()=> {
-	            	this.animateTextBoxOut()
-	            }}>
-				    <figure className={"back" + " figure" + this.props.indent}></figure>
-				    <figure className={"top" + " figure" + this.props.indent}></figure>
-				    <figure className={"bottom" + " figure" + this.props.indent}></figure>
-				    <figure className={"left" + " figure" + this.props.indent}></figure>
-				    <figure className={"right" + " figure" + this.props.indent}></figure>
-				    <figure className={"front" + " figure" + this.props.indent}>
-						{
-							svgFigure(this.props.figure)
-						}
-				    </figure>
-				</div> < /div>
+		            <div className="cube"
+		            	
+		            	onClick={()=> {
+
+		            		this.clickCubes.call(this.props.figure) }} 
+
+		            	onMouseOver={()=> {
+
+		            		NexusActions.settext(this.props.figure) }} 
+
+		            	onMouseOut={()=> {
+
+		            		this.animateTextBoxOut() }}
+		            	>
+					    <figure className={"back" + " figure" + this.props.indent}></figure>
+					    <figure className={"top" + " figure" + this.props.indent}></figure>
+					    <figure className={"bottom" + " figure" + this.props.indent}></figure>
+					    <figure className={"left" + " figure" + this.props.indent}></figure>
+					    <figure className={"right" + " figure" + this.props.indent}></figure>
+					    <figure className={"front" + " figure" + this.props.indent}>
+							{
+								svgFigure(this.props.figure)
+							}
+					    </figure>
+					</div> 
+				</div>
         )
     }
 };

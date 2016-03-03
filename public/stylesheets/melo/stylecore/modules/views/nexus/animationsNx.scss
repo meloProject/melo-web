@@ -159,6 +159,7 @@ $rotationSpeed: 1s;
     -webkit-animation-timing-function: ease;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-fill-mode: forwards;
+    align-self: flex-start;
     @keyframes nexTextContainerOut {
         0% {
             -webkit-transform: scale(1);
@@ -169,7 +170,6 @@ $rotationSpeed: 1s;
         }
 
         50% {
-            -webkit-transform: scale(1);
         }
 
         100% {
