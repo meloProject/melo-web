@@ -3,31 +3,31 @@ import NexusActions from '../nexus/actions/nexusActions.jsx';
 
 class NexusStore {
     constructor() {
+        // TEXTO BOX SELECTION TYPE.
+        this.textType = "";
 
-        this.text = "";
-        this.background = "";
-        this.fontColor = "";
-
+        // SECTION CONFIGS AND CUSTOMS.
+        this.sectionClass = "";
+        this.classLateralIcons = "";
         this.actuallyLocation;
 
         this.cubes = {
             female: {
                 description: "Chica",
-                background: "#FFEE58",
-                fontColor: "#ce35e5" 
+                sectionClass: "section-female",
+                classLateralIcons: "icons-female"
             },
             alien: {
                 description: "Extraterrestre",
-                background: "#74ef5c",
-                fontColor: "#ba68c8"
+                sectionClass: "section-alien",
+                classLateralIcons: "icons-alien"
             },
             male: {
                 description: "Chico",
-                background: "#1997f6",
-                fontColor: "white"
+                sectionClass: "section-male",
+                classLateralIcons: "icons-male"
             }
         };
-
 
         this.bindListeners({
             handleItemTextDescrition: NexusActions.SETTEXT,
@@ -37,13 +37,15 @@ class NexusStore {
     }
 
     handleItemTextDescrition(type) {
-        this.text = this.cubes[type].description;
-        this.background = this.cubes[type].background;
+        // HANDLER FOR INSERT TEXTO DE DESCRIPCION DE LOS TIPOS.
+        this.textType = this.cubes[type].description;
+        this.sectionClass = this.cubes[type].sectionClass;
     }
 
     handlerCubeGoto(type) {
+        // HANDLER DISPARADO CUANDO SE ELIGE UNA SECCION.
         this.type = type;
-        this.fontColor = this.cubes[type].fontColor;
+        this.classLateralIcons = this.cubes[type].classLateralIcons;
     }
 }
 

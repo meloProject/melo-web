@@ -30,11 +30,11 @@ export default class Nexus extends Component {
         return (
             <div id="meloContainer" className="main-melo">
                 <Sections 
-                    background={ this.state.background } 
-                    text={ this.state.text }>
+                    sectionClass={ this.state.sectionClass } 
+                    textType={ this.state.textType }>
                 </Sections>
 
-                <LateralPanel fontColor={ this.state.fontColor }>
+                <LateralPanel classLateralIcons={ this.state.classLateralIcons }>
                 </LateralPanel>
             </div>
         )

@@ -19,10 +19,15 @@ export default class Sections extends Component {
         Swittcher.init();
     }
 
+    test(go) {
+        console.log(go)
+        Swittcher.goTo(go)
+    }
+
     render() {
         return (
             <div className="main-nexus" id="swittcher">
-                 <section>
+                 <section id="section-type">
                      <div className="main_nex__st_top"></div>
                      <div className="main_nex__st_mid">
                         <div className="con_selection">
@@ -35,12 +40,25 @@ export default class Sections extends Component {
                     </div>
                     <div className="main_nex__st_bot">
                         <div className="nex_text_container" id="nex_text_container">
-                            <span>{this.props.text}</span>
+                            <span>{this.props.textType}</span>
                         </div>
                     </div>
                 </section>
 
-                <section style={{ background: this.props.background }}>
+                <section id="section-link" className={ this.props.sectionClass }>
+                 <a onClick={()=> {
+                        this.test("section-type")
+                    }}>type</a> 
+                    <br/>
+                    <a onClick={()=> {
+                        this.test("section-test")
+                    }}>test</a>
+                </section>
+
+                <section id="section-test">
+                    <a onClick={()=> {
+                        this.test("section-link")
+                    }}>link</a>
                 </section>
             </div>
         )

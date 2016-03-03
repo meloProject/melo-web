@@ -63437,9 +63437,9 @@ var Nexus = function (_Component) {
                 'div',
                 { id: 'meloContainer', className: 'main-melo' },
                 _react2.default.createElement(_sections2.default, {
-                    background: this.state.background,
-                    text: this.state.text }),
-                _react2.default.createElement(_panelLateral2.default, { fontColor: this.state.fontColor })
+                    sectionClass: this.state.sectionClass,
+                    textType: this.state.textType }),
+                _react2.default.createElement(_panelLateral2.default, { classLateralIcons: this.state.classLateralIcons })
             );
         }
     }]);
@@ -63451,7 +63451,7 @@ exports.default = Nexus;
 ;
 
 },{"./nexus/sections.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sections.jsx","./standars/panelLateral.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\panelLateral.jsx","./stores/nexusStore.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\stores\\nexusStore.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx":[function(require,module,exports){
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -63459,9 +63459,13 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _alt = require("../../alt.jsx");
+var _alt = require('../../alt.jsx');
 
 var _alt2 = _interopRequireDefault(_alt);
+
+var _swittcher = require('../../standars/swittcher.js');
+
+var _swittcher2 = _interopRequireDefault(_swittcher);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63473,15 +63477,17 @@ var NexusActions = function () {
     }
 
     _createClass(NexusActions, [{
-        key: "settext",
+        key: 'settext',
         value: function settext(text) {
+            // se realizo la accion de mouse over para insertar texto descritibo.
             document.getElementById("nex_text_container").className = "nex_text_container";
             return text;
         }
     }, {
-        key: "cubeGoTo",
+        key: 'cubeGoTo',
         value: function cubeGoTo(location) {
-            document.querySelector("#swittcher > section").classList.add("switchSection");
+            // se realiza la accion para ir a la proxima sesesion del mini spa nexus.
+            _swittcher2.default.goTo("section-link");
             document.getElementById("nex_text_container").className = "nex_text_container_out";
             return location;
         }
@@ -63492,7 +63498,7 @@ var NexusActions = function () {
 
 exports.default = _alt2.default.createActions(NexusActions);
 
-},{"../../alt.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\alt.jsx"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx":[function(require,module,exports){
+},{"../../alt.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\alt.jsx","../../standars/swittcher.js":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\swittcher.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -63703,14 +63709,22 @@ var Sections = function (_Component) {
             _swittcher2.default.init();
         }
     }, {
+        key: 'test',
+        value: function test(go) {
+            console.log(go);
+            _swittcher2.default.goTo(go);
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return _react2.default.createElement(
                 'div',
                 { className: 'main-nexus', id: 'swittcher' },
                 _react2.default.createElement(
                     'section',
-                    null,
+                    { id: 'section-type' },
                     _react2.default.createElement('div', { className: 'main_nex__st_top' }),
                     _react2.default.createElement(
                         'div',
@@ -63732,12 +63746,41 @@ var Sections = function (_Component) {
                             _react2.default.createElement(
                                 'span',
                                 null,
-                                this.props.text
+                                this.props.textType
                             )
                         )
                     )
                 ),
-                _react2.default.createElement('section', { style: { background: this.props.background } })
+                _react2.default.createElement(
+                    'section',
+                    { id: 'section-link', className: this.props.sectionClass },
+                    _react2.default.createElement(
+                        'a',
+                        { onClick: function onClick() {
+                                _this2.test("section-type");
+                            } },
+                        'type'
+                    ),
+                    _react2.default.createElement('br', null),
+                    _react2.default.createElement(
+                        'a',
+                        { onClick: function onClick() {
+                                _this2.test("section-test");
+                            } },
+                        'test'
+                    )
+                ),
+                _react2.default.createElement(
+                    'section',
+                    { id: 'section-test' },
+                    _react2.default.createElement(
+                        'a',
+                        { onClick: function onClick() {
+                                _this2.test("section-link");
+                            } },
+                        'link'
+                    )
+                )
             );
         }
     }]);
@@ -63843,16 +63886,16 @@ var PanelLateral = function (_Component) {
                 { className: 'panel_l_container' },
                 _react2.default.createElement(
                     'ul',
-                    { className: 'ul_panel_lateral', style: { color: this.props.fontColor } },
+                    { className: 'ul_panel_lateral' },
                     _react2.default.createElement(
                         'li',
                         null,
-                        _react2.default.createElement('i', { className: 'volume up icon' })
+                        _react2.default.createElement('i', { className: "volume up icon " + this.props.classLateralIcons })
                     ),
                     _react2.default.createElement(
                         'li',
                         null,
-                        _react2.default.createElement('i', { className: 'unmute icon' })
+                        _react2.default.createElement('i', { className: "unmute icon " + this.props.classLateralIcons })
                     )
                 )
             );
@@ -63871,7 +63914,7 @@ exports.default = PanelLateral;
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+    value: true
 });
 exports.Swittcher = undefined;
 
@@ -63884,41 +63927,63 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Swittcher = exports.Swittcher = function () {
-	function Swittcher() {
-		_classCallCheck(this, Swittcher);
+    function Swittcher() {
+        _classCallCheck(this, Swittcher);
 
-		this.sections;
-		this.actualPosition = 0;
-	}
+        this.sections = [];
+        this.HTMLSectionsElements = this.HTMLSectionsElements || {};
+        this.restart;
 
-	_createClass(Swittcher, [{
-		key: "init",
-		value: function init(name) {
-			var sections;
-			name = name !== undefined ? "#" + name : "#swittcher";
+        this.sectionCurrent;
 
-			sections = document.querySelectorAll(name + "> section");
-			this.sections = sections.length;
-			console.log(name);
-			_underscore2.default.each(sections, function (value, key) {
-				if (!key) {
-					value.className = "sw_select";
-				} else {
-					value.className = "sw_deselect";
-				}
-			});
-		}
-	}, {
-		key: "goTo",
-		value: function goTo(position) {}
-	}]);
+        this.config = {
+            scroll: true
+        };
+    }
 
-	return Swittcher;
+    _createClass(Swittcher, [{
+        key: "init",
+        value: function init(name) {
+            var _this = this;
+
+            name = name !== undefined ? "#" + name : "#swittcher";
+
+            if (!document.querySelectorAll(name + "> section").length) throw Error("Not sections for work");
+
+            _underscore2.default.each(document.querySelectorAll(name + "> section"), function (value, key) {
+                // convert array of sections in object sections.
+                _this.HTMLSectionsElements[value.id] = value;
+
+                if (!value.id) throw Error("The attribute ID is required");
+                if (!key) _this.sectionCurrent = value;
+            });
+        }
+    }, {
+        key: "goTo",
+        value: function goTo(sectionId) {
+            var currentsec = this.sectionCurrent,
+                gosec = this.HTMLSectionsElements[sectionId];
+
+            this.sectionCurrent = this.HTMLSectionsElements[sectionId];
+
+            if (currentsec.classList.contains("sw_select_in")) currentsec.classList.remove("sw_select_in");else if (gosec.classList.contains("sw_select_out")) gosec.classList.remove("sw_select_out");
+
+            currentsec.classList.add("sw_select_out");
+            gosec.classList.add("sw_select_in");
+
+            if (typeof this.restart === "function") restart();
+        }
+    }]);
+
+    return Swittcher;
 }();
 
 ;
 
-exports.default = new Swittcher();
+var SwittcherInstance = new Swittcher();
+window.swittch = SwittcherInstance;
+
+exports.default = SwittcherInstance;
 
 },{"underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\stores\\nexusStore.jsx":[function(require,module,exports){
 'use strict';
@@ -63941,27 +64006,29 @@ var NexusStore = function () {
     function NexusStore() {
         _classCallCheck(this, NexusStore);
 
-        this.text = "";
-        this.background = "";
-        this.fontColor = "";
+        // TEXTO BOX SELECTION TYPE.
+        this.textType = "";
 
+        // SECTION CONFIGS AND CUSTOMS.
+        this.sectionClass = "";
+        this.classLateralIcons = "";
         this.actuallyLocation;
 
         this.cubes = {
             female: {
                 description: "Chica",
-                background: "#FFEE58",
-                fontColor: "#ce35e5"
+                sectionClass: "section-female",
+                classLateralIcons: "icons-female"
             },
             alien: {
                 description: "Extraterrestre",
-                background: "#74ef5c",
-                fontColor: "#ba68c8"
+                sectionClass: "section-alien",
+                classLateralIcons: "icons-alien"
             },
             male: {
                 description: "Chico",
-                background: "#1997f6",
-                fontColor: "white"
+                sectionClass: "section-male",
+                classLateralIcons: "icons-male"
             }
         };
 
@@ -63974,14 +64041,16 @@ var NexusStore = function () {
     _createClass(NexusStore, [{
         key: 'handleItemTextDescrition',
         value: function handleItemTextDescrition(type) {
-            this.text = this.cubes[type].description;
-            this.background = this.cubes[type].background;
+            // HANDLER FOR INSERT TEXTO DE DESCRIPCION DE LOS TIPOS.
+            this.textType = this.cubes[type].description;
+            this.sectionClass = this.cubes[type].sectionClass;
         }
     }, {
         key: 'handlerCubeGoto',
         value: function handlerCubeGoto(type) {
+            // HANDLER DISPARADO CUANDO SE ELIGE UNA SECCION.
             this.type = type;
-            this.fontColor = this.cubes[type].fontColor;
+            this.classLateralIcons = this.cubes[type].classLateralIcons;
         }
     }]);
 

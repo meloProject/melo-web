@@ -60,25 +60,34 @@ textarea::-webkit-input-placeholder {
     width: 100%;
     height: 100%; }
 
-.sw_select {
-  width: 100%;
-  height: 100%;
-  overflow: hidden; }
-
-.sw_deselect {
-  width: 100% !important;
-  height: 100% !important;
-  overflow: hidden; }
-
-.switchSection {
-  -webkit-animation-name: switchSection;
+.sw_select_out {
+  -webkit-animation-name: switchSectionOut;
   -webkit-animation-timing-function: ease;
   -webkit-animation-duration: 0.8s;
-  -webkit-animation-fill-mode: forwards; }
+  -webkit-animation-fill-mode: forwards;
+  overflow: hidden; }
 
-@keyframes switchSection {
+@keyframes switchSectionOut {
   to {
     height: 0; } }
+
+.sw_select_in {
+  -webkit-animation-name: switchSectionIn;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-fill-mode: forwards;
+  overflow: hidden; }
+
+@keyframes switchSectionIn {
+  from {
+    height: 0; }
+  to {
+    height: 100%; } }
+
+#section-test {
+  width: 100%;
+  height: 100%;
+  background: #FF1744; }
 
 /* Material icon font configurations */
 .material-icons {
@@ -567,6 +576,31 @@ textarea::-webkit-input-placeholder {
     -webkit-transform: translateX(-1px) translateY(3px); }
   100% {
     -webkit-transform: translateY(0px); } }
+
+/* SECTION CUSTOMS */
+.section-female {
+  background: #FFEE58; }
+
+.section-alien {
+  background: #73ee5b; }
+
+.section-male {
+  background: #1796f5; }
+
+.icons-female {
+  color: #ff5722; }
+  .icons-female:hover {
+    color: white !important; }
+
+.icons-alien {
+  color: #ba68c8; }
+  .icons-alien:hover {
+    color: white !important; }
+
+.icons-male {
+  color: #FFF; }
+  .icons-male:hover {
+    color: #FFEB3B !important; }
 
 .main-nexus {
   width: 100%;

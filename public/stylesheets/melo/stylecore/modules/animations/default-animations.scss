@@ -18,15 +18,31 @@
 }
 
 
-@mixin switchSection() {
-    -webkit-animation-name: switchSection;
+@mixin sw_select_out() {
+    -webkit-animation-name: switchSectionOut;
     -webkit-animation-timing-function: ease;
     -webkit-animation-duration: 0.8s;
     -webkit-animation-fill-mode: forwards;
 
-    @keyframes switchSection {
+    @keyframes switchSectionOut {
         to {
             height: 0;
+        }
+    }
+}
+
+@mixin sw_select_in() {
+    -webkit-animation-name: switchSectionIn;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-fill-mode: forwards;
+
+    @keyframes switchSectionIn {
+        from {
+            height: 0;
+        }
+        to {
+            height: 100%;
         }
     }
 }
