@@ -74,11 +74,11 @@ export default class Cubes extends Component {
 		            <div className="cube"
 		            	
 		            	onClick={()=> {
-		            		NexusActions.cubeGoTo(this.props.figure) }} 
+		            		NexusActions.goTo(this.props.figure) }} 
 
 		            	onMouseOver={()=> {
 
-		            		NexusActions.settext(this.props.figure) }} 
+		            		NexusActions.setText(this.props.figure) }} 
 
 		            	onMouseOut={()=> {
 

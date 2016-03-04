@@ -78,21 +78,37 @@ $iconsSize: 65px;
 
 
 
-
 /* SECTION CUSTOMS */
+.section-default {
+    background: #FFF;
+}
 
 .section-female {
     background: #FFEE58;
+    display: flex;
 }
+
 .section-alien {
-     background: #73ee5b;
+    background: #73ee5b;
+    display: flex;
 }
+
 .section-male {
-     background: #1796f5;
+    background: #1796f5;
+    display: flex;
+}
+
+.icons-default {
+    color: #333;
+
+    &:hover {
+        color: #1796f5 !important;
+    }
 }
 
 .icons-female {
     color: #ff5722;
+
     &:hover {
         color: white !important;
     }
@@ -100,17 +116,63 @@ $iconsSize: 65px;
 
 .icons-alien {
     color: #ba68c8;
-     &:hover {
+
+    &:hover {
         color: white !important;
     }
 }
 
 .icons-male {
     color: #FFF;
-     &:hover {
+
+    &:hover {
         color: #FFEB3B !important;
     }
 }
+
+/* SECTION LINK */
+
+.cn_panelLateralLeft {
+    position: relative;
+    left: 40px;
+    width: 80px;
+    height: 180px;
+    display: flex;
+    align-self: center;
+    @include boxAnimate();
+}
+
+.ul_panelLL {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   
+    li:hover {
+        @include arrowsGoTo();
+    }
+    li:nth-child(1) {
+        margin-bottom: 20px;
+    }
+
+    li {
+        width: 100%;
+        background: #FFF;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        @include arrowsGoToOut(); 
+        /* desplazament top bottom arrowns */
+        i {
+            align-self: center;
+            font-size: 28px;
+            color: #333;
+            @include collapse();
+        }
+    }
+}
+
 
 .main-nexus {
     width: 100%;
@@ -185,10 +247,10 @@ $iconsSize: 65px;
     width: 200px;
     height: 170px;
     -webkit-transform-style: preserve-3d;
-    @include rotateOut();
+    -webkit-transition: -webkit-transform 1.5s ease;
 
     &:hover {
-        @include rotateSelection();
+        -webkit-transform: rotateY(-360deg) translateY(-20px);
     }
 }
 

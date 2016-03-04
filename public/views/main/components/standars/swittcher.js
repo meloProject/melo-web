@@ -15,7 +15,9 @@ export class Swittcher {
     }
 
     init(name) {
-        name = (name !== undefined) ? "#" + name : "#swittcher";
+        name = (name !== undefined) 
+	        ? "#" + name 
+	        : "#swittcher";
 
         if (!document.querySelectorAll(name + "> section").length)
             throw Error("Not sections for work");
@@ -49,7 +51,4 @@ export class Swittcher {
     }
 };
 
-let SwittcherInstance = new Swittcher();
-window.swittch = SwittcherInstance;
-
-export default SwittcherInstance;
+export default new Swittcher();

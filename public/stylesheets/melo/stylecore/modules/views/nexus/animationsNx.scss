@@ -9,7 +9,7 @@ $rotationSpeed: 1s;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-delay: 2s;
     -webkit-animation-direction: alternate-reverse;
-
+    -webkit-animation-delay: 4s;
     @keyframes alienEye {
         0% {
             -webkit-transform: translateY(0);
@@ -80,37 +80,6 @@ $rotationSpeed: 1s;
 }
 
 
-@mixin rotateSelection() {
-    -webkit-animation-name: rotateSelection;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: $rotationSpeed;
-
-    @keyframes rotateSelection {
-        to {
-            -webkit-transform: rotateY(-360deg) translateY(-20px);
-            }
-    }
-}
-
-@mixin rotateOut() {
-    -webkit-animation-name: rotateOut;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: $rotationSpeed;
-    -webkit-animation-fill-mode: forwards;
-
-    @keyframes rotateOut {
-        from {
-            -webkit-transform: rotateY(-720deg) translateY(-20px);
-        }
-
-        to {
-            -webkit-transform: rotateY(0deg) translateY(0px);
-            opacity: 5;
-        }
-    }
-}
-
-
 @mixin boxAnimate() {
     -webkit-animation-name: boxAnimate;
     -webkit-animation-timing-function: ease-in-out;
@@ -138,6 +107,7 @@ $rotationSpeed: 1s;
     -webkit-animation-timing-function: ease;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.4s;
     opacity: 0;
     @keyframes nexTextContainer {
         0% {
@@ -179,3 +149,35 @@ $rotationSpeed: 1s;
      }
 }
 
+
+@mixin arrowsGoTo() {
+    -webkit-animation-name: arrowsGoTo;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-fill-mode: forwards;
+    @keyframes arrowsGoTo {
+        0% {
+            -webkit-transform: scale(1);
+        }
+
+        100% {
+            -webkit-transform: scale(0.9);
+        }
+     }
+}
+
+@mixin arrowsGoToOut() {
+    -webkit-animation-name: arrowsGoToOut;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-fill-mode: forwards;
+    @keyframes arrowsGoToOut {
+        from {
+            -webkit-transform: scale(0.9);
+        }
+
+        to {
+            -webkit-transform: scale(1);
+        }
+     }
+}

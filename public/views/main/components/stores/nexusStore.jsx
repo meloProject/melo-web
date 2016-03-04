@@ -7,9 +7,8 @@ class NexusStore {
         this.textType = "";
 
         // SECTION CONFIGS AND CUSTOMS.
-        this.sectionClass = "";
-        this.classLateralIcons = "";
-        this.actuallyLocation;
+        this.sectionClass = "section-default";
+        this.classLateralIcons = "icons-default";
 
         this.cubes = {
             female: {
@@ -30,10 +29,10 @@ class NexusStore {
         };
 
         this.bindListeners({
-            handleItemTextDescrition: NexusActions.SETTEXT,
-            handlerCubeGoto: NexusActions.CUBE_GO_TO
+            handleItemTextDescrition: NexusActions.SET_TEXT,
+            handlerGotoGeneral: NexusActions.GO_TO_GENERAL, 
+            handlerGoto: NexusActions.GO_TO
         });
-
     }
 
     handleItemTextDescrition(type) {
@@ -42,10 +41,15 @@ class NexusStore {
         this.sectionClass = this.cubes[type].sectionClass;
     }
 
-    handlerCubeGoto(type) {
+    handlerGoto(type) {
         // HANDLER DISPARADO CUANDO SE ELIGE UNA SECCION.
         this.type = type;
         this.classLateralIcons = this.cubes[type].classLateralIcons;
+    }
+
+    handlerGotoGeneral(location) {
+        if(location == "section-type")
+            this.classLateralIcons = "icons-default";
     }
 }
 

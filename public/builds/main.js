@@ -63477,18 +63477,24 @@ var NexusActions = function () {
     }
 
     _createClass(NexusActions, [{
-        key: 'settext',
-        value: function settext(text) {
+        key: 'setText',
+        value: function setText(text) {
             // se realizo la accion de mouse over para insertar texto descritibo.
             document.getElementById("nex_text_container").className = "nex_text_container";
             return text;
         }
     }, {
-        key: 'cubeGoTo',
-        value: function cubeGoTo(location) {
+        key: 'goTo',
+        value: function goTo(boxType) {
             // se realiza la accion para ir a la proxima sesesion del mini spa nexus.
             _swittcher2.default.goTo("section-link");
             document.getElementById("nex_text_container").className = "nex_text_container_out";
+            return boxType;
+        }
+    }, {
+        key: 'goToGeneral',
+        value: function goToGeneral(direction, location) {
+            _swittcher2.default.goTo(location);
             return location;
         }
     }]);
@@ -63622,12 +63628,12 @@ var Cubes = function (_Component) {
 																				{ className: 'cube',
 
 																								onClick: function onClick() {
-																												_nexusActions2.default.cubeGoTo(_this2.props.figure);
+																												_nexusActions2.default.goTo(_this2.props.figure);
 																								},
 
 																								onMouseOver: function onMouseOver() {
 
-																												_nexusActions2.default.settext(_this2.props.figure);
+																												_nexusActions2.default.setText(_this2.props.figure);
 																								},
 
 																								onMouseOut: function onMouseOut() {
@@ -63656,7 +63662,7 @@ var Cubes = function (_Component) {
 exports.default = Cubes;
 ;
 
-},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sections.jsx":[function(require,module,exports){
+},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionLink.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -63669,13 +63675,96 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _cubes = require('./cubes.jsx');
+var _nexusActions = require('./actions/nexusActions.jsx');
 
-var _cubes2 = _interopRequireDefault(_cubes);
+var _nexusActions2 = _interopRequireDefault(_nexusActions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SectionLink = function (_Component) {
+    _inherits(SectionLink, _Component);
+
+    function SectionLink() {
+        _classCallCheck(this, SectionLink);
+
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(SectionLink).call(this));
+    }
+
+    _createClass(SectionLink, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {}
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'section',
+                { id: 'section-link', className: this.props.sectionClass },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'cn_panelLateralLeft' },
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'ul_panelLL' },
+                        _react2.default.createElement(
+                            'li',
+                            { onClick: function onClick() {
+                                    _nexusActions2.default.goToGeneral("top", "section-type");
+                                } },
+                            _react2.default.createElement('i', { className: 'arrow up icon' })
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            { onClick: function onClick() {
+                                    _nexusActions2.default.goToGeneral("bot", "section-next");
+                                } },
+                            _react2.default.createElement('i', { className: 'arrow down icon' })
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return SectionLink;
+}(_react.Component);
+
+exports.default = SectionLink;
+;
+
+},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sections.jsx":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
 
 var _swittcher = require('./../standars/swittcher.js');
 
 var _swittcher2 = _interopRequireDefault(_swittcher);
+
+var _nexusActions = require('./actions/nexusActions.jsx');
+
+var _nexusActions2 = _interopRequireDefault(_nexusActions);
+
+var _sectionLink = require('./sectionLink.jsx');
+
+var _sectionLink2 = _interopRequireDefault(_sectionLink);
+
+var _cubes = require('./cubes.jsx');
+
+var _cubes2 = _interopRequireDefault(_cubes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63709,16 +63798,8 @@ var Sections = function (_Component) {
             _swittcher2.default.init();
         }
     }, {
-        key: 'test',
-        value: function test(go) {
-            console.log(go);
-            _swittcher2.default.goTo(go);
-        }
-    }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             return _react2.default.createElement(
                 'div',
                 { className: 'main-nexus', id: 'swittcher' },
@@ -63751,32 +63832,15 @@ var Sections = function (_Component) {
                         )
                     )
                 ),
+                _react2.default.createElement(_sectionLink2.default, { sectionClass: this.props.sectionClass }),
                 _react2.default.createElement(
                     'section',
-                    { id: 'section-link', className: this.props.sectionClass },
+                    { id: 'section-next' },
                     _react2.default.createElement(
                         'a',
                         { onClick: function onClick() {
-                                _this2.test("section-type");
-                            } },
-                        'type'
-                    ),
-                    _react2.default.createElement('br', null),
-                    _react2.default.createElement(
-                        'a',
-                        { onClick: function onClick() {
-                                _this2.test("section-test");
-                            } },
-                        'test'
-                    )
-                ),
-                _react2.default.createElement(
-                    'section',
-                    { id: 'section-test' },
-                    _react2.default.createElement(
-                        'a',
-                        { onClick: function onClick() {
-                                _this2.test("section-link");
+
+                                _nexusActions2.default.goToGeneral("top", "section-link");
                             } },
                         'link'
                     )
@@ -63791,7 +63855,7 @@ var Sections = function (_Component) {
 exports.default = Sections;
 ;
 
-},{"./../standars/swittcher.js":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\swittcher.js","./cubes.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
+},{"./../standars/swittcher.js":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\swittcher.js","./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","./cubes.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx","./sectionLink.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionLink.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -63980,10 +64044,7 @@ var Swittcher = exports.Swittcher = function () {
 
 ;
 
-var SwittcherInstance = new Swittcher();
-window.swittch = SwittcherInstance;
-
-exports.default = SwittcherInstance;
+exports.default = new Swittcher();
 
 },{"underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\stores\\nexusStore.jsx":[function(require,module,exports){
 'use strict';
@@ -64010,9 +64071,8 @@ var NexusStore = function () {
         this.textType = "";
 
         // SECTION CONFIGS AND CUSTOMS.
-        this.sectionClass = "";
-        this.classLateralIcons = "";
-        this.actuallyLocation;
+        this.sectionClass = "section-default";
+        this.classLateralIcons = "icons-default";
 
         this.cubes = {
             female: {
@@ -64033,8 +64093,9 @@ var NexusStore = function () {
         };
 
         this.bindListeners({
-            handleItemTextDescrition: _nexusActions2.default.SETTEXT,
-            handlerCubeGoto: _nexusActions2.default.CUBE_GO_TO
+            handleItemTextDescrition: _nexusActions2.default.SET_TEXT,
+            handlerGotoGeneral: _nexusActions2.default.GO_TO_GENERAL,
+            handlerGoto: _nexusActions2.default.GO_TO
         });
     }
 
@@ -64046,11 +64107,16 @@ var NexusStore = function () {
             this.sectionClass = this.cubes[type].sectionClass;
         }
     }, {
-        key: 'handlerCubeGoto',
-        value: function handlerCubeGoto(type) {
+        key: 'handlerGoto',
+        value: function handlerGoto(type) {
             // HANDLER DISPARADO CUANDO SE ELIGE UNA SECCION.
             this.type = type;
             this.classLateralIcons = this.cubes[type].classLateralIcons;
+        }
+    }, {
+        key: 'handlerGotoGeneral',
+        value: function handlerGotoGeneral(location) {
+            if (location == "section-type") this.classLateralIcons = "icons-default";
         }
     }]);
 

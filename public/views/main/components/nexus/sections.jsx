@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Cubes from './cubes.jsx';
 import Swittcher from './../standars/swittcher.js';
+import NexusActions from './actions/nexusActions.jsx';
+import SectionLink from './sectionLink.jsx';
+import Cubes from './cubes.jsx';
 
 export default class Sections extends Component {
 
@@ -17,11 +19,6 @@ export default class Sections extends Component {
 
     componentDidMount() {
         Swittcher.init();
-    }
-
-    test(go) {
-        console.log(go)
-        Swittcher.goTo(go)
     }
 
     render() {
@@ -45,21 +42,17 @@ export default class Sections extends Component {
                     </div>
                 </section>
 
-                <section id="section-link" className={ this.props.sectionClass }>
-                 <a onClick={()=> {
-                        this.test("section-type")
-                    }}>type</a> 
-                    <br/>
-                    <a onClick={()=> {
-                        this.test("section-test")
-                    }}>test</a>
-                </section>
+                <SectionLink sectionClass={ this.props.sectionClass  }/>
 
-                <section id="section-test">
+
+                <section id="section-next">
                     <a onClick={()=> {
-                        this.test("section-link")
+                        
+                         NexusActions.goToGeneral("top","section-link")
+
                     }}>link</a>
                 </section>
+
             </div>
         )
     }
