@@ -1,6 +1,6 @@
 ﻿
 $bg_cube0: #FFEE58;
-$bg_cube0RL: #f3e45b;
+$bg_cube0RL: #FFEE58;
 $fontColor0: #ce35e5;
 
 $bg_cube1: #74ef5c;
@@ -53,9 +53,16 @@ $iconsSize: 65px;
     height: 80%;
 }
 
+.icons8-controller {
+    width: 80%;
+    height: 80%;
+    -webkit-filter: drop-shadow( 0 0 5px rgba(51, 51, 51, 0.25) );
+}
+
 .icons8 { /* Customizes all icons at once */
     display: inline-block;
     align-self: center;
+    shape-rendering:auto;
 }
 
 /* ALIEN FIGURE */
@@ -363,7 +370,7 @@ $iconsSize: 65px;
     height: 170px;
     -webkit-transform-style: preserve-3d;
     -webkit-transition: -webkit-transform 0.8s ease;
-
+    
     &:hover {
         -webkit-transform: rotateY(-360deg) scale(1.3);
     }

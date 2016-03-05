@@ -516,10 +516,16 @@ textarea::-webkit-input-placeholder {
   width: 80%;
   height: 80%; }
 
+.icons8-controller {
+  width: 80%;
+  height: 80%;
+  -webkit-filter: drop-shadow(0 0 5px rgba(51, 51, 51, 0.25)); }
+
 .icons8 {
   /* Customizes all icons at once */
   display: inline-block;
-  align-self: center; }
+  align-self: center;
+  shape-rendering: auto; }
 
 /* ALIEN FIGURE */
 .icons8-Alien {
@@ -943,7 +949,7 @@ figure {
   -webkit-transform-origin: 50% 50% 0; }
 
 .figure0 {
-  background: -webkit-linear-gradient(top, #FFEE58 0, #f3e45b 100%);
+  background: -webkit-linear-gradient(top, #FFEE58 0, #FFEE58 100%);
   border: 1px solid #FFEE58; }
 
 .figure1 {
