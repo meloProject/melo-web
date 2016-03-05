@@ -157,11 +157,11 @@ $rotationSpeed: 1s;
     -webkit-animation-fill-mode: forwards;
     @keyframes arrowsGoTo {
         0% {
-            -webkit-transform: scale(1);
+            -webkit-transform: translateY(0);
         }
 
         100% {
-            -webkit-transform: scale(0.9);
+            -webkit-transform:  translateY(-5px);
         }
      }
 }
@@ -171,13 +171,15 @@ $rotationSpeed: 1s;
     -webkit-animation-timing-function: ease;
     -webkit-animation-duration: 0.2s;
     -webkit-animation-fill-mode: forwards;
+
     @keyframes arrowsGoToOut {
         from {
-            -webkit-transform: scale(0.9);
+            -webkit-transform:  translateY(-5px);
         }
 
         to {
-            -webkit-transform: scale(1);
+            -webkit-transform:  translateY(0px);
         }
      }
 }
+

@@ -12,7 +12,7 @@ class NexusStore {
 
         this.cubes = {
             female: {
-                description: "Chica",
+                description: "Trivia punch!",
                 sectionClass: "section-female",
                 classLateralIcons: "icons-female"
             },
@@ -36,15 +36,15 @@ class NexusStore {
     }
 
     handleItemTextDescrition(type) {
-        // HANDLER FOR INSERT TEXTO DE DESCRIPCION DE LOS TIPOS.
+        // HANDLER FOR INSERT TEXTO DESCRIPTION TYPES.
         this.textType = this.cubes[type].description;
-        this.sectionClass = this.cubes[type].sectionClass;
     }
 
     handlerGoto(type) {
         // HANDLER DISPARADO CUANDO SE ELIGE UNA SECCION.
         this.type = type;
         this.classLateralIcons = this.cubes[type].classLateralIcons;
+        this.sectionClass = this.cubes[type].sectionClass;
     }
 
     handlerGotoGeneral(location) {

@@ -63487,7 +63487,7 @@ var NexusActions = function () {
         key: 'goTo',
         value: function goTo(boxType) {
             // se realiza la accion para ir a la proxima sesesion del mini spa nexus.
-            _swittcher2.default.goTo("section-link");
+            _swittcher2.default.goTo("section-contact");
             document.getElementById("nex_text_container").className = "nex_text_container_out";
             return boxType;
         }
@@ -63510,7 +63510,7 @@ exports.default = _alt2.default.createActions(NexusActions);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
-				value: true
+	value: true
 });
 
 var _react = require('react');
@@ -63534,135 +63534,137 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Cubes = function (_Component) {
-				_inherits(Cubes, _Component);
+	_inherits(Cubes, _Component);
 
-				function Cubes() {
-								_classCallCheck(this, Cubes);
+	function Cubes() {
+		_classCallCheck(this, Cubes);
 
-								return _possibleConstructorReturn(this, Object.getPrototypeOf(Cubes).apply(this, arguments));
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Cubes).apply(this, arguments));
+	}
+
+	_createClass(Cubes, [{
+		key: 'animateTextBoxOut',
+		value: function animateTextBoxOut() {
+			document.getElementById("nex_text_container").className = "nex_text_container_out";
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			function svgFigure(figure) {
+				switch (figure) {
+					case "male":
+						return _react2.default.createElement(
+							'svg',
+							{ className: 'icons8 icons8-User-Female', version: '1.1', x: '0px', y: '0px', width: '48px', height: '48px', viewBox: '0 0 48 48', 'enable-background': 'new 0 0 48 48' },
+							_react2.default.createElement('path', { fill: '#E39D36', d: 'M32.449,29.093L19.271,36.92c-0.025,0,3.074,4.029,3.074,4.029l12.605-7.647\r c1.15-0.692,1.527-2.182,0.848-3.338C35.114,28.799,33.615,28.408,32.449,29.093' }),
+							_react2.default.createElement('path', { fill: '#689F38', d: 'M32.732,13.157C31.147,8.502,23.766,5.693,22.031,5c0.756,2.881-4.762,8.823-2.47,13.207\r c1.62,3.104,4.583,3.984,7.995,0.763C31.318,19.92,33.854,16.453,32.732,13.157z' }),
+							_react2.default.createElement(
+								'g',
+								null,
+								_react2.default.createElement('path', { fill: 'none', stroke: '#8BC34A', 'stroke-width': '2', 'stroke-linecap': 'round', d: 'M23.879,12.55C27.579,16.783,27,25,27,25' }),
+								_react2.default.createElement('path', { fill: '#8BC34A', d: 'M19.562,18.207C17.27,13.823,22.787,7.881,22.031,5c0,0,0,0,0.001,0.001\r c1.514,1.677,3.459,5.503,5.547,13.973c-0.008-0.001-0.015-0.002-0.022-0.004C24.145,22.191,21.182,21.311,19.562,18.207z' })
+							),
+							_react2.default.createElement(
+								'g',
+								null,
+								_react2.default.createElement('circle', { fill: '#795548', cx: '24', cy: '27', r: '3' }),
+								_react2.default.createElement('circle', { fill: '#795548', cx: '30', cy: '32', r: '3' }),
+								_react2.default.createElement('ellipse', { fill: '#795548', cx: '26.5', cy: '29', rx: '3.5', ry: '3' }),
+								_react2.default.createElement('circle', { fill: '#795548', cx: '20', cy: '28', r: '3' }),
+								_react2.default.createElement('circle', { fill: '#795548', cx: '28.5', cy: '26.5', r: '2.5' }),
+								_react2.default.createElement('circle', { fill: '#795548', cx: '34', cy: '30', r: '2' }),
+								_react2.default.createElement('circle', { fill: '#795548', cx: '31.5', cy: '27.5', r: '2.5' })
+							),
+							_react2.default.createElement('path', { fill: '#FFB74D', d: 'M38.9,30.431l-12.356,7.338c-0.028,0,0.029,0,0,0l-5.867-3.358l2.949,1.608\r c1.288,0.702,2.935,0.481,3.892-0.628c1.322-1.534,0.858-3.816-0.842-4.747l-12.351-6.77c-1.149-0.63-2.543-0.618-3.683,0.029\r l-5.601,3.185C5.027,27.112,5.016,27.134,5,27.158v10.684l4.045-2.55l15.107,8.246c1.178,0.644,2.608,0.613,3.758-0.08l13.771-8.349\r c1.278-0.77,1.698-2.424,0.942-3.71C41.863,30.104,40.197,29.67,38.9,30.431' }),
+							_react2.default.createElement(
+								'g',
+								null,
+								_react2.default.createElement('path', { fill: '#EDA740', d: 'M27.518,35.391c-0.742,0.859-1.896,1.179-2.979,0.955l-0.236,0.14l2.241,1.283L38.9,30.431\r c0.105-0.063,0.218-0.104,0.327-0.15c-0.72-1.049-2.132-1.386-3.247-0.731l-7.822,4.646C28.039,34.617,27.832,35.025,27.518,35.391\r z' }),
+								_react2.default.createElement('path', { fill: '#EDA740', d: 'M26.492,37.798l0.053-0.029l-1.368-0.876l-10.683-6.041l8.035,6.589\r C23.652,38.361,25.224,38.502,26.492,37.798' })
+							),
+							_react2.default.createElement('path', { fill: '#FFCC80', d: 'M24.449,35.16c-0.902-0.466-0.574-1.275-0.109-2.177c0.467-0.902,0.896-1.555,1.798-1.089\r c0.901,0.466,1.255,1.575,0.789,2.477C26.461,35.273,25.352,35.626,24.449,35.16' })
+						);
+					case "female":
+						return _react2.default.createElement(
+							'svg',
+							{ className: 'icons8 icons8-User-Male', version: '1.1', x: '0px', y: '0px', viewBox: '0 0 48 48' },
+							_react2.default.createElement('polygon', { style: { fill: "#C5CAE9" }, points: '43,5 17.963,30.037 15.817,27.891 34.416,6.431 ' }),
+							_react2.default.createElement('polygon', { style: { fill: "#9FA8DA" }, points: '43,5 17.963,30.037 20.109,32.183 41.569,13.584 ' }),
+							_react2.default.createElement('path', { style: { fill: "#FFB300" }, d: 'M19.751,36.117l-7.869-7.869c-0.593-0.593-0.593-1.553,0-2.146l0,0c0.593-0.593,1.553-0.593,2.146,0\r l7.869,7.869c0.593,0.593,0.593,1.553,0,2.146l0,0C21.305,36.71,20.344,36.71,19.751,36.117z' }),
+							_react2.default.createElement('path', { style: { fill: "#FFB300" }, d: 'M10.452,42.556l-5.007-5.007c-0.593-0.593-0.593-1.553,0-2.146l0,0c0.593-0.593,1.553-0.593,2.146,0\r l5.007,5.007c0.593,0.593,0.593,1.553,0,2.146h0C12.005,43.148,11.044,43.148,10.452,42.556z' }),
+							_react2.default.createElement('rect', { x: '10.365', y: '29.925', transform: 'matrix(0.7071 0.7071 -0.7071 0.7071 27.5017 1.5478)', style: { fill: "#EF6C00" }, width: '3.035', height: '8.093' }),
+							_react2.default.createElement('rect', { x: '12.511', y: '32.071', transform: 'matrix(0.7071 0.7071 -0.7071 0.7071 29.6478 0.6589)', style: { fill: "#D44B00" }, width: '3.035', height: '8.093' })
+						);
+					case "alien":
+						return _react2.default.createElement(
+							'svg',
+							{ version: '1.1', x: '0px', y: '0px', width: '48px', height: '48px', viewBox: '0 0 48 48', className: 'icons8 icons8-Alien' },
+							_react2.default.createElement(
+								'g',
+								null,
+								_react2.default.createElement('path', { className: 'ant-right', fill: '#8E24AA', d: 'M31,13.8l2,0.3C33.5,11,36.3,9,40,9V7C35.3,7,31.7,9.7,31,13.8z' }),
+								_react2.default.createElement('path', { className: 'ant-letf', fill: '#8E24AA', d: 'M8,7v2c3.7,0,6.5,2,7,5.2l2-0.3C16.3,9.7,12.7,7,8,7z' })
+							),
+							_react2.default.createElement(
+								'g',
+								null,
+								_react2.default.createElement('path', { fill: '#BA68C8', d: 'M24,10.2c-9.5,0-17.3,9.5-17.3,19S14.5,43,24,43s17.3-4.3,17.3-13.8S33.5,10.2,24,10.2z' }),
+								_react2.default.createElement('circle', { className: 'ant-right', fill: '#BA68C8', cx: '40', cy: '8', r: '3' }),
+								_react2.default.createElement('circle', { className: 'ant-letf', fill: '#BA68C8', cx: '8', cy: '8', r: '3' })
+							),
+							_react2.default.createElement('path', { fill: '#FFF', d: 'M24,33c-4.5,0-8-3.5-8-8s3.5-8,8-8s8,3.5,8,8S28.5,33,24,33z' }),
+							_react2.default.createElement('circle', { className: 'alien-eye', fill: '#333', cx: '24', cy: '25', r: '4' }),
+							_react2.default.createElement('circle', { fillOpacity: '0.2', className: 'alien-eye', fill: '#FFFFFF', cx: '26.5', cy: '22.5', r: '2.5' }),
+							_react2.default.createElement('path', { className: 'alien-mouth', fill: '#6A1B9A', d: 'M30.9,38c0,0-3.3,1.7-6.9,1.7S17.1,38,17.1,38s4.1,0,6.9,0S30.9,38,30.9,38z' })
+						);
 				}
+			}
 
-				_createClass(Cubes, [{
-								key: 'animateTextBoxOut',
-								value: function animateTextBoxOut() {
-												document.getElementById("nex_text_container").className = "nex_text_container_out";
-								}
-				}, {
-								key: 'render',
-								value: function render() {
-												var _this2 = this;
+			return _react2.default.createElement(
+				'div',
+				{ className: 'stage' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'cube',
 
-												function svgFigure(figure) {
-																switch (figure) {
-																				case "male":
-																								return _react2.default.createElement(
-																												'svg',
-																												{ version: '1.0', x: '0px', y: '0px', width: '48px', height: '48px', viewBox: '0 0 48 48', className: 'icons8 icons8-User-Male' },
-																												_react2.default.createElement(
-																																'g',
-																																null,
-																																_react2.default.createElement('path', { fill: '#FFA726', d: 'M14,27c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S14,24.791,14,27' }),
-																																_react2.default.createElement('path', { fill: '#FFA726', d: 'M42,27c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S42,24.791,42,27' })
-																												),
-																												_react2.default.createElement('path', { fill: '#FFB74D', d: 'M9,20c0-12.725,30-8.284,30,0v10c0,8.284-6.716,15-15,15S9,38.284,9,30V20z' }),
-																												_react2.default.createElement('path', { fill: '#424242', d: 'M40.891,19.338C40.417,13.365,38.33,7.482,31,6l-2-3h-5C14.772,3,7,10.48,7,21v3.4l3,3.6v-6l21-7l7,6v7\tl3-3.6V21C41,20.436,40.957,19.883,40.891,19.338' }),
-																												_react2.default.createElement(
-																																'g',
-																																null,
-																																_react2.default.createElement('path', { fill: '#784719', d: 'M33,28c0,1.105-0.895,2-2,2s-2-0.895-2-2s0.895-2,2-2S33,26.895,33,28' }),
-																																_react2.default.createElement('path', { fill: '#784719', d: 'M19,28c0,1.105-0.895,2-2,2s-2-0.895-2-2s0.895-2,2-2S19,26.895,19,28' })
-																												),
-																												_react2.default.createElement('path', { fill: '#FB8C00', d: 'M19,37h10c0,0-2,3-5,3S19,37,19,37z' })
-																								);
-																				case "female":
-																								return _react2.default.createElement(
-																												'svg',
-																												{ version: '1.0', x: '0px', y: '0px', width: '48px', height: '48px', viewBox: '0 0 48 48', className: 'icons8 icons8-User-Female' },
-																												_react2.default.createElement('path', { fill: '#BF360C', d: 'M35,44c0,0-6-2-11-2s-11,2-11,2V32h22V44z' }),
-																												_react2.default.createElement(
-																																'g',
-																																null,
-																																_react2.default.createElement('path', { fill: '#FFA726', d: 'M14,28c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S14,25.791,14,28' }),
-																																_react2.default.createElement('path', { fill: '#FFA726', d: 'M42,28c0,2.209-1.791,4-4,4s-4-1.791-4-4s1.791-4,4-4S42,25.791,42,28' })
-																												),
-																												_react2.default.createElement('path', { fill: '#FFB74D', d: 'M38,18c0-12.725-28-8.284-28,0v9c0,8.284,6.269,15,14,15s14-6.716,14-15V18z' }),
-																												_react2.default.createElement(
-																																'g',
-																																null,
-																																_react2.default.createElement('path', { fill: '#784719', d: 'M32,26c0,1.105-0.895,2-2,2s-2-0.895-2-2s0.895-2,2-2S32,24.895,32,26' }),
-																																_react2.default.createElement('path', { fill: '#784719', d: 'M20,26c0,1.105-0.895,2-2,2s-2-0.895-2-2s0.895-2,2-2S20,24.895,20,26' })
-																												),
-																												_react2.default.createElement('path', { fill: '#FF5722', d: 'M24,4C15.495,4,3,9,2.875,36L13,44V24l16.75-9l5.125,7L35,44l10-8c0-12-0.543-29-15-29l-2-3H24z' }),
-																												_react2.default.createElement('path', { fill: '#FB8C00', d: 'M19,35h10c0,0-2,3-5,3S19,35,19,35z' })
-																								);
-																				case "alien":
-																								return _react2.default.createElement(
-																												'svg',
-																												{ version: '1.1', x: '0px', y: '0px', width: '48px', height: '48px', viewBox: '0 0 48 48', className: 'icons8 icons8-Alien' },
-																												_react2.default.createElement(
-																																'g',
-																																null,
-																																_react2.default.createElement('path', { className: 'ant-right', fill: '#8E24AA', d: 'M31,13.8l2,0.3C33.5,11,36.3,9,40,9V7C35.3,7,31.7,9.7,31,13.8z' }),
-																																_react2.default.createElement('path', { className: 'ant-letf', fill: '#8E24AA', d: 'M8,7v2c3.7,0,6.5,2,7,5.2l2-0.3C16.3,9.7,12.7,7,8,7z' })
-																												),
-																												_react2.default.createElement(
-																																'g',
-																																null,
-																																_react2.default.createElement('path', { fill: '#BA68C8', d: 'M24,10.2c-9.5,0-17.3,9.5-17.3,19S14.5,43,24,43s17.3-4.3,17.3-13.8S33.5,10.2,24,10.2z' }),
-																																_react2.default.createElement('circle', { className: 'ant-right', fill: '#BA68C8', cx: '40', cy: '8', r: '3' }),
-																																_react2.default.createElement('circle', { className: 'ant-letf', fill: '#BA68C8', cx: '8', cy: '8', r: '3' })
-																												),
-																												_react2.default.createElement('path', { fill: '#FFF', d: 'M24,33c-4.5,0-8-3.5-8-8s3.5-8,8-8s8,3.5,8,8S28.5,33,24,33z' }),
-																												_react2.default.createElement('circle', { className: 'alien-eye', fill: '#333', cx: '24', cy: '25', r: '4' }),
-																												_react2.default.createElement('circle', { fillOpacity: '0.2', className: 'alien-eye', fill: '#FFFFFF', cx: '26.5', cy: '22.5', r: '2.5' }),
-																												_react2.default.createElement('path', { className: 'alien-mouth', fill: '#6A1B9A', d: 'M30.9,38c0,0-3.3,1.7-6.9,1.7S17.1,38,17.1,38s4.1,0,6.9,0S30.9,38,30.9,38z' })
-																								);
-																}
-												}
+						onClick: function onClick() {
+							_nexusActions2.default.goTo(_this2.props.figure);
+						},
 
-												return _react2.default.createElement(
-																'div',
-																{ className: 'stage' },
-																_react2.default.createElement(
-																				'div',
-																				{ className: 'cube',
+						onMouseOver: function onMouseOver() {
 
-																								onClick: function onClick() {
-																												_nexusActions2.default.goTo(_this2.props.figure);
-																								},
+							_nexusActions2.default.setText(_this2.props.figure);
+						},
 
-																								onMouseOver: function onMouseOver() {
+						onMouseOut: function onMouseOut() {
 
-																												_nexusActions2.default.setText(_this2.props.figure);
-																								},
+							_this2.animateTextBoxOut();
+						}
+					},
+					_react2.default.createElement('figure', { className: "back" + " figure" + this.props.indent }),
+					_react2.default.createElement('figure', { className: "top" + " figure" + this.props.indent }),
+					_react2.default.createElement('figure', { className: "bottom" + " figure" + this.props.indent }),
+					_react2.default.createElement('figure', { className: "left" + " figure" + this.props.indent }),
+					_react2.default.createElement('figure', { className: "right" + " figure" + this.props.indent }),
+					_react2.default.createElement(
+						'figure',
+						{ className: "front" + " figure" + this.props.indent },
+						svgFigure(this.props.figure)
+					)
+				)
+			);
+		}
+	}]);
 
-																								onMouseOut: function onMouseOut() {
-
-																												_this2.animateTextBoxOut();
-																								}
-																				},
-																				_react2.default.createElement('figure', { className: "back" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "top" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "bottom" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "left" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "right" + " figure" + this.props.indent }),
-																				_react2.default.createElement(
-																								'figure',
-																								{ className: "front" + " figure" + this.props.indent },
-																								svgFigure(this.props.figure)
-																				)
-																)
-												);
-								}
-				}]);
-
-				return Cubes;
+	return Cubes;
 }(_react.Component);
 
 exports.default = Cubes;
 ;
 
-},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionLink.jsx":[function(require,module,exports){
+},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js","underscore":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\underscore\\underscore.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\panelLL.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -63687,6 +63689,141 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var PanelLL = function (_Component) {
+    _inherits(PanelLL, _Component);
+
+    function PanelLL() {
+        _classCallCheck(this, PanelLL);
+
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(PanelLL).apply(this, arguments));
+    }
+
+    _createClass(PanelLL, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'cn_panelLateralLeft' },
+                _react2.default.createElement(
+                    'ul',
+                    { className: this.props.themeClass || "ul_panelLL" },
+                    _react2.default.createElement(
+                        'li',
+                        { onClick: function onClick() {
+                                _nexusActions2.default.goToGeneral("top", "section-type");
+                            } },
+                        _react2.default.createElement('span', null),
+                        _react2.default.createElement('i', { className: 'arrow up icon' })
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        { onClick: function onClick() {
+                                _nexusActions2.default.goToGeneral("bot", "section-link");
+                            } },
+                        _react2.default.createElement('span', null),
+                        _react2.default.createElement('i', { className: 'arrow down icon' })
+                    )
+                )
+            );
+        }
+    }]);
+
+    return PanelLL;
+}(_react.Component);
+
+exports.default = PanelLL;
+;
+
+},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionContact.jsx":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _nexusActions = require('./actions/nexusActions.jsx');
+
+var _nexusActions2 = _interopRequireDefault(_nexusActions);
+
+var _panelLL = require('./panelLL.jsx');
+
+var _panelLL2 = _interopRequireDefault(_panelLL);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SectionContact = function (_Component) {
+    _inherits(SectionContact, _Component);
+
+    function SectionContact() {
+        _classCallCheck(this, SectionContact);
+
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(SectionContact).apply(this, arguments));
+    }
+
+    _createClass(SectionContact, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'section',
+                { id: 'section-contact', className: this.props.sectionClass },
+                _react2.default.createElement('div', { className: 'section_contact__st_top' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'section_contact__st_mid' },
+                    _react2.default.createElement(_panelLL2.default, null)
+                ),
+                _react2.default.createElement('div', { className: 'section_contact__st_bot' })
+            );
+        }
+    }]);
+
+    return SectionContact;
+}(_react.Component);
+
+exports.default = SectionContact;
+;
+
+},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","./panelLL.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\panelLL.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionLink.jsx":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _nexusActions = require('./actions/nexusActions.jsx');
+
+var _nexusActions2 = _interopRequireDefault(_nexusActions);
+
+var _panelLL = require('./panelLL.jsx');
+
+var _panelLL2 = _interopRequireDefault(_panelLL);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var SectionLink = function (_Component) {
     _inherits(SectionLink, _Component);
 
@@ -63694,39 +63831,66 @@ var SectionLink = function (_Component) {
         _classCallCheck(this, SectionLink);
 
         return _possibleConstructorReturn(this, Object.getPrototypeOf(SectionLink).call(this));
+        // <a onClick={()=> {
+
+        //  NexusActions.goToGeneral("top","section-contact")
+
+        //}}>link</a>
     }
 
     _createClass(SectionLink, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {}
-    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'section',
-                { id: 'section-link', className: this.props.sectionClass },
+                { id: 'section-link' },
+                _react2.default.createElement('div', { className: 'section_link__st_top' }),
                 _react2.default.createElement(
                     'div',
-                    { className: 'cn_panelLateralLeft' },
+                    { className: 'section_link__st_mid' },
+                    _react2.default.createElement(_panelLL2.default, { themeClass: 'panelLL-alternative' }),
                     _react2.default.createElement(
-                        'ul',
-                        { className: 'ul_panelLL' },
+                        'div',
+                        { className: 'link_cn_middle' },
                         _react2.default.createElement(
-                            'li',
-                            { onClick: function onClick() {
-                                    _nexusActions2.default.goToGeneral("top", "section-type");
-                                } },
-                            _react2.default.createElement('i', { className: 'arrow up icon' })
-                        ),
-                        _react2.default.createElement(
-                            'li',
-                            { onClick: function onClick() {
-                                    _nexusActions2.default.goToGeneral("bot", "section-next");
-                                } },
-                            _react2.default.createElement('i', { className: 'arrow down icon' })
+                            'div',
+                            { className: 'link_cn_container' },
+                            _react2.default.createElement(
+                                'ul',
+                                { className: 'link_cn_ul' },
+                                _react2.default.createElement(
+                                    'li',
+                                    null,
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'cn_link' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'top_link_post' },
+                                            _react2.default.createElement(
+                                                'svg',
+                                                { className: 'icons8 icons8-controller', version: '1.0', id: 'Layer_1', x: '0px', y: '0px', viewBox: '0 0 48 48', 'enable-background': 'new 0 0 48 48' },
+                                                _react2.default.createElement('path', { fill: '#37474F', d: 'M4,39V7c0-2.2,1.8-4,4-4h22c2.2,0,4,1.8,4,4v32c0,2.2-1.8,4-4,4H8C5.8,43,4,41.2,4,39z' }),
+                                                _react2.default.createElement('path', { fill: '#BBDEFB', d: 'M30,6H8C7.4,6,7,6.4,7,7v29c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V7C31,6.4,30.6,6,30,6z' }),
+                                                _react2.default.createElement('rect', { x: '15', y: '39', fill: '#78909C', width: '6', height: '2' }),
+                                                _react2.default.createElement('path', { fill: '#E38939', d: 'M24,41V17c0-2.2,1.8-4,4-4h12c2.2,0,4,1.8,4,4v24c0,2.2-1.8,4-4,4H28C25.8,45,24,43.2,24,41z' }),
+                                                _react2.default.createElement('path', { fill: '#FFF3E0', d: 'M40,16H28c-0.6,0-1,0.4-1,1v22c0,0.6,0.4,1,1,1h12c0.6,0,1-0.4,1-1V17C41,16.4,40.6,16,40,16z' }),
+                                                _react2.default.createElement('circle', { fill: '#A6642A', cx: '34', cy: '42.5', r: '1.5' })
+                                            )
+                                        ),
+                                        _react2.default.createElement('div', { className: 'mid_link_post' })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'li',
+                                    null,
+                                    _react2.default.createElement('div', null)
+                                )
+                            )
                         )
                     )
-                )
+                ),
+                _react2.default.createElement('div', { className: 'section_link__st_bot' })
             );
         }
     }]);
@@ -63737,7 +63901,7 @@ var SectionLink = function (_Component) {
 exports.default = SectionLink;
 ;
 
-},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sections.jsx":[function(require,module,exports){
+},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","./panelLL.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\panelLL.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sections.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -63757,6 +63921,10 @@ var _swittcher2 = _interopRequireDefault(_swittcher);
 var _nexusActions = require('./actions/nexusActions.jsx');
 
 var _nexusActions2 = _interopRequireDefault(_nexusActions);
+
+var _sectionContact = require('./sectionContact.jsx');
+
+var _sectionContact2 = _interopRequireDefault(_sectionContact);
 
 var _sectionLink = require('./sectionLink.jsx');
 
@@ -63806,10 +63974,10 @@ var Sections = function (_Component) {
                 _react2.default.createElement(
                     'section',
                     { id: 'section-type' },
-                    _react2.default.createElement('div', { className: 'main_nex__st_top' }),
+                    _react2.default.createElement('div', { className: 'section_type__st_top' }),
                     _react2.default.createElement(
                         'div',
-                        { className: 'main_nex__st_mid' },
+                        { className: 'section_type__st_mid' },
                         _react2.default.createElement(
                             'div',
                             { className: 'con_selection' },
@@ -63820,7 +63988,7 @@ var Sections = function (_Component) {
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'main_nex__st_bot' },
+                        { className: 'section_type__st_bot' },
                         _react2.default.createElement(
                             'div',
                             { className: 'nex_text_container', id: 'nex_text_container' },
@@ -63832,19 +64000,8 @@ var Sections = function (_Component) {
                         )
                     )
                 ),
-                _react2.default.createElement(_sectionLink2.default, { sectionClass: this.props.sectionClass }),
-                _react2.default.createElement(
-                    'section',
-                    { id: 'section-next' },
-                    _react2.default.createElement(
-                        'a',
-                        { onClick: function onClick() {
-
-                                _nexusActions2.default.goToGeneral("top", "section-link");
-                            } },
-                        'link'
-                    )
-                )
+                _react2.default.createElement(_sectionContact2.default, { sectionClass: this.props.sectionClass }),
+                _react2.default.createElement(_sectionLink2.default, null)
             );
         }
     }]);
@@ -63855,7 +64012,7 @@ var Sections = function (_Component) {
 exports.default = Sections;
 ;
 
-},{"./../standars/swittcher.js":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\swittcher.js","./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","./cubes.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx","./sectionLink.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionLink.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
+},{"./../standars/swittcher.js":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\swittcher.js","./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","./cubes.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx","./sectionContact.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionContact.jsx","./sectionLink.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionLink.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -64076,7 +64233,7 @@ var NexusStore = function () {
 
         this.cubes = {
             female: {
-                description: "Chica",
+                description: "Trivia punch!",
                 sectionClass: "section-female",
                 classLateralIcons: "icons-female"
             },
@@ -64102,9 +64259,8 @@ var NexusStore = function () {
     _createClass(NexusStore, [{
         key: 'handleItemTextDescrition',
         value: function handleItemTextDescrition(type) {
-            // HANDLER FOR INSERT TEXTO DE DESCRIPCION DE LOS TIPOS.
+            // HANDLER FOR INSERT TEXTO DESCRIPTION TYPES.
             this.textType = this.cubes[type].description;
-            this.sectionClass = this.cubes[type].sectionClass;
         }
     }, {
         key: 'handlerGoto',
@@ -64112,6 +64268,7 @@ var NexusStore = function () {
             // HANDLER DISPARADO CUANDO SE ELIGE UNA SECCION.
             this.type = type;
             this.classLateralIcons = this.cubes[type].classLateralIcons;
+            this.sectionClass = this.cubes[type].sectionClass;
         }
     }, {
         key: 'handlerGotoGeneral',

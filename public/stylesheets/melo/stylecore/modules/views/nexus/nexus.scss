@@ -7,8 +7,8 @@ $bg_cube1: #74ef5c;
 $bg_cube1RL: #6feb57;
 $fontColor1: #333;
 
-$bg_cube2: #1997f6;
-$bg_cube2RL: #048bf1;
+$bg_cube2: #00c8ff;
+$bg_cube2RL: #00c8ff;
 $fontColor2: #0092ff;
 
 $boxSize: 60px;
@@ -38,8 +38,8 @@ $iconsSize: 65px;
 
 .icons8-User-Female { /* Customizes User Female icon */
     fill: #false;
-    width: 96px;
-    height: 96px;
+    width: 80%;
+    height: 80%;
 }
 
 .icon { /* Customizes all icons at once */
@@ -49,8 +49,8 @@ $iconsSize: 65px;
 
 .icons8-User-Male { /* Customizes User Male icon */
     fill: #false;
-    width: 96px;
-    height: 96px;
+    width: 80%;
+    height: 80%;
 }
 
 .icons8 { /* Customizes all icons at once */
@@ -60,8 +60,8 @@ $iconsSize: 65px;
 
 /* ALIEN FIGURE */
 .icons8-Alien {
-    width: 96px;
-    height: 96px;
+    width: 80%;
+    height: 80%;
 }
 
 .ant-right {
@@ -75,7 +75,6 @@ $iconsSize: 65px;
 .alien-eye {
     @include alienEye();
 }
-
 
 
 /* SECTION CUSTOMS */
@@ -94,7 +93,7 @@ $iconsSize: 65px;
 }
 
 .section-male {
-    background: #1796f5;
+    background: #00c8ff;
     display: flex;
 }
 
@@ -130,16 +129,66 @@ $iconsSize: 65px;
     }
 }
 
-/* SECTION LINK */
 
 .cn_panelLateralLeft {
-    position: relative;
     left: 40px;
     width: 80px;
-    height: 180px;
+    height: 200px;
     display: flex;
     align-self: center;
+    margin-left: 20px;
+    margin-right: 8px;
     @include boxAnimate();
+}
+
+.panelLL-alternative {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 80px;
+    max-width: 80px;
+    opacity: 0.1;
+
+    li:hover {
+        @include arrowsGoTo();
+    }
+
+    li:nth-child(1) {
+        margin-bottom: 50px;
+    }
+
+    span {
+        content: "";
+        position: relative;
+        width: 100%;
+        height: 0;
+        border-top: 80px solid #9f9f9f;
+        border-right: 80px solid transparent;
+        display: flex;
+        opacity: 0.1;
+        @include collapse();
+    }
+
+    li {
+        width: 100%;
+        display: flex;
+        border: 4px solid #4a4a4a;
+        justify-content: center;
+        cursor: pointer;
+        @include arrowsGoToOut();
+        /* desplazament top buttons arrowns */
+        i {
+            position: absolute;
+            align-self: center;
+            top: 20px;
+            left: 20px;
+            font-size: 35px;
+            color: #4a4a4a;
+            @include collapse();
+        }
+    }
 }
 
 .ul_panelLL {
@@ -148,49 +197,66 @@ $iconsSize: 65px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-   
+    max-height: 80px;
+    max-width: 80px;
+
     li:hover {
         @include arrowsGoTo();
     }
+
     li:nth-child(1) {
-        margin-bottom: 20px;
+        margin-bottom: 50px;
+    }
+
+    span {
+        content: "";
+        position: relative;
+        width: 100%;
+        height: 0;
+        border-top: 80px solid #FFF;
+        border-right: 80px solid transparent;
+        display: flex;
+        opacity: 0.1;
+        @include collapse();
     }
 
     li {
         width: 100%;
-        background: #FFF;
         display: flex;
+        border: 4px solid #FFF;
         justify-content: center;
         cursor: pointer;
-        @include arrowsGoToOut(); 
-        /* desplazament top bottom arrowns */
+        @include arrowsGoToOut();
+        /* desplazament top buttons arrowns */
         i {
+            position: absolute;
             align-self: center;
-            font-size: 28px;
-            color: #333;
+            top: 20px;
+            left: 20px;
+            font-size: 35px;
+            color: #FFF;
             @include collapse();
         }
     }
 }
 
-
 .main-nexus {
     width: 100%;
     height: 100%;
-    //background: -webkit-linear-gradient(top, #e9fff6 0, #ffffff 100%);
+    //background: -webkit-linear-gradient(top, #ffffff 0, #ededed 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.main_nex__st_top {
+.section_type__st_top {
     width: 100%;
     height: 10%;
     display: flex;
     @include collapse();
 }
 
-.main_nex__st_mid {
+.section_type__st_mid {
     width: 100%;
     height: 60%;
     display: flex;
@@ -199,9 +265,58 @@ $iconsSize: 65px;
     @include collapse();
 }
 
-.main_nex__st_bot {
+.section_type__st_bot {
     width: 100%;
     height: 30%;
+    display: flex;
+    justify-content: center;
+    @include collapse();
+}
+
+
+.section_link__st_top {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    @include collapse();
+}
+
+.section_link__st_mid {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    @include collapse();
+}
+
+.section_link__st_bot {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    @include collapse();
+}
+
+
+.section_contact__st_top {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    @include collapse();
+}
+
+.section_contact__st_mid {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    @include collapse();
+}
+
+.section_contact__st_bot {
+    width: 100%;
+    height: 10%;
     display: flex;
     justify-content: center;
     @include collapse();
@@ -247,10 +362,10 @@ $iconsSize: 65px;
     width: 200px;
     height: 170px;
     -webkit-transform-style: preserve-3d;
-    -webkit-transition: -webkit-transform 1.5s ease;
+    -webkit-transition: -webkit-transform 0.8s ease;
 
     &:hover {
-        -webkit-transform: rotateY(-360deg) translateY(-20px);
+        -webkit-transform: rotateY(-360deg) scale(1.3);
     }
 }
 
@@ -308,5 +423,66 @@ figure {
 .figure2 {
     background: -webkit-linear-gradient(top, $bg_cube2 0, $bg_cube2RL 100%);
     border-collapse: collapse;
-    border: 1px solid $bg_cube2;
+}
+
+
+/// SECTIONS ///
+
+.link_cn_middle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.link_cn_container {
+    width: 60%;
+    height: 80%;
+    display: flex;
+    align-self: center;
+}
+
+.link_cn_ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    li {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin-left: 5px;
+        justify-content: center;
+    }
+}
+
+.cn_link {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    @include collapse();
+}
+
+.top_link_post {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    @include boxAnimate();
+}
+
+.icons8-controller {
+    width: 140px;
+    height: 140px;
+    align-self: center;
+}
+
+.mid_link_post {
+    width: 100%;
+    height: 20%;
+    display: flex;
 }

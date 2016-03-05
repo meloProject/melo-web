@@ -12,7 +12,7 @@ class NexusActions {
 
     goTo(boxType) {
         // se realiza la accion para ir a la proxima sesesion del mini spa nexus.
-    	Swittcher.goTo("section-link");
+    	Swittcher.goTo("section-contact");
     	document.getElementById("nex_text_container")
             .className = "nex_text_container_out";
     	return boxType;
