@@ -11,7 +11,7 @@ class NexusActions {
     }
 
     goTo(boxType) {
-        // se realiza la accion para ir a la proxima sesesion del mini spa nexus.
+        // se realiza la accion para ir a la proxima sesesion de los boxTypes.
     	Swittcher.goTo("section-contact");
     	document.getElementById("nex_text_container")
             .className = "nex_text_container_out";
@@ -21,6 +21,11 @@ class NexusActions {
     goToGeneral(direction, location) {
         Swittcher.goTo(location);
         return location;
+    }
+
+    getQr() {
+        // create session the sesion have the qr code room.
+        return "www.apirest.com/melo/getcodeqr"; 
     }
 }
 

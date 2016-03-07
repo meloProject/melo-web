@@ -6,32 +6,36 @@ class NexusStore {
         // TEXTO BOX SELECTION TYPE.
         this.textType = "";
 
+        // SECTION LINK
+        this.qrcode = "";
+
         // SECTION CONFIGS AND CUSTOMS.
         this.sectionClass = "section-default";
         this.classLateralIcons = "icons-default";
 
         this.cubes = {
-            female: {
-                description: "Trivia punch!",
-                sectionClass: "section-female",
-                classLateralIcons: "icons-female"
+            cube1: {
+                description: "Trivia",
+                sectionClass: "section-cube1",
+                classLateralIcons: "icons-cube1"
             },
-            alien: {
-                description: "Extraterrestre",
-                sectionClass: "section-alien",
-                classLateralIcons: "icons-alien"
+            cube2: {
+                description: "Extraños",
+                sectionClass: "section-cube2",
+                classLateralIcons: "icons-cube2"
             },
-            male: {
-                description: "Chico",
-                sectionClass: "section-male",
-                classLateralIcons: "icons-male"
+            cube3: {
+                description: "Mentales",
+                sectionClass: "section-cube3",
+                classLateralIcons: "icons-cube3"
             }
         };
 
         this.bindListeners({
             handleItemTextDescrition: NexusActions.SET_TEXT,
             handlerGotoGeneral: NexusActions.GO_TO_GENERAL, 
-            handlerGoto: NexusActions.GO_TO
+            handlerGoto: NexusActions.GO_TO,
+            handlerQR: NexusActions.GET_QR
         });
     }
 
@@ -48,8 +52,18 @@ class NexusStore {
     }
 
     handlerGotoGeneral(location) {
-        if(location == "section-type")
-            this.classLateralIcons = "icons-default";
+        switch(location) {
+            case "section-type":
+                this.classLateralIcons = "icons-default";
+                break;
+            case "section-link":
+                this.classLateralIcons = "icons-default";
+                break;
+        }
+    }
+
+    handlerQR(QRrequest) {
+        this.qrcode = QRrequest;
     }
 }
 

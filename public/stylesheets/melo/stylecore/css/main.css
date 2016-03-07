@@ -60,9 +60,7 @@ textarea::-webkit-input-placeholder {
 
 @keyframes switchSectionOut {
   to {
-    -webkit-transform: rotateZ(-10deg);
-    height: 0;
-    opacity: 0; } }
+    height: 0; } }
 
 .sw_select_in {
   -webkit-animation-name: switchSectionIn;
@@ -587,15 +585,15 @@ textarea::-webkit-input-placeholder {
 .section-default {
   background: #FFF; }
 
-.section-female {
+.section-cube1 {
   background: #FFEE58;
   display: flex; }
 
-.section-alien {
+.section-cube2 {
   background: #73ee5b;
   display: flex; }
 
-.section-male {
+.section-cube3 {
   background: #00c8ff;
   display: flex; }
 
@@ -604,19 +602,19 @@ textarea::-webkit-input-placeholder {
   .icons-default:hover {
     color: #1796f5 !important; }
 
-.icons-female {
+.icons-cubr1 {
   color: #ff5722; }
-  .icons-female:hover {
+  .icons-cubr1:hover {
     color: white !important; }
 
-.icons-alien {
+.icons-cube2 {
   color: #ba68c8; }
-  .icons-alien:hover {
+  .icons-cube2:hover {
     color: white !important; }
 
-.icons-male {
+.icons-cube3 {
   color: #FFF; }
-  .icons-male:hover {
+  .icons-cube3:hover {
     color: #FFEB3B !important; }
 
 .cn_panelLateralLeft {
@@ -974,6 +972,27 @@ figure {
   display: flex;
   align-self: center; }
 
+.contact_cn_middle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center; }
+
+.contact_cn_container {
+  width: 60%;
+  height: 80%;
+  display: flex;
+  align-self: center; }
+  .contact_cn_container p {
+    margin: 0 0 16px;
+    font-size: 40px;
+    line-height: 70px;
+    font-weight: 700;
+    color: white;
+    font-family: 'roboto',Helvetica,Arial,sans-serif; }
+
 .link_cn_ul {
   width: 100%;
   height: 100%;
@@ -984,9 +1003,11 @@ figure {
     display: flex;
     margin-left: 5px;
     justify-content: center; }
+  .link_cn_ul li:nth-child(2) {
+    width: 0px; }
 
 .cn_link {
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -996,7 +1017,7 @@ figure {
 
 .top_link_post {
   width: 100%;
-  height: 80%;
+  height: 60%;
   display: flex;
   justify-content: center;
   -webkit-animation-name: boxAnimate;
@@ -1004,6 +1025,34 @@ figure {
   -webkit-animation-duration: 0.7s;
   -webkit-animation-fill-mode: forwards;
   -webkit-animation-iteration-count: infinite; }
+  .top_link_post svg {
+    cursor: pointer; }
+
+@keyframes boxAnimate {
+  0% {
+    -webkit-transform: translate(0, 0); }
+  50% {
+    -webkit-transform: translate(0, 5px); }
+  100% {
+    -webkit-transform: translate(0, 0); } }
+
+.mid_link_post {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column; }
+  .mid_link_post p {
+    align-self: center;
+    font-size: 35px;
+    padding: 0px !important;
+    margin: 0px !important;
+    -webkit-animation-name: boxAnimate;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 0.7s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite; }
 
 @keyframes boxAnimate {
   0% {
@@ -1017,11 +1066,6 @@ figure {
   width: 140px;
   height: 140px;
   align-self: center; }
-
-.mid_link_post {
-  width: 100%;
-  height: 20%;
-  display: flex; }
 
 /* CONTROLLER PAGE */
 /*ROTATE SPIN*/

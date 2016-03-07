@@ -31,7 +31,8 @@ export default class Nexus extends Component {
             <div id="meloContainer" className="main-melo">
                 <Sections 
                     sectionClass={ this.state.sectionClass } 
-                    textType={ this.state.textType }>
+                    textType={ this.state.textType }
+                    qrcode={ this.state.qrcode }>
                 </Sections>
 
                 <LateralPanel classLateralIcons={ this.state.classLateralIcons }>

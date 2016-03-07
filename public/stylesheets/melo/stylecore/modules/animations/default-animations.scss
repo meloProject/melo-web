@@ -26,9 +26,7 @@
 
     @keyframes switchSectionOut {
         to {
-            -webkit-transform: rotateZ(-10deg);
             height: 0;
-            opacity: 0;
         }
     }
 }
