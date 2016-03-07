@@ -27,30 +27,37 @@ export default class SectionType extends Component {
             <section id="section-type">
                 <div className="section_type__st_top"></div>
                 <div className="section_type__st_mid">
-                    <div className="con_selection">
-                        {
-                            this.cubes.map((object, key)=> {
-                            return ( 
-                                    <Cubes 
-                                        key={key} 
-                                        figure={object.figure} 
 
-                                        click={ ()=> {
-                                            NexusActions.goTo(object.figure)
-                                            } 
-                                        }
-                                        over= { ()=> {
-                                            NexusActions.setText(object.figure) 
+                    <div className="sec_type_md_left"></div>
+                    
+                    <div className="sec_type_md_mid">
+                        <div className="con_selection">
+                            {
+                                this.cubes.map((object, key)=> {
+                                return ( 
+                                        <Cubes 
+                                            key={key} 
+                                            figure={object.figure} 
+
+                                            click={ ()=> {
+                                                NexusActions.goTo(object.figure)
+                                                } 
                                             }
-                                        }
+                                            over= { ()=> {
+                                                NexusActions.setText(object.figure) 
+                                                }
+                                            }
 
-                                        out= { this.mouseOut }
+                                            out= { this.mouseOut }
 
-                                        indent={key} />
-                                    )
-                            })
-                        }
+                                            indent={key} />
+                                        )
+                                })
+                            }
+                        </div>
                     </div>
+                    <div className="sec_type_md_right"></div>
+
                 </div>
                 <div className="section_type__st_bot">
                     <div className="nex_text_container" id="nex_text_container">

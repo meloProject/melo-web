@@ -7,7 +7,7 @@ class NexusStore {
         this.textType = "";
 
         // SECTION LINK
-        this.qrcode = "";
+        this.qrcode = "normal";
 
         // SECTION CONFIGS AND CUSTOMS.
         this.sectionClass = "section-default";

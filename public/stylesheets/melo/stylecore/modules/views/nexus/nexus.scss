@@ -11,8 +11,9 @@ $bg_cube2: #00c8ff;
 $bg_cube2RL: #00c8ff;
 $fontColor2: #0092ff;
 
-$boxSize: 60px;
+$boxSizeTypes: 60px;
 $iconsSize: 65px;
+
 
 /*@media screen and (max-width: 1023px) {
     .con_selection {
@@ -62,7 +63,7 @@ $iconsSize: 65px;
 .icons8 { /* Customizes all icons at once */
     display: inline-block;
     align-self: center;
-    shape-rendering:auto;
+    shape-rendering: auto;
 }
 
 /* ALIEN FIGURE */
@@ -91,17 +92,14 @@ $iconsSize: 65px;
 
 .section-cube1 {
     background: #FFEE58;
-    display: flex;
 }
 
 .section-cube2 {
     background: #73ee5b;
-    display: flex;
 }
 
 .section-cube3 {
     background: #00c8ff;
-    display: flex;
 }
 
 .icons-default {
@@ -157,7 +155,7 @@ $iconsSize: 65px;
     max-height: 80px;
     max-width: 80px;
     opacity: 0.1;
-    
+
 
     li:hover {
         @include arrowsGoTo();
@@ -268,9 +266,27 @@ $iconsSize: 65px;
     width: 100%;
     height: 60%;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     @include collapse();
+}
+
+.sec_type_md_left {
+    width: 10%;
+    height: 100%;
+    display: flex;
+}
+
+.sec_type_md_mid {
+     width: 80%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+} 
+
+.sec_type_md_right {
+     width: 10%;
+     height: 100%;
+     display: flex;
 }
 
 .section_type__st_bot {
@@ -306,7 +322,6 @@ $iconsSize: 65px;
     @include collapse();
 }
 
-
 .section_contact__st_top {
     width: 100%;
     height: 10%;
@@ -320,6 +335,27 @@ $iconsSize: 65px;
     display: flex;
     flex-direction: row;
     @include collapse();
+}
+
+.sec_contact_md_left {
+     width: 10%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+}
+
+.sec_contact_md_mid {
+     width: 80%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+}
+
+.sec_contact_md_right {
+     width: 10%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
 }
 
 .section_contact__st_bot {
@@ -355,8 +391,8 @@ $iconsSize: 65px;
 }
 
 .stage {
-    width: $boxSize * 3;
-    height: $boxSize * 3;
+    width: $boxSizeTypes * 3;
+    height: $boxSizeTypes * 3;
     margin-right: 2%;
     margin-left: 2%;
     align-self: center;
@@ -371,52 +407,49 @@ $iconsSize: 65px;
     height: 170px;
     -webkit-transform-style: preserve-3d;
     -webkit-transition: -webkit-transform 0.8s ease;
-    
+
     &:hover {
         -webkit-transform: rotateY(-360deg) scale(1.3);
     }
 }
 
+.figure_box {
+    width: $boxSizeTypes * 2;
+    height: $boxSizeTypes * 2;
+    display: block;
+    position: absolute;
+    -webkit-transform-origin: 50% 50% 0;
+}
+
+
 .front {
-    -webkit-transform: translateZ($boxSize);
+    -webkit-transform: translateZ($boxSizeTypes);
     display: flex;
     justify-content: center;
-
-    i {
-        font-size: $iconsSize;
-        align-self: center;
-    }
 }
 
 .back {
-    -webkit-transform: rotateY(180deg) translateZ($boxSize);
+    -webkit-transform: rotateY(180deg) translateZ($boxSizeTypes);
 }
 
 .top {
-    -webkit-transform: rotateX(90deg) translateZ($boxSize);
+    -webkit-transform: rotateX(90deg) translateZ($boxSizeTypes);
 }
 
 .bottom {
-    -webkit-transform: rotateX(-90deg) translateZ($boxSize);
+    -webkit-transform: rotateX(-90deg) translateZ($boxSizeTypes);
     -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 }
 
 .left {
-    -webkit-transform: rotateY(-90deg) translateZ($boxSize);
+    -webkit-transform: rotateY(-90deg) translateZ($boxSizeTypes);
 }
 
 .right {
-    -webkit-transform: rotateY(90deg) translateZ($boxSize);
+    -webkit-transform: rotateY(90deg) translateZ($boxSizeTypes);
 }
 
-// custom cubes
-figure {
-    display: block;
-    position: absolute;
-    width: $boxSize * 2;
-    height: $boxSize * 2;
-    -webkit-transform-origin: 50% 50% 0;
-}
+
 
 .figure0 {
     background: -webkit-linear-gradient(top, $bg_cube0 0, $bg_cube0RL 100%);
@@ -433,16 +466,23 @@ figure {
     border-collapse: collapse;
 }
 
-.figureDispositive {
-
-}
-
 
 /// SECTIONS ///
 
+.linker {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    canvas {
+        align-self: center;
+    }
+}
 .link_cn_middle {
     width: 100%;
     height: 100%;
+    margin-right: 5%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -456,8 +496,8 @@ figure {
     align-self: center;
 }
 
-.contact_cn_middle{
-     width: 100%;
+.contact_cn_middle {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -466,16 +506,17 @@ figure {
 }
 
 .contact_cn_container {
-     width: 60%;
+    width: 60%;
     height: 80%;
     display: flex;
     align-self: center;
+    justify-content: center;
     p {
         margin: 0 0 16px;
-    font-size: 40px;
-    line-height: 70px;
-    font-weight: 700;
-    color: white;
+        font-size: 40px;
+        line-height: 70px;
+        font-weight: 700;
+        color: white;
         font-family: 'roboto',Helvetica,Arial,sans-serif;
     }
 }
@@ -492,8 +533,9 @@ figure {
         margin-left: 5px;
         justify-content: center;
     }
+
     li:nth-child(2) {
-       width: 0px;
+        width: 0px;
     }
 }
 
@@ -511,9 +553,11 @@ figure {
     height: 60%;
     display: flex;
     justify-content: center;
+
     svg {
         cursor: pointer;
     }
+
     @include boxAnimate();
 }
 
@@ -524,6 +568,7 @@ figure {
     justify-content: center;
     flex-wrap: wrap;
     flex-direction: column;
+
     p {
         align-self: center;
         font-size: 35px;
@@ -538,12 +583,3 @@ figure {
     height: 140px;
     align-self: center;
 }
-
-
-
-
-
-
-
-
-

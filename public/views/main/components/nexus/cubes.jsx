@@ -28,12 +28,12 @@ export default class Cubes extends Component {
 	            	onMouseOut={ this.props.out }
 
 	            	>
-				    <figure className={"back" + " figure" + this.props.indent}></figure>
-				    <figure className={"top" + " figure" + this.props.indent}></figure>
-				    <figure className={"bottom" + " figure" + this.props.indent}></figure>
-				    <figure className={"left" + " figure" + this.props.indent}></figure>
-				    <figure className={"right" + " figure" + this.props.indent}></figure>
-				    <figure className={"front" + " figure" + this.props.indent}>
+				    <figure className={"back figure_box" + " figure" + this.props.indent}></figure>
+				    <figure className={"top figure_box" + " figure" + this.props.indent}></figure>
+				    <figure className={"bottom figure_box" + " figure" + this.props.indent}></figure>
+				    <figure className={"left figure_box" + " figure" + this.props.indent}></figure>
+				    <figure className={"right figure_box" + " figure" + this.props.indent}></figure>
+				    <figure className={"front figure_box" + " figure" + this.props.indent}>
 						{
 							svgFigure(this.props.figure)
 						}

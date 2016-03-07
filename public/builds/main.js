@@ -64841,7 +64841,7 @@ exports.default = _alt2.default.createActions(NexusActions);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
-				value: true
+    value: true
 });
 
 var _react = require('react');
@@ -64867,55 +64867,43 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// cubes svg img
-
 
 var Cubes = function (_Component) {
-				_inherits(Cubes, _Component);
+    _inherits(Cubes, _Component);
 
-				function Cubes() {
-								_classCallCheck(this, Cubes);
+    function Cubes() {
+        _classCallCheck(this, Cubes);
 
-								return _possibleConstructorReturn(this, Object.getPrototypeOf(Cubes).apply(this, arguments));
-				}
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(Cubes).apply(this, arguments));
+    }
 
-				_createClass(Cubes, [{
-								key: 'render',
-								value: function render() {
-												return _react2.default.createElement(
-																'div',
-																{ className: 'stage' },
-																_react2.default.createElement(
-																				'div',
-																				{ className: 'cube',
+    _createClass(Cubes, [{
+        key: 'render',
+        value: function render() {
+            function renderLinkerState(state) {
+                switch (state) {
+                    case "normal":
+                        return _react2.default.createElement(_dispositive2.default, null);
+                    case "wait":
+                        return _react2.default.createElement(
+                            'p',
+                            null,
+                            ' wait :) '
+                        );
+                    default:
+                        return _react2.default.createElement(_qrcode2.default, { value: state, className: 'box_qrcode' });
+                }
+            }
 
-																								onClick: _nexusActions2.default.getQr
+            return _react2.default.createElement(
+                'div',
+                { className: 'linker', onClick: _nexusActions2.default.getQr },
+                renderLinkerState(this.props.qrcode)
+            );
+        }
+    }]);
 
-																				},
-																				_react2.default.createElement(
-																								'figure',
-																								{ className: "back" + " figure" + this.props.indent },
-																								this.props.qrcode ? _react2.default.createElement(_qrcode2.default, { value: this.props.qrcode }) : _react2.default.createElement(
-																												'p',
-																												null,
-																												' wait :) '
-																								)
-																				),
-																				_react2.default.createElement('figure', { className: "top" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "bottom" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "left" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "right" + " figure" + this.props.indent }),
-																				_react2.default.createElement(
-																								'figure',
-																								{ className: "front" + " figure" + this.props.indent },
-																								_react2.default.createElement(_dispositive2.default, null)
-																				)
-																)
-												);
-								}
-				}]);
-
-				return Cubes;
+    return Cubes;
 }(_react.Component);
 
 exports.default = Cubes;
@@ -64993,14 +64981,14 @@ var Cubes = function (_Component) {
 																								onMouseOut: this.props.out
 
 																				},
-																				_react2.default.createElement('figure', { className: "back" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "top" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "bottom" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "left" + " figure" + this.props.indent }),
-																				_react2.default.createElement('figure', { className: "right" + " figure" + this.props.indent }),
+																				_react2.default.createElement('figure', { className: "back figure_box" + " figure" + this.props.indent }),
+																				_react2.default.createElement('figure', { className: "top figure_box" + " figure" + this.props.indent }),
+																				_react2.default.createElement('figure', { className: "bottom figure_box" + " figure" + this.props.indent }),
+																				_react2.default.createElement('figure', { className: "left figure_box" + " figure" + this.props.indent }),
+																				_react2.default.createElement('figure', { className: "right figure_box" + " figure" + this.props.indent }),
 																				_react2.default.createElement(
 																								'figure',
-																								{ className: "front" + " figure" + this.props.indent },
+																								{ className: "front figure_box" + " figure" + this.props.indent },
 																								svgFigure(this.props.figure)
 																				)
 																)
@@ -65128,20 +65116,29 @@ var SectionContact = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'section_contact__st_mid' },
-                    _react2.default.createElement(_panelLL2.default, null),
                     _react2.default.createElement(
                         'div',
-                        { className: 'contact_cn_middle' },
+                        { className: 'sec_contact_md_left' },
+                        _react2.default.createElement(_panelLL2.default, null)
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'sec_contact_md_mid' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'contact_cn_container' },
+                            { className: 'contact_cn_middle' },
                             _react2.default.createElement(
-                                'p',
-                                null,
-                                'Juegos mentales'
+                                'div',
+                                { className: 'contact_cn_container' },
+                                _react2.default.createElement(
+                                    'p',
+                                    null,
+                                    'Juegos mentales'
+                                )
                             )
                         )
-                    )
+                    ),
+                    _react2.default.createElement('div', { className: 'sec_contact_md_right' })
                 ),
                 _react2.default.createElement('div', { className: 'section_contact__st_bot' })
             );
@@ -65330,26 +65327,32 @@ var SectionType = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'section_type__st_mid' },
+                    _react2.default.createElement('div', { className: 'sec_type_md_left' }),
                     _react2.default.createElement(
                         'div',
-                        { className: 'con_selection' },
-                        this.cubes.map(function (object, key) {
-                            return _react2.default.createElement(_cubes2.default, {
-                                key: key,
-                                figure: object.figure,
+                        { className: 'sec_type_md_mid' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'con_selection' },
+                            this.cubes.map(function (object, key) {
+                                return _react2.default.createElement(_cubes2.default, {
+                                    key: key,
+                                    figure: object.figure,
 
-                                click: function click() {
-                                    _nexusActions2.default.goTo(object.figure);
-                                },
-                                over: function over() {
-                                    _nexusActions2.default.setText(object.figure);
-                                },
+                                    click: function click() {
+                                        _nexusActions2.default.goTo(object.figure);
+                                    },
+                                    over: function over() {
+                                        _nexusActions2.default.setText(object.figure);
+                                    },
 
-                                out: _this2.mouseOut,
+                                    out: _this2.mouseOut,
 
-                                indent: key });
-                        })
-                    )
+                                    indent: key });
+                            })
+                        )
+                    ),
+                    _react2.default.createElement('div', { className: 'sec_type_md_right' })
                 ),
                 _react2.default.createElement(
                     'div',
@@ -65885,7 +65888,7 @@ var NexusStore = function () {
         this.textType = "";
 
         // SECTION LINK
-        this.qrcode = "";
+        this.qrcode = "normal";
 
         // SECTION CONFIGS AND CUSTOMS.
         this.sectionClass = "section-default";
