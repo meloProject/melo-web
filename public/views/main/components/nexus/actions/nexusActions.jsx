@@ -3,6 +3,10 @@ import Swittcher from '../../standars/swittcher.js';
 
 class NexusActions {
 
+    waitFor(wfor) {
+        return wfor;
+    }
+
     setText(text) {
         // se realizo la accion de mouse over para insertar texto descritibo.
         document.getElementById("nex_text_container")
@@ -24,8 +28,19 @@ class NexusActions {
     }
 
     getQr() {
+        this.waitFor("forQR");
+        document.getElementById("linker")
+                    .classList.add("qrcode_wait");
         // create session the sesion have the qr code room.
-        return "www.apirest.com/melo/getcodeqr"; 
+        return (dispatch) => {
+            setTimeout(() => {
+                document.getElementById("linker")
+                    .classList.remove("qrcode_wait");
+                document.getElementById("linker")
+                    .className= "linker_whit_code";
+                dispatch("www.apirest.com/melo/getcodeqr")
+            }, 9000);
+        };
     }
 }
 

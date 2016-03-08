@@ -35,7 +35,8 @@ class NexusStore {
             handleItemTextDescrition: NexusActions.SET_TEXT,
             handlerGotoGeneral: NexusActions.GO_TO_GENERAL, 
             handlerGoto: NexusActions.GO_TO,
-            handlerQR: NexusActions.GET_QR
+            handlerQR: NexusActions.GET_QR,
+            handlerWaitFor: NexusActions.WAIT_FOR
         });
     }
 
@@ -58,6 +59,14 @@ class NexusStore {
                 break;
             case "section-link":
                 this.classLateralIcons = "icons-default";
+                break;
+        }
+    }
+
+    handlerWaitFor(waitFor) {
+        switch(waitFor) {
+            case "forQR":
+                this.qrcode = "wait";
                 break;
         }
     }

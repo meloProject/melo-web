@@ -183,3 +183,35 @@ $rotationSpeed: 1s;
      }
 }
 
+
+@mixin linkerGetCode() {
+    -webkit-animation-name: linkerGetCode;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.7s;
+
+    @keyframes linkerGetCode {
+        0% {
+            -webkit-transform:  scale(1);
+        }
+        50% {
+             -webkit-transform:  scale(1.2);
+        }
+        100% {
+             -webkit-transform:  scale(1);
+        }
+     }
+}
+
+
+@mixin linkerGetCodeWait() {
+    -webkit-animation-name: linkerGetCodeWait;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+
+    @keyframes linkerGetCodeWait {
+        to {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+}

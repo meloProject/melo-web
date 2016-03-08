@@ -57,7 +57,7 @@ $iconsSize: 65px;
 .icons8-controller {
     width: 80%;
     height: 80%;
-    -webkit-filter: drop-shadow( 0 0 5px rgba(51, 51, 51, 0.25) );
+    //-webkit-filter: drop-shadow( 0 0 5px rgba(51, 51, 51, 0.25) );
 }
 
 .icons8 { /* Customizes all icons at once */
@@ -264,7 +264,7 @@ $iconsSize: 65px;
 
 .section_type__st_mid {
     width: 100%;
-    height: 60%;
+    height: 50%;
     display: flex;
     flex-direction: row;
     @include collapse();
@@ -289,9 +289,28 @@ $iconsSize: 65px;
      display: flex;
 }
 
+.sec_type_bot_left {
+    width: 10%;
+    height: 100%;
+    display: flex;
+}
+
+.sec_type_bot_mid {
+     width: 80%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+} 
+
+.sec_type_bot_right {
+     width: 10%;
+     height: 100%;
+     display: flex;
+}
+
 .section_type__st_bot {
     width: 100%;
-    height: 30%;
+    height: 40%;
     display: flex;
     justify-content: center;
     @include collapse();
@@ -312,6 +331,27 @@ $iconsSize: 65px;
     justify-content: center;
     flex-direction: row;
     @include collapse();
+}
+
+.sec_link_md_left {
+     width: 10%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+}
+
+.sec_link_md_mid {
+     width: 80%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+} 
+
+.sec_link_md_right {
+     width: 10%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
 }
 
 .section_link__st_bot {
@@ -368,22 +408,23 @@ $iconsSize: 65px;
 
 .nex_text_container {
     align-self: flex-start;
-    font-size: 45px;
-    font-family: "Roboto";
+    font-size: 56px;
+    font-weight: 800;
     color: #464646;
     @include nexTextContainer();
 }
 
 .nex_text_container_out {
-    align-self: center;
     font-size: 45px;
-    font-family: "Roboto";
+    font-size: 56px;
+    font-weight: 800;
     color: #464646;
     @include nexTextContainerOut();
 }
 
 .con_selection {
-    width: 70%;
+    width: 60%;
+    margin-right: 3%;
     display: flex;
     align-self: center;
     flex-direction: row;
@@ -475,14 +516,35 @@ $iconsSize: 65px;
     display: flex;
     align-self: center;
     justify-content: center;
+    margin-right: 3%;
     canvas {
         align-self: center;
     }
 }
+
+.linker_whit_code {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-right: 3%;
+    border-radius: 18px;
+    background: #74ef5c;
+    -webkit-box-shadow: 0 4px 2px rgba(0, 0, 0, 0.10);
+     @include linkerGetCode();
+    canvas {
+        align-self: center;
+    }
+}
+
+.qrcode_wait {
+    @include linkerGetCodeWait();
+}
+
 .link_cn_middle {
     width: 100%;
     height: 100%;
-    margin-right: 5%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -525,17 +587,15 @@ $iconsSize: 65px;
     width: 100%;
     height: 100%;
     display: flex;
-
     li {
         width: 100%;
         height: 100%;
         display: flex;
-        margin-left: 5px;
         justify-content: center;
     }
 
     li:nth-child(2) {
-        width: 0px;
+        width: 0;
     }
 }
 
@@ -553,7 +613,6 @@ $iconsSize: 65px;
     height: 60%;
     display: flex;
     justify-content: center;
-
     svg {
         cursor: pointer;
     }
@@ -565,13 +624,13 @@ $iconsSize: 65px;
     width: 100%;
     height: 40%;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     flex-direction: column;
+    justify-content: center;
 
     p {
+        font-size: 56px;
+        font-weight: 800;
         align-self: center;
-        font-size: 35px;
         @include collapse();
         @include boxAnimate();
     }
@@ -582,4 +641,12 @@ $iconsSize: 65px;
     width: 140px;
     height: 140px;
     align-self: center;
+}
+.icons8-octopusTentacle {
+     
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    bottom: -186px;
+    left: -119px;
 }

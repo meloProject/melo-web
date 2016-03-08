@@ -64172,8 +64172,7 @@ var indexDepdencies = function (_Component) {
       return _react2.default.createElement(
         'scripts',
         null,
-        _react2.default.createElement('script', { src: '/src/systemjs-master/dist/system.src.js', type: 'text/javascript' }),
-        _react2.default.createElement('script', { src: '/systemConfig.js', type: 'text/javascript' })
+        _react2.default.createElement('script', { src: '/src/experimental.js', type: 'text/javascript' })
       );
     }
   }]);
@@ -64802,6 +64801,11 @@ var NexusActions = function () {
     }
 
     _createClass(NexusActions, [{
+        key: 'waitFor',
+        value: function waitFor(wfor) {
+            return wfor;
+        }
+    }, {
         key: 'setText',
         value: function setText(text) {
             // se realizo la accion de mouse over para insertar texto descritibo.
@@ -64825,8 +64829,16 @@ var NexusActions = function () {
     }, {
         key: 'getQr',
         value: function getQr() {
+            this.waitFor("forQR");
+            document.getElementById("linker").classList.add("qrcode_wait");
             // create session the sesion have the qr code room.
-            return "www.apirest.com/melo/getcodeqr";
+            return function (dispatch) {
+                setTimeout(function () {
+                    document.getElementById("linker").classList.remove("qrcode_wait");
+                    document.getElementById("linker").className = "linker_whit_code";
+                    dispatch("www.apirest.com/melo/getcodeqr");
+                }, 9000);
+            };
         }
     }]);
 
@@ -64860,6 +64872,10 @@ var _dispositive = require('./svg/dispositive.jsx');
 
 var _dispositive2 = _interopRequireDefault(_dispositive);
 
+var _waitComponents = require('./svg/waitComponents.jsx');
+
+var _waitComponents2 = _interopRequireDefault(_waitComponents);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -64874,31 +64890,36 @@ var Cubes = function (_Component) {
     function Cubes() {
         _classCallCheck(this, Cubes);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(Cubes).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Cubes).call(this));
+
+        _this.QRconfig = {
+            bgcolor: "#FFF",
+            fgColor: "#263238",
+            size: 128,
+            level: "L"
+        };
+        return _this;
     }
 
     _createClass(Cubes, [{
         key: 'render',
         value: function render() {
+
             function renderLinkerState(state) {
                 switch (state) {
                     case "normal":
                         return _react2.default.createElement(_dispositive2.default, null);
                     case "wait":
-                        return _react2.default.createElement(
-                            'p',
-                            null,
-                            ' wait :) '
-                        );
+                        return _react2.default.createElement(_waitComponents2.default, null);
                     default:
-                        return _react2.default.createElement(_qrcode2.default, { value: state, className: 'box_qrcode' });
+                        return _react2.default.createElement(_qrcode2.default, { value: state, fgColor: this.QRconfig.fgColor, className: 'box_qrcode' });
                 }
             }
 
             return _react2.default.createElement(
                 'div',
-                { className: 'linker', onClick: _nexusActions2.default.getQr },
-                renderLinkerState(this.props.qrcode)
+                { className: 'linker', id: 'linker', onClick: _nexusActions2.default.getQr },
+                renderLinkerState.call(this, this.props.qrcode)
             );
         }
     }]);
@@ -64909,7 +64930,7 @@ var Cubes = function (_Component) {
 exports.default = Cubes;
 ;
 
-},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","./svg/dispositive.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\svg\\dispositive.jsx","qrcode.react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\qrcode.react\\lib\\index.js","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx":[function(require,module,exports){
+},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","./svg/dispositive.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\svg\\dispositive.jsx","./svg/waitComponents.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\svg\\waitComponents.jsx","qrcode.react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\qrcode.react\\lib\\index.js","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -65204,52 +65225,55 @@ var SectionLink = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'section_link__st_mid' },
-                    _react2.default.createElement(_panelLL2.default, { themeClass: 'panelLL-alternative' }),
                     _react2.default.createElement(
                         'div',
-                        { className: 'link_cn_middle' },
+                        { className: 'sec_link_md_left' },
+                        _react2.default.createElement(_panelLL2.default, { themeClass: 'panelLL-alternative' })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'sec_link_md_mid' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'link_cn_container' },
+                            { className: 'link_cn_middle' },
                             _react2.default.createElement(
-                                'ul',
-                                { className: 'link_cn_ul' },
+                                'div',
+                                { className: 'link_cn_container' },
                                 _react2.default.createElement(
-                                    'li',
-                                    null,
+                                    'ul',
+                                    { className: 'link_cn_ul' },
                                     _react2.default.createElement(
-                                        'div',
-                                        { className: 'cn_link' },
+                                        'li',
+                                        null,
                                         _react2.default.createElement(
                                             'div',
-                                            { className: 'top_link_post' },
-                                            _react2.default.createElement(_cubeQR2.default, { qrcode: this.props.qrcode })
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'mid_link_post' },
+                                            { className: 'cn_link' },
                                             _react2.default.createElement(
-                                                'p',
-                                                null,
-                                                'Es hora de conectarnos'
+                                                'div',
+                                                { className: 'top_link_post' },
+                                                _react2.default.createElement(_cubeQR2.default, { qrcode: this.props.qrcode })
                                             ),
-                                            _react2.default.createElement('br', null),
                                             _react2.default.createElement(
-                                                'p',
-                                                null,
-                                                'a tu melo'
+                                                'div',
+                                                { className: 'mid_link_post' },
+                                                _react2.default.createElement(
+                                                    'p',
+                                                    null,
+                                                    'conectarnos'
+                                                )
                                             )
                                         )
+                                    ),
+                                    _react2.default.createElement(
+                                        'li',
+                                        null,
+                                        _react2.default.createElement('div', null)
                                     )
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    null,
-                                    _react2.default.createElement('div', null)
                                 )
                             )
                         )
-                    )
+                    ),
+                    _react2.default.createElement('div', { className: 'sec_link_md_right' })
                 ),
                 _react2.default.createElement('div', { className: 'section_link__st_bot' })
             );
@@ -65357,15 +65381,21 @@ var SectionType = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'section_type__st_bot' },
+                    _react2.default.createElement('div', { className: 'sec_type_bot_left' }),
                     _react2.default.createElement(
                         'div',
-                        { className: 'nex_text_container', id: 'nex_text_container' },
+                        { className: 'sec_type_bot_mid' },
                         _react2.default.createElement(
-                            'span',
-                            null,
-                            this.props.textType
+                            'div',
+                            { className: 'nex_text_container', id: 'nex_text_container' },
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                this.props.textType
+                            )
                         )
-                    )
+                    ),
+                    _react2.default.createElement('div', { className: 'sec_type_bot_right' })
                 )
             );
         }
@@ -65626,7 +65656,7 @@ exports.default = Cubes3;
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 Object.defineProperty(exports, "__esModule", {
-				value: true
+	value: true
 });
 
 var _react = require("react");
@@ -65642,34 +65672,99 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Dispositive = function (_Component) {
-				_inherits(Dispositive, _Component);
+	_inherits(Dispositive, _Component);
 
-				function Dispositive() {
-								_classCallCheck(this, Dispositive);
+	function Dispositive() {
+		_classCallCheck(this, Dispositive);
 
-								return _possibleConstructorReturn(this, Object.getPrototypeOf(Dispositive).apply(this, arguments));
-				}
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Dispositive).apply(this, arguments));
+	}
 
-				_createClass(Dispositive, [{
-								key: "render",
-								value: function render() {
-												return _react2.default.createElement(
-																"svg",
-																{ className: "icons8 icons8-controller", version: "1.0", id: "Layer_1", x: "0px", y: "0px", viewBox: "0 0 48 48", "enable-background": "new 0 0 48 48" },
-																_react2.default.createElement("path", { fill: "#37474F", d: "M4,39V7c0-2.2,1.8-4,4-4h22c2.2,0,4,1.8,4,4v32c0,2.2-1.8,4-4,4H8C5.8,43,4,41.2,4,39z" }),
-																_react2.default.createElement("path", { fill: "#BBDEFB", d: "M30,6H8C7.4,6,7,6.4,7,7v29c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V7C31,6.4,30.6,6,30,6z" }),
-																_react2.default.createElement("rect", { x: "15", y: "39", fill: "#78909C", width: "6", height: "2" }),
-																_react2.default.createElement("path", { fill: "#E38939", d: "M24,41V17c0-2.2,1.8-4,4-4h12c2.2,0,4,1.8,4,4v24c0,2.2-1.8,4-4,4H28C25.8,45,24,43.2,24,41z" }),
-																_react2.default.createElement("path", { fill: "#FFF3E0", d: "M40,16H28c-0.6,0-1,0.4-1,1v22c0,0.6,0.4,1,1,1h12c0.6,0,1-0.4,1-1V17C41,16.4,40.6,16,40,16z" }),
-																_react2.default.createElement("circle", { fill: "#A6642A", cx: "34", cy: "42.5", r: "1.5" })
-												);
-								}
-				}]);
+	_createClass(Dispositive, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"svg",
+				{ className: "icons8 icons8-controller", x: "0px", y: "0px", viewBox: "0 0 48 48", "enable-background": "new 0 0 48 48" },
+				_react2.default.createElement("path", { fill: "#2196F3", d: "M41.2,30.4l-4.7-3.7l-3.8-7.6c-0.1-0.2-0.2-0.4-0.4-0.5C32.1,18.3,29.7,16,24,16s-8.1,2.3-8.4,2.6\r c-0.2,0.2-0.3,0.3-0.4,0.5l-3.8,7.6l-4.7,3.7c-0.9,0.7-1,2-0.3,2.8C6.8,33.7,7.4,34,8,34c0.4,0,0.9-0.1,1.2-0.4l5-4\r c0.2-0.2,0.4-0.4,0.5-0.7l2.2-3.2V33l-5.7,3.5c-1.1,0.7-1.6,2.1-1.2,3.4c0.4,1.3,1.5,2.1,2.9,2.1h9h4h9c1.3,0,2.5-0.9,2.9-2.1\r c0.4-1.3-0.1-2.6-1.2-3.4L31,33v-7.3l2.2,3.2c0.1,0.3,0.3,0.5,0.5,0.7l5,4c0.4,0.3,0.8,0.4,1.2,0.4c0.6,0,1.2-0.3,1.6-0.8\r C42.3,32.4,42.1,31.1,41.2,30.4z" }),
+				_react2.default.createElement("path", { fill: "#FFB74D", d: "M24,6c2.8,0,5,2.2,5,5s-2.2,5-5,5s-5-2.2-5-5S21.2,6,24,6z" }),
+				_react2.default.createElement("path", { fill: "#1976D2", d: "M22,36h8.9L22,34c-2.8,0-5,2.2-5,5c0,1.1,0.4,2.2,1,3h4c-1.7,0-3-1.3-3-3S20.3,36,22,36z M33.8,29.6\r c-0.2-0.2-0.4-0.4-0.5-0.7L31,25.7V22l2.9,7.7L33.8,29.6z M14.2,29.6c0.2-0.2,0.4-0.4,0.5-0.7l2.2-3.2V22l-2.9,7.7L14.2,29.6z" })
+			);
+		}
+	}]);
 
-				return Dispositive;
+	return Dispositive;
 }(_react.Component);
 
 exports.default = Dispositive;
+;
+
+},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\svg\\waitComponents.jsx":[function(require,module,exports){
+"use strict";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var waitFlower = function (_Component) {
+	_inherits(waitFlower, _Component);
+
+	function waitFlower() {
+		_classCallCheck(this, waitFlower);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(waitFlower).apply(this, arguments));
+	}
+
+	_createClass(waitFlower, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"svg",
+				{ className: "icons8 icons8-controller", x: "0px", y: "0px", width: "48px", height: "48px", viewBox: "0 0 48 48", "enable-background": "new 0 0 48 48" },
+				_react2.default.createElement(
+					"g",
+					null,
+					_react2.default.createElement("path", { fill: "#1565C0", d: "M33.148,7.77c2.722,1.57,3.661,5.059,2.091,7.78c-1.584,2.733-10.639,7.026-10.639,7.026\r s-0.816-9.995,0.768-12.729C26.938,7.126,30.427,6.186,33.148,7.77" }),
+					_react2.default.createElement("path", { fill: "#1565C0", d: "M14.852,40.235c-2.722-1.571-3.661-5.06-2.091-7.78c1.584-2.734,10.639-7.026,10.639-7.026\r s0.816,9.995-0.768,12.729C21.062,40.879,17.573,41.807,14.852,40.235" }),
+					_react2.default.createElement("path", { fill: "#1565C0", d: "M43,23.998c0,3.143-2.548,5.703-5.702,5.703c-3.143,0-11.393-5.703-11.393-5.703s8.25-5.702,11.393-5.702\r C40.452,18.296,43,20.844,43,23.998" }),
+					_react2.default.createElement("path", { fill: "#1565C0", d: "M5,23.998c0-3.154,2.548-5.702,5.702-5.702c3.143,0,11.393,5.702,11.393,5.702s-8.25,5.703-11.393,5.703\r C7.548,29.701,5,27.141,5,23.998" }),
+					_react2.default.createElement("path", { fill: "#1565C0", d: "M33.148,40.235c-2.722,1.571-6.21,0.644-7.78-2.078c-1.584-2.733-0.768-12.729-0.768-12.729\r s9.055,4.292,10.639,7.026C36.81,35.176,35.87,38.664,33.148,40.235" }),
+					_react2.default.createElement("path", { fill: "#1565C0", d: "M14.852,7.77c2.722-1.584,6.21-0.644,7.78,2.078c1.584,2.733,0.768,12.729,0.768,12.729\r s-9.055-4.293-10.639-7.026C11.19,12.828,12.13,9.34,14.852,7.77" })
+				),
+				_react2.default.createElement(
+					"g",
+					null,
+					_react2.default.createElement("path", { fill: "#2196F3", d: "M24,5.012c3.319,0,6,2.682,6,6.001c0,3.306-6,12.988-6,12.988s-6-9.683-6-12.988\r C18,7.693,20.681,5.012,24,5.012" }),
+					_react2.default.createElement("path", { fill: "#2196F3", d: "M7.448,14.692c1.627-2.894,5.278-3.915,8.171-2.288C18.501,14.024,24,24,24,24s-11.381,0.483-14.263-1.137\r C6.845,21.236,5.821,17.586,7.448,14.692" }),
+					_react2.default.createElement("path", { fill: "#2196F3", d: "M40.588,14.758c1.616,2.9,0.578,6.547-2.321,8.162C35.379,24.529,24,24.001,24,24.001\r s5.538-9.954,8.426-11.563C35.325,10.822,38.973,11.858,40.588,14.758" }),
+					_react2.default.createElement("path", { fill: "#2196F3", d: "M24,42.988c-3.319,0-6-2.682-6-6.001c0-3.306,6-12.988,6-12.988s6,9.683,6,12.988\r C30,40.307,27.319,42.988,24,42.988" }),
+					_react2.default.createElement("path", { fill: "#2196F3", d: "M7.412,33.242c-1.616-2.9-0.578-6.547,2.321-8.162C12.621,23.471,24,23.999,24,23.999\r s-5.538,9.954-8.426,11.563C12.675,37.178,9.027,36.142,7.412,33.242" }),
+					_react2.default.createElement("path", { fill: "#2196F3", d: "M40.552,33.308c-1.627,2.894-5.278,3.915-8.171,2.288C29.499,33.976,24,24,24,24s11.381-0.483,14.263,1.137\r C41.155,26.764,42.179,30.414,40.552,33.308" })
+				),
+				_react2.default.createElement("path", { fill: "#FF9800", d: "M24,16.998c3.865,0,7,3.125,7,7c0,3.864-3.135,7-7,7s-7-3.136-7-7C17,20.123,20.135,16.998,24,16.998" }),
+				_react2.default.createElement("path", { fill: "#FFEB3B", d: "M24,19.998c2.207,0,4,1.793,4,4c0,2.208-1.793,4-4,4s-4-1.792-4-4C20,21.791,21.793,19.998,24,19.998" })
+			);
+		}
+	}]);
+
+	return waitFlower;
+}(_react.Component);
+
+exports.default = waitFlower;
 ;
 
 },{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
@@ -65815,6 +65910,9 @@ var Swittcher = exports.Swittcher = function () {
         this.HTMLSectionsElements = this.HTMLSectionsElements || {};
         this.restart;
 
+        this.onStart;
+        this.onEnd;
+
         this.sectionCurrent;
 
         this.config = {
@@ -65834,6 +65932,14 @@ var Swittcher = exports.Swittcher = function () {
             _underscore2.default.each(document.querySelectorAll(name + "> section"), function (value, key) {
                 // convert array of sections in object sections.
                 _this.HTMLSectionsElements[value.id] = value;
+
+                value.addEventListener("animationstart", function (eve) {
+                    if (typeof _this.onStart === "function") _this.onStart(value.id, eve);
+                });
+
+                value.addEventListener("animationend", function (eve) {
+                    if (typeof _this.onEnd === "function") _this.onEnd(value.id, eve);
+                });
 
                 if (!value.id) throw Error("The attribute ID is required");
                 if (!key) _this.sectionCurrent = value;
@@ -65916,7 +66022,8 @@ var NexusStore = function () {
             handleItemTextDescrition: _nexusActions2.default.SET_TEXT,
             handlerGotoGeneral: _nexusActions2.default.GO_TO_GENERAL,
             handlerGoto: _nexusActions2.default.GO_TO,
-            handlerQR: _nexusActions2.default.GET_QR
+            handlerQR: _nexusActions2.default.GET_QR,
+            handlerWaitFor: _nexusActions2.default.WAIT_FOR
         });
     }
 
@@ -65943,6 +66050,15 @@ var NexusStore = function () {
                     break;
                 case "section-link":
                     this.classLateralIcons = "icons-default";
+                    break;
+            }
+        }
+    }, {
+        key: 'handlerWaitFor',
+        value: function handlerWaitFor(waitFor) {
+            switch (waitFor) {
+                case "forQR":
+                    this.qrcode = "wait";
                     break;
             }
         }

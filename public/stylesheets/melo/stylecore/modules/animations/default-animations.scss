@@ -36,7 +36,7 @@
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-duration: 1s;
     -webkit-animation-fill-mode: forwards;
-
+    display: block;
     @keyframes switchSectionIn {
         0% {
             height: 0;

@@ -4,8 +4,7 @@ export default class indexDepdencies extends Component {
   render() {
     return (
     	<scripts>
-        <script src='/src/systemjs-master/dist/system.src.js' type="text/javascript"></script>
-        <script src='/systemConfig.js' type="text/javascript"></script>
+        <script src='/src/experimental.js' type="text/javascript"></script>
         </scripts>
     )
   }

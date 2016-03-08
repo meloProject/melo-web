@@ -35,23 +35,23 @@ export default class SectionType extends Component {
                             {
                                 this.cubes.map((object, key)=> {
                                 return ( 
-                                        <Cubes 
-                                            key={key} 
-                                            figure={object.figure} 
+                                    <Cubes 
+                                        key={key} 
+                                        figure={object.figure} 
 
-                                            click={ ()=> {
-                                                NexusActions.goTo(object.figure)
-                                                } 
+                                        click={ ()=> {
+                                            NexusActions.goTo(object.figure)
+                                            } 
+                                        }
+                                        over= { ()=> {
+                                            NexusActions.setText(object.figure) 
                                             }
-                                            over= { ()=> {
-                                                NexusActions.setText(object.figure) 
-                                                }
-                                            }
+                                        }
 
-                                            out= { this.mouseOut }
+                                        out= { this.mouseOut }
 
-                                            indent={key} />
-                                        )
+                                        indent={key} />
+                                    )
                                 })
                             }
                         </div>
@@ -60,9 +60,15 @@ export default class SectionType extends Component {
 
                 </div>
                 <div className="section_type__st_bot">
-                    <div className="nex_text_container" id="nex_text_container">
-                        <span>{ this.props.textType }</span>
+
+                    <div className="sec_type_bot_left"></div>
+                    <div className="sec_type_bot_mid">
+                        <div className="nex_text_container" id="nex_text_container">
+                        <p>{ this.props.textType }</p>
                     </div>
+                    </div>
+                    <div className="sec_type_bot_right"></div>
+                    
                 </div>
             </section>
         )
