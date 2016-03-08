@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 export default class Cubes3 extends Component {
     render() {
     	return (
-		<svg className="icons8 icons8-User-Female" version="1.1" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
+		<svg className="icons8 icons8-User-default" version="1.1" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48">
 			<g>
 			<path fill="#F8BBD0" d="M5,30c0,14,15,14,15,14c1.657,0,3-1.344,3-3V7c0-1.656-1-3-3-3C16,4,5,12,5,30z"></path>
 			<path fill="#F8BBD0" d="M43,30c0,14-15,14-15,14c-1.656,0-3-1.344-3-3V7c0-1.656,1-3,3-3C32,4,43,12,43,30z"></path>

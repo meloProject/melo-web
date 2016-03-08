@@ -64829,15 +64829,12 @@ var NexusActions = function () {
     }, {
         key: 'getQr',
         value: function getQr() {
-            this.waitFor("forQR");
-            document.getElementById("linker").classList.add("qrcode_wait");
             // create session the sesion have the qr code room.
             return function (dispatch) {
                 setTimeout(function () {
-                    document.getElementById("linker").classList.remove("qrcode_wait");
-                    document.getElementById("linker").className = "linker_whit_code";
+                    document.querySelector(".top_link_post").classList.add("qrcodreReady");
                     dispatch("www.apirest.com/melo/getcodeqr");
-                }, 9000);
+                }, 2000);
             };
         }
     }]);
@@ -64863,18 +64860,6 @@ var _react2 = _interopRequireDefault(_react);
 var _qrcode = require('qrcode.react');
 
 var _qrcode2 = _interopRequireDefault(_qrcode);
-
-var _nexusActions = require('./actions/nexusActions.jsx');
-
-var _nexusActions2 = _interopRequireDefault(_nexusActions);
-
-var _dispositive = require('./svg/dispositive.jsx');
-
-var _dispositive2 = _interopRequireDefault(_dispositive);
-
-var _waitComponents = require('./svg/waitComponents.jsx');
-
-var _waitComponents2 = _interopRequireDefault(_waitComponents);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -64907,10 +64892,10 @@ var Cubes = function (_Component) {
 
             function renderLinkerState(state) {
                 switch (state) {
-                    case "normal":
-                        return _react2.default.createElement(_dispositive2.default, null);
                     case "wait":
-                        return _react2.default.createElement(_waitComponents2.default, null);
+                        return _react2.default.createElement('span', null);
+                    case "normal":
+                        return _react2.default.createElement('span', null);
                     default:
                         return _react2.default.createElement(_qrcode2.default, { value: state, fgColor: this.QRconfig.fgColor, className: 'box_qrcode' });
                 }
@@ -64918,7 +64903,7 @@ var Cubes = function (_Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'linker', id: 'linker', onClick: _nexusActions2.default.getQr },
+                { className: 'linker', id: 'linker' },
                 renderLinkerState.call(this, this.props.qrcode)
             );
         }
@@ -64930,7 +64915,7 @@ var Cubes = function (_Component) {
 exports.default = Cubes;
 ;
 
-},{"./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","./svg/dispositive.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\svg\\dispositive.jsx","./svg/waitComponents.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\svg\\waitComponents.jsx","qrcode.react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\qrcode.react\\lib\\index.js","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx":[function(require,module,exports){
+},{"qrcode.react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\qrcode.react\\lib\\index.js","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubes.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -65193,6 +65178,14 @@ var _panelLL = require('./panelLL.jsx');
 
 var _panelLL2 = _interopRequireDefault(_panelLL);
 
+var _nexusActions = require('./actions/nexusActions.jsx');
+
+var _nexusActions2 = _interopRequireDefault(_nexusActions);
+
+var _inopportuneMessenger = require('./../standars/inopportuneMessenger.jsx');
+
+var _inopportuneMessenger2 = _interopRequireDefault(_inopportuneMessenger);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -65221,7 +65214,11 @@ var SectionLink = function (_Component) {
             return _react2.default.createElement(
                 'section',
                 { id: 'section-link' },
-                _react2.default.createElement('div', { className: 'section_link__st_top' }),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'section_link__st_top' },
+                    _react2.default.createElement(_inopportuneMessenger2.default, { x: 50, y: 50 })
+                ),
                 _react2.default.createElement(
                     'div',
                     { className: 'section_link__st_mid' },
@@ -65258,7 +65255,7 @@ var SectionLink = function (_Component) {
                                                 { className: 'mid_link_post' },
                                                 _react2.default.createElement(
                                                     'p',
-                                                    null,
+                                                    { onClick: _nexusActions2.default.getQr },
                                                     'conectarnos'
                                                 )
                                             )
@@ -65286,7 +65283,7 @@ var SectionLink = function (_Component) {
 exports.default = SectionLink;
 ;
 
-},{"./cubeQR.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubeQR.jsx","./panelLL.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\panelLL.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionType.jsx":[function(require,module,exports){
+},{"./../standars/inopportuneMessenger.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\inopportuneMessenger.jsx","./actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","./cubeQR.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\cubeQR.jsx","./panelLL.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\panelLL.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\sectionType.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -65512,7 +65509,7 @@ var Cubes1 = function (_Component) {
 								value: function render() {
 												return _react2.default.createElement(
 																"svg",
-																{ className: "icons8 icons8-User-Male", version: "1.1", x: "0px", y: "0px", viewBox: "0 0 48 48" },
+																{ className: "icons8 icons8-User-default", version: "1.1", x: "0px", y: "0px", viewBox: "0 0 48 48" },
 																_react2.default.createElement("polygon", { style: { fill: "#C5CAE9" }, points: "43,5 17.963,30.037 15.817,27.891 34.416,6.431 " }),
 																_react2.default.createElement("polygon", { style: { fill: "#9FA8DA" }, points: "43,5 17.963,30.037 20.109,32.183 41.569,13.584 " }),
 																_react2.default.createElement("path", { style: { fill: "#FFB300" }, d: "M19.751,36.117l-7.869-7.869c-0.593-0.593-0.593-1.553,0-2.146l0,0c0.593-0.593,1.553-0.593,2.146,0\r l7.869,7.869c0.593,0.593,0.593,1.553,0,2.146l0,0C21.305,36.71,20.344,36.71,19.751,36.117z" }),
@@ -65627,7 +65624,7 @@ var Cubes3 = function (_Component) {
 								value: function render() {
 												return _react2.default.createElement(
 																"svg",
-																{ className: "icons8 icons8-User-Female", version: "1.1", x: "0px", y: "0px", width: "48px", height: "48px", viewBox: "0 0 48 48", "enable-background": "new 0 0 48 48" },
+																{ className: "icons8 icons8-User-default", version: "1.1", x: "0px", y: "0px", width: "48px", height: "48px", viewBox: "0 0 48 48", "enable-background": "new 0 0 48 48" },
 																_react2.default.createElement(
 																				"g",
 																				null,
@@ -65648,123 +65645,6 @@ var Cubes3 = function (_Component) {
 }(_react.Component);
 
 exports.default = Cubes3;
-;
-
-},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\svg\\dispositive.jsx":[function(require,module,exports){
-"use strict";
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Dispositive = function (_Component) {
-	_inherits(Dispositive, _Component);
-
-	function Dispositive() {
-		_classCallCheck(this, Dispositive);
-
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(Dispositive).apply(this, arguments));
-	}
-
-	_createClass(Dispositive, [{
-		key: "render",
-		value: function render() {
-			return _react2.default.createElement(
-				"svg",
-				{ className: "icons8 icons8-controller", x: "0px", y: "0px", viewBox: "0 0 48 48", "enable-background": "new 0 0 48 48" },
-				_react2.default.createElement("path", { fill: "#2196F3", d: "M41.2,30.4l-4.7-3.7l-3.8-7.6c-0.1-0.2-0.2-0.4-0.4-0.5C32.1,18.3,29.7,16,24,16s-8.1,2.3-8.4,2.6\r c-0.2,0.2-0.3,0.3-0.4,0.5l-3.8,7.6l-4.7,3.7c-0.9,0.7-1,2-0.3,2.8C6.8,33.7,7.4,34,8,34c0.4,0,0.9-0.1,1.2-0.4l5-4\r c0.2-0.2,0.4-0.4,0.5-0.7l2.2-3.2V33l-5.7,3.5c-1.1,0.7-1.6,2.1-1.2,3.4c0.4,1.3,1.5,2.1,2.9,2.1h9h4h9c1.3,0,2.5-0.9,2.9-2.1\r c0.4-1.3-0.1-2.6-1.2-3.4L31,33v-7.3l2.2,3.2c0.1,0.3,0.3,0.5,0.5,0.7l5,4c0.4,0.3,0.8,0.4,1.2,0.4c0.6,0,1.2-0.3,1.6-0.8\r C42.3,32.4,42.1,31.1,41.2,30.4z" }),
-				_react2.default.createElement("path", { fill: "#FFB74D", d: "M24,6c2.8,0,5,2.2,5,5s-2.2,5-5,5s-5-2.2-5-5S21.2,6,24,6z" }),
-				_react2.default.createElement("path", { fill: "#1976D2", d: "M22,36h8.9L22,34c-2.8,0-5,2.2-5,5c0,1.1,0.4,2.2,1,3h4c-1.7,0-3-1.3-3-3S20.3,36,22,36z M33.8,29.6\r c-0.2-0.2-0.4-0.4-0.5-0.7L31,25.7V22l2.9,7.7L33.8,29.6z M14.2,29.6c0.2-0.2,0.4-0.4,0.5-0.7l2.2-3.2V22l-2.9,7.7L14.2,29.6z" })
-			);
-		}
-	}]);
-
-	return Dispositive;
-}(_react.Component);
-
-exports.default = Dispositive;
-;
-
-},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\svg\\waitComponents.jsx":[function(require,module,exports){
-"use strict";
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var waitFlower = function (_Component) {
-	_inherits(waitFlower, _Component);
-
-	function waitFlower() {
-		_classCallCheck(this, waitFlower);
-
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(waitFlower).apply(this, arguments));
-	}
-
-	_createClass(waitFlower, [{
-		key: "render",
-		value: function render() {
-			return _react2.default.createElement(
-				"svg",
-				{ className: "icons8 icons8-controller", x: "0px", y: "0px", width: "48px", height: "48px", viewBox: "0 0 48 48", "enable-background": "new 0 0 48 48" },
-				_react2.default.createElement(
-					"g",
-					null,
-					_react2.default.createElement("path", { fill: "#1565C0", d: "M33.148,7.77c2.722,1.57,3.661,5.059,2.091,7.78c-1.584,2.733-10.639,7.026-10.639,7.026\r s-0.816-9.995,0.768-12.729C26.938,7.126,30.427,6.186,33.148,7.77" }),
-					_react2.default.createElement("path", { fill: "#1565C0", d: "M14.852,40.235c-2.722-1.571-3.661-5.06-2.091-7.78c1.584-2.734,10.639-7.026,10.639-7.026\r s0.816,9.995-0.768,12.729C21.062,40.879,17.573,41.807,14.852,40.235" }),
-					_react2.default.createElement("path", { fill: "#1565C0", d: "M43,23.998c0,3.143-2.548,5.703-5.702,5.703c-3.143,0-11.393-5.703-11.393-5.703s8.25-5.702,11.393-5.702\r C40.452,18.296,43,20.844,43,23.998" }),
-					_react2.default.createElement("path", { fill: "#1565C0", d: "M5,23.998c0-3.154,2.548-5.702,5.702-5.702c3.143,0,11.393,5.702,11.393,5.702s-8.25,5.703-11.393,5.703\r C7.548,29.701,5,27.141,5,23.998" }),
-					_react2.default.createElement("path", { fill: "#1565C0", d: "M33.148,40.235c-2.722,1.571-6.21,0.644-7.78-2.078c-1.584-2.733-0.768-12.729-0.768-12.729\r s9.055,4.292,10.639,7.026C36.81,35.176,35.87,38.664,33.148,40.235" }),
-					_react2.default.createElement("path", { fill: "#1565C0", d: "M14.852,7.77c2.722-1.584,6.21-0.644,7.78,2.078c1.584,2.733,0.768,12.729,0.768,12.729\r s-9.055-4.293-10.639-7.026C11.19,12.828,12.13,9.34,14.852,7.77" })
-				),
-				_react2.default.createElement(
-					"g",
-					null,
-					_react2.default.createElement("path", { fill: "#2196F3", d: "M24,5.012c3.319,0,6,2.682,6,6.001c0,3.306-6,12.988-6,12.988s-6-9.683-6-12.988\r C18,7.693,20.681,5.012,24,5.012" }),
-					_react2.default.createElement("path", { fill: "#2196F3", d: "M7.448,14.692c1.627-2.894,5.278-3.915,8.171-2.288C18.501,14.024,24,24,24,24s-11.381,0.483-14.263-1.137\r C6.845,21.236,5.821,17.586,7.448,14.692" }),
-					_react2.default.createElement("path", { fill: "#2196F3", d: "M40.588,14.758c1.616,2.9,0.578,6.547-2.321,8.162C35.379,24.529,24,24.001,24,24.001\r s5.538-9.954,8.426-11.563C35.325,10.822,38.973,11.858,40.588,14.758" }),
-					_react2.default.createElement("path", { fill: "#2196F3", d: "M24,42.988c-3.319,0-6-2.682-6-6.001c0-3.306,6-12.988,6-12.988s6,9.683,6,12.988\r C30,40.307,27.319,42.988,24,42.988" }),
-					_react2.default.createElement("path", { fill: "#2196F3", d: "M7.412,33.242c-1.616-2.9-0.578-6.547,2.321-8.162C12.621,23.471,24,23.999,24,23.999\r s-5.538,9.954-8.426,11.563C12.675,37.178,9.027,36.142,7.412,33.242" }),
-					_react2.default.createElement("path", { fill: "#2196F3", d: "M40.552,33.308c-1.627,2.894-5.278,3.915-8.171,2.288C29.499,33.976,24,24,24,24s11.381-0.483,14.263,1.137\r C41.155,26.764,42.179,30.414,40.552,33.308" })
-				),
-				_react2.default.createElement("path", { fill: "#FF9800", d: "M24,16.998c3.865,0,7,3.125,7,7c0,3.864-3.135,7-7,7s-7-3.136-7-7C17,20.123,20.135,16.998,24,16.998" }),
-				_react2.default.createElement("path", { fill: "#FFEB3B", d: "M24,19.998c2.207,0,4,1.793,4,4c0,2.208-1.793,4-4,4s-4-1.792-4-4C20,21.791,21.793,19.998,24,19.998" })
-			);
-		}
-	}]);
-
-	return waitFlower;
-}(_react.Component);
-
-exports.default = waitFlower;
 ;
 
 },{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\screen.jsx":[function(require,module,exports){
@@ -65820,7 +65700,93 @@ var Screen = function (_Component) {
 exports.default = Screen;
 ;
 
-},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\panelLateral.jsx":[function(require,module,exports){
+},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\inopportuneMessenger.jsx":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _annuncer = require('./svg/annuncer.jsx');
+
+var _annuncer2 = _interopRequireDefault(_annuncer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var InopportuneMessenger = function (_Component) {
+    _inherits(InopportuneMessenger, _Component);
+
+    function InopportuneMessenger() {
+        _classCallCheck(this, InopportuneMessenger);
+
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(InopportuneMessenger).apply(this, arguments));
+    }
+
+    _createClass(InopportuneMessenger, [{
+        key: 'render',
+        value: function render() {
+
+            var stlyeInopp = {
+                top: this.props.y || 20,
+                left: this.props.x || 20
+            };
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'cn_inopportune', style: stlyeInopp },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'inopportune_head' },
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'ul_announcer' },
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            _react2.default.createElement(_annuncer2.default, null)
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'inopportune_body' },
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'ul_text_annuncer' },
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            _react2.default.createElement(
+                                'p',
+                                null,
+                                'Nadie por aqui quiere poner a prueba tu paciencia aguarda unos segundos :)'
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return InopportuneMessenger;
+}(_react.Component);
+
+exports.default = InopportuneMessenger;
+;
+
+},{"./svg/annuncer.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\svg\\annuncer.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\panelLateral.jsx":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -65884,7 +65850,77 @@ var PanelLateral = function (_Component) {
 exports.default = PanelLateral;
 ;
 
-},{".././nexus/actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\swittcher.js":[function(require,module,exports){
+},{".././nexus/actions/nexusActions.jsx":"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\nexus\\actions\\nexusActions.jsx","react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\svg\\annuncer.jsx":[function(require,module,exports){
+"use strict";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var annuncer = function (_Component) {
+	_inherits(annuncer, _Component);
+
+	function annuncer() {
+		_classCallCheck(this, annuncer);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(annuncer).apply(this, arguments));
+	}
+
+	_createClass(annuncer, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"svg",
+				{ className: "icons8 icons8-User-default", x: "0px", y: "0px", width: "48px", height: "48px", viewBox: "0 0 48 48", "enable-background": "new 0 0 48 48" },
+				_react2.default.createElement("polygon", { fill: "#455A64", points: "30,14 42,5 33,16 " }),
+				_react2.default.createElement(
+					"g",
+					null,
+					_react2.default.createElement("path", { fill: "#B0BEC5", d: "M43,31c0,0,0.802-2.301-1.525-3.692c-4.635-4.475-6.061-8.874-6.061-8.874S34.69,15.682,34,15\r s-3.529-2.725-3.529-2.725S27,9,20,12C12.146,15.365,5,25,5,25s0,16,12,17c3.87-5.447,5.787-15.199,7.894-15.1S30,31,35,32\r c2,1,0.113,2.053,3,3c2.444,0.801,4.136-1.156,4.136-1.156S43.039,31.307,43,31z" }),
+					_react2.default.createElement("path", { fill: "#B0BEC5", d: "M30.773,17c-1.266-2.842-0.479-4.896-0.479-4.896C32.773,9,31.819,6,31.819,6s-0.787,2.054-3.629,3.32\r s-3.63,3.319-3.63,3.319s-0.702,0.883,0.127,2.485C25.625,16.938,30.773,17,30.773,17z" })
+				),
+				_react2.default.createElement("path", { fill: "#78909C", d: "M27,15c0,0-0.787-0.36-0.25-1.417C31.5,9.833,31.819,6,31.819,6s0.922,3.64-1.301,7.132\r C30.519,13.132,29.375,15.75,27,15z" }),
+				_react2.default.createElement(
+					"g",
+					null,
+					_react2.default.createElement("path", { fill: "#C51162", d: "M17.159,24.828c-0.022-0.296-0.048-0.589-0.074-0.879c0.111,1.238,0.208,2.527,0.16,3.851\r c1.417-1.865,2.81-4.545,3.755-8.8c0.721-3.246,1.706-5.164,2.611-6.311C21.276,15.474,19.583,20.95,17.159,24.828z" }),
+					_react2.default.createElement("path", { fill: "#C51162", d: "M11.179,32.089c-0.028-0.384-0.061-0.764-0.094-1.14c0.097,1.08,0.185,2.197,0.175,3.342\r c2.865-2.604,3.928-4.916,4.325-10.347c0.101-1.371,0.261-2.796,0.64-4.165C16.593,18.407,17.21,17.127,18,16\r C13.833,21.417,14.417,29.084,11.179,32.089z" }),
+					_react2.default.createElement("path", { fill: "#C51162", d: "M7.125,34.484c0.451,0.959,0.889,1.789,1.228,2.398c0.024-0.06,0.05-0.116,0.074-0.179\r c0.232-0.585,0.425-1.19,0.579-1.813c0.313-1.248,0.84-6.742,1.219-8.111C10.593,25.407,11.21,24.127,12,23\r C8.667,27.251,9.583,30.001,7.125,34.484z" })
+				),
+				_react2.default.createElement(
+					"g",
+					null,
+					_react2.default.createElement("path", { fill: "#FF4081", d: "M28.471,9.174C28.328,9.116,28.175,9.058,28,9C17,7,6,20,5,25c-0.574,2.872,0.826,6.724,2.124,9.485\r C9.583,30.001,8.667,27.251,12,23c-0.574,1.254-0.93,2.58-1.038,3.912c-0.116,1.334,0.002,2.666,0.123,4.037\r c0.033,0.376,0.065,0.756,0.094,1.14C14.417,29.084,13.833,21.417,18,16c-0.574,1.254-0.93,2.58-1.038,3.912\r c-0.116,1.334,0.002,2.666,0.123,4.037c0.026,0.29,0.052,0.583,0.074,0.879c3.054-4.885,4.949-12.305,8.429-13.677\r c0.563-0.607,1.386-1.289,2.603-1.831C28.293,9.274,28.373,9.222,28.471,9.174z" }),
+					_react2.default.createElement("path", { fill: "#FF4081", d: "M33.444,11.269c-0.672-0.343-1.241-0.614-1.756-0.848c-0.224,0.869-0.586,1.794-1.17,2.711\r c0,0-0.002,0.003-0.002,0.004c0.538,0.499,1.174,0.917,1.928,1.132C35,15,36,17,36,19C37,17,37.116,13.143,33.444,11.269z" })
+				),
+				_react2.default.createElement("path", { fill: "#263238", d: "M34,19c0,0.553-0.447,1-1,1s-2-2-2-2s1.447,0,2,0S34,18.447,34,19z" }),
+				_react2.default.createElement("path", { fill: "#455A64", d: "M42.136,33.844c0,0,0.903-2.537,0.864-2.844c0,0,0.122-0.357,0.131-0.873\r c-0.039-0.021-0.077-0.045-0.121-0.059c-0.526-0.164-1.154,0.343-1.401,1.133c-0.242,0.777,0.365,2.715,0.388,2.786\r C42.085,33.9,42.136,33.844,42.136,33.844z" }),
+				_react2.default.createElement("path", { fill: "#546E7A", d: "M40.945,34.741c-0.017-0.063-0.021-0.128-0.051-0.188l-2-4c-0.248-0.495-0.848-0.694-1.342-0.447\r s-0.694,0.848-0.447,1.342l1.867,3.735C39.754,35.227,40.425,35.013,40.945,34.741z" })
+			);
+		}
+	}]);
+
+	return annuncer;
+}(_react.Component);
+
+exports.default = annuncer;
+;
+
+},{"react":"D:\\APIS\\melo\\webserver\\melo\\melo\\node_modules\\react\\react.js"}],"D:\\APIS\\melo\\webserver\\melo\\melo\\public\\views\\main\\components\\standars\\swittcher.js":[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

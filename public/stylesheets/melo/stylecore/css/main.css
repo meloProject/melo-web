@@ -496,7 +496,72 @@ textarea::-webkit-input-placeholder {
         height: 100% !important;
     }
 }*/
-.icons8-User-Female {
+.cn_inopportune {
+  width: 430px;
+  height: 150px;
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap; }
+
+.inopportune_head {
+  width: 30%;
+  height: 100%;
+  justify-content: center;
+  display: flex; }
+
+.inopportune_body {
+  width: 70%;
+  height: 100%;
+  justify-content: center;
+  display: flex; }
+
+.ul_text_annuncer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 900; }
+  .ul_text_annuncer li {
+    width: 100%;
+    align-self: center;
+    background: #000;
+    text-align: center; }
+    .ul_text_annuncer li p {
+      align-self: center;
+      color: white;
+      padding: 5px; }
+
+.ul_announcer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; }
+  .ul_announcer li {
+    align-self: center;
+    background: #FFEE58;
+    border-radius: 80px;
+    width: 90px;
+    height: 90px;
+    -webkit-animation-name: animateAnnuncer;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.7s;
+    -webkit-animation-fill-mode: forwards; }
+
+@keyframes animateAnnuncer {
+  0% {
+    -webkit-transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1.2); }
+  100% {
+    -webkit-transform: scale(1); } }
+    .ul_announcer li svg {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      left: -7px;
+      top: 3px; }
+
+.icons8-User-default {
   /* Customizes User Female icon */
   fill: #false;
   width: 80%;
@@ -506,16 +571,6 @@ textarea::-webkit-input-placeholder {
   /* Customizes all icons at once */
   display: inline-block;
   align-self: center; }
-
-.icons8-User-Male {
-  /* Customizes User Male icon */
-  fill: #false;
-  width: 80%;
-  height: 80%; }
-
-.icons8-controller {
-  width: 80%;
-  height: 80%; }
 
 .icons8 {
   /* Customizes all icons at once */
@@ -902,6 +957,7 @@ textarea::-webkit-input-placeholder {
   align-self: flex-start;
   font-size: 56px;
   font-weight: 800;
+  margin-right: 6%;
   color: #464646;
   -webkit-animation-name: nexTextContainer;
   -webkit-animation-timing-function: ease;
@@ -922,6 +978,7 @@ textarea::-webkit-input-placeholder {
   font-size: 45px;
   font-size: 56px;
   font-weight: 800;
+  margin-right: 6%;
   color: #464646;
   -webkit-animation-name: nexTextContainerOut;
   -webkit-animation-timing-function: ease;
@@ -941,7 +998,7 @@ textarea::-webkit-input-placeholder {
 
 .con_selection {
   width: 60%;
-  margin-right: 3%;
+  margin-right: 7%;
   display: flex;
   align-self: center;
   flex-direction: row;
@@ -1036,7 +1093,6 @@ textarea::-webkit-input-placeholder {
   justify-content: center;
   margin-right: 3%;
   border-radius: 18px;
-  background: #74ef5c;
   -webkit-box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
   -webkit-animation-name: linkerGetCode;
   -webkit-animation-timing-function: ease;
@@ -1052,15 +1108,17 @@ textarea::-webkit-input-placeholder {
   .linker_whit_code canvas {
     align-self: center; }
 
-.qrcode_wait {
-  -webkit-animation-name: linkerGetCodeWait;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite; }
+.qrcodreReady {
+  -webkit-animation-name: qrcodreReadys;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-fill-mode: forwards; }
 
-@keyframes linkerGetCodeWait {
+@keyframes qrcodreReadys {
+  from {
+    height: 20%; }
   to {
-    -webkit-transform: rotate(360deg); } }
+    height: 60%; } }
 
 .link_cn_middle {
   width: 100%;
@@ -1074,7 +1132,20 @@ textarea::-webkit-input-placeholder {
   width: 60%;
   height: 80%;
   display: flex;
-  align-self: center; }
+  align-self: center;
+  -webkit-animation-name: boxAnimate;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite; }
+
+@keyframes boxAnimate {
+  0% {
+    -webkit-transform: translate(0, 0); }
+  50% {
+    -webkit-transform: translate(0, 5px); }
+  100% {
+    -webkit-transform: translate(0, 0); } }
 
 .contact_cn_middle {
   width: 100%;
@@ -1121,24 +1192,9 @@ textarea::-webkit-input-placeholder {
 
 .top_link_post {
   width: 100%;
-  height: 60%;
+  height: 20%;
   display: flex;
-  justify-content: center;
-  -webkit-animation-name: boxAnimate;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-duration: 0.7s;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: infinite; }
-  .top_link_post svg {
-    cursor: pointer; }
-
-@keyframes boxAnimate {
-  0% {
-    -webkit-transform: translate(0, 0); }
-  50% {
-    -webkit-transform: translate(0, 5px); }
-  100% {
-    -webkit-transform: translate(0, 0); } }
+  justify-content: center; }
 
 .mid_link_post {
   width: 100%;
@@ -1150,21 +1206,10 @@ textarea::-webkit-input-placeholder {
     font-size: 56px;
     font-weight: 800;
     align-self: center;
-    padding: 0px !important;
-    margin: 0px !important;
-    -webkit-animation-name: boxAnimate;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 0.7s;
-    -webkit-animation-fill-mode: forwards;
-    -webkit-animation-iteration-count: infinite; }
-
-@keyframes boxAnimate {
-  0% {
-    -webkit-transform: translate(0, 0); }
-  50% {
-    -webkit-transform: translate(0, 5px); }
-  100% {
-    -webkit-transform: translate(0, 0); } }
+    cursor: pointer;
+    padding: 20px;
+    background: #00c8ff;
+    color: white; }
 
 .icons8-controller {
   width: 140px;

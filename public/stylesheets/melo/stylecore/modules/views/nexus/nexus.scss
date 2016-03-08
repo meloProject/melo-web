@@ -37,7 +37,68 @@ $iconsSize: 65px;
     }
 }*/
 
-.icons8-User-Female { /* Customizes User Female icon */
+.cn_inopportune {
+    width: 430px;
+    height: 150px;
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+}
+
+.inopportune_head {
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+}
+.inopportune_body {
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+}
+.ul_text_annuncer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 900;
+    li
+        {
+        width: 100%;
+        align-self: center;
+        background: #000;
+            text-align: center;
+        p {
+            align-self: center;
+            color: white;
+            padding: 5px;
+        }
+    }
+}
+.ul_announcer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    li {
+        align-self: center;
+        background: #FFEE58;
+        border-radius: 80px;
+        width: 90px;
+        height: 90px;
+        @include animateAnnuncer();
+        svg {
+            width: 100%;
+            height: 100%;
+                position: relative;
+    left: -7px;
+    top: 3px;
+        }
+    }
+}
+
+.icons8-User-default { /* Customizes User Female icon */
     fill: #false;
     width: 80%;
     height: 80%;
@@ -46,18 +107,6 @@ $iconsSize: 65px;
 .icon { /* Customizes all icons at once */
     display: inline-block;
     align-self: center;
-}
-
-.icons8-User-Male { /* Customizes User Male icon */
-    fill: #false;
-    width: 80%;
-    height: 80%;
-}
-
-.icons8-controller {
-    width: 80%;
-    height: 80%;
-    //-webkit-filter: drop-shadow( 0 0 5px rgba(51, 51, 51, 0.25) );
 }
 
 .icons8 { /* Customizes all icons at once */
@@ -410,6 +459,7 @@ $iconsSize: 65px;
     align-self: flex-start;
     font-size: 56px;
     font-weight: 800;
+    margin-right: 6%;
     color: #464646;
     @include nexTextContainer();
 }
@@ -418,13 +468,14 @@ $iconsSize: 65px;
     font-size: 45px;
     font-size: 56px;
     font-weight: 800;
+    margin-right: 6%;
     color: #464646;
     @include nexTextContainerOut();
 }
 
 .con_selection {
     width: 60%;
-    margin-right: 3%;
+    margin-right: 7%;
     display: flex;
     align-self: center;
     flex-direction: row;
@@ -530,7 +581,6 @@ $iconsSize: 65px;
     justify-content: center;
     margin-right: 3%;
     border-radius: 18px;
-    background: #74ef5c;
     -webkit-box-shadow: 0 4px 2px rgba(0, 0, 0, 0.10);
      @include linkerGetCode();
     canvas {
@@ -538,8 +588,8 @@ $iconsSize: 65px;
     }
 }
 
-.qrcode_wait {
-    @include linkerGetCodeWait();
+.qrcodreReady {
+    @include qrcodreReadys();
 }
 
 .link_cn_middle {
@@ -556,6 +606,7 @@ $iconsSize: 65px;
     height: 80%;
     display: flex;
     align-self: center;
+    @include boxAnimate();
 }
 
 .contact_cn_middle {
@@ -610,14 +661,9 @@ $iconsSize: 65px;
 
 .top_link_post {
     width: 100%;
-    height: 60%;
+    height: 20%;
     display: flex;
     justify-content: center;
-    svg {
-        cursor: pointer;
-    }
-
-    @include boxAnimate();
 }
 
 .mid_link_post {
@@ -626,13 +672,14 @@ $iconsSize: 65px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     p {
         font-size: 56px;
         font-weight: 800;
         align-self: center;
-        @include collapse();
-        @include boxAnimate();
+        cursor: pointer;
+        padding: 20px;
+        background: #00c8ff;
+        color: white;
     }
 }
 
@@ -643,7 +690,6 @@ $iconsSize: 65px;
     align-self: center;
 }
 .icons8-octopusTentacle {
-     
     width: 600px;
     height: 600px;
     position: absolute;

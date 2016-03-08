@@ -10,6 +10,7 @@ $rotationSpeed: 1s;
     -webkit-animation-delay: 2s;
     -webkit-animation-direction: alternate-reverse;
     -webkit-animation-delay: 4s;
+
     @keyframes alienEye {
         0% {
             -webkit-transform: translateY(0);
@@ -86,6 +87,7 @@ $rotationSpeed: 1s;
     -webkit-animation-duration: 0.7s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation-iteration-count: infinite;
+
     @keyframes boxAnimate {
         0% {
             -webkit-transform: translate(0, 0);
@@ -109,6 +111,7 @@ $rotationSpeed: 1s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation-delay: 0.4s;
     opacity: 0;
+
     @keyframes nexTextContainer {
         0% {
             -webkit-transform: scale(0.2);
@@ -121,7 +124,7 @@ $rotationSpeed: 1s;
         100% {
             opacity: 8;
         }
-     }
+    }
 }
 
 @mixin nexTextContainerOut() {
@@ -130,6 +133,7 @@ $rotationSpeed: 1s;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-fill-mode: forwards;
     align-self: flex-start;
+
     @keyframes nexTextContainerOut {
         0% {
             -webkit-transform: scale(1);
@@ -146,7 +150,7 @@ $rotationSpeed: 1s;
             -webkit-transform: translateY(50px);
             opacity: 0;
         }
-     }
+    }
 }
 
 
@@ -155,15 +159,16 @@ $rotationSpeed: 1s;
     -webkit-animation-timing-function: ease;
     -webkit-animation-duration: 0.2s;
     -webkit-animation-fill-mode: forwards;
+
     @keyframes arrowsGoTo {
         0% {
             -webkit-transform: translateY(0);
         }
 
         100% {
-            -webkit-transform:  translateY(-5px);
+            -webkit-transform: translateY(-5px);
         }
-     }
+    }
 }
 
 @mixin arrowsGoToOut() {
@@ -174,13 +179,13 @@ $rotationSpeed: 1s;
 
     @keyframes arrowsGoToOut {
         from {
-            -webkit-transform:  translateY(-5px);
+            -webkit-transform: translateY(-5px);
         }
 
         to {
-            -webkit-transform:  translateY(0px);
+            -webkit-transform: translateY(0px);
         }
-     }
+    }
 }
 
 
@@ -191,27 +196,54 @@ $rotationSpeed: 1s;
 
     @keyframes linkerGetCode {
         0% {
-            -webkit-transform:  scale(1);
+            -webkit-transform: scale(1);
         }
+
         50% {
-             -webkit-transform:  scale(1.2);
+            -webkit-transform: scale(1.2);
         }
+
         100% {
-             -webkit-transform:  scale(1);
-        }
-     }
-}
-
-
-@mixin linkerGetCodeWait() {
-    -webkit-animation-name: linkerGetCodeWait;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-
-    @keyframes linkerGetCodeWait {
-        to {
-            -webkit-transform: rotate(360deg);
+            -webkit-transform: scale(1);
         }
     }
 }
+
+@mixin qrcodreReadys() {
+    -webkit-animation-name: qrcodreReadys;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.7s;
+    -webkit-animation-fill-mode: forwards;
+
+    @keyframes qrcodreReadys {
+        from {
+           height: 20%;
+        }
+        to {
+            height: 60%;
+        }
+    }
+}
+
+
+@mixin animateAnnuncer() {
+    -webkit-animation-name: animateAnnuncer;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 0.7s;
+    -webkit-animation-fill-mode: forwards;
+
+     @keyframes animateAnnuncer {
+        0% {
+            -webkit-transform: scale(0);
+        }
+
+        50% {
+            -webkit-transform: scale(1.2);
+        }
+
+        100% {
+            -webkit-transform: scale(1);
+        }
+    }
+}
+

@@ -28,18 +28,13 @@ class NexusActions {
     }
 
     getQr() {
-        this.waitFor("forQR");
-        document.getElementById("linker")
-                    .classList.add("qrcode_wait");
         // create session the sesion have the qr code room.
         return (dispatch) => {
             setTimeout(() => {
-                document.getElementById("linker")
-                    .classList.remove("qrcode_wait");
-                document.getElementById("linker")
-                    .className= "linker_whit_code";
+                document.querySelector(".top_link_post")
+                    .classList.add("qrcodreReady");
                 dispatch("www.apirest.com/melo/getcodeqr")
-            }, 9000);
+            }, 2000);
         };
     }
 }

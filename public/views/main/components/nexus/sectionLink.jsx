@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CubeQr from './cubeQR.jsx';
 import PanelLL from './panelLL.jsx';
+import NexusActions from './actions/nexusActions.jsx';
+import InopportuneMessenger from './../standars/inopportuneMessenger.jsx';
 
 export default class SectionLink extends Component {
 
@@ -16,7 +18,9 @@ export default class SectionLink extends Component {
     render() {
         return (
             <section id="section-link">
-                <div className="section_link__st_top"></div>
+                <div className="section_link__st_top">
+                    <InopportuneMessenger x={ 50 } y={ 50 } />
+                </div>
                 <div className="section_link__st_mid">
                     <div className="sec_link_md_left">
                         <PanelLL themeClass="panelLL-alternative"/>
@@ -31,7 +35,7 @@ export default class SectionLink extends Component {
                                                     <CubeQr qrcode={ this.props.qrcode }/>
                                                 </div>
                                                 <div className="mid_link_post">
-                                                    <p>conectarnos</p>
+                                                    <p onClick={ NexusActions.getQr } >conectarnos</p>
                                                 </div>
                                             </div>
                                         </li>

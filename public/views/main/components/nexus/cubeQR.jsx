@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import QRcode from 'qrcode.react';
-import NexusActions from './actions/nexusActions.jsx';
-import Dispositive from './svg/dispositive.jsx';
-import WaitFlower from './svg/waitComponents.jsx';
 
 export default class Cubes extends Component {
     constructor() {
@@ -18,17 +15,17 @@ export default class Cubes extends Component {
 
     	function renderLinkerState(state) {
     		switch(state) {
+                case "wait":
+                    return <span></span>
     			case "normal":
-    				return <Dispositive />
-    			case "wait":
-    				return <WaitFlower />
+    				return <span></span>
     			default:
     				return <QRcode value={ state } fgColor={ this.QRconfig.fgColor } className="box_qrcode" />
     		}
     	}
 
         return (
-			<div className="linker" id="linker" onClick={ NexusActions.getQr } >	            	
+			<div className="linker" id="linker">	            	
 				{
 					renderLinkerState.call(this, this.props.qrcode)
 				}

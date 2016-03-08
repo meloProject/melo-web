@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 export default class Cubes1 extends Component {
     render() {
     	return (
-			<svg className="icons8 icons8-User-Male" version="1.1" x="0px" y="0px" viewBox="0 0 48 48">
+			<svg className="icons8 icons8-User-default" version="1.1" x="0px" y="0px" viewBox="0 0 48 48">
 				<polygon style={{ fill: "#C5CAE9" }} points="43,5 17.963,30.037 15.817,27.891 34.416,6.431 "></polygon>
 				<polygon style={{ fill: "#9FA8DA" }} points="43,5 17.963,30.037 20.109,32.183 41.569,13.584 "></polygon>
 				<path style={{ fill: "#FFB300"}} d="M19.751,36.117l-7.869-7.869c-0.593-0.593-0.593-1.553,0-2.146l0,0c0.593-0.593,1.553-0.593,2.146,0
